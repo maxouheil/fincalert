@@ -1,0 +1,44 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "finca_001",
+        "surface_estimee_m2": 94,
+        "distance_plus_proche_voisin_m": 42,
+        "qualifiee_finca": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1.3132, 38.9231]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "finca_002",
+        "surface_estimee_m2": 120,
+        "distance_plus_proche_voisin_m": 65,
+        "qualifiee_finca": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1.3245, 38.9156]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "finca_003",
+        "surface_estimee_m2": 85,
+        "distance_plus_proche_voisin_m": 38,
+        "qualifiee_finca": true
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [1.3089, 38.9312]
+      }
+    }
+  ]
+}

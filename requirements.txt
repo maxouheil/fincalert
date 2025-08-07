@@ -1,0 +1,12 @@
+earthengine-api==0.1.375
+geemap==0.28.2
+geopandas==0.14.1
+numpy==1.24.3
+opencv-python==4.8.0.74
+pandas==2.0.3
+rasterio==1.3.8
+requests==2.31.0
+shapely==2.0.1
+fastapi==0.104.1
+uvicorn==0.24.0
+python-dotenv==1.0.0

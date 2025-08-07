@@ -1,0 +1,64 @@
+/* Global typography and mapbox overrides */
+:root {
+  --app-font: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+               Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--app-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mapbox popup uses its own default font; override to match app */
+.mapboxgl-popup-content,
+.mapboxgl-popup-content * {
+  font-family: var(--app-font) !important;
+}
+
+/* Softer shadow around popup and remove default container padding */
+.mapboxgl-popup-content {
+  background: transparent !important; /* avoid white flash before image loads */
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18) !important;
+  border-radius: 14px !important;
+  padding: 0 !important;
+}
+
+.mapboxgl-popup-close-button {
+  top: 6px !important;
+  right: 8px !important;
+}
+
+/* Minimal filter selects */
+.filter-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: var(--app-font);
+  font-weight: 700;
+  font-size: 16px;
+  color: #0F172A; /* slate-900 */
+  background: rgba(255,255,255,0.92)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231F2937' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E")
+    no-repeat right 14px center;
+  background-size: 12px 12px;
+  border: 1px solid #E2E8F0; /* slate-200 */
+  border-radius: 14px;
+  padding: 8px 44px 8px 16px; /* 30% less vertical padding */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #94A3B8; /* slate-400 */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.16);
+}
+
+.filter-select option {
+  font-weight: 600;
+}
+
