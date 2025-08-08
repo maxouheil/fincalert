@@ -8,7 +8,7 @@ class BuildingDetector:
         """Initialize the building detector with Microsoft Building Footprints."""
         self.min_area = 50  # minimum area in m²
         self.max_area = 150  # maximum area in m²
-        self.min_isolation = 15  # minimum distance to nearest building in meters
+        self.min_isolation = 10  # minimum distance to nearest building in meters
 
     def fetch_buildings(self, bounds):
         """

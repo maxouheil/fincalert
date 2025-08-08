@@ -38,8 +38,9 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
   const [popupTick, setPopupTick] = useState(0);
   const [placeCache, setPlaceCache] = useState<Record<string, string>>({});
   const [sizeFilter, setSizeFilter] = useState<'all' | 'S' | 'M' | 'L'>('all');
-  const [nnFilter, setNnFilter] = useState<'all' | 'lt30' | '30to60' | 'gt60'>('all');
+  const [nnFilter, setNnFilter] = useState<'all' | '10to15' | '15to30' | 'lt30' | '30to60' | 'gt60'>('all');
   const [hasCentered, setHasCentered] = useState(false);
+  const [thumbLoaded, setThumbLoaded] = useState(false);
 
   // Reference areas for West Ibiza (approximate centers)
   const referenceAreas = useMemo(
@@ -91,8 +92,12 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
 
       let distOk = true;
       if (nnFilter === 'lt30') distOk = dist < 30;
+      else if (nnFilter === '10to15') distOk = dist >= 10 && dist < 15;
+      else if (nnFilter === '15to30') distOk = dist >= 15 && dist < 30;
       else if (nnFilter === '30to60') distOk = dist >= 30 && dist <= 60;
       else if (nnFilter === 'gt60') distOk = dist > 60;
+      // Ensure minimum isolation of 10m (instead of 15m)
+      if (dist < 10) distOk = false;
 
       return areaOk && distOk;
     });
@@ -133,6 +138,11 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
       setHasCentered(true);
     }
   }, [datasetCenter, fincas.length, hasCentered]);
+
+  // Reset thumbnail loading state when popup changes
+  useEffect(() => {
+    setThumbLoaded(false);
+  }, [selected?.id, popupTick]);
 
   // Lazy reverse geocoding for selected finca
   useEffect(() => {
@@ -231,10 +241,12 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
           <select
             className="filter-select"
             value={nnFilter}
-            onChange={(e) => setNnFilter(e.target.value as 'all' | 'lt30' | '30to60' | 'gt60')}
+            onChange={(e) => setNnFilter(e.target.value as 'all' | '10to15' | '15to30' | 'lt30' | '30to60' | 'gt60')}
             aria-label="Filter by isolation"
           >
             <option value="all">All isolations</option>
+            <option value="10to15">10 to 15m</option>
+            <option value="15to30">15 to 30m</option>
             <option value="lt30">Less than 30m</option>
             <option value="30to60">30 to 60m</option>
             <option value="gt60">More than 60m</option>
@@ -269,17 +281,26 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
           anchor="top"
           onClose={() => onSelect(null as unknown as string)}
         >
-          <div style={{ width: 280, boxSizing: 'border-box' }}>
-            <div style={{ width: 280, height: 200, margin: 0, overflow: 'hidden', borderTopLeftRadius: 12, borderTopRightRadius: 12, background: 'transparent' }}>
-              <img
-                src={`https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/${selected.lon},${selected.lat},18.5,0/280x200@2x?access_token=${MAPBOX_TOKEN}`}
-                srcSet={`https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/${selected.lon},${selected.lat},18.5,0/280x200@1x?access_token=${MAPBOX_TOKEN} 1x, https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/${selected.lon},${selected.lat},18.5,0/280x200@2x?access_token=${MAPBOX_TOKEN} 2x`}
-                loading="eager"
-                decoding="async"
-                alt={selected.id}
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', backgroundColor: 'transparent' }}
-              />
-            </div>
+            <div style={{ width: 280, boxSizing: 'border-box' }}>
+              <div style={{ width: 280, height: 200, margin: 0, overflow: 'hidden', borderTopLeftRadius: 12, borderTopRightRadius: 12, background: '#F3F4F6' }}>
+                <img
+                  src={`http://localhost:8000/api/thumbnail/${encodeURIComponent(selected.id)}?lon=${selected.lon}&lat=${selected.lat}&width=280&height=200&scale=2`}
+                  srcSet={`http://localhost:8000/api/thumbnail/${encodeURIComponent(selected.id)}?lon=${selected.lon}&lat=${selected.lat}&width=280&height=200&scale=1 1x, http://localhost:8000/api/thumbnail/${encodeURIComponent(selected.id)}?lon=${selected.lon}&lat=${selected.lat}&width=280&height=200&scale=2 2x`}
+                  onLoad={() => setThumbLoaded(true)}
+                  onError={(e) => {
+                    const t = e.currentTarget as HTMLImageElement;
+                    // prevent infinite loop
+                    t.onerror = null;
+                    const base = `https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/${selected.lon},${selected.lat},18.5,0/280x200`;
+                    t.src = `${base}@2x?access_token=${MAPBOX_TOKEN}`;
+                    t.srcset = `${base}@1x?access_token=${MAPBOX_TOKEN} 1x, ${base}@2x?access_token=${MAPBOX_TOKEN} 2x`;
+                  }}
+                  loading="eager"
+                  decoding="async"
+                  alt={selected.id}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', backgroundColor: 'transparent', opacity: thumbLoaded ? 1 : 0, transition: 'opacity 200ms ease' }}
+                />
+              </div>
             <div style={{ background: '#FFFFFF', borderBottomLeftRadius: 12, borderBottomRightRadius: 12, padding: '12px 14px 12px' }}>
               <div style={{ fontSize: 18, fontWeight: 800, color: '#1A202C', marginBottom: 4 }}>{selected.id}</div>
               <div style={{ fontSize: 14, color: '#4A5568', marginBottom: 6 }}>

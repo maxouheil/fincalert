@@ -1,15 +1,22 @@
 import ee
-import geemap
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
 def initialize_gee():
-    """Initialize Google Earth Engine with service account."""
-    service_account = os.getenv('GEE_SERVICE_ACCOUNT')
-    credentials = ee.ServiceAccountCredentials(None, service_account)
-    ee.Initialize(credentials)
+    """Best-effort initialize Google Earth Engine; no-op if not configured."""
+    try:
+        service_account = os.getenv('GEE_SERVICE_ACCOUNT')
+        private_key = os.getenv('GEE_PRIVATE_KEY')
+        # If credentials are not configured, skip initialization
+        if not service_account or not private_key:
+            return
+        credentials = ee.ServiceAccountCredentials(service_account, key_data=private_key)
+        ee.Initialize(credentials)
+    except Exception:
+        # Do not fail the app if GEE is unavailable
+        return
 
 def get_sentinel_imagery(bounds, start_date, end_date):
     """

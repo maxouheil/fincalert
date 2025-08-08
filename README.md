@@ -2,6 +2,8 @@
 
 Fincalert is a tool for detecting and mapping isolated fincas in Western Ibiza using satellite imagery.
 
+For a complete documentation guide, see `docs/README.md`.
+
 ## Features
 
 - Automatic detection of isolated buildings (fincas) using satellite imagery
@@ -16,12 +18,38 @@ Fincalert is a tool for detecting and mapping isolated fincas in Western Ibiza u
 - Satellite Data: Sentinel-2 via Google Earth Engine
 - Building Detection: Microsoft Building Footprints API
 
-## Setup
+## Quick Start
+
+### Start all servers at once
+```bash
+./start-all.sh
+```
+
+This will start:
+- Backend API on http://localhost:8000
+- Frontend on http://localhost:3001
+
+### Stop all servers
+```bash
+./stop-all.sh
+```
+
+### Start servers individually
+```bash
+# Backend only
+./start-backend.sh
+
+# Frontend only  
+./start-frontend.sh
+```
+
+## Manual Setup (if needed)
 
 ### Frontend
 ```bash
+cd frontend
 npm install
-npm start
+PORT=3001 npm start
 ```
 
 ### Backend
@@ -29,6 +57,8 @@ npm start
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
+export PYTHONPATH=$(pwd)/backend
+uvicorn backend.api.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 ### Environment Variables

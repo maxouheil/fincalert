@@ -1,23 +1,27 @@
 import json
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Tuple
+from pathlib import Path
 
 import geopandas as gpd
 import numpy as np
 import pandas as pd
 import requests
-from shapely.geometry import Polygon, MultiPolygon, shape
+from shapely.geometry import Polygon, MultiPolygon, Point, shape
 from shapely.ops import unary_union
 
 
-OVERPASS_URL = "https://overpass-api.de/api/interpreter"
+OVERPASS_ENDPOINTS = [
+    "https://overpass-api.de/api/interpreter",
+    "https://overpass.kumi.systems/api/interpreter",
+]
 
 
 @dataclass
 class FincaCriteria:
     min_area_m2: float = 50.0
     max_area_m2: float = 150.0
-    min_isolation_m: float = 15.0
+    min_isolation_m: float = 10.0
     max_cluster_radius_m: float = 250.0
     max_density_in_radius: int = 6  # drop if more than this many neighbors within radius
 
@@ -40,9 +44,19 @@ def fetch_osm_buildings(bounds: Dict[str, float]) -> gpd.GeoDataFrame:
     );
     out body geom;
     """
-    resp = requests.post(OVERPASS_URL, data={"data": query})
-    resp.raise_for_status()
-    data = resp.json()
+    data = None
+    last_err = None
+    for url in OVERPASS_ENDPOINTS:
+        try:
+            resp = requests.post(url, data={"data": query}, timeout=90)
+            resp.raise_for_status()
+            data = resp.json()
+            break
+        except Exception as e:
+            last_err = e
+            continue
+    if data is None:
+        raise last_err if last_err else RuntimeError("Failed to fetch OSM buildings")
 
     features: List[Tuple[str, Polygon | MultiPolygon]] = []
 
@@ -127,6 +141,8 @@ def filter_fincas(
     )
     out["id"] = [f"finca_{i:05d}" for i in range(1, len(out) + 1)]
     out["qualifiee_finca"] = True
+
+    # Neighborhood attribution is done later (single Overpass fetch + nearest join)
     return out[
         [
             "id",
@@ -140,21 +156,155 @@ def filter_fincas(
     ]
 
 
+def fetch_osm_places(bounds: Dict[str, float]) -> gpd.GeoDataFrame:
+    """Fetch OSM place features within a bbox and return point features with name/type.
+
+    Returns a GeoDataFrame (EPSG:4326) with columns: name, place, geometry (Point).
+    """
+    south = bounds["south"]
+    west = bounds["west"]
+    north = bounds["north"]
+    east = bounds["east"]
+
+    query = f"""
+    [out:json][timeout:120];
+    (
+      node["place"]({south},{west},{north},{east});
+      way["place"]({south},{west},{north},{east});
+      relation["place"]({south},{west},{north},{east});
+    );
+    out center tags;
+    """
+    data = None
+    last_err = None
+    for url in OVERPASS_ENDPOINTS:
+        try:
+            resp = requests.post(url, data={"data": query}, timeout=90)
+            resp.raise_for_status()
+            data = resp.json()
+            break
+        except Exception as e:
+            last_err = e
+            continue
+    if data is None:
+        raise last_err if last_err else RuntimeError("Failed to fetch OSM places")
+
+    names: List[str] = []
+    types: List[str] = []
+    points: List[Point] = []
+
+    for el in data.get("elements", []):
+        tags = el.get("tags", {})
+        name = tags.get("name")
+        place_type = tags.get("place")
+        if not name or not place_type:
+            continue
+
+        if el.get("type") == "node" and "lat" in el and "lon" in el:
+            lat, lon = el["lat"], el["lon"]
+        else:
+            center = el.get("center")
+            if not center:
+                continue
+            lat, lon = center.get("lat"), center.get("lon")
+        if lat is None or lon is None:
+            continue
+        names.append(name)
+        types.append(place_type)
+        points.append(Point(lon, lat))
+
+    if not points:
+        return gpd.GeoDataFrame({"name": [], "place": []}, geometry=[], crs="EPSG:4326")
+
+    return gpd.GeoDataFrame({"name": names, "place": types}, geometry=points, crs="EPSG:4326")
+
+
+def assign_neighborhoods(
+    fincas_wgs84: gpd.GeoDataFrame, bounds: Dict[str, float]
+) -> gpd.GeoDataFrame:
+    """Assign neighborhood names to fincas using a single OSM places fetch and nearest join.
+
+    Preference order: neighbourhood > suburb > quarter > locality > village > hamlet > town > city.
+    """
+    if fincas_wgs84.empty:
+        fincas_wgs84["neighborhood"] = []
+        return fincas_wgs84
+
+    places = fetch_osm_places(bounds)
+    if places.empty:
+        fincas_wgs84["neighborhood"] = ""
+        return fincas_wgs84
+
+    # Project to metric CRS for accurate nearest distance
+    fincas_m = fincas_wgs84.to_crs(32631).copy()
+    places_m = places.to_crs(32631).copy()
+
+    # Priority mapping (lower is better)
+    priority = {
+        "neighbourhood": 0,
+        "neighborhood": 0,  # US spelling if present
+        "suburb": 1,
+        "quarter": 2,
+        "locality": 3,
+        "village": 4,
+        "hamlet": 5,
+        "town": 6,
+        "city": 7,
+    }
+    places_m["place_rank"] = places_m["place"].map(priority).fillna(999).astype(int)
+
+    neighborhoods = pd.Series(["" for _ in range(len(fincas_m))], index=fincas_m.index)
+
+    # Iterate by rank and fill progressively
+    for rank in sorted(places_m["place_rank"].unique()):
+        if neighborhoods.ne("").sum() == len(neighborhoods):
+            break
+        subset = places_m[places_m["place_rank"] == rank]
+        if subset.empty:
+            continue
+        try:
+            joined = gpd.sjoin_nearest(
+                fincas_m[neighborhoods.eq("")], subset[["name", "place", "geometry"]], how="left", distance_col="_dist"
+            )
+            neighborhoods.loc[joined.index] = joined["name"].fillna("")
+        except Exception:
+            # Fallback: manual nearest using numpy if sjoin_nearest unavailable
+            fin_pts = np.array([(geom.centroid.x, geom.centroid.y) for geom in fincas_m.loc[neighborhoods.eq("")].geometry])
+            plc_pts = np.array([(geom.x, geom.y) for geom in subset.geometry])
+            if len(plc_pts) == 0 or len(fin_pts) == 0:
+                continue
+            # Compute pairwise distances
+            diff = fin_pts[:, None, :] - plc_pts[None, :, :]
+            dists = np.hypot(diff[..., 0], diff[..., 1])
+            nearest_idx = dists.argmin(axis=1)
+            fin_idx = fincas_m.loc[neighborhoods.eq("")].index
+            neighborhoods.loc[fin_idx] = subset.iloc[nearest_idx]["name"].values
+
+    fincas_wgs84 = fincas_m.to_crs(4326)
+    fincas_wgs84["neighborhood"] = neighborhoods.values
+    return fincas_wgs84
+
+
 def run_pipeline(
     bounds: Dict[str, float], criteria: Optional[FincaCriteria] = None, output_path: str = ""
 ) -> str:
     criteria = criteria or FincaCriteria()
     buildings = fetch_osm_buildings(bounds)
     fincas = filter_fincas(buildings, criteria)
+    fincas = assign_neighborhoods(fincas, bounds)
     if not output_path:
-        output_path = "data/fincas_extreme_west.geojson"
-    fincas.to_file(output_path, driver="GeoJSON")
-    return output_path
+        project_root = Path(__file__).resolve().parents[2]
+        output_path = project_root / "data" / "fincas_extreme_west.geojson"
+    else:
+        output_path = Path(output_path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    fincas.to_file(str(output_path), driver="GeoJSON")
+    return str(output_path)
 
 
 if __name__ == "__main__":
     # Extreme west of Ibiza (west of Sant Antoni) — same as exporter ROI
     bounds = {"west": 1.16, "south": 38.86, "east": 1.30, "north": 39.05}
-    path = run_pipeline(bounds, FincaCriteria(min_isolation_m=15.0))
+    path = run_pipeline(bounds, FincaCriteria(min_isolation_m=10.0))
     print(f"Wrote {path}")
 
