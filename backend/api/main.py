@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, JSONResponse
 from pydantic import BaseModel
 from typing import List, Optional
 import json
@@ -10,6 +10,8 @@ import re
 import requests
 
 from ..satellite.sentinel import initialize_gee, get_sentinel_imagery
+from ..satellite.ndvi_timeseries_optimized import compute_and_store_optimized as ndvi_compute, get_progress
+from pathlib import Path
 from ..detection.building_detector import BuildingDetector
 
 app = FastAPI()
@@ -140,3 +142,194 @@ async def get_thumbnail(
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+# --- NDVI 6-month timeseries and status ---
+
+@app.get("/api/ndvi/{finca_id}")
+async def get_ndvi_summary(finca_id: str, lat: float, lon: float):
+    try:
+        # Cache path: data/ndvi/{id}/summary.json
+        here = os.path.dirname(__file__)
+        ndvi_dir = os.path.normpath(os.path.join(here, "../../data/ndvi", finca_id))
+        os.makedirs(ndvi_dir, exist_ok=True)
+        out_path = Path(ndvi_dir) / "summary.json"
+
+        # If cached and fresh (< 7 days), return cached
+        if out_path.exists():
+            mtime = out_path.stat().st_mtime
+            import time
+            if time.time() - mtime < 7 * 24 * 3600:
+                return JSONResponse(json.loads(out_path.read_text()))
+
+        # Compute real NDVI using Google Earth Engine (may take 30-60s per finca)
+        print(f"Computing NDVI for {finca_id} at ({lat}, {lon})")
+        ndvi_compute(finca_id, lat, lon, Path(ndvi_dir))
+        return JSONResponse(json.loads(out_path.read_text()))
+    except Exception as e:
+        print(f"NDVI computation failed for {finca_id}: {e}")
+        raise HTTPException(status_code=503, detail=f"NDVI unavailable: {e}")
+
+
+@app.get("/api/ndvi/progress/{finca_id}")
+async def get_ndvi_progress(finca_id: str):
+    """Get real-time progress for NDVI computation"""
+    progress_data = get_progress(finca_id)
+    return JSONResponse(progress_data)
+
+
+@app.get("/api/abandon/{finca_id}")
+async def get_abandon_data(finca_id: str):
+    """Get pre-computed abandon analysis data for a finca"""
+    try:
+        # Load the pre-computed analysis data
+        analysis_dir = Path(__file__).parent.parent.parent / "data" / "abandon_analysis_FULL"
+        
+        # Find the latest analysis file
+        analysis_files = list(analysis_dir.glob("fincas_abandon_analysis_FULL_*.json"))
+        if not analysis_files:
+            raise HTTPException(status_code=404, detail="No abandon analysis data found")
+        
+        latest_file = sorted(analysis_files)[-1]
+        
+        with open(latest_file, 'r') as f:
+            data = json.load(f)
+        
+        # Find the specific finca
+        finca_data = None
+        for finca in data["fincas"]:
+            if finca["finca_id"] == finca_id:
+                finca_data = finca
+                break
+        
+        if not finca_data:
+            raise HTTPException(status_code=404, detail=f"Finca {finca_id} not found in analysis")
+        
+        if finca_data["status"] != "success":
+            raise HTTPException(status_code=503, detail=f"Analysis failed: {finca_data.get('error_message', 'Unknown error')}")
+        
+        # Return structured data for frontend
+        return {
+            "finca_id": finca_id,
+            "abandon_score": finca_data["abandon_score"],
+            "activity_status": finca_data["activity_status"],
+            "std_deviation": finca_data["std_deviation"],
+            "median_ndvi": finca_data["median_ndvi"],
+            "valid_periods": finca_data["valid_periods"],
+            "ndvi_timeseries": finca_data["ndvi_timeseries"],
+            "processing_duration_s": finca_data["processing_duration_s"],
+            "processed_at": finca_data["processed_at"]
+        }
+        
+    except FileNotFoundError:
+        raise HTTPException(status_code=404, detail="Abandon analysis data not found")
+    except Exception as e:
+        print(f"Error loading abandon data for {finca_id}: {e}")
+        raise HTTPException(status_code=500, detail=f"Error loading abandon data: {e}")
+
+
+@app.get("/api/ndvi/thumb/{finca_id}/{name}")
+async def get_ndvi_thumb(finca_id: str, name: str, hq: bool = False):
+    try:
+        here = os.path.dirname(__file__)
+        ndvi_path = os.path.normpath(os.path.join(here, f"../../data/ndvi/{finca_id}/{name}"))
+        
+        # If high quality requested and summary exists, generate HQ version
+        if hq:
+            return await get_hq_thumbnail(finca_id, name)
+        
+        # Return real thumbnail if it exists
+        if os.path.isfile(ndvi_path):
+            return FileResponse(ndvi_path, media_type="image/png")
+        
+        # Return 404 for missing thumbnails - frontend should handle gracefully
+        raise HTTPException(status_code=404, detail="Thumbnail not found")
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+async def get_hq_thumbnail(finca_id: str, name: str):
+    """Generate high-quality thumbnail on-demand using cached NDVI data."""
+    try:
+        import ee
+        from ..satellite.ndvi_timeseries import _ensure_gee_initialized, _mask_s2_clouds
+        from io import BytesIO
+        from starlette.responses import StreamingResponse
+        import requests
+        
+        if not _ensure_gee_initialized():
+            raise HTTPException(status_code=503, detail="GEE not available")
+        
+        # Parse thumbnail index from name (e.g., "w_05.png" -> 5)
+        import re
+        match = re.search(r'w_(\d+)\.png', name)
+        if not match:
+            raise HTTPException(status_code=400, detail="Invalid thumbnail name")
+        
+        thumb_idx = int(match.group(1))
+        
+        # Load summary to get period info
+        here = os.path.dirname(__file__)
+        summary_path = os.path.normpath(os.path.join(here, f"../../data/ndvi/{finca_id}/summary.json"))
+        
+        if not os.path.isfile(summary_path):
+            raise HTTPException(status_code=404, detail="NDVI data not found")
+        
+        with open(summary_path) as f:
+            import json
+            summary_data = json.load(f)
+        
+        series = summary_data.get('series', [])
+        if thumb_idx >= len(series) or not series[thumb_idx].get('start'):
+            raise HTTPException(status_code=404, detail="Period not found")
+        
+        period = series[thumb_idx]
+        start_date = period['start']
+        end_date = period['end']
+        
+        # Try to get coordinates from summary data or use default
+        summary = summary_data.get('summary', {})
+        lat = summary.get('lat', 38.9269)  # Will add lat/lon to summary in future
+        lon = summary.get('lon', 1.2735)   # For now use default Ibiza coordinates
+        
+        # Generate high-quality image using GEE
+        pt = ee.Geometry.Point([lon, lat])
+        roi = pt.buffer(25)  # 25m buffer
+        
+        collection = (
+            ee.ImageCollection("COPERNICUS/S2_SR")
+            .filterBounds(roi)
+            .filterDate(start_date, end_date)
+            .map(_mask_s2_clouds)
+        )
+        
+        if collection.size().getInfo() == 0:
+            raise HTTPException(status_code=404, detail="No satellite data for period")
+        
+        median = collection.median()
+        vis = median.visualize(bands=["B4", "B3", "B2"], min=0, max=3000, gamma=1.4)
+        
+        # Generate 360x240 high-quality image
+        url = vis.getThumbURL({
+            "region": roi.coordinates().getInfo(),
+            "dimensions": "360x240",
+            "format": "png",
+            "crs": "EPSG:3857"
+        })
+        
+        # Fetch and return the image
+        response = requests.get(url, timeout=30)
+        if not response.ok:
+            raise HTTPException(status_code=503, detail="Failed to generate thumbnail")
+        
+        return StreamingResponse(
+            BytesIO(response.content),
+            media_type="image/png",
+            headers={"Cache-Control": "max-age=86400"}  # Cache for 24 hours
+        )
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Thumbnail generation failed: {str(e)}")

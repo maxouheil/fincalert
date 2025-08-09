@@ -1,6 +1,6 @@
 import { Finca } from './types';
 
-export async function loadFincas(path: string = '/data/fincas_extreme_west.geojson'): Promise<Finca[]> {
+export async function loadFincas(path: string = '/data/fincas_with_abandon_scores.geojson'): Promise<Finca[]> {
   const res = await fetch(path);
   if (!res.ok) throw new Error(`Failed to load fincas: ${res.status}`);
   const geojson = await res.json();
@@ -20,6 +20,14 @@ export async function loadFincas(path: string = '/data/fincas_extreme_west.geojs
       distance_plus_proche_voisin_m: neighborRounded,
       qualifiee_finca: Boolean(f.properties?.qualifiee_finca ?? true),
       neighborhood: f.properties?.neighborhood,
+      // Nouvelles données NDVI
+      abandon_score: f.properties?.abandon_score,
+      activity_status: f.properties?.activity_status,
+      std_deviation: f.properties?.std_deviation,
+      median_ndvi: f.properties?.median_ndvi,
+      valid_periods: f.properties?.valid_periods,
+      processing_duration_s: f.properties?.processing_duration_s,
+      ndvi_timeseries: f.properties?.ndvi_timeseries,
     } as Finca;
   });
 }

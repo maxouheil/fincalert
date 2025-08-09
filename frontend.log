@@ -1,0 +1,1887 @@
+Starting frontend server on http://localhost:3001
+
+> fincalert-frontend@0.1.0 start
+> react-scripts start
+
+(node:83769) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+(node:83769) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+Starting the development server...
+
+Compiled successfully!
+
+You can now view fincalert-frontend in the browser.
+
+  Local:            http://localhost:3001
+  On Your Network:  http://192.168.8.103:3001
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+ERROR in src/components/MapView.tsx:682:35
+TS2322: Type '{ key: number; cx: number; cy: number; r: string; fill: string; stroke: string; strokeWidth: string; title: string; }' is not assignable to type 'SVGProps<SVGCircleElement>'.
+  Property 'title' does not exist on type 'SVGProps<SVGCircleElement>'.
+    680 |                                   stroke="#FFFFFF" 
+    681 |                                   strokeWidth="1.5"
+  > 682 |                                   title={`${p.date}: NDVI ${p.ndvi?.toFixed(3) || 'N/A'}`}
+        |                                   ^^^^^
+    683 |                                 />
+    684 |                               ))}
+    685 |                               
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/MapView.tsx:682:35
+TS2322: Type '{ key: number; cx: number; cy: number; r: string; fill: string; stroke: string; strokeWidth: string; title: string; }' is not assignable to type 'SVGProps<SVGCircleElement>'.
+  Property 'title' does not exist on type 'SVGProps<SVGCircleElement>'.
+    680 |                                   stroke="#FFFFFF" 
+    681 |                                   strokeWidth="1.5"
+  > 682 |                                   title={`${p.date}: NDVI ${p.ndvi?.toFixed(3) || 'N/A'}`}
+        |                                   ^^^^^
+    683 |                                 />
+    684 |                               ))}
+    685 |                               
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/MapView.tsx:682:35
+TS2322: Type '{ key: number; cx: number; cy: number; r: string; fill: string; stroke: string; strokeWidth: string; title: string; }' is not assignable to type 'SVGProps<SVGCircleElement>'.
+  Property 'title' does not exist on type 'SVGProps<SVGCircleElement>'.
+    680 |                                   stroke="#FFFFFF" 
+    681 |                                   strokeWidth="1.5"
+  > 682 |                                   title={`${p.date}: NDVI ${p.ndvi?.toFixed(3) || 'N/A'}`}
+        |                                   ^^^^^
+    683 |                                 />
+    684 |                               ))}
+    685 |                               
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/MapView.tsx:682:35
+TS2322: Type '{ key: number; cx: number; cy: number; r: string; fill: string; stroke: string; strokeWidth: string; title: string; }' is not assignable to type 'SVGProps<SVGCircleElement>'.
+  Property 'title' does not exist on type 'SVGProps<SVGCircleElement>'.
+    680 |                                   stroke="#FFFFFF" 
+    681 |                                   strokeWidth="1.5"
+  > 682 |                                   title={`${p.date}: NDVI ${p.ndvi?.toFixed(3) || 'N/A'}`}
+        |                                   ^^^^^
+    683 |                                 />
+    684 |                               ))}
+    685 |                               
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+ERROR in src/components/MapView.tsx:682:35
+TS2322: Type '{ key: number; cx: number; cy: number; r: string; fill: string; stroke: string; strokeWidth: string; title: string; }' is not assignable to type 'SVGProps<SVGCircleElement>'.
+  Property 'title' does not exist on type 'SVGProps<SVGCircleElement>'.
+    680 |                                   stroke="#FFFFFF" 
+    681 |                                   strokeWidth="1.5"
+  > 682 |                                   title={`${p.date}: NDVI ${p.ndvi?.toFixed(3) || 'N/A'}`}
+        |                                   ^^^^^
+    683 |                                 />
+    684 |                               ))}
+    685 |                               
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/MapView.tsx:682:35
+TS2322: Type '{ key: number; cx: number; cy: number; r: string; fill: string; stroke: string; strokeWidth: string; title: string; }' is not assignable to type 'SVGProps<SVGCircleElement>'.
+  Property 'title' does not exist on type 'SVGProps<SVGCircleElement>'.
+    680 |                                   stroke="#FFFFFF" 
+    681 |                                   strokeWidth="1.5"
+  > 682 |                                   title={`${p.date}: NDVI ${p.ndvi?.toFixed(3) || 'N/A'}`}
+        |                                   ^^^^^
+    683 |                                 />
+    684 |                               ))}
+    685 |                               
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/MapView.tsx:695:35
+TS2322: Type '{ key: number; cx: number; cy: number; r: string; fill: string; stroke: string; strokeWidth: string; title: string; }' is not assignable to type 'SVGProps<SVGCircleElement>'.
+  Property 'title' does not exist on type 'SVGProps<SVGCircleElement>'.
+    693 |                                   stroke="#FFFFFF" 
+    694 |                                   strokeWidth="1.5"
+  > 695 |                                   title={`${p.date}: NDVI ${p.ndvi?.toFixed(3) || 'N/A'}`}
+        |                                   ^^^^^
+    696 |                                 />
+    697 |                               ))}
+    698 |                               
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/MapView.tsx:699:35
+TS2322: Type '{ key: number; cx: number; cy: number; r: string; fill: string; stroke: string; strokeWidth: string; title: string; }' is not assignable to type 'SVGProps<SVGCircleElement>'.
+  Property 'title' does not exist on type 'SVGProps<SVGCircleElement>'.
+    697 |                                   stroke="#FFFFFF" 
+    698 |                                   strokeWidth="1.5"
+  > 699 |                                   title={`${p.date}: NDVI ${p.ndvi?.toFixed(3) || 'N/A'}`}
+        |                                   ^^^^^
+    700 |                                 />
+    701 |                               ))}
+    702 |                               
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+ERROR in src/components/MapView.tsx:624:35
+TS2322: Type '{ key: number; cx: number; cy: number; r: string; fill: string; stroke: string; strokeWidth: string; title: string; }' is not assignable to type 'SVGProps<SVGCircleElement>'.
+  Property 'title' does not exist on type 'SVGProps<SVGCircleElement>'.
+    622 |                                   stroke="#FFFFFF" 
+    623 |                                   strokeWidth="1.5"
+  > 624 |                                   title={`${p.date}: NDVI ${p.ndvi?.toFixed(3) || 'N/A'}`}
+        |                                   ^^^^^
+    625 |                                 />
+    626 |                               ))}
+    627 |                               
+
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/MapView.tsx:624:35
+TS2322: Type '{ key: number; cx: number; cy: number; r: string; fill: string; stroke: string; strokeWidth: string; title: string; }' is not assignable to type 'SVGProps<SVGCircleElement>'.
+  Property 'title' does not exist on type 'SVGProps<SVGCircleElement>'.
+    622 |                                   stroke="#FFFFFF" 
+    623 |                                   strokeWidth="1.5"
+  > 624 |                                   title={`${p.date}: NDVI ${p.ndvi?.toFixed(3) || 'N/A'}`}
+        |                                   ^^^^^
+    625 |                                 />
+    626 |                               ))}
+    627 |                               
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/MapView.tsx:579:35
+TS2322: Type '{ key: number; cx: number; cy: number; r: string; fill: string; stroke: string; strokeWidth: string; title: string; }' is not assignable to type 'SVGProps<SVGCircleElement>'.
+  Property 'title' does not exist on type 'SVGProps<SVGCircleElement>'.
+    577 |                                   stroke="#FFFFFF" 
+    578 |                                   strokeWidth="1.5"
+  > 579 |                                   title={`${p.date}: NDVI ${p.ndvi?.toFixed(3) || 'N/A'}`}
+        |                                   ^^^^^
+    580 |                                 />
+    581 |                               ))}
+    582 |                               
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/MapView.tsx:579:35
+TS2322: Type '{ key: number; cx: number; cy: number; r: string; fill: string; stroke: string; strokeWidth: string; title: string; }' is not assignable to type 'SVGProps<SVGCircleElement>'.
+  Property 'title' does not exist on type 'SVGProps<SVGCircleElement>'.
+    577 |                                   stroke="#FFFFFF" 
+    578 |                                   strokeWidth="1.5"
+  > 579 |                                   title={`${p.date}: NDVI ${p.ndvi?.toFixed(3) || 'N/A'}`}
+        |                                   ^^^^^
+    580 |                                 />
+    581 |                               ))}
+    582 |                               
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/MapView.tsx:555:35
+TS2322: Type '{ key: number; cx: number; cy: number; r: string; fill: string; stroke: string; strokeWidth: string; title: string; }' is not assignable to type 'SVGProps<SVGCircleElement>'.
+  Property 'title' does not exist on type 'SVGProps<SVGCircleElement>'.
+    553 |                                   stroke="#FFFFFF" 
+    554 |                                   strokeWidth="1.5"
+  > 555 |                                   title={`${p.date}: NDVI ${p.ndvi?.toFixed(3) || 'N/A'}`}
+        |                                   ^^^^^
+    556 |                                 />
+    557 |                               ))}
+    558 |                               
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/MapView.tsx:553:35
+TS2322: Type '{ key: number; cx: number; cy: number; r: string; fill: string; stroke: string; strokeWidth: string; title: string; }' is not assignable to type 'SVGProps<SVGCircleElement>'.
+  Property 'title' does not exist on type 'SVGProps<SVGCircleElement>'.
+    551 |                                   stroke="#FFFFFF" 
+    552 |                                   strokeWidth="1.5"
+  > 553 |                                   title={`${p.date}: NDVI ${p.ndvi?.toFixed(3) || 'N/A'}`}
+        |                                   ^^^^^
+    554 |                                 />
+    555 |                               ))}
+    556 |                               
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/MapView.tsx:470:126
+TS18047: 'medianNdvi' is possibly 'null'.
+    468 |                   )}
+    469 |                   {stdDeviation !== null && (
+  > 470 |                     <span title="Coefficient of variation - measure of relative variability">📈 Variation: {((stdDeviation / medianNdvi) * 100).toFixed(0)}%</span>
+        |                                                                                                                              ^^^^^^^^^^
+    471 |                   )}
+    472 |                 </div>
+    473 |               )}
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/MapView.tsx:442:39
+TS2304: Cannot find name 'setHoverScore'.
+    440 |                 <div 
+    441 |                   style={{ position: 'relative' }}
+  > 442 |                   onMouseEnter={() => setHoverScore(true)}
+        |                                       ^^^^^^^^^^^^^
+    443 |                   onMouseLeave={() => setHoverScore(false)}
+    444 |                 >
+    445 |                   <span 
+
+ERROR in src/components/MapView.tsx:443:39
+TS2304: Cannot find name 'setHoverScore'.
+    441 |                   style={{ position: 'relative' }}
+    442 |                   onMouseEnter={() => setHoverScore(true)}
+  > 443 |                   onMouseLeave={() => setHoverScore(false)}
+        |                                       ^^^^^^^^^^^^^
+    444 |                 >
+    445 |                   <span 
+    446 |                     style={{ 
+
+ERROR in src/components/MapView.tsx:465:20
+TS2304: Cannot find name 'hoverScore'.
+    463 |                   </span>
+    464 |                   {/* Hover tooltip avec score détaillé */}
+  > 465 |                   {hoverScore && selected?.abandon_score !== undefined && (
+        |                    ^^^^^^^^^^
+    466 |                     <div style={{
+    467 |                       position: 'absolute',
+    468 |                       top: '100%',
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+No issues found.
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/MapView.tsx:720:16
+TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+    718 |                   )}
+    719 |                 </>
+  > 720 |               )}
+        |                ^
+    721 |               <div style={{ marginTop: 12, display: 'flex', justifyContent: 'flex-end' }}>
+    722 |                 {hasStreetView !== 'unavailable' ? (
+    723 |                   <a
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/MapView.tsx:706:16
+TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+    704 |                   )}
+    705 |                 </>
+  > 706 |               )}
+        |                ^
+    707 |               <div style={{ marginTop: 12, display: 'flex', justifyContent: 'flex-end' }}>
+    708 |                 {hasStreetView !== 'unavailable' ? (
+    709 |                   <a
+
+Compiling...
+Failed to compile.
+
+SyntaxError: /Users/sou/Desktop/Fincalert/frontend/src/components/MapView.tsx: Expected corresponding JSX closing tag for <div>. (704:16)
+  702 |                     </div>
+  703 |                   )}
+> 704 |                 </>
+      |                 ^
+  705 |               )}
+  706 |               <div style={{ marginTop: 12, display: 'flex', justifyContent: 'flex-end' }}>
+  707 |                 {hasStreetView !== 'unavailable' ? (
+ERROR in ./src/components/MapView.tsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/sou/Desktop/Fincalert/frontend/src/components/MapView.tsx: Expected corresponding JSX closing tag for <div>. (704:16)
+
+  702 |                     </div>
+  703 |                   )}
+> 704 |                 </>
+      |                 ^
+  705 |               )}
+  706 |               <div style={{ marginTop: 12, display: 'flex', justifyContent: 'flex-end' }}>
+  707 |                 {hasStreetView !== 'unavailable' ? (
+    at constructor (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:367:19)
+    at TypeScriptParserMixin.raise (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:6627:19)
+    at TypeScriptParserMixin.jsxParseElementAt (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4752:14)
+    at TypeScriptParserMixin.jsxParseElementAt (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4728:32)
+    at TypeScriptParserMixin.jsxParseElementAt (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4728:32)
+    at TypeScriptParserMixin.jsxParseElement (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4779:17)
+    at TypeScriptParserMixin.parseExprAtom (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4789:19)
+    at TypeScriptParserMixin.parseExprSubscripts (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11076:23)
+    at TypeScriptParserMixin.parseUpdate (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11061:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11041:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:9852:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10894:61)
+    at TypeScriptParserMixin.parseExprOps (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10899:23)
+    at TypeScriptParserMixin.parseMaybeConditional (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10876:23)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10826:21)
+    at /Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:9790:39
+    at TypeScriptParserMixin.tryParse (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:6935:20)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:9790:18)
+    at /Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10795:39
+    at TypeScriptParserMixin.allowInAnd (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:12427:12)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10795:17)
+    at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:12494:17)
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11674:28)
+    at TypeScriptParserMixin.parseExprAtom (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11326:23)
+    at TypeScriptParserMixin.parseExprAtom (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4794:20)
+    at TypeScriptParserMixin.parseExprSubscripts (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11076:23)
+    at TypeScriptParserMixin.parseUpdate (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11061:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11041:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:9852:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10894:61)
+    at TypeScriptParserMixin.parseExprOpBaseRightExpr (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10981:34)
+    at TypeScriptParserMixin.parseExprOpRightExpr (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10976:21)
+    at TypeScriptParserMixin.parseExprOp (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10942:27)
+    at TypeScriptParserMixin.parseExprOp (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:9389:18)
+    at TypeScriptParserMixin.parseExprOps (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10903:17)
+    at TypeScriptParserMixin.parseMaybeConditional (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10876:23)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10826:21)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:9801:20)
+    at TypeScriptParserMixin.parseExpressionBase (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10779:23)
+    at /Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10775:39
+    at TypeScriptParserMixin.allowInAnd (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:12427:12)
+    at TypeScriptParserMixin.parseExpression (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10775:17)
+    at TypeScriptParserMixin.jsxParseExpressionContainer (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4662:31)
+    at TypeScriptParserMixin.jsxParseElementAt (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4741:36)
+    at TypeScriptParserMixin.jsxParseElement (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4779:17)
+    at TypeScriptParserMixin.parseExprAtom (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4789:19)
+    at TypeScriptParserMixin.parseExprSubscripts (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11076:23)
+    at TypeScriptParserMixin.parseUpdate (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11061:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11041:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:9852:18)
+
+webpack compiled with 1 error
+Compiling...
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+Failed to compile.
+
+SyntaxError: /Users/sou/Desktop/Fincalert/frontend/src/components/MapView.tsx: Expected corresponding JSX closing tag for <div>. (704:16)
+  702 |                     </div>
+  703 |                   )}
+> 704 |                 </>
+      |                 ^
+  705 |               )}
+  706 |               <div style={{ marginTop: 12, display: 'flex', justifyContent: 'flex-end' }}>
+  707 |                 {hasStreetView !== 'unavailable' ? (
+ERROR in ./src/components/MapView.tsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/sou/Desktop/Fincalert/frontend/src/components/MapView.tsx: Expected corresponding JSX closing tag for <div>. (704:16)
+
+  702 |                     </div>
+  703 |                   )}
+> 704 |                 </>
+      |                 ^
+  705 |               )}
+  706 |               <div style={{ marginTop: 12, display: 'flex', justifyContent: 'flex-end' }}>
+  707 |                 {hasStreetView !== 'unavailable' ? (
+    at constructor (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:367:19)
+    at TypeScriptParserMixin.raise (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:6627:19)
+    at TypeScriptParserMixin.jsxParseElementAt (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4752:14)
+    at TypeScriptParserMixin.jsxParseElementAt (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4728:32)
+    at TypeScriptParserMixin.jsxParseElementAt (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4728:32)
+    at TypeScriptParserMixin.jsxParseElement (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4779:17)
+    at TypeScriptParserMixin.parseExprAtom (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4789:19)
+    at TypeScriptParserMixin.parseExprSubscripts (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11076:23)
+    at TypeScriptParserMixin.parseUpdate (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11061:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11041:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:9852:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10894:61)
+    at TypeScriptParserMixin.parseExprOps (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10899:23)
+    at TypeScriptParserMixin.parseMaybeConditional (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10876:23)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10826:21)
+    at /Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:9790:39
+    at TypeScriptParserMixin.tryParse (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:6935:20)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:9790:18)
+    at /Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10795:39
+    at TypeScriptParserMixin.allowInAnd (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:12427:12)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10795:17)
+    at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:12494:17)
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11674:28)
+    at TypeScriptParserMixin.parseExprAtom (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11326:23)
+    at TypeScriptParserMixin.parseExprAtom (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4794:20)
+    at TypeScriptParserMixin.parseExprSubscripts (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11076:23)
+    at TypeScriptParserMixin.parseUpdate (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11061:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11041:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:9852:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10894:61)
+    at TypeScriptParserMixin.parseExprOpBaseRightExpr (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10981:34)
+    at TypeScriptParserMixin.parseExprOpRightExpr (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10976:21)
+    at TypeScriptParserMixin.parseExprOp (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10942:27)
+    at TypeScriptParserMixin.parseExprOp (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:9389:18)
+    at TypeScriptParserMixin.parseExprOps (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10903:17)
+    at TypeScriptParserMixin.parseMaybeConditional (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10876:23)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10826:21)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:9801:20)
+    at TypeScriptParserMixin.parseExpressionBase (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10779:23)
+    at /Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10775:39
+    at TypeScriptParserMixin.allowInAnd (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:12427:12)
+    at TypeScriptParserMixin.parseExpression (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10775:17)
+    at TypeScriptParserMixin.jsxParseExpressionContainer (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4662:31)
+    at TypeScriptParserMixin.jsxParseElementAt (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4741:36)
+    at TypeScriptParserMixin.jsxParseElement (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4779:17)
+    at TypeScriptParserMixin.parseExprAtom (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4789:19)
+    at TypeScriptParserMixin.parseExprSubscripts (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11076:23)
+    at TypeScriptParserMixin.parseUpdate (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11061:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11041:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:9852:18)
+
+webpack compiled with 1 error
+ERROR in src/components/MapView.tsx:679:20
+TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+    677 |                       </svg>
+    678 |                     </div>
+  > 679 |                   )}
+        |                    ^
+    680 |                   {/* NDVI thumbnails carousel */}
+    681 |                   {ndviSeries && ndviSeries.some(s => s.thumb) && (
+    682 |                     <div style={{ marginTop: 8, display: 'flex', gap: 8, overflowX: 'auto', paddingBottom: 4 }}>
+
+ERROR in src/components/MapView.tsx:704:19
+TS1003: Identifier expected.
+    702 |                     </div>
+    703 |                   )}
+  > 704 |                 </>
+        |                   ^
+    705 |               )}
+    706 |               <div style={{ marginTop: 12, display: 'flex', justifyContent: 'flex-end' }}>
+    707 |                 {hasStreetView !== 'unavailable' ? (
+
+ERROR in src/components/MapView.tsx:705:16
+TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+    703 |                   )}
+    704 |                 </>
+  > 705 |               )}
+        |                ^
+    706 |               <div style={{ marginTop: 12, display: 'flex', justifyContent: 'flex-end' }}>
+    707 |                 {hasStreetView !== 'unavailable' ? (
+    708 |                   <a
+
+ERROR in src/components/MapView.tsx:723:13
+TS17002: Expected corresponding JSX closing tag for 'Popup'.
+    721 |               </div>
+    722 |             </div>
+  > 723 |           </div>
+        |             ^^^
+    724 |         </Popup>
+    725 |       )}
+    726 |     </Map>
+
+ERROR in src/components/MapView.tsx:724:9
+TS1005: ')' expected.
+    722 |             </div>
+    723 |           </div>
+  > 724 |         </Popup>
+        |         ^^
+    725 |       )}
+    726 |     </Map>
+    727 |   );
+
+ERROR in src/components/MapView.tsx:724:11
+TS17002: Expected corresponding JSX closing tag for 'Map'.
+    722 |             </div>
+    723 |           </div>
+  > 724 |         </Popup>
+        |           ^^^^^
+    725 |       )}
+    726 |     </Map>
+    727 |   );
+
+ERROR in src/components/MapView.tsx:726:5
+TS1128: Declaration or statement expected.
+    724 |         </Popup>
+    725 |       )}
+  > 726 |     </Map>
+        |     ^^
+    727 |   );
+    728 | };
+    729 |
+
+ERROR in src/components/MapView.tsx:727:3
+TS1109: Expression expected.
+    725 |       )}
+    726 |     </Map>
+  > 727 |   );
+        |   ^
+    728 | };
+    729 |
+    730 | export default MapView;
+
+ERROR in src/components/MapView.tsx:728:1
+TS1128: Declaration or statement expected.
+    726 |     </Map>
+    727 |   );
+  > 728 | };
+        | ^
+    729 |
+    730 | export default MapView;
+
+Compiling...
+Failed to compile.
+
+SyntaxError: /Users/sou/Desktop/Fincalert/frontend/src/components/MapView.tsx: Expected corresponding JSX closing tag for <div>. (701:16)
+  699 |                     </div>
+  700 |                   )}
+> 701 |                 </>
+      |                 ^
+  702 |               )}
+  703 |               <div style={{ marginTop: 12, display: 'flex', justifyContent: 'flex-end' }}>
+  704 |                 {hasStreetView !== 'unavailable' ? (
+ERROR in ./src/components/MapView.tsx
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/sou/Desktop/Fincalert/frontend/src/components/MapView.tsx: Expected corresponding JSX closing tag for <div>. (701:16)
+
+  699 |                     </div>
+  700 |                   )}
+> 701 |                 </>
+      |                 ^
+  702 |               )}
+  703 |               <div style={{ marginTop: 12, display: 'flex', justifyContent: 'flex-end' }}>
+  704 |                 {hasStreetView !== 'unavailable' ? (
+    at constructor (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:367:19)
+    at TypeScriptParserMixin.raise (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:6627:19)
+    at TypeScriptParserMixin.jsxParseElementAt (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4752:14)
+    at TypeScriptParserMixin.jsxParseElementAt (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4728:32)
+    at TypeScriptParserMixin.jsxParseElement (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4779:17)
+    at TypeScriptParserMixin.parseExprAtom (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4789:19)
+    at TypeScriptParserMixin.parseExprSubscripts (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11076:23)
+    at TypeScriptParserMixin.parseUpdate (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11061:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11041:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:9852:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10894:61)
+    at TypeScriptParserMixin.parseExprOps (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10899:23)
+    at TypeScriptParserMixin.parseMaybeConditional (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10876:23)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10826:21)
+    at /Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:9790:39
+    at TypeScriptParserMixin.tryParse (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:6935:20)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:9790:18)
+    at /Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10795:39
+    at TypeScriptParserMixin.allowInAnd (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:12427:12)
+    at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10795:17)
+    at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:12494:17)
+    at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11674:28)
+    at TypeScriptParserMixin.parseExprAtom (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11326:23)
+    at TypeScriptParserMixin.parseExprAtom (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4794:20)
+    at TypeScriptParserMixin.parseExprSubscripts (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11076:23)
+    at TypeScriptParserMixin.parseUpdate (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11061:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11041:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:9852:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10894:61)
+    at TypeScriptParserMixin.parseExprOpBaseRightExpr (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10981:34)
+    at TypeScriptParserMixin.parseExprOpRightExpr (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10976:21)
+    at TypeScriptParserMixin.parseExprOp (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10942:27)
+    at TypeScriptParserMixin.parseExprOp (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:9389:18)
+    at TypeScriptParserMixin.parseExprOps (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10903:17)
+    at TypeScriptParserMixin.parseMaybeConditional (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10876:23)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10826:21)
+    at TypeScriptParserMixin.parseMaybeAssign (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:9801:20)
+    at TypeScriptParserMixin.parseExpressionBase (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10779:23)
+    at /Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10775:39
+    at TypeScriptParserMixin.allowInAnd (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:12427:12)
+    at TypeScriptParserMixin.parseExpression (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10775:17)
+    at TypeScriptParserMixin.jsxParseExpressionContainer (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4662:31)
+    at TypeScriptParserMixin.jsxParseElementAt (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4741:36)
+    at TypeScriptParserMixin.jsxParseElement (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4779:17)
+    at TypeScriptParserMixin.parseExprAtom (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:4789:19)
+    at TypeScriptParserMixin.parseExprSubscripts (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11076:23)
+    at TypeScriptParserMixin.parseUpdate (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11061:21)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:11041:23)
+    at TypeScriptParserMixin.parseMaybeUnary (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:9852:18)
+    at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/sou/Desktop/Fincalert/frontend/node_modules/@babel/parser/lib/index.js:10894:61)
+
+webpack compiled with 1 error
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+ERROR in src/components/MapView.tsx:676:20
+TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+    674 |                       </svg>
+    675 |                     </div>
+  > 676 |                   )}
+        |                    ^
+    677 |                   {/* NDVI thumbnails carousel */}
+    678 |                   {ndviSeries && ndviSeries.some(s => s.thumb) && (
+    679 |                     <div style={{ marginTop: 8, display: 'flex', gap: 8, overflowX: 'auto', paddingBottom: 4 }}>
+
+ERROR in src/components/MapView.tsx:701:19
+TS1003: Identifier expected.
+    699 |                     </div>
+    700 |                   )}
+  > 701 |                 </>
+        |                   ^
+    702 |               )}
+    703 |               <div style={{ marginTop: 12, display: 'flex', justifyContent: 'flex-end' }}>
+    704 |                 {hasStreetView !== 'unavailable' ? (
+
+ERROR in src/components/MapView.tsx:702:16
+TS1381: Unexpected token. Did you mean `{'}'}` or `&rbrace;`?
+    700 |                   )}
+    701 |                 </>
+  > 702 |               )}
+        |                ^
+    703 |               <div style={{ marginTop: 12, display: 'flex', justifyContent: 'flex-end' }}>
+    704 |                 {hasStreetView !== 'unavailable' ? (
+    705 |                   <a
+
+ERROR in src/components/MapView.tsx:719:15
+TS17002: Expected corresponding JSX closing tag for 'Popup'.
+    717 |                 )}
+    718 |               </div>
+  > 719 |             </div>
+        |               ^^^
+    720 |           </div>
+    721 |         </Popup>
+    722 |       )}
+
+ERROR in src/components/MapView.tsx:720:11
+TS1005: ')' expected.
+    718 |               </div>
+    719 |             </div>
+  > 720 |           </div>
+        |           ^^
+    721 |         </Popup>
+    722 |       )}
+    723 |     </Map>
+
+ERROR in src/components/MapView.tsx:720:13
+TS17002: Expected corresponding JSX closing tag for 'Map'.
+    718 |               </div>
+    719 |             </div>
+  > 720 |           </div>
+        |             ^^^
+    721 |         </Popup>
+    722 |       )}
+    723 |     </Map>
+
+ERROR in src/components/MapView.tsx:721:9
+TS1005: ')' expected.
+    719 |             </div>
+    720 |           </div>
+  > 721 |         </Popup>
+        |         ^^
+    722 |       )}
+    723 |     </Map>
+    724 |   );
+
+ERROR in src/components/MapView.tsx:722:7
+TS1109: Expression expected.
+    720 |           </div>
+    721 |         </Popup>
+  > 722 |       )}
+        |       ^
+    723 |     </Map>
+    724 |   );
+    725 | };
+
+ERROR in src/components/MapView.tsx:722:8
+TS1128: Declaration or statement expected.
+    720 |           </div>
+    721 |         </Popup>
+  > 722 |       )}
+        |        ^
+    723 |     </Map>
+    724 |   );
+    725 | };
+
+ERROR in src/components/MapView.tsx:723:5
+TS1128: Declaration or statement expected.
+    721 |         </Popup>
+    722 |       )}
+  > 723 |     </Map>
+        |     ^^
+    724 |   );
+    725 | };
+    726 |
+
+ERROR in src/components/MapView.tsx:724:3
+TS1109: Expression expected.
+    722 |       )}
+    723 |     </Map>
+  > 724 |   );
+        |   ^
+    725 | };
+    726 |
+    727 | export default MapView;
+
+ERROR in src/components/MapView.tsx:725:1
+TS1128: Declaration or statement expected.
+    723 |     </Map>
+    724 |   );
+  > 725 | };
+        | ^
+    726 |
+    727 | export default MapView;
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/NewPopup.tsx:18:29
+TS2339: Property 'ndvi_timeseries' does not exist on type 'Finca'.
+    16 |
+    17 |   // Données NDVI mensuelles (12 mois) depuis les vraies données ou simulées
+  > 18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+       |                             ^^^^^^^^^^^^^^^
+    19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts, i) => ({
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+
+ERROR in src/components/NewPopup.tsx:18:57
+TS2339: Property 'ndvi_timeseries' does not exist on type 'Finca'.
+    16 |
+    17 |   // Données NDVI mensuelles (12 mois) depuis les vraies données ou simulées
+  > 18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+       |                                                         ^^^^^^^^^^^^^^^
+    19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts, i) => ({
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+
+ERROR in src/components/NewPopup.tsx:19:16
+TS2339: Property 'ndvi_timeseries' does not exist on type 'Finca'.
+    17 |   // Données NDVI mensuelles (12 mois) depuis les vraies données ou simulées
+    18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+  > 19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts, i) => ({
+       |                ^^^^^^^^^^^^^^^
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+    22 |       }))
+
+ERROR in src/components/NewPopup.tsx:19:50
+TS7006: Parameter 'ts' implicitly has an 'any' type.
+    17 |   // Données NDVI mensuelles (12 mois) depuis les vraies données ou simulées
+    18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+  > 19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts, i) => ({
+       |                                                  ^^
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+    22 |       }))
+
+ERROR in src/components/NewPopup.tsx:19:54
+TS7006: Parameter 'i' implicitly has an 'any' type.
+    17 |   // Données NDVI mensuelles (12 mois) depuis les vraies données ou simulées
+    18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+  > 19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts, i) => ({
+       |                                                      ^
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+    22 |       }))
+
+ERROR in src/components/NewPopup.tsx:177:46
+TS7006: Parameter 'd' implicitly has an 'any' type.
+    175 |             <svg width={252} height={60} viewBox="0 0 252 60" style={{ borderRadius: 4 }}>
+    176 |               {(() => {
+  > 177 |                 const points = ndviData.map((d, i) => {
+        |                                              ^
+    178 |                   const x = 21 + (i / 11) * 210;
+    179 |                   const y = 50 - (d.ndvi - 0.3) * 100;
+    180 |                   return { x, y, ndvi: d.ndvi, month: d.month };
+
+ERROR in src/components/NewPopup.tsx:177:49
+TS7006: Parameter 'i' implicitly has an 'any' type.
+    175 |             <svg width={252} height={60} viewBox="0 0 252 60" style={{ borderRadius: 4 }}>
+    176 |               {(() => {
+  > 177 |                 const points = ndviData.map((d, i) => {
+        |                                                 ^
+    178 |                   const x = 21 + (i / 11) * 210;
+    179 |                   const y = 50 - (d.ndvi - 0.3) * 100;
+    180 |                   return { x, y, ndvi: d.ndvi, month: d.month };
+
+ERROR in src/components/NewPopup.tsx:184:25
+TS7006: Parameter 'p' implicitly has an 'any' type.
+    182 |
+    183 |                 const path = points
+  > 184 |                   .map((p, idx) => `${idx === 0 ? 'M' : 'L'}${p.x.toFixed(1)},${p.y.toFixed(1)}`)
+        |                         ^
+    185 |                   .join(' ');
+    186 |
+    187 |                 return (
+
+ERROR in src/components/NewPopup.tsx:184:28
+TS7006: Parameter 'idx' implicitly has an 'any' type.
+    182 |
+    183 |                 const path = points
+  > 184 |                   .map((p, idx) => `${idx === 0 ? 'M' : 'L'}${p.x.toFixed(1)},${p.y.toFixed(1)}`)
+        |                            ^^^
+    185 |                   .join(' ');
+    186 |
+    187 |                 return (
+
+ERROR in src/components/NewPopup.tsx:200:34
+TS7006: Parameter 'p' implicitly has an 'any' type.
+    198 |
+    199 |                     {/* Points interactifs */}
+  > 200 |                     {points.map((p, i) => (
+        |                                  ^
+    201 |                       <circle
+    202 |                         key={i}
+    203 |                         cx={p.x}
+
+ERROR in src/components/NewPopup.tsx:200:37
+TS7006: Parameter 'i' implicitly has an 'any' type.
+    198 |
+    199 |                     {/* Points interactifs */}
+  > 200 |                     {points.map((p, i) => (
+        |                                     ^
+    201 |                       <circle
+    202 |                         key={i}
+    203 |                         cx={p.x}
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/NewPopup.tsx:18:29
+TS2339: Property 'ndvi_timeseries' does not exist on type 'Finca'.
+    16 |
+    17 |   // Données NDVI mensuelles (12 mois) depuis les vraies données ou simulées
+  > 18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+       |                             ^^^^^^^^^^^^^^^
+    19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts, i) => ({
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+
+ERROR in src/components/NewPopup.tsx:18:57
+TS2339: Property 'ndvi_timeseries' does not exist on type 'Finca'.
+    16 |
+    17 |   // Données NDVI mensuelles (12 mois) depuis les vraies données ou simulées
+  > 18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+       |                                                         ^^^^^^^^^^^^^^^
+    19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts, i) => ({
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+
+ERROR in src/components/NewPopup.tsx:19:16
+TS2339: Property 'ndvi_timeseries' does not exist on type 'Finca'.
+    17 |   // Données NDVI mensuelles (12 mois) depuis les vraies données ou simulées
+    18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+  > 19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts, i) => ({
+       |                ^^^^^^^^^^^^^^^
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+    22 |       }))
+
+ERROR in src/components/NewPopup.tsx:19:50
+TS7006: Parameter 'ts' implicitly has an 'any' type.
+    17 |   // Données NDVI mensuelles (12 mois) depuis les vraies données ou simulées
+    18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+  > 19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts, i) => ({
+       |                                                  ^^
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+    22 |       }))
+
+ERROR in src/components/NewPopup.tsx:19:54
+TS7006: Parameter 'i' implicitly has an 'any' type.
+    17 |   // Données NDVI mensuelles (12 mois) depuis les vraies données ou simulées
+    18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+  > 19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts, i) => ({
+       |                                                      ^
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+    22 |       }))
+
+ERROR in src/components/NewPopup.tsx:177:46
+TS7006: Parameter 'd' implicitly has an 'any' type.
+    175 |             <svg width={280} height={60} viewBox="0 0 280 60" style={{ borderRadius: 4 }}>
+    176 |               {(() => {
+  > 177 |                 const points = ndviData.map((d, i) => {
+        |                                              ^
+    178 |                   const x = 20 + (i / 11) * 240; // Full width distribution
+    179 |                   const y = 50 - (d.ndvi - 0.3) * 100;
+    180 |                   return { x, y, ndvi: d.ndvi, month: d.month };
+
+ERROR in src/components/NewPopup.tsx:177:49
+TS7006: Parameter 'i' implicitly has an 'any' type.
+    175 |             <svg width={280} height={60} viewBox="0 0 280 60" style={{ borderRadius: 4 }}>
+    176 |               {(() => {
+  > 177 |                 const points = ndviData.map((d, i) => {
+        |                                                 ^
+    178 |                   const x = 20 + (i / 11) * 240; // Full width distribution
+    179 |                   const y = 50 - (d.ndvi - 0.3) * 100;
+    180 |                   return { x, y, ndvi: d.ndvi, month: d.month };
+
+ERROR in src/components/NewPopup.tsx:220:34
+TS7006: Parameter 'p' implicitly has an 'any' type.
+    218 |
+    219 |                     {/* Points interactifs */}
+  > 220 |                     {points.map((p, i) => (
+        |                                  ^
+    221 |                       <circle
+    222 |                         key={i}
+    223 |                         cx={p.x}
+
+ERROR in src/components/NewPopup.tsx:220:37
+TS7006: Parameter 'i' implicitly has an 'any' type.
+    218 |
+    219 |                     {/* Points interactifs */}
+  > 220 |                     {points.map((p, i) => (
+        |                                     ^
+    221 |                       <circle
+    222 |                         key={i}
+    223 |                         cx={p.x}
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/NewPopup.tsx:18:29
+TS2339: Property 'ndvi_timeseries' does not exist on type 'Finca'.
+    16 |
+    17 |   // Données NDVI mensuelles (12 mois) depuis les vraies données ou simulées
+  > 18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+       |                             ^^^^^^^^^^^^^^^
+    19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts, i) => ({
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+
+ERROR in src/components/NewPopup.tsx:18:57
+TS2339: Property 'ndvi_timeseries' does not exist on type 'Finca'.
+    16 |
+    17 |   // Données NDVI mensuelles (12 mois) depuis les vraies données ou simulées
+  > 18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+       |                                                         ^^^^^^^^^^^^^^^
+    19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts, i) => ({
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+
+ERROR in src/components/NewPopup.tsx:19:16
+TS2339: Property 'ndvi_timeseries' does not exist on type 'Finca'.
+    17 |   // Données NDVI mensuelles (12 mois) depuis les vraies données ou simulées
+    18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+  > 19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts, i) => ({
+       |                ^^^^^^^^^^^^^^^
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+    22 |       }))
+
+ERROR in src/components/NewPopup.tsx:19:50
+TS7006: Parameter 'ts' implicitly has an 'any' type.
+    17 |   // Données NDVI mensuelles (12 mois) depuis les vraies données ou simulées
+    18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+  > 19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts, i) => ({
+       |                                                  ^^
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+    22 |       }))
+
+ERROR in src/components/NewPopup.tsx:19:54
+TS7006: Parameter 'i' implicitly has an 'any' type.
+    17 |   // Données NDVI mensuelles (12 mois) depuis les vraies données ou simulées
+    18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+  > 19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts, i) => ({
+       |                                                      ^
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+    22 |       }))
+
+ERROR in src/components/NewPopup.tsx:177:46
+TS7006: Parameter 'd' implicitly has an 'any' type.
+    175 |             <svg width={280} height={60} viewBox="0 0 280 60" style={{ borderRadius: 4 }}>
+    176 |               {(() => {
+  > 177 |                 const points = ndviData.map((d, i) => {
+        |                                              ^
+    178 |                   const x = 20 + (i / 11) * 240; // Full width distribution
+    179 |                   const y = 50 - (d.ndvi - 0.3) * 100;
+    180 |                   return { x, y, ndvi: d.ndvi, month: d.month };
+
+ERROR in src/components/NewPopup.tsx:177:49
+TS7006: Parameter 'i' implicitly has an 'any' type.
+    175 |             <svg width={280} height={60} viewBox="0 0 280 60" style={{ borderRadius: 4 }}>
+    176 |               {(() => {
+  > 177 |                 const points = ndviData.map((d, i) => {
+        |                                                 ^
+    178 |                   const x = 20 + (i / 11) * 240; // Full width distribution
+    179 |                   const y = 50 - (d.ndvi - 0.3) * 100;
+    180 |                   return { x, y, ndvi: d.ndvi, month: d.month };
+
+ERROR in src/components/NewPopup.tsx:220:34
+TS7006: Parameter 'p' implicitly has an 'any' type.
+    218 |
+    219 |                     {/* Points interactifs */}
+  > 220 |                     {points.map((p, i) => (
+        |                                  ^
+    221 |                       <circle
+    222 |                         key={i}
+    223 |                         cx={p.x}
+
+ERROR in src/components/NewPopup.tsx:220:37
+TS7006: Parameter 'i' implicitly has an 'any' type.
+    218 |
+    219 |                     {/* Points interactifs */}
+  > 220 |                     {points.map((p, i) => (
+        |                                     ^
+    221 |                       <circle
+    222 |                         key={i}
+    223 |                         cx={p.x}
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/NewPopup.tsx:18:29
+TS2339: Property 'ndvi_timeseries' does not exist on type 'Finca'.
+    16 |
+    17 |   // Données NDVI mensuelles (12 mois) depuis les vraies données ou simulées
+  > 18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+       |                             ^^^^^^^^^^^^^^^
+    19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts, i) => ({
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+
+ERROR in src/components/NewPopup.tsx:18:57
+TS2339: Property 'ndvi_timeseries' does not exist on type 'Finca'.
+    16 |
+    17 |   // Données NDVI mensuelles (12 mois) depuis les vraies données ou simulées
+  > 18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+       |                                                         ^^^^^^^^^^^^^^^
+    19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts, i) => ({
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+
+ERROR in src/components/NewPopup.tsx:19:16
+TS2339: Property 'ndvi_timeseries' does not exist on type 'Finca'.
+    17 |   // Données NDVI mensuelles (12 mois) depuis les vraies données ou simulées
+    18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+  > 19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts, i) => ({
+       |                ^^^^^^^^^^^^^^^
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+    22 |       }))
+
+ERROR in src/components/NewPopup.tsx:19:50
+TS7006: Parameter 'ts' implicitly has an 'any' type.
+    17 |   // Données NDVI mensuelles (12 mois) depuis les vraies données ou simulées
+    18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+  > 19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts, i) => ({
+       |                                                  ^^
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+    22 |       }))
+
+ERROR in src/components/NewPopup.tsx:19:54
+TS7006: Parameter 'i' implicitly has an 'any' type.
+    17 |   // Données NDVI mensuelles (12 mois) depuis les vraies données ou simulées
+    18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+  > 19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts, i) => ({
+       |                                                      ^
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+    22 |       }))
+
+ERROR in src/components/NewPopup.tsx:177:46
+TS7006: Parameter 'd' implicitly has an 'any' type.
+    175 |             <svg width={280} height={60} viewBox="0 0 280 60" style={{ borderRadius: 4 }}>
+    176 |               {(() => {
+  > 177 |                 const points = ndviData.map((d, i) => {
+        |                                              ^
+    178 |                   const x = 20 + (i / 11) * 240; // Full width distribution
+    179 |                   const y = 50 - (d.ndvi - 0.3) * 100;
+    180 |                   return { x, y, ndvi: d.ndvi, month: d.month };
+
+ERROR in src/components/NewPopup.tsx:177:49
+TS7006: Parameter 'i' implicitly has an 'any' type.
+    175 |             <svg width={280} height={60} viewBox="0 0 280 60" style={{ borderRadius: 4 }}>
+    176 |               {(() => {
+  > 177 |                 const points = ndviData.map((d, i) => {
+        |                                                 ^
+    178 |                   const x = 20 + (i / 11) * 240; // Full width distribution
+    179 |                   const y = 50 - (d.ndvi - 0.3) * 100;
+    180 |                   return { x, y, ndvi: d.ndvi, month: d.month };
+
+ERROR in src/components/NewPopup.tsx:220:34
+TS7006: Parameter 'p' implicitly has an 'any' type.
+    218 |
+    219 |                     {/* Points interactifs */}
+  > 220 |                     {points.map((p, i) => (
+        |                                  ^
+    221 |                       <circle
+    222 |                         key={i}
+    223 |                         cx={p.x}
+
+ERROR in src/components/NewPopup.tsx:220:37
+TS7006: Parameter 'i' implicitly has an 'any' type.
+    218 |
+    219 |                     {/* Points interactifs */}
+  > 220 |                     {points.map((p, i) => (
+        |                                     ^
+    221 |                       <circle
+    222 |                         key={i}
+    223 |                         cx={p.x}
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/NewPopup.tsx:18:29
+TS2339: Property 'ndvi_timeseries' does not exist on type 'Finca'.
+    16 |
+    17 |   // Données NDVI mensuelles (12 mois) - utilise les vraies données si disponibles
+  > 18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+       |                             ^^^^^^^^^^^^^^^
+    19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts: any, i: number) => ({
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+
+ERROR in src/components/NewPopup.tsx:18:57
+TS2339: Property 'ndvi_timeseries' does not exist on type 'Finca'.
+    16 |
+    17 |   // Données NDVI mensuelles (12 mois) - utilise les vraies données si disponibles
+  > 18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+       |                                                         ^^^^^^^^^^^^^^^
+    19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts: any, i: number) => ({
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+
+ERROR in src/components/NewPopup.tsx:19:16
+TS2339: Property 'ndvi_timeseries' does not exist on type 'Finca'.
+    17 |   // Données NDVI mensuelles (12 mois) - utilise les vraies données si disponibles
+    18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+  > 19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts: any, i: number) => ({
+       |                ^^^^^^^^^^^^^^^
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+    22 |       }))
+
+ERROR in src/components/NewPopup.tsx:177:46
+TS7006: Parameter 'd' implicitly has an 'any' type.
+    175 |             <svg width={280} height={60} viewBox="0 0 280 60" style={{ borderRadius: 4 }}>
+    176 |               {(() => {
+  > 177 |                 const points = ndviData.map((d, i) => {
+        |                                              ^
+    178 |                   const x = 20 + (i / 11) * 240; // Full width distribution
+    179 |                   const y = 50 - (d.ndvi - 0.3) * 100;
+    180 |                   return { x, y, ndvi: d.ndvi, month: d.month };
+
+ERROR in src/components/NewPopup.tsx:177:49
+TS7006: Parameter 'i' implicitly has an 'any' type.
+    175 |             <svg width={280} height={60} viewBox="0 0 280 60" style={{ borderRadius: 4 }}>
+    176 |               {(() => {
+  > 177 |                 const points = ndviData.map((d, i) => {
+        |                                                 ^
+    178 |                   const x = 20 + (i / 11) * 240; // Full width distribution
+    179 |                   const y = 50 - (d.ndvi - 0.3) * 100;
+    180 |                   return { x, y, ndvi: d.ndvi, month: d.month };
+
+ERROR in src/components/NewPopup.tsx:220:34
+TS7006: Parameter 'p' implicitly has an 'any' type.
+    218 |
+    219 |                     {/* Points interactifs */}
+  > 220 |                     {points.map((p, i) => (
+        |                                  ^
+    221 |                       <circle
+    222 |                         key={i}
+    223 |                         cx={p.x}
+
+ERROR in src/components/NewPopup.tsx:220:37
+TS7006: Parameter 'i' implicitly has an 'any' type.
+    218 |
+    219 |                     {/* Points interactifs */}
+  > 220 |                     {points.map((p, i) => (
+        |                                     ^
+    221 |                       <circle
+    222 |                         key={i}
+    223 |                         cx={p.x}
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/NewPopup.tsx:18:29
+TS2339: Property 'ndvi_timeseries' does not exist on type 'Finca'.
+    16 |
+    17 |   // Données NDVI mensuelles (12 mois) - utilise les vraies données si disponibles
+  > 18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+       |                             ^^^^^^^^^^^^^^^
+    19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts: any, i: number) => ({
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+
+ERROR in src/components/NewPopup.tsx:18:57
+TS2339: Property 'ndvi_timeseries' does not exist on type 'Finca'.
+    16 |
+    17 |   // Données NDVI mensuelles (12 mois) - utilise les vraies données si disponibles
+  > 18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+       |                                                         ^^^^^^^^^^^^^^^
+    19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts: any, i: number) => ({
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+
+ERROR in src/components/NewPopup.tsx:19:16
+TS2339: Property 'ndvi_timeseries' does not exist on type 'Finca'.
+    17 |   // Données NDVI mensuelles (12 mois) - utilise les vraies données si disponibles
+    18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+  > 19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts: any, i: number) => ({
+       |                ^^^^^^^^^^^^^^^
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+    22 |       }))
+
+ERROR in src/components/NewPopup.tsx:220:34
+TS7006: Parameter 'p' implicitly has an 'any' type.
+    218 |
+    219 |                     {/* Points interactifs */}
+  > 220 |                     {points.map((p, i) => (
+        |                                  ^
+    221 |                       <circle
+    222 |                         key={i}
+    223 |                         cx={p.x}
+
+ERROR in src/components/NewPopup.tsx:220:37
+TS7006: Parameter 'i' implicitly has an 'any' type.
+    218 |
+    219 |                     {/* Points interactifs */}
+  > 220 |                     {points.map((p, i) => (
+        |                                     ^
+    221 |                       <circle
+    222 |                         key={i}
+    223 |                         cx={p.x}
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/NewPopup.tsx:18:29
+TS2339: Property 'ndvi_timeseries' does not exist on type 'Finca'.
+    16 |
+    17 |   // Données NDVI mensuelles (12 mois) - utilise les vraies données si disponibles
+  > 18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+       |                             ^^^^^^^^^^^^^^^
+    19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts: any, i: number) => ({
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+
+ERROR in src/components/NewPopup.tsx:18:57
+TS2339: Property 'ndvi_timeseries' does not exist on type 'Finca'.
+    16 |
+    17 |   // Données NDVI mensuelles (12 mois) - utilise les vraies données si disponibles
+  > 18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+       |                                                         ^^^^^^^^^^^^^^^
+    19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts: any, i: number) => ({
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+
+ERROR in src/components/NewPopup.tsx:19:16
+TS2339: Property 'ndvi_timeseries' does not exist on type 'Finca'.
+    17 |   // Données NDVI mensuelles (12 mois) - utilise les vraies données si disponibles
+    18 |   const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length >= 12 
+  > 19 |     ? selected.ndvi_timeseries.slice(0, 12).map((ts: any, i: number) => ({
+       |                ^^^^^^^^^^^^^^^
+    20 |         month: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'][i],
+    21 |         ndvi: ts.ndvi || 0.4
+    22 |       }))
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/NewPopup.tsx:255:86
+TS2339: Property 'date' does not exist on type '{ x: number; y: number; ndvi: any; month: string; }'.
+    253 |                             white-space: nowrap;
+    254 |                           `;
+  > 255 |                           tooltip.textContent = `${p.month}: ${p.ndvi.toFixed(3)}${p.date ? ` (${p.date.split('-')[1]}/${p.date.split('-')[2]})` : ''}`;
+        |                                                                                      ^^^^
+    256 |                           document.body.appendChild(tooltip);
+    257 |
+    258 |                           const rect = e.currentTarget.getBoundingClientRect();
+
+ERROR in src/components/NewPopup.tsx:255:100
+TS2339: Property 'date' does not exist on type '{ x: number; y: number; ndvi: any; month: string; }'.
+    253 |                             white-space: nowrap;
+    254 |                           `;
+  > 255 |                           tooltip.textContent = `${p.month}: ${p.ndvi.toFixed(3)}${p.date ? ` (${p.date.split('-')[1]}/${p.date.split('-')[2]})` : ''}`;
+        |                                                                                                    ^^^^
+    256 |                           document.body.appendChild(tooltip);
+    257 |
+    258 |                           const rect = e.currentTarget.getBoundingClientRect();
+
+ERROR in src/components/NewPopup.tsx:255:124
+TS2339: Property 'date' does not exist on type '{ x: number; y: number; ndvi: any; month: string; }'.
+    253 |                             white-space: nowrap;
+    254 |                           `;
+  > 255 |                           tooltip.textContent = `${p.month}: ${p.ndvi.toFixed(3)}${p.date ? ` (${p.date.split('-')[1]}/${p.date.split('-')[2]})` : ''}`;
+        |                                                                                                                            ^^^^
+    256 |                           document.body.appendChild(tooltip);
+    257 |
+    258 |                           const rect = e.currentTarget.getBoundingClientRect();
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/NewPopup.tsx:255:86
+TS2339: Property 'date' does not exist on type '{ x: number; y: number; ndvi: any; month: string; }'.
+    253 |                             white-space: nowrap;
+    254 |                           `;
+  > 255 |                           tooltip.textContent = `${p.month}: ${p.ndvi.toFixed(3)}${p.date ? ` (${p.date.split('-')[1]}/${p.date.split('-')[2]})` : ''}`;
+        |                                                                                      ^^^^
+    256 |                           document.body.appendChild(tooltip);
+    257 |
+    258 |                           const rect = e.currentTarget.getBoundingClientRect();
+
+ERROR in src/components/NewPopup.tsx:255:100
+TS2339: Property 'date' does not exist on type '{ x: number; y: number; ndvi: any; month: string; }'.
+    253 |                             white-space: nowrap;
+    254 |                           `;
+  > 255 |                           tooltip.textContent = `${p.month}: ${p.ndvi.toFixed(3)}${p.date ? ` (${p.date.split('-')[1]}/${p.date.split('-')[2]})` : ''}`;
+        |                                                                                                    ^^^^
+    256 |                           document.body.appendChild(tooltip);
+    257 |
+    258 |                           const rect = e.currentTarget.getBoundingClientRect();
+
+ERROR in src/components/NewPopup.tsx:255:124
+TS2339: Property 'date' does not exist on type '{ x: number; y: number; ndvi: any; month: string; }'.
+    253 |                             white-space: nowrap;
+    254 |                           `;
+  > 255 |                           tooltip.textContent = `${p.month}: ${p.ndvi.toFixed(3)}${p.date ? ` (${p.date.split('-')[1]}/${p.date.split('-')[2]})` : ''}`;
+        |                                                                                                                            ^^^^
+    256 |                           document.body.appendChild(tooltip);
+    257 |
+    258 |                           const rect = e.currentTarget.getBoundingClientRect();
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/NewPopup.tsx:255:86
+TS2339: Property 'date' does not exist on type '{ x: number; y: number; ndvi: any; month: string; }'.
+    253 |                             white-space: nowrap;
+    254 |                           `;
+  > 255 |                           tooltip.textContent = `${p.month}: ${p.ndvi.toFixed(3)}${p.date ? ` (${p.date.split('-')[1]}/${p.date.split('-')[2]})` : ''}`;
+        |                                                                                      ^^^^
+    256 |                           document.body.appendChild(tooltip);
+    257 |
+    258 |                           const rect = e.currentTarget.getBoundingClientRect();
+
+ERROR in src/components/NewPopup.tsx:255:100
+TS2339: Property 'date' does not exist on type '{ x: number; y: number; ndvi: any; month: string; }'.
+    253 |                             white-space: nowrap;
+    254 |                           `;
+  > 255 |                           tooltip.textContent = `${p.month}: ${p.ndvi.toFixed(3)}${p.date ? ` (${p.date.split('-')[1]}/${p.date.split('-')[2]})` : ''}`;
+        |                                                                                                    ^^^^
+    256 |                           document.body.appendChild(tooltip);
+    257 |
+    258 |                           const rect = e.currentTarget.getBoundingClientRect();
+
+ERROR in src/components/NewPopup.tsx:255:124
+TS2339: Property 'date' does not exist on type '{ x: number; y: number; ndvi: any; month: string; }'.
+    253 |                             white-space: nowrap;
+    254 |                           `;
+  > 255 |                           tooltip.textContent = `${p.month}: ${p.ndvi.toFixed(3)}${p.date ? ` (${p.date.split('-')[1]}/${p.date.split('-')[2]})` : ''}`;
+        |                                                                                                                            ^^^^
+    256 |                           document.body.appendChild(tooltip);
+    257 |
+    258 |                           const rect = e.currentTarget.getBoundingClientRect();
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/NewPopup.tsx:191:72
+TS2339: Property 'date' does not exist on type '{ month: string; ndvi: any; date: any; } | { month: string; ndvi: number; }'.
+  Property 'date' does not exist on type '{ month: string; ndvi: number; }'.
+    189 |                   const x = 20 + (i / 11) * 240; // Full width distribution
+    190 |                   const y = 50 - (d.ndvi - 0.3) * 100;
+  > 191 |                   return { x, y, ndvi: d.ndvi, month: d.month, date: d.date };
+        |                                                                        ^^^^
+    192 |                 });
+    193 |
+    194 |                 // Créer un path avec courbes lisses (spline)
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/NewPopup.tsx:191:72
+TS2339: Property 'date' does not exist on type '{ month: string; ndvi: any; date: any; } | { month: string; ndvi: number; }'.
+  Property 'date' does not exist on type '{ month: string; ndvi: number; }'.
+    189 |                   const x = 20 + (i / 11) * 240; // Full width distribution
+    190 |                   const y = 50 - (d.ndvi - 0.3) * 100;
+  > 191 |                   return { x, y, ndvi: d.ndvi, month: d.month, date: d.date };
+        |                                                                        ^^^^
+    192 |                 });
+    193 |
+    194 |                 // Créer un path avec courbes lisses (spline)
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/NewPopup.tsx:25:13
+TS2552: Cannot find name 'response'. Did you mean 'Response'?
+    23 |         testImage.src = `https://maps.googleapis.com/maps/api/streetview?size=1x1&location=${selected.lat},${selected.lon}&key=AIzaSyBhx3fNoAyS6x9bvG4GfLZhHQWJ8WtYYOo`;
+    24 |         
+  > 25 |         if (response.ok) {
+       |             ^^^^^^^^
+    26 |           const data = await response.json();
+    27 |           setHasStreetView(data.status === 'OK' ? 'available' : 'unavailable');
+    28 |         } else {
+
+ERROR in src/components/NewPopup.tsx:26:30
+TS2552: Cannot find name 'response'. Did you mean 'Response'?
+    24 |         
+    25 |         if (response.ok) {
+  > 26 |           const data = await response.json();
+       |                              ^^^^^^^^
+    27 |           setHasStreetView(data.status === 'OK' ? 'available' : 'unavailable');
+    28 |         } else {
+    29 |           setHasStreetView('unavailable');
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/NewPopup.tsx:23:24
+TS2345: Argument of type '"available" | "unavailable" | undefined' is not assignable to parameter of type 'SetStateAction<"available" | "unavailable" | "loading">'.
+  Type 'undefined' is not assignable to type 'SetStateAction<"available" | "unavailable" | "loading">'.
+    21 |     const cachedResult = streetViewCache.get(fincaKey);
+    22 |     if (false && cachedResult) { // Désactivé temporairement pour retester
+  > 23 |       setHasStreetView(cachedResult);
+       |                        ^^^^^^^^^^^^
+    24 |       return;
+    25 |     }
+    26 |
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/NewPopup.tsx:23:24
+TS2345: Argument of type '"available" | "unavailable" | undefined' is not assignable to parameter of type 'SetStateAction<"available" | "unavailable" | "loading">'.
+  Type 'undefined' is not assignable to type 'SetStateAction<"available" | "unavailable" | "loading">'.
+    21 |     const cachedResult = streetViewCache.get(fincaKey);
+    22 |     if (false && cachedResult) { // Désactivé temporairement pour retester
+  > 23 |       setHasStreetView(cachedResult);
+       |                        ^^^^^^^^^^^^
+    24 |       return;
+    25 |     }
+    26 |
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.

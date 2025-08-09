@@ -1,0 +1,27 @@
+{
+  "timestamp": "20250809_134200",
+  "algorithm_version": "corrected_potential_formula",
+  "total_fincas": 631,
+  "recalculated_count": 631,
+  "status_distribution": {
+    "potential": 48,
+    "active": 0,
+    "inactive": 583,
+    "unknown": 0
+  },
+  "risk_distribution": {
+    "high_risk_ge_70": 626,
+    "medium_risk_40_69": 5,
+    "low_risk_lt_40": 0
+  },
+  "score_statistics": {
+    "mean": 86.5,
+    "min": 54.2,
+    "max": 128.6
+  },
+  "files_generated": {
+    "json_data": "/Users/sou/Desktop/Fincalert/data/abandon_analysis_FULL/fincas_abandon_analysis_CORRECTED_20250809_134200.json",
+    "csv_scores": "/Users/sou/Desktop/Fincalert/data/abandon_analysis_FULL/fincas_abandon_scores_CORRECTED_20250809_134200.csv",
+    "summary": "/Users/sou/Desktop/Fincalert/data/abandon_analysis_FULL/analysis_summary_CORRECTED_20250809_134200.json"
+  }
+}

@@ -3,6 +3,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import Map, { Source, Layer, Popup, MapRef } from 'react-map-gl';
 import type { LayerProps } from 'react-map-gl';
 import { Finca } from '../utils/types';
+import NewPopup, { streetViewCache } from './NewPopup';
 
 // Prefer REACT_APP_MAPBOX_TOKEN (CRA convention). Fallback to MAPBOX_TOKEN if present.
 const env = process.env as unknown as Record<string, string | undefined>;
@@ -21,7 +22,13 @@ const fincaLayer: LayerProps = {
   type: 'circle',
   paint: {
     'circle-radius': 6,
-    'circle-color': '#2B6CB0',
+    'circle-color': [
+      'case',
+      ['>=', ['get', 'abandon_score'], 70], '#DC2626', // Red
+      ['>=', ['get', 'abandon_score'], 40], '#FB923C', // Orange
+      ['<', ['get', 'abandon_score'], 40], '#059669', // Green
+      '#2B6CB0' // Default Blue
+    ],
     'circle-stroke-width': 2,
     'circle-stroke-color': '#FFFFFF'
   }
@@ -39,8 +46,12 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
   const [placeCache, setPlaceCache] = useState<Record<string, string>>({});
   const [sizeFilter, setSizeFilter] = useState<'all' | 'S' | 'M' | 'L'>('all');
   const [nnFilter, setNnFilter] = useState<'all' | '10to15' | '15to30' | 'lt30' | '30to60' | 'gt60'>('all');
+  const [activityFilter, setActivityFilter] = useState<'all' | 'active' | 'semi-active' | 'inactive'>('all');
+  const [streetViewFilter, setStreetViewFilter] = useState<'all' | 'available' | 'unavailable'>('all');
   const [hasCentered, setHasCentered] = useState(false);
   const [thumbLoaded, setThumbLoaded] = useState(false);
+  const [isCheckingStreetView, setIsCheckingStreetView] = useState(false);
+  const [streetViewProgress, setStreetViewProgress] = useState({ checked: 0, total: 0 });
 
   // Reference areas for West Ibiza (approximate centers)
   const referenceAreas = useMemo(
@@ -80,10 +91,72 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
     return best ? best.name : null;
   };
 
+  // Fonction pour vérifier Street View pour une finca
+  const checkStreetViewForFinca = async (finca: Finca): Promise<'available' | 'unavailable'> => {
+    const fincaKey = `${finca.lat}-${finca.lon}`;
+    
+    // Vérifier le cache d'abord
+    const cachedResult = streetViewCache.get(fincaKey);
+    if (cachedResult) {
+      return cachedResult;
+    }
+
+    try {
+      const metadataUrl = `https://maps.googleapis.com/maps/api/streetview/metadata?location=${finca.lat},${finca.lon}&key=AIzaSyDXkjUWbqx23PD0L_IKrF5K8xzO0N3ASLY`;
+      
+      const response = await fetch(metadataUrl);
+      const data = await response.json();
+      
+      const result = data.status === 'OK' ? 'available' : 'unavailable';
+      streetViewCache.set(fincaKey, result);
+      return result;
+      
+    } catch (error) {
+      console.warn('Erreur vérification Street View:', error);
+      streetViewCache.set(fincaKey, 'unavailable');
+      return 'unavailable';
+    }
+  };
+
+  // Fonction pour vérifier toutes les fincas
+  const checkAllStreetView = async () => {
+    if (isCheckingStreetView) return;
+    
+    setIsCheckingStreetView(true);
+    setStreetViewProgress({ checked: 0, total: fincas.length });
+    
+    console.log(`🔍 Démarrage vérification Street View pour ${fincas.length} fincas...`);
+    
+    let checked = 0;
+    const batchSize = 10; // Traiter par batch de 10 pour éviter de surcharger l'API
+    
+    for (let i = 0; i < fincas.length; i += batchSize) {
+      const batch = fincas.slice(i, i + batchSize);
+      
+      // Traiter le batch en parallèle
+      await Promise.all(
+        batch.map(async (finca) => {
+          await checkStreetViewForFinca(finca);
+          checked++;
+          setStreetViewProgress({ checked, total: fincas.length });
+        })
+      );
+      
+      // Petite pause entre les batches pour éviter le rate limiting
+      if (i + batchSize < fincas.length) {
+        await new Promise(resolve => setTimeout(resolve, 500));
+      }
+    }
+    
+    setIsCheckingStreetView(false);
+    console.log(`✅ Vérification terminée: ${checked} fincas vérifiées`);
+  };
+
   const filteredFincas = useMemo(() => {
     return fincas.filter((f) => {
       const area = f.surface_estimee_m2;
       const dist = f.distance_plus_proche_voisin_m;
+      const activity = f.activity_status;
 
       let areaOk = true;
       if (sizeFilter === 'S') areaOk = area >= 50 && area < 80;
@@ -99,9 +172,26 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
       // Ensure minimum isolation of 10m (instead of 15m)
       if (dist < 10) distOk = false;
 
-      return areaOk && distOk;
+      let activityOk = true;
+      if (activityFilter !== 'all') {
+        activityOk = activity === activityFilter;
+      }
+
+      let streetViewOk = true;
+      if (streetViewFilter !== 'all') {
+        const fincaKey = `${f.lat}-${f.lon}`;
+        const streetViewStatus = streetViewCache.get(fincaKey);
+        if (streetViewStatus) {
+          streetViewOk = streetViewStatus === streetViewFilter;
+        } else {
+          // Si pas encore vérifié, on inclut dans le filtre pour permettre la vérification
+          streetViewOk = true;
+        }
+      }
+
+      return areaOk && distOk && activityOk && streetViewOk;
     });
-  }, [fincas, sizeFilter, nnFilter]);
+  }, [fincas, sizeFilter, nnFilter, activityFilter, streetViewFilter]);
 
   useEffect(() => {
     if (selected && !filteredFincas.some((f) => f.id === selected.id)) {
@@ -113,7 +203,11 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
     type: 'FeatureCollection',
     features: filteredFincas.map((f) => ({
       type: 'Feature',
-      properties: { id: f.id },
+      properties: { 
+        id: f.id,
+        abandon_score: f.abandon_score || 50,
+        activity_status: f.activity_status || 'unknown'
+      },
       geometry: { type: 'Point', coordinates: [f.lon, f.lat] },
     })),
   }), [filteredFincas]);
@@ -186,13 +280,13 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
       onMouseMove={(e) => {
         if (!mapRef.current) return;
         const m: any = mapRef.current;
-        const box = [
-          [e.point.x - 4, e.point.y - 4],
-          [e.point.x + 4, e.point.y + 4],
-        ];
-        const feats = m.queryRenderedFeatures(box, { layers: [String(fincaLayer.id)] });
-        const canvas = m.getCanvas?.() || m.getMap?.().getCanvas?.();
-        if (canvas) canvas.style.cursor = feats && feats.length ? 'pointer' : '';
+          const box = [
+            [e.point.x - 4, e.point.y - 4],
+            [e.point.x + 4, e.point.y + 4],
+          ];
+          const feats = m.queryRenderedFeatures(box, { layers: [String(fincaLayer.id)] });
+          const canvas = m.getCanvas?.() || m.getMap?.().getCanvas?.();
+          if (canvas) canvas.style.cursor = feats && feats.length ? 'pointer' : '';
       }}
       onClick={(e) => {
         let feature = e.features && e.features.find((ft: any) => ft.layer?.id === fincaLayer.id);
@@ -210,12 +304,27 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
           onSelect(null as unknown as string);
           return;
         }
-        // Center the map on the clicked dot
+        // Center the map on the clicked dot (100px higher to show popup fully)
         const target = fincas.find((f) => f.id === String(id));
         if (target && mapRef.current) {
           const m: any = mapRef.current;
           const currentZoom = m.getZoom ? m.getZoom() : FALLBACK_VIEW_STATE.zoom;
-          m.flyTo({ center: [target.lon, target.lat], zoom: currentZoom, duration: 500 });
+          
+          // Calculate offset to center 100px higher
+          const container = m.getContainer();
+          const containerHeight = container.offsetHeight;
+          const offsetPixels = 100;
+          
+          // Convert pixel offset to geographic offset
+          const pointAtCenter = m.project([target.lon, target.lat]);
+          const pointOffset = { x: pointAtCenter.x, y: pointAtCenter.y + offsetPixels };
+          const centerOffset = m.unproject(pointOffset);
+          
+          m.flyTo({ 
+            center: [centerOffset.lng, centerOffset.lat], 
+            zoom: currentZoom, 
+            duration: 500 
+          });
         }
         if (selected?.id === String(id)) {
           setPopupTick((t) => t + 1);
@@ -226,7 +335,7 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
     >
       {/* Filters overlay */}
       <div style={{ position: 'absolute', top: 12, left: 12, zIndex: 1 }}>
-        <div style={{ display: 'flex', gap: 16 }}>
+        <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
           <select
             className="filter-select"
             value={sizeFilter}
@@ -251,7 +360,79 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
             <option value="30to60">30 to 60m</option>
             <option value="gt60">More than 60m</option>
           </select>
+          <select
+            className="filter-select"
+            value={activityFilter}
+            onChange={(e) => setActivityFilter(e.target.value as 'all' | 'active' | 'semi-active' | 'inactive')}
+            aria-label="Filter by activity status"
+          >
+            <option value="all">All activities</option>
+            <option value="active">🟢 Active</option>
+            <option value="semi-active">🟡 Semi-active</option>
+            <option value="inactive">🔴 Inactive</option>
+          </select>
+          <select
+            className="filter-select"
+            value={streetViewFilter}
+            onChange={(e) => setStreetViewFilter(e.target.value as 'all' | 'available' | 'unavailable')}
+            aria-label="Filter by Street View availability"
+          >
+            <option value="all">All Street View</option>
+            <option value="available">🗺️ Available</option>
+            <option value="unavailable">🚫 Unavailable</option>
+          </select>
+          
+          {/* Bouton de vérification Street View */}
+          <button
+            onClick={checkAllStreetView}
+            disabled={isCheckingStreetView}
+            style={{
+              padding: '8px 12px',
+              backgroundColor: isCheckingStreetView ? '#9CA3AF' : '#2563EB',
+              color: 'white',
+              border: 'none',
+              borderRadius: '6px',
+              fontSize: '12px',
+              fontWeight: 600,
+              cursor: isCheckingStreetView ? 'not-allowed' : 'pointer',
+              whiteSpace: 'nowrap'
+            }}
+          >
+            {isCheckingStreetView ? 
+              `Checking... ${streetViewProgress.checked}/${streetViewProgress.total}` : 
+              'Check All Street View'
+            }
+          </button>
         </div>
+        
+        {/* Barre de progression */}
+        {isCheckingStreetView && (
+          <div style={{ 
+            marginTop: '8px',
+            backgroundColor: 'rgba(255,255,255,0.9)',
+            borderRadius: '8px',
+            padding: '8px',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+          }}>
+            <div style={{ fontSize: '11px', marginBottom: '4px', color: '#374151' }}>
+              Street View verification: {streetViewProgress.checked}/{streetViewProgress.total}
+            </div>
+            <div style={{
+              width: '200px',
+              height: '4px',
+              backgroundColor: '#E5E7EB',
+              borderRadius: '2px',
+              overflow: 'hidden'
+            }}>
+              <div style={{
+                width: `${(streetViewProgress.checked / streetViewProgress.total) * 100}%`,
+                height: '100%',
+                backgroundColor: '#2563EB',
+                transition: 'width 0.3s ease'
+              }} />
+            </div>
+          </div>
+        )}
       </div>
       <Source id="fincas" type="geojson" data={geojson as any}>
         <Layer {...fincaLayer} />
@@ -262,7 +443,13 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
             filter={["==", ["get", "id"], selected.id] as any}
             paint={{
               'circle-radius': 8,
-              'circle-color': '#2DD4BF',
+              'circle-color': [
+                'case',
+                ['>=', ['get', 'abandon_score'], 70], '#DC2626', // Red
+                ['>=', ['get', 'abandon_score'], 40], '#FB923C', // Orange
+                ['<', ['get', 'abandon_score'], 40], '#059669', // Green
+                '#2B6CB0' // Default Blue
+              ],
               'circle-stroke-width': 3,
               'circle-stroke-color': '#FFFFFF',
             }}
@@ -275,40 +462,13 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
           className="finca-popup"
           key={`${selected.id}-${popupTick}`}
           longitude={selected.lon}
-          latitude={selected.lat}
+          latitude={selected.lat - 0.0008}
           closeButton={false}
           closeOnClick={false}
           anchor="top"
           onClose={() => onSelect(null as unknown as string)}
         >
-            <div style={{ width: 280, boxSizing: 'border-box' }}>
-              <div style={{ width: 280, height: 200, margin: 0, overflow: 'hidden', borderTopLeftRadius: 12, borderTopRightRadius: 12, background: '#F3F4F6' }}>
-                <img
-                  src={`http://localhost:8000/api/thumbnail/${encodeURIComponent(selected.id)}?lon=${selected.lon}&lat=${selected.lat}&width=280&height=200&scale=2`}
-                  srcSet={`http://localhost:8000/api/thumbnail/${encodeURIComponent(selected.id)}?lon=${selected.lon}&lat=${selected.lat}&width=280&height=200&scale=1 1x, http://localhost:8000/api/thumbnail/${encodeURIComponent(selected.id)}?lon=${selected.lon}&lat=${selected.lat}&width=280&height=200&scale=2 2x`}
-                  onLoad={() => setThumbLoaded(true)}
-                  onError={(e) => {
-                    const t = e.currentTarget as HTMLImageElement;
-                    // prevent infinite loop
-                    t.onerror = null;
-                    const base = `https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/${selected.lon},${selected.lat},18.5,0/280x200`;
-                    t.src = `${base}@2x?access_token=${MAPBOX_TOKEN}`;
-                    t.srcset = `${base}@1x?access_token=${MAPBOX_TOKEN} 1x, ${base}@2x?access_token=${MAPBOX_TOKEN} 2x`;
-                  }}
-                  loading="eager"
-                  decoding="async"
-                  alt={selected.id}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', backgroundColor: 'transparent', opacity: thumbLoaded ? 1 : 0, transition: 'opacity 200ms ease' }}
-                />
-              </div>
-            <div style={{ background: '#FFFFFF', borderBottomLeftRadius: 12, borderBottomRightRadius: 12, padding: '12px 14px 12px' }}>
-              <div style={{ fontSize: 18, fontWeight: 800, color: '#1A202C', marginBottom: 4 }}>{selected.id}</div>
-              <div style={{ fontSize: 14, color: '#4A5568', marginBottom: 6 }}>
-                {selected.neighborhood || placeCache[selected.id] || lookupReferenceArea(selected.lat, selected.lon) || '—'}
-              </div>
-              <div style={{ fontSize: 12, color: '#718096' }}>{Math.round(selected.surface_estimee_m2)} m² • {selected.distance_plus_proche_voisin_m} m from nearest neighbour</div>
-            </div>
-          </div>
+          <NewPopup selected={selected} onClose={() => onSelect(null as unknown as string)} />
         </Popup>
       )}
     </Map>

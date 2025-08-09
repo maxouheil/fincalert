@@ -1,0 +1,20 @@
+{
+  "total_analyzed": 631,
+  "abandon_score_stats": {
+    "min": 5.0,
+    "max": 89.36033609679214,
+    "average": 52.49111848402119,
+    "median": 58.947887126808865
+  },
+  "status_distribution": {
+    "active": 106,
+    "potential": 525,
+    "inactive": 0,
+    "unknown": 0
+  },
+  "high_abandon_risk": 107,
+  "processing_stats": {
+    "total_duration_s": 2331.0382084846497,
+    "avg_duration_s": 3.6941968438742467
+  }
+}

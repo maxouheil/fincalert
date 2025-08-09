@@ -1,0 +1,566 @@
+{
+  "test_metadata": {
+    "total_fincas": 5,
+    "successful": 5,
+    "total_duration_s": 13.731579065322876,
+    "avg_duration_s": 6.147941637039184,
+    "tested_at": "2025-08-08T17:25:50.147108"
+  },
+  "results": {
+    "finca_00003": {
+      "finca_id": "finca_00003",
+      "success": true,
+      "duration": 6.997267007827759,
+      "result": {
+        "series": [
+          {
+            "start": "2025-02-09",
+            "end": "2025-02-23",
+            "ndvi": 0.22150096055539112,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-02-23",
+            "end": "2025-03-09",
+            "ndvi": 0.2186591807912468,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-03-09",
+            "end": "2025-03-23",
+            "ndvi": 0.2389049569959688,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-03-23",
+            "end": "2025-04-06",
+            "ndvi": 0.22297709891899395,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-04-06",
+            "end": "2025-04-20",
+            "ndvi": 0.2186601161341197,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-04-20",
+            "end": "2025-05-04",
+            "ndvi": 0.20639346039439746,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-05-04",
+            "end": "2025-05-18",
+            "ndvi": 0.19684505716009976,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-05-18",
+            "end": "2025-06-01",
+            "ndvi": 0.18115973191582924,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-06-01",
+            "end": "2025-06-15",
+            "ndvi": 0.18100163090008753,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-06-15",
+            "end": "2025-06-29",
+            "ndvi": 0.16971978104297994,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-06-29",
+            "end": "2025-07-13",
+            "ndvi": 0.16229318959204422,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-07-13",
+            "end": "2025-07-27",
+            "ndvi": 0.1690966652120027,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-07-27",
+            "end": "2025-08-08",
+            "ndvi": 0.16742813770473042,
+            "cloud_pct": 50.0,
+            "thumb": null
+          }
+        ],
+        "summary": {
+          "valid": 13,
+          "median": 0.19684505716009976,
+          "std": 0.026082063664961547,
+          "dips": 0,
+          "green_persistence": 0.0,
+          "status": "potential",
+          "abandon_score": 53.04103183248077,
+          "window_days": 14,
+          "months": 6
+        }
+      }
+    },
+    "finca_00002": {
+      "finca_id": "finca_00002",
+      "success": true,
+      "duration": 7.325634002685547,
+      "result": {
+        "series": [
+          {
+            "start": "2025-02-09",
+            "end": "2025-02-23",
+            "ndvi": 0.06991080732789914,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-02-23",
+            "end": "2025-03-09",
+            "ndvi": 0.08103122858102696,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-03-09",
+            "end": "2025-03-23",
+            "ndvi": 0.04829949804372416,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-03-23",
+            "end": "2025-04-06",
+            "ndvi": 0.07392701152880114,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-04-06",
+            "end": "2025-04-20",
+            "ndvi": 0.06469245273215182,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-04-20",
+            "end": "2025-05-04",
+            "ndvi": 0.06421901413078719,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-05-04",
+            "end": "2025-05-18",
+            "ndvi": 0.06765739020258053,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-05-18",
+            "end": "2025-06-01",
+            "ndvi": 0.07823789109957767,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-06-01",
+            "end": "2025-06-15",
+            "ndvi": 0.07702621388827878,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-06-15",
+            "end": "2025-06-29",
+            "ndvi": 0.05788152139042535,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-06-29",
+            "end": "2025-07-13",
+            "ndvi": 0.06220903928122945,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-07-13",
+            "end": "2025-07-27",
+            "ndvi": 0.06232588146217461,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-07-27",
+            "end": "2025-08-08",
+            "ndvi": 0.061550796989275645,
+            "cloud_pct": 50.0,
+            "thumb": null
+          }
+        ],
+        "summary": {
+          "valid": 13,
+          "median": 0.06469245273215182,
+          "std": 0.00913176775223428,
+          "dips": 0,
+          "green_persistence": 0.0,
+          "status": "potential",
+          "abandon_score": 44.56588387611714,
+          "window_days": 14,
+          "months": 6
+        }
+      }
+    },
+    "finca_00001": {
+      "finca_id": "finca_00001",
+      "success": true,
+      "duration": 7.351725101470947,
+      "result": {
+        "series": [
+          {
+            "start": "2025-02-09",
+            "end": "2025-02-23",
+            "ndvi": 0.1218564538394698,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-02-23",
+            "end": "2025-03-09",
+            "ndvi": 0.11060365838227901,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-03-09",
+            "end": "2025-03-23",
+            "ndvi": 0.10550861764409335,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-03-23",
+            "end": "2025-04-06",
+            "ndvi": 0.11793736188333458,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-04-06",
+            "end": "2025-04-20",
+            "ndvi": 0.1093491021866035,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-04-20",
+            "end": "2025-05-04",
+            "ndvi": 0.10250986320358126,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-05-04",
+            "end": "2025-05-18",
+            "ndvi": 0.10480122505529535,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-05-18",
+            "end": "2025-06-01",
+            "ndvi": 0.10945159263865391,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-06-01",
+            "end": "2025-06-15",
+            "ndvi": 0.09701018499112682,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-06-15",
+            "end": "2025-06-29",
+            "ndvi": 0.08902432520328912,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-06-29",
+            "end": "2025-07-13",
+            "ndvi": 0.08137875818122209,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-07-13",
+            "end": "2025-07-27",
+            "ndvi": 0.09302669081211122,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-07-27",
+            "end": "2025-08-08",
+            "ndvi": 0.08113361659709184,
+            "cloud_pct": 50.0,
+            "thumb": null
+          }
+        ],
+        "summary": {
+          "valid": 13,
+          "median": 0.10480122505529535,
+          "std": 0.012865444530371061,
+          "dips": 0,
+          "green_persistence": 0.0,
+          "status": "potential",
+          "abandon_score": 46.43272226518553,
+          "window_days": 14,
+          "months": 6
+        }
+      }
+    },
+    "finca_00004": {
+      "finca_id": "finca_00004",
+      "success": true,
+      "duration": 2.659796953201294,
+      "result": {
+        "series": [
+          {
+            "start": "2025-02-09",
+            "end": "2025-02-23",
+            "ndvi": 0.1326489330333971,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-02-23",
+            "end": "2025-03-09",
+            "ndvi": 0.12329107867622217,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-03-09",
+            "end": "2025-03-23",
+            "ndvi": 0.11736801078988315,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-03-23",
+            "end": "2025-04-06",
+            "ndvi": 0.1319520858516629,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-04-06",
+            "end": "2025-04-20",
+            "ndvi": 0.12123077585183555,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-04-20",
+            "end": "2025-05-04",
+            "ndvi": 0.11608572578932722,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-05-04",
+            "end": "2025-05-18",
+            "ndvi": 0.1131503148648669,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-05-18",
+            "end": "2025-06-01",
+            "ndvi": 0.1078746979159516,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-06-01",
+            "end": "2025-06-15",
+            "ndvi": 0.09465937282527401,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-06-15",
+            "end": "2025-06-29",
+            "ndvi": 0.0910179559457025,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-06-29",
+            "end": "2025-07-13",
+            "ndvi": 0.08614154990174104,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-07-13",
+            "end": "2025-07-27",
+            "ndvi": 0.09458580805957367,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-07-27",
+            "end": "2025-08-08",
+            "ndvi": 0.08779907106839852,
+            "cloud_pct": 50.0,
+            "thumb": null
+          }
+        ],
+        "summary": {
+          "valid": 13,
+          "median": 0.1131503148648669,
+          "std": 0.01655126953261299,
+          "dips": 0,
+          "green_persistence": 0.0,
+          "status": "potential",
+          "abandon_score": 48.275634766306496,
+          "window_days": 14,
+          "months": 6
+        }
+      }
+    },
+    "finca_00005": {
+      "finca_id": "finca_00005",
+      "success": true,
+      "duration": 6.405285120010376,
+      "result": {
+        "series": [
+          {
+            "start": "2025-02-09",
+            "end": "2025-02-23",
+            "ndvi": 0.10749695747199997,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-02-23",
+            "end": "2025-03-09",
+            "ndvi": 0.18048376405567831,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-03-09",
+            "end": "2025-03-23",
+            "ndvi": 0.20338763210940408,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-03-23",
+            "end": "2025-04-06",
+            "ndvi": 0.19022965540796358,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-04-06",
+            "end": "2025-04-20",
+            "ndvi": 0.18017913786806208,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-04-20",
+            "end": "2025-05-04",
+            "ndvi": 0.15544817272645722,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-05-04",
+            "end": "2025-05-18",
+            "ndvi": 0.16335801279992013,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-05-18",
+            "end": "2025-06-01",
+            "ndvi": 0.1554466300594599,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-06-01",
+            "end": "2025-06-15",
+            "ndvi": 0.1701224371408157,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-06-15",
+            "end": "2025-06-29",
+            "ndvi": 0.1478253583203885,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-06-29",
+            "end": "2025-07-13",
+            "ndvi": 0.14649078567112078,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-07-13",
+            "end": "2025-07-27",
+            "ndvi": 0.14903063050240556,
+            "cloud_pct": 50.0,
+            "thumb": null
+          },
+          {
+            "start": "2025-07-27",
+            "end": "2025-08-08",
+            "ndvi": 0.15360762592121677,
+            "cloud_pct": 50.0,
+            "thumb": null
+          }
+        ],
+        "summary": {
+          "valid": 13,
+          "median": 0.15544817272645722,
+          "std": 0.024127615300682047,
+          "dips": 0,
+          "green_persistence": 0.0,
+          "status": "potential",
+          "abandon_score": 52.06380765034102,
+          "window_days": 14,
+          "months": 6
+        }
+      }
+    }
+  }
+}
