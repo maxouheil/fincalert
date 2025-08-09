@@ -1885,3 +1885,116 @@ Compiling...
 Compiled successfully!
 webpack compiled successfully
 No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Files successfully emitted, waiting for typecheck results...
+Issues checking in progress...
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/NewPopup.tsx:431:20
+TS2304: Cannot find name 'getPoolIcon'.
+    429 |                   color: '#374151'
+    430 |                 }}>
+  > 431 |                   {getPoolIcon(visualAnalysis.pools.detection_result.best_pool?.state || 'unknown')}
+        |                    ^^^^^^^^^^^
+    432 |                   <span style={{ marginLeft: 6 }}>
+    433 |                     {getPoolStateLabel(visualAnalysis.pools.detection_result.best_pool?.state || 'unknown')}
+    434 |                   </span>
+
+ERROR in src/components/NewPopup.tsx:433:22
+TS2304: Cannot find name 'getPoolStateLabel'.
+    431 |                   {getPoolIcon(visualAnalysis.pools.detection_result.best_pool?.state || 'unknown')}
+    432 |                   <span style={{ marginLeft: 6 }}>
+  > 433 |                     {getPoolStateLabel(visualAnalysis.pools.detection_result.best_pool?.state || 'unknown')}
+        |                      ^^^^^^^^^^^^^^^^^
+    434 |                   </span>
+    435 |                   <span style={{ 
+    436 |                     marginLeft: 'auto', 
+
+ERROR in src/components/NewPopup.tsx:454:20
+TS2304: Cannot find name 'getMobilityIcon'.
+    452 |                   color: '#374151'
+    453 |                 }}>
+  > 454 |                   {getMobilityIcon(visualAnalysis.mobility.detection_result.mobility_level)}
+        |                    ^^^^^^^^^^^^^^^
+    455 |                   <span style={{ marginLeft: 6 }}>
+    456 |                     {getMobilityLabel(visualAnalysis.mobility.detection_result.mobility_level)}
+    457 |                   </span>
+
+ERROR in src/components/NewPopup.tsx:456:22
+TS2304: Cannot find name 'getMobilityLabel'.
+    454 |                   {getMobilityIcon(visualAnalysis.mobility.detection_result.mobility_level)}
+    455 |                   <span style={{ marginLeft: 6 }}>
+  > 456 |                     {getMobilityLabel(visualAnalysis.mobility.detection_result.mobility_level)}
+        |                      ^^^^^^^^^^^^^^^^
+    457 |                   </span>
+    458 |                   <span style={{ 
+    459 |                     marginLeft: 'auto', 
+
+ERROR in src/components/NewPopup.tsx:473:36
+TS2304: Cannot find name 'getConfidenceColor'.
+    471 |                   marginTop: 8,
+    472 |                   padding: '6px 8px',
+  > 473 |                   backgroundColor: getConfidenceColor(visualAnalysis.summary.confidence).bg,
+        |                                    ^^^^^^^^^^^^^^^^^^
+    474 |                   color: getConfidenceColor(visualAnalysis.summary.confidence).text,
+    475 |                   borderRadius: 4,
+    476 |                   fontSize: 11,
+
+ERROR in src/components/NewPopup.tsx:474:26
+TS2304: Cannot find name 'getConfidenceColor'.
+    472 |                   padding: '6px 8px',
+    473 |                   backgroundColor: getConfidenceColor(visualAnalysis.summary.confidence).bg,
+  > 474 |                   color: getConfidenceColor(visualAnalysis.summary.confidence).text,
+        |                          ^^^^^^^^^^^^^^^^^^
+    475 |                   borderRadius: 4,
+    476 |                   fontSize: 11,
+    477 |                   fontWeight: 600
+
+ERROR in src/components/NewPopup.tsx:479:20
+TS2304: Cannot find name 'getConfidenceIcon'.
+    477 |                   fontWeight: 600
+    478 |                 }}>
+  > 479 |                   {getConfidenceIcon(visualAnalysis.summary.confidence)} {getConfidenceLabel(visualAnalysis.summary.confidence)}
+        |                    ^^^^^^^^^^^^^^^^^
+    480 |                   <span style={{ fontWeight: 400, marginLeft: 4 }}>
+    481 |                     (Score visuel: {Math.round(visualAnalysis.summary.visual_score * 100)}%)
+    482 |                   </span>
+
+ERROR in src/components/NewPopup.tsx:479:75
+TS2304: Cannot find name 'getConfidenceLabel'.
+    477 |                   fontWeight: 600
+    478 |                 }}>
+  > 479 |                   {getConfidenceIcon(visualAnalysis.summary.confidence)} {getConfidenceLabel(visualAnalysis.summary.confidence)}
+        |                                                                           ^^^^^^^^^^^^^^^^^^
+    480 |                   <span style={{ fontWeight: 400, marginLeft: 4 }}>
+    481 |                     (Score visuel: {Math.round(visualAnalysis.summary.visual_score * 100)}%)
+    482 |                   </span>
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+Compiling...
+No issues found.
+Compiled successfully!
+webpack compiled successfully
+No issues found.

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Finca } from '../utils/types';
+import { Finca, VisualAnalysisResult } from '../utils/types';
 
 interface Props {
   selected: Finca;
@@ -12,6 +12,8 @@ export const streetViewCache = new Map<string, 'available' | 'unavailable'>();
 const NewPopup: React.FC<Props> = ({ selected, onClose }) => {
   const [hoverScore, setHoverScore] = useState(false);
   const [hasStreetView, setHasStreetView] = useState<'loading' | 'available' | 'unavailable'>('loading');
+  const [visualAnalysis, setVisualAnalysis] = useState<VisualAnalysisResult | null>(null);
+  const [loadingVisual, setLoadingVisual] = useState(false);
 
   // Vérification de la disponibilité Street View avec cache
   useEffect(() => {
@@ -58,6 +60,29 @@ const NewPopup: React.FC<Props> = ({ selected, onClose }) => {
 
     checkStreetView();
   }, [selected.lat, selected.lon]);
+
+  // Chargement analyse visuelle YOLO
+  useEffect(() => {
+    const loadVisualAnalysis = async () => {
+      setLoadingVisual(true);
+      try {
+        const response = await fetch(`http://localhost:8000/api/detection/visual-analysis/${selected.id}`);
+        if (response.ok) {
+          const result = await response.json();
+          setVisualAnalysis(result);
+          console.log('🎯 Visual analysis loaded:', result);
+        } else {
+          console.warn('⚠️ Visual analysis unavailable:', response.status);
+        }
+      } catch (error) {
+        console.warn('⚠️ Visual analysis failed:', error);
+      } finally {
+        setLoadingVisual(false);
+      }
+    };
+
+    loadVisualAnalysis();
+  }, [selected.id]);
 
   // Calcul de la variation en pourcentage
   const variationPercent = selected.std_deviation && selected.median_ndvi && selected.median_ndvi > 0 
@@ -379,10 +404,161 @@ const NewPopup: React.FC<Props> = ({ selected, onClose }) => {
           </div>
         </div>
 
+        {/* Section Activité Visuelle (YOLO) */}
+        <div style={{ borderTop: '1px solid #E5E7EB', paddingTop: 12, marginTop: 12 }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
+            <div style={{ fontSize: 14, fontWeight: 600, color: '#374151' }}>
+              Activité visuelle
+            </div>
+            {loadingVisual && (
+              <div style={{ fontSize: 10, color: '#6B7280' }}>
+                Analyse...
+              </div>
+            )}
+          </div>
+
+          {visualAnalysis ? (
+            <div>
+              {/* Indicateurs piscine */}
+              {visualAnalysis.pools?.detection_result?.pool_detected && (
+                <div style={{ 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  marginBottom: 4,
+                  fontSize: 12,
+                  color: '#374151'
+                }}>
+                  {getPoolIcon(visualAnalysis.pools.detection_result.best_pool?.state || 'unknown')}
+                  <span style={{ marginLeft: 6 }}>
+                    {getPoolStateLabel(visualAnalysis.pools.detection_result.best_pool?.state || 'unknown')}
+                  </span>
+                  <span style={{ 
+                    marginLeft: 'auto', 
+                    fontSize: 10, 
+                    color: '#6B7280' 
+                  }}>
+                    {Math.round((visualAnalysis.pools.detection_result.best_pool?.confidence || 0) * 100)}%
+                  </span>
+                </div>
+              )}
+
+              {/* Indicateurs mobilité */}
+              {visualAnalysis.mobility?.detection_result && (
+                <div style={{ 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  marginBottom: 4,
+                  fontSize: 12,
+                  color: '#374151'
+                }}>
+                  {getMobilityIcon(visualAnalysis.mobility.detection_result.mobility_level)}
+                  <span style={{ marginLeft: 6 }}>
+                    {getMobilityLabel(visualAnalysis.mobility.detection_result.mobility_level)}
+                  </span>
+                  <span style={{ 
+                    marginLeft: 'auto', 
+                    fontSize: 10, 
+                    color: '#6B7280' 
+                  }}>
+                    Score: {Math.round(visualAnalysis.mobility.detection_result.mobility_score * 100)}%
+                  </span>
+                </div>
+              )}
+
+              {/* Résumé confiance */}
+              {visualAnalysis.summary && (
+                <div style={{ 
+                  marginTop: 8,
+                  padding: '6px 8px',
+                  backgroundColor: getConfidenceColor(visualAnalysis.summary.confidence).bg,
+                  color: getConfidenceColor(visualAnalysis.summary.confidence).text,
+                  borderRadius: 4,
+                  fontSize: 11,
+                  fontWeight: 600
+                }}>
+                  {getConfidenceIcon(visualAnalysis.summary.confidence)} {getConfidenceLabel(visualAnalysis.summary.confidence)}
+                  <span style={{ fontWeight: 400, marginLeft: 4 }}>
+                    (Score visuel: {Math.round(visualAnalysis.summary.visual_score * 100)}%)
+                  </span>
+                </div>
+              )}
+            </div>
+          ) : !loadingVisual ? (
+            <div style={{ fontSize: 11, color: '#9CA3AF', fontStyle: 'italic' }}>
+              🔍 Analyse visuelle non disponible
+            </div>
+          ) : null}
+        </div>
 
       </div>
     </div>
   );
+};
+
+// Fonctions helpers pour l'analyse visuelle
+const getPoolIcon = (state: string) => {
+  switch (state) {
+    case 'blue': return '🏊';
+    case 'green': return '🟢';
+    case 'empty': return '⚫';
+    case 'covered': return '🔲';
+    default: return '❓';
+  }
+};
+
+const getPoolStateLabel = (state: string) => {
+  switch (state) {
+    case 'blue': return 'Piscine entretenue';
+    case 'green': return 'Piscine sale';
+    case 'empty': return 'Piscine vide';
+    case 'covered': return 'Piscine couverte';
+    default: return 'Piscine détectée';
+  }
+};
+
+const getMobilityIcon = (level: string) => {
+  switch (level) {
+    case 'high': return '🚗';
+    case 'medium': return '🚙';
+    case 'low': return '🚶';
+    default: return '❓';
+  }
+};
+
+const getMobilityLabel = (level: string) => {
+  switch (level) {
+    case 'high': return 'Activité élevée';
+    case 'medium': return 'Activité modérée';
+    case 'low': return 'Activité faible';
+    default: return 'Activité inconnue';
+  }
+};
+
+const getConfidenceIcon = (confidence: string) => {
+  switch (confidence) {
+    case 'high': return '✅';
+    case 'medium': return '⚠️';
+    case 'low': return '❌';
+    default: return '❓';
+  }
+};
+
+const getConfidenceLabel = (confidence: string) => {
+  switch (confidence) {
+    case 'high': return 'Confiance élevée';
+    case 'medium': return 'Confiance modérée';
+    case 'low': return 'Confiance faible';
+    default: return 'Confiance inconnue';
+  }
+};
+
+const getConfidenceColor = (confidence: string) => {
+  switch (confidence) {
+    case 'high': return { bg: '#D1FAE5', text: '#065F46' };
+    case 'medium': return { bg: '#FEF3C7', text: '#92400E' };
+    case 'low': return { bg: '#FEE2E2', text: '#991B1B' };
+    default: return { bg: '#F3F4F6', text: '#374151' };
+  }
 };
 
 export default NewPopup;

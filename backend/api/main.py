@@ -13,6 +13,9 @@ from ..satellite.sentinel import initialize_gee, get_sentinel_imagery
 from ..satellite.ndvi_timeseries_optimized import compute_and_store_optimized as ndvi_compute, get_progress
 from pathlib import Path
 from ..detection.building_detector import BuildingDetector
+from ..detection.yolo_pool_detector import YOLOPoolDetector
+from ..detection.yolo_mobile_detector import YOLOMobileDetector
+from ..detection.demo_detector import DemoDetector
 
 app = FastAPI()
 
@@ -31,6 +34,25 @@ try:
 except Exception:
     pass
 detector = BuildingDetector()
+
+# Initialize YOLO detectors (lazy loading pour éviter ralentissement startup)
+pool_detector = None
+mobile_detector = None
+demo_detector = DemoDetector()  # Toujours disponible
+
+def get_pool_detector():
+    """Lazy loading du détecteur piscines"""
+    global pool_detector
+    if pool_detector is None:
+        pool_detector = YOLOPoolDetector()
+    return pool_detector
+
+def get_mobile_detector():
+    """Lazy loading du détecteur objets mobiles"""
+    global mobile_detector
+    if mobile_detector is None:
+        mobile_detector = YOLOMobileDetector()
+    return mobile_detector
 
 class Finca(BaseModel):
     id: str
@@ -333,3 +355,247 @@ async def get_hq_thumbnail(finca_id: str, name: str):
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Thumbnail generation failed: {str(e)}")
+
+
+# ========== NOUVELLES ROUTES YOLO DETECTION ==========
+
+@app.get("/api/detection/pools/{finca_id}")
+async def detect_pools(finca_id: str, use_mapbox: bool = True, demo: bool = True):
+    """
+    Détecte piscines pour une finca donnée
+    Args:
+        finca_id: ID de la finca
+        use_mapbox: Utiliser Mapbox (True) ou Sentinel-2 (False)
+    """
+    try:
+        # Charger données finca
+        here = os.path.dirname(__file__)
+        geojson_path = os.path.normpath(os.path.join(here, "../../frontend/public/data/fincas_with_abandon_scores.geojson"))
+        
+        if not os.path.exists(geojson_path):
+            raise HTTPException(status_code=404, detail="Finca data not found")
+        
+        with open(geojson_path, 'r') as f:
+            geojson_data = json.load(f)
+        
+        # Trouver la finca
+        finca = None
+        for feature in geojson_data.get('features', []):
+            if feature.get('properties', {}).get('id') == finca_id:
+                finca = feature['properties']
+                break
+        
+        if not finca:
+            raise HTTPException(status_code=404, detail=f"Finca {finca_id} not found")
+        
+        lat, lon = finca['lat'], finca['lon']
+        
+        if demo:
+            # Mode démo avec résultats cohérents
+            result = demo_detector.detect_pools_demo(finca_id, lat, lon)
+        else:
+            # Mode production YOLO
+            # Générer URL image haute résolution
+            if use_mapbox:
+                token = os.getenv("MAPBOX_TOKEN") or os.getenv("REACT_APP_MAPBOX_TOKEN")
+                if not token:
+                    raise HTTPException(status_code=503, detail="Mapbox token not configured")
+                
+                # Image haute résolution pour détection
+                image_url = f"https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/{lon},{lat},19,0/640x480@2x?access_token={token}"
+            else:
+                # TODO: Utiliser Sentinel-2 haute résolution si disponible
+                raise HTTPException(status_code=501, detail="Sentinel-2 pool detection not yet implemented")
+            
+            # Détection piscines
+            detector = get_pool_detector()
+            result = detector.detect_pools_from_url(image_url, finca_id)
+        
+        return {
+            "finca_id": finca_id,
+            "coordinates": {"lat": lat, "lon": lon},
+            "image_source": "mapbox" if use_mapbox else "sentinel2",
+            "detection_result": result
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Pool detection failed: {str(e)}")
+
+
+@app.get("/api/detection/mobility/{finca_id}")
+async def detect_mobility(finca_id: str, months_gap: int = 6, demo: bool = True):
+    """
+    Détecte changements objets mobiles pour une finca
+    Args:
+        finca_id: ID de la finca  
+        months_gap: Écart temporel en mois pour comparaison
+    """
+    try:
+        # Charger données finca
+        here = os.path.dirname(__file__)
+        geojson_path = os.path.normpath(os.path.join(here, "../../frontend/public/data/fincas_with_abandon_scores.geojson"))
+        
+        if not os.path.exists(geojson_path):
+            raise HTTPException(status_code=404, detail="Finca data not found")
+        
+        with open(geojson_path, 'r') as f:
+            geojson_data = json.load(f)
+        
+        # Trouver la finca
+        finca = None
+        for feature in geojson_data.get('features', []):
+            if feature.get('properties', {}).get('id') == finca_id:
+                finca = feature['properties']
+                break
+        
+        if not finca:
+            raise HTTPException(status_code=404, detail=f"Finca {finca_id} not found")
+        
+        lat, lon = finca['lat'], finca['lon']
+        
+        if demo:
+            # Mode démo avec résultats cohérents
+            result = demo_detector.detect_mobility_demo(finca_id, lat, lon, months_gap)
+        else:
+            # Mode production YOLO
+            # Générer URLs pour deux périodes différentes
+            token = os.getenv("MAPBOX_TOKEN") or os.getenv("REACT_APP_MAPBOX_TOKEN")
+            if not token:
+                raise HTTPException(status_code=503, detail="Mapbox token not configured")
+            
+            # Images haute résolution (on simule deux dates différentes pour l'instant)
+            # TODO: Intégrer avec vraies dates historiques de NDVI
+            base_url = f"https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/{lon},{lat},19,0/640x480@2x?access_token={token}"
+            
+            # Pour l'instant, même image (en production, utiliser dates historiques)
+            image_url_t1 = base_url  # Image "ancienne"
+            image_url_t2 = base_url  # Image "récente"
+            
+            # Détection mobilité
+            detector = get_mobile_detector()
+            result = detector.detect_mobility_from_urls(
+                image_url_t1, image_url_t2, finca_id, months_gap
+            )
+        
+        return {
+            "finca_id": finca_id,
+            "coordinates": {"lat": lat, "lon": lon},
+            "time_gap_months": months_gap,
+            "detection_result": result
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Mobility detection failed: {str(e)}")
+
+
+@app.get("/api/detection/visual-analysis/{finca_id}")
+async def get_visual_analysis(finca_id: str, demo: bool = True):
+    """
+    Analyse visuelle complète (piscines + mobilité) pour une finca
+    """
+    try:
+        if demo:
+            # Mode démo - récupération directe des coordonnées
+            here = os.path.dirname(__file__)
+            geojson_path = os.path.normpath(os.path.join(here, "../../frontend/public/data/fincas_with_abandon_scores.geojson"))
+            
+            if not os.path.exists(geojson_path):
+                raise HTTPException(status_code=404, detail="Finca data not found")
+            
+            with open(geojson_path, 'r') as f:
+                geojson_data = json.load(f)
+            
+            # Trouver la finca
+            finca = None
+            for feature in geojson_data.get('features', []):
+                if feature.get('properties', {}).get('id') == finca_id:
+                    finca = feature['properties']
+                    break
+            
+            if not finca:
+                raise HTTPException(status_code=404, detail=f"Finca {finca_id} not found")
+            
+            lat, lon = finca['lat'], finca['lon']
+            return demo_detector.get_visual_analysis_demo(finca_id, lat, lon)
+        else:
+            # Mode production - exécuter détections en parallèle
+            import asyncio
+            
+            pool_task = detect_pools(finca_id, use_mapbox=True, demo=False)
+            mobility_task = detect_mobility(finca_id, months_gap=6, demo=False)
+            
+            pool_result, mobility_result = await asyncio.gather(
+                pool_task, mobility_task, return_exceptions=True
+            )
+            
+            # Gérer erreurs éventuelles
+            if isinstance(pool_result, Exception):
+                pool_result = {"error": str(pool_result)}
+            if isinstance(mobility_result, Exception):
+                mobility_result = {"error": str(mobility_result)}
+            
+            return {
+                "finca_id": finca_id,
+                "pools": pool_result,
+                "mobility": mobility_result,
+                "summary": _generate_visual_summary(pool_result, mobility_result)
+            }
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Visual analysis failed: {str(e)}")
+
+
+def _generate_visual_summary(pool_result: dict, mobility_result: dict) -> dict:
+    """Génère résumé consolidé de l'analyse visuelle"""
+    summary = {
+        "activity_indicators": [],
+        "visual_score": 0.0,
+        "confidence": "low"
+    }
+    
+    try:
+        # Analyse piscines
+        if "detection_result" in pool_result and pool_result["detection_result"].get("pool_detected"):
+            pool_state = pool_result["detection_result"]["best_pool"]["state"]
+            if pool_state == "blue":
+                summary["activity_indicators"].append("🏊 Piscine entretenue")
+                summary["visual_score"] += 0.3
+            elif pool_state == "green":
+                summary["activity_indicators"].append("🏊 Piscine sale")
+                summary["visual_score"] += 0.1
+            else:
+                summary["activity_indicators"].append("🏊 Piscine détectée")
+                summary["visual_score"] += 0.2
+        
+        # Analyse mobilité
+        if "detection_result" in mobility_result:
+            mobility_score = mobility_result["detection_result"].get("mobility_score", 0)
+            mobility_level = mobility_result["detection_result"].get("mobility_level", "low")
+            
+            if mobility_level == "high":
+                summary["activity_indicators"].append("🚗 Activité élevée")
+                summary["visual_score"] += 0.4
+            elif mobility_level == "medium":
+                summary["activity_indicators"].append("🚗 Activité modérée")
+                summary["visual_score"] += 0.2
+            
+            summary["visual_score"] += mobility_score * 0.3
+        
+        # Classification confiance
+        if summary["visual_score"] >= 0.6:
+            summary["confidence"] = "high"
+        elif summary["visual_score"] >= 0.3:
+            summary["confidence"] = "medium"
+        else:
+            summary["confidence"] = "low"
+        
+        summary["visual_score"] = min(1.0, summary["visual_score"])
+        
+    except Exception as e:
+        summary["error"] = f"Summary generation failed: {str(e)}"
+    
+    return summary
