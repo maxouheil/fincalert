@@ -1,0 +1,212 @@
+[
+  {
+    "finca_id": "finca_00001",
+    "pool_detected": false,
+    "pool_count": 0,
+    "summary": "No pools detected",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00001.jpg"
+  },
+  {
+    "finca_id": "finca_00002",
+    "pool_detected": false,
+    "pool_count": 0,
+    "summary": "No pools detected",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00002.jpg"
+  },
+  {
+    "finca_id": "finca_00003",
+    "pool_detected": true,
+    "pool_count": 1,
+    "summary": "1 pool(s) detected, best state: blue",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00003.jpg"
+  },
+  {
+    "finca_id": "finca_00004",
+    "pool_detected": false,
+    "pool_count": 0,
+    "summary": "No pools detected",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00004.jpg"
+  },
+  {
+    "finca_id": "finca_00005",
+    "pool_detected": false,
+    "pool_count": 0,
+    "summary": "No pools detected",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00005.jpg"
+  },
+  {
+    "finca_id": "finca_00006",
+    "pool_detected": false,
+    "pool_count": 0,
+    "summary": "No pools detected",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00006.jpg"
+  },
+  {
+    "finca_id": "finca_00007",
+    "pool_detected": false,
+    "pool_count": 0,
+    "summary": "No pools detected",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00007.jpg"
+  },
+  {
+    "finca_id": "finca_00008",
+    "pool_detected": false,
+    "pool_count": 0,
+    "summary": "No pools detected",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00008.jpg"
+  },
+  {
+    "finca_id": "finca_00009",
+    "pool_detected": false,
+    "pool_count": 0,
+    "summary": "No pools detected",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00009.jpg"
+  },
+  {
+    "finca_id": "finca_00010",
+    "pool_detected": false,
+    "pool_count": 0,
+    "summary": "No pools detected",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00010.jpg"
+  },
+  {
+    "finca_id": "finca_00011",
+    "pool_detected": true,
+    "pool_count": 2,
+    "summary": "2 pool(s) detected, best state: blue",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00011.jpg"
+  },
+  {
+    "finca_id": "finca_00012",
+    "pool_detected": false,
+    "pool_count": 0,
+    "summary": "No pools detected",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00012.jpg"
+  },
+  {
+    "finca_id": "finca_00013",
+    "pool_detected": false,
+    "pool_count": 0,
+    "summary": "No pools detected",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00013.jpg"
+  },
+  {
+    "finca_id": "finca_00014",
+    "pool_detected": false,
+    "pool_count": 0,
+    "summary": "No pools detected",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00014.jpg"
+  },
+  {
+    "finca_id": "finca_00015",
+    "pool_detected": false,
+    "pool_count": 0,
+    "summary": "No pools detected",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00015.jpg"
+  },
+  {
+    "finca_id": "finca_00016",
+    "pool_detected": false,
+    "pool_count": 0,
+    "summary": "No pools detected",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00016.jpg"
+  },
+  {
+    "finca_id": "finca_00017",
+    "pool_detected": false,
+    "pool_count": 0,
+    "summary": "No pools detected",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00017.jpg"
+  },
+  {
+    "finca_id": "finca_00018",
+    "pool_detected": true,
+    "pool_count": 2,
+    "summary": "2 pool(s) detected, best state: blue",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00018.jpg"
+  },
+  {
+    "finca_id": "finca_00019",
+    "pool_detected": true,
+    "pool_count": 2,
+    "summary": "2 pool(s) detected, best state: blue",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00019.jpg"
+  },
+  {
+    "finca_id": "finca_00020",
+    "pool_detected": true,
+    "pool_count": 1,
+    "summary": "1 pool(s) detected, best state: blue",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00020.jpg"
+  },
+  {
+    "finca_id": "finca_00021",
+    "pool_detected": false,
+    "pool_count": 0,
+    "summary": "No pools detected",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00021.jpg"
+  },
+  {
+    "finca_id": "finca_00022",
+    "pool_detected": true,
+    "pool_count": 1,
+    "summary": "1 pool(s) detected, best state: green",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00022.jpg"
+  },
+  {
+    "finca_id": "finca_00023",
+    "pool_detected": false,
+    "pool_count": 0,
+    "summary": "No pools detected",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00023.jpg"
+  },
+  {
+    "finca_id": "finca_00024",
+    "pool_detected": false,
+    "pool_count": 0,
+    "summary": "No pools detected",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00024.jpg"
+  },
+  {
+    "finca_id": "finca_00025",
+    "pool_detected": true,
+    "pool_count": 1,
+    "summary": "1 pool(s) detected, best state: blue",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00025.jpg"
+  },
+  {
+    "finca_id": "finca_00026",
+    "pool_detected": true,
+    "pool_count": 1,
+    "summary": "1 pool(s) detected, best state: unknown",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00026.jpg"
+  },
+  {
+    "finca_id": "finca_00027",
+    "pool_detected": false,
+    "pool_count": 0,
+    "summary": "No pools detected",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00027.jpg"
+  },
+  {
+    "finca_id": "finca_00028",
+    "pool_detected": false,
+    "pool_count": 0,
+    "summary": "No pools detected",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00028.jpg"
+  },
+  {
+    "finca_id": "finca_00029",
+    "pool_detected": false,
+    "pool_count": 0,
+    "summary": "No pools detected",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00029.jpg"
+  },
+  {
+    "finca_id": "finca_00030",
+    "pool_detected": false,
+    "pool_count": 0,
+    "summary": "No pools detected",
+    "overlay": "/Users/sou/Desktop/Fincalert/data/test_results/overlays_top30/finca_00030.jpg"
+  }
+]

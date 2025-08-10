@@ -1,3 +1,14 @@
+# --- Torchvision stub to avoid _lzma import issues on systems without lzma ---
+try:
+    import torchvision  # noqa: F401
+except Exception:
+    import sys, types
+    tv = types.ModuleType('torchvision')
+    sys.modules['torchvision'] = tv
+    # create minimal submodules often imported
+    for name in ['datasets','io','models','ops','transforms','utils','_meta_registrations']:
+        sys.modules[f'torchvision.{name}'] = types.ModuleType(f'torchvision.{name}')
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
@@ -13,7 +24,7 @@ from ..satellite.sentinel import initialize_gee, get_sentinel_imagery
 from ..satellite.ndvi_timeseries_optimized import compute_and_store_optimized as ndvi_compute, get_progress
 from pathlib import Path
 from ..detection.building_detector import BuildingDetector
-from ..detection.yolo_pool_detector import YOLOPoolDetector
+from ..detection.yolo_pool_detector import YOLOPoolDetector  # noqa
 from ..detection.yolo_mobile_detector import YOLOMobileDetector
 from ..detection.demo_detector import DemoDetector
 
@@ -44,6 +55,7 @@ def get_pool_detector():
     """Lazy loading du détecteur piscines"""
     global pool_detector
     if pool_detector is None:
+        # Ensure torchvision NMS fallback is active inside detector module
         pool_detector = YOLOPoolDetector()
     return pool_detector
 
@@ -402,7 +414,12 @@ async def detect_pools(finca_id: str, use_mapbox: bool = True, demo: bool = True
                     raise HTTPException(status_code=503, detail="Mapbox token not configured")
                 
                 # Image haute résolution pour détection
-                image_url = f"https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/{lon},{lat},19,0/640x480@2x?access_token={token}"
+                # Plus de zoom + image plus large pour capter piscines proches mais pas collées à la maison
+                # Larger extent around finca to include nearby pools (±100m)
+                # Use auto bbox static-geojson with a circle buffer around center
+                bbox_zoom = 19
+                width, height = 1280, 960
+                image_url = f"https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/{lon},{lat},{bbox_zoom},0/{width}x{height}@2x?access_token={token}"
             else:
                 # TODO: Utiliser Sentinel-2 haute résolution si disponible
                 raise HTTPException(status_code=501, detail="Sentinel-2 pool detection not yet implemented")

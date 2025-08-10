@@ -1,1847 +1,275 @@
-
-[notice] A new release of pip is available: 23.2.1 -> 25.2
-[notice] To update, run: pip install --upgrade pip
-Starting backend server on http://localhost:8000
 INFO:     Will watch for changes in these directories: ['/Users/sou/Desktop/Fincalert']
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
-INFO:     Started reloader process [83699] using StatReload
-INFO:     Started server process [83701]
+INFO:     Started reloader process [56793] using StatReload
+INFO:     Started server process [56828]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     127.0.0.1:49433 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49457 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49462 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57125 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57129 - "GET /api/detection/pools/finca_00003?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57135 - "GET /api/detection/pools/finca_00018?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57138 - "GET /api/detection/pools/finca_00019?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57141 - "GET /api/detection/pools/finca_00025?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57144 - "GET /api/detection/pools/finca_00026?use_mapbox=true&demo=false HTTP/1.1" 200 OK
 WARNING:  StatReload detected changes in 'backend/api/main.py'. Reloading...
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [83701]
-INFO:     Started server process [83844]
+INFO:     Finished server process [56828]
+INFO:     Started server process [57315]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     127.0.0.1:49476 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49486 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49506 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49524 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49550 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49560 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49865 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49865 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49865 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49865 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49865 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49865 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49879 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49937 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49947 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49954 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49959 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49975 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49979 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49991 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49998 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50001 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50015 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50019 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50036 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50042 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50048 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50061 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50069 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50084 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50090 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50094 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50106 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50115 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50125 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50131 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50134 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50147 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50150 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50163 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50171 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50175 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50191 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50202 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50212 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50220 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50223 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50238 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50243 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50252 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50258 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50264 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50283 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50287 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50297 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50305 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50309 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50325 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50329 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50339 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50345 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50349 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50364 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50367 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50378 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50384 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50388 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50402 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50405 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50414 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50420 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50425 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50443 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50448 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50458 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50466 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50478 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50493 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50496 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50507 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50516 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50520 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50534 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50538 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50550 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50556 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50565 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50694 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50705 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50723 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50738 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50743 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50760 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50776 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50786 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50802 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50810 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50880 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50897 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50909 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50915 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50922 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50940 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50946 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50964 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50980 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50987 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51023 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51029 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51041 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51054 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51060 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51081 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51097 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51109 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51127 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51134 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51155 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51162 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51171 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51177 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51181 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51196 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51202 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51213 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51219 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51223 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51236 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51239 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51258 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51267 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51308 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51341 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51351 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51361 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51369 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51375 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51392 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51398 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51409 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51415 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51418 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51432 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51435 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51444 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51451 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51454 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51473 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51481 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51490 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51497 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51501 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51514 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51521 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51531 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51538 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51543 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51564 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51567 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51579 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51588 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51595 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51614 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51619 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51629 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51637 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51643 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51657 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51662 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51671 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51679 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51686 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51699 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51704 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51714 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51721 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51726 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51746 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51749 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51760 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51767 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51770 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51782 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51789 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51798 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51811 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51816 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51829 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51836 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51848 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51860 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51868 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51880 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51883 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51894 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51900 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51906 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51920 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51924 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51935 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51941 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51945 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51958 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51962 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51973 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51980 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:51984 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52002 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52007 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52018 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52024 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52028 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52042 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52046 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52058 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52065 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52081 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52101 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52104 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52114 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52121 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52125 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52139 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52142 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52154 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52161 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52166 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52179 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52184 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52194 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52199 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52206 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52220 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52226 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52235 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52241 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52245 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52277 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52281 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52292 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52298 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52301 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52313 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52318 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52327 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52339 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52343 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52355 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52360 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52406 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52418 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52425 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52441 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52448 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52464 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52473 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52480 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52495 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52510 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52521 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52528 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52533 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52554 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52568 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52578 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52585 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52589 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52605 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52610 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52622 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52628 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52636 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52650 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52655 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52665 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52674 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52679 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52698 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52704 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52714 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52722 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52730 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52742 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52747 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52758 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52763 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52767 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52780 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52786 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52796 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52803 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52807 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52820 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52833 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52861 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52867 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52870 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52886 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52890 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52900 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52906 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52909 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52929 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52934 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52944 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52953 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52956 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52968 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52974 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:52992 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53016 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53025 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53039 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53048 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53061 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53070 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53076 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53090 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53094 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53105 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53112 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53116 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53130 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53135 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53145 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53154 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53159 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53172 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53177 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53189 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53197 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53200 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53213 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53220 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53230 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53241 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53244 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53258 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53267 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53277 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53286 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53291 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53303 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53309 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53318 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53325 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53328 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53344 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53348 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53360 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53366 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53369 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53384 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53392 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53403 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53410 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53413 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53427 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53445 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53466 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53476 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53482 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53497 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53502 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53515 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53523 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53526 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53538 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53544 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53553 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53560 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53568 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53580 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53586 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53599 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53606 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53609 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53624 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53629 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53638 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53647 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53651 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53665 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53674 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53683 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53691 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53697 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53715 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53724 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53771 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53778 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53783 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53794 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53800 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53809 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53814 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53818 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53833 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53842 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:53865 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54119 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54301 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54346 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54408 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54420 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54428 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54431 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54445 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54450 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54459 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54467 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54473 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54508 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54514 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54523 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54529 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54534 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54549 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54558 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54568 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54576 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54580 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54592 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54596 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54605 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54610 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54619 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54633 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54638 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54648 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54655 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54662 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54674 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54680 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54689 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54694 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54699 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54715 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54724 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54733 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54739 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54742 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54754 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54765 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54777 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54785 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54789 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54803 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54812 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54821 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54829 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54832 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54844 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54850 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54859 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54864 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54868 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54884 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54889 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54904 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54911 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54915 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54926 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54934 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54946 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54951 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54956 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54969 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54977 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54991 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54998 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55003 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55015 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55019 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55032 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55039 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55043 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55057 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55066 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55077 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55083 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55088 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55099 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55103 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55114 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55121 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55125 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55153 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55157 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55166 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55172 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55176 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55213 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55222 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55231 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55237 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55240 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55252 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55257 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55274 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55281 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55291 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55302 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55311 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55333 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55340 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55345 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55358 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55401 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55411 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55420 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55425 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55439 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55444 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55454 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55467 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55472 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55489 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55493 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55509 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55517 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55520 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55532 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55537 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55551 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55559 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55562 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55575 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55580 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55592 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55599 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55607 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55619 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55625 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55638 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55644 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55647 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55659 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55665 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55677 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55687 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55693 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55706 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55711 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55723 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55729 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55734 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55749 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55753 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55763 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55770 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55774 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55786 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55790 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55800 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55807 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55813 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55827 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55830 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55842 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55849 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55861 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55881 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55890 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55900 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55905 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55908 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55920 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55927 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55939 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55945 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55951 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55971 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55976 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55987 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55995 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56001 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56016 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56019 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56034 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56042 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56045 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56057 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56062 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56072 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56079 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56083 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56096 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56099 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56109 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56117 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56139 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56154 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56158 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56169 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56175 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56179 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56193 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56200 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56216 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56222 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56225 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56241 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56245 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56256 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56261 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56265 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56286 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56290 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56301 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56307 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56315 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56328 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56335 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56346 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56351 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56354 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56370 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56376 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56441 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56463 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56469 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56534 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56537 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56562 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56570 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56575 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56588 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56593 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56603 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56611 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56616 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56630 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56634 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56649 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56655 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56659 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56677 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56680 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56690 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56696 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56699 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56718 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56724 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56734 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56739 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56745 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56776 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56783 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56795 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56804 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56808 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56822 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56828 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56839 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56847 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56851 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56870 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56883 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56905 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56918 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56926 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56945 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56956 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56970 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56981 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56986 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57000 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57006 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57025 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57034 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57039 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57059 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57069 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57084 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57093 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57107 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57153 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57157 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57173 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57182 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57187 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57203 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57209 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57221 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57232 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57237 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57254 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57259 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57271 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57280 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57287 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57305 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57311 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57323 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57331 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57335 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57349 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57354 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57369 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57379 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57384 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57398 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57403 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57417 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57426 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57432 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57460 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57468 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57480 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57488 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57495 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57513 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57521 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57541 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57549 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57553 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57582 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57588 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57611 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57619 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57652 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57667 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57676 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57696 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57704 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57709 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57723 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57729 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57743 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57756 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57760 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57774 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57784 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57796 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57810 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57814 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57833 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57840 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57858 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57866 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57872 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57885 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57900 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57928 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57945 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57951 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57971 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57975 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:57988 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58003 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58012 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58025 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58029 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58044 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58055 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58062 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58085 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58092 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58111 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58126 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58132 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58153 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58160 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58206 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58221 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58226 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58240 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58247 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58263 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58272 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58297 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58350 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58365 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58415 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58438 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58438 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58438 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58438 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58444 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58444 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58444 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58444 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58444 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58456 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58456 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58456 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58456 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58456 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58465 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58465 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58465 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58465 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58465 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58476 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58476 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58476 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58476 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58476 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58500 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58500 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58500 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58500 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58500 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58503 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58503 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58503 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58503 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58503 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58505 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58505 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58505 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58505 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58505 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58507 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58507 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58507 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58507 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58507 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58522 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58522 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58522 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58522 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58522 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58524 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58524 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58524 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58524 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58524 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58526 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58526 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58526 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58526 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58526 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58528 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58528 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58528 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58528 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58528 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58534 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58541 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58566 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58629 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58653 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58673 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58695 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58702 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58734 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:58997 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59210 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59461 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59725 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60007 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60115 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60129 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60136 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60142 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60168 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60188 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60215 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60220 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60220 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60220 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60222 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60222 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60222 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60222 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60222 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60224 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60224 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60224 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60224 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60224 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60227 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60227 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60227 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60227 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60227 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60229 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60229 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60229 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60229 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60229 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60231 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60231 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60231 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60231 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60231 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60233 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60233 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60233 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60233 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60233 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60235 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60235 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60235 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60235 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60235 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60239 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60239 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60239 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60239 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60239 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60241 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60241 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60241 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60241 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60241 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60243 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60243 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60243 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60243 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60243 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60245 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60245 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60245 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60245 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60245 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60248 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60248 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60248 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60248 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60248 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60250 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60250 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60250 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60250 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60250 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60252 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60252 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60252 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60252 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60252 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60255 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60255 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60255 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60255 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60255 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60257 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60257 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60257 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60257 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60257 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60259 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60259 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60259 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60259 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60259 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60261 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60261 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60261 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60261 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60261 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60264 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60264 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60264 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60264 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60264 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60268 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60268 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60268 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60268 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60268 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60270 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60270 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60270 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60270 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60270 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60272 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60272 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60272 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60272 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60272 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60274 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60274 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60274 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60274 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60274 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60277 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60277 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60277 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60277 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60277 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60279 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60279 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60279 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60279 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60279 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'scripts/generate_frontend_data.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [83844]
-INFO:     Started server process [1870]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     127.0.0.1:60283 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60283 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60283 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60283 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60283 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'scripts/generate_frontend_data.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [1870]
-INFO:     Started server process [1879]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     127.0.0.1:60286 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60286 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60286 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60286 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60286 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'scripts/generate_frontend_data.py'. Reloading...
-INFO:     127.0.0.1:60289 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [1879]
-INFO:     Started server process [1884]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     127.0.0.1:60292 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60292 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60292 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60292 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60294 - "GET /api/ndvi/progress/finca_00089 HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'scripts/generate_frontend_data.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [1884]
-INFO:     Started server process [3194]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     127.0.0.1:60415 - "GET /api/thumbnail/finca_00528?lon=1.266450256346567&lat=38.92678911762045&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60417 - "GET /api/thumbnail/finca_00034?lon=1.2743130231001922&lat=38.92145887242816&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60419 - "GET /api/thumbnail/finca_00529?lon=1.2660078254000662&lat=38.923555698658106&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60526 - "GET /api/thumbnail/finca_00156?lon=1.279407556157383&lat=38.9194328527941&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60530 - "GET /api/thumbnail/finca_00167?lon=1.28337495&lat=38.92734125&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60565 - "GET /api/thumbnail/finca_00162?lon=1.273454329505241&lat=38.92699115732293&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60583 - "GET /api/thumbnail/finca_00421?lon=1.2849841573678862&lat=38.931067506002464&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60589 - "GET /api/thumbnail/finca_00409?lon=1.273942381169232&lat=38.936286371783474&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60589 - "GET /api/thumbnail/finca_00505?lon=1.2604711866233143&lat=38.932188253708645&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60589 - "GET /api/thumbnail/finca_00499?lon=1.2450614&lat=38.93187925&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60598 - "GET /api/thumbnail/finca_00518?lon=1.266193&lat=38.93040365&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60602 - "GET /api/thumbnail/finca_00429?lon=1.2794482352551284&lat=38.93412887188423&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60817 - "GET /api/thumbnail/finca_00167?lon=1.28337495&lat=38.92734125&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60822 - "GET /api/thumbnail/finca_00112?lon=1.2999683859155127&lat=38.92203907789648&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:60937 - "GET /api/thumbnail/finca_00503?lon=1.2645951142819338&lat=38.93060947077588&width=280&height=200&scale=2 HTTP/1.1" 500 Internal Server Error
-INFO:     127.0.0.1:60943 - "GET /api/thumbnail/finca_00288?lon=1.2308800080014148&lat=38.886404712321976&width=280&height=200&scale=2 HTTP/1.1" 500 Internal Server Error
-INFO:     127.0.0.1:61186 - "GET /api/thumbnail/finca_00503?lon=1.2645951142819338&lat=38.93060947077588&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61360 - "GET /api/thumbnail/finca_00512?lon=1.2606605&lat=38.9283312&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61406 - "GET /api/thumbnail/finca_00514?lon=1.2595943812106731&lat=38.925004189324135&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61412 - "GET /api/thumbnail/finca_00509?lon=1.2586814590245123&lat=38.93004802559341&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61418 - "GET /api/thumbnail/finca_00527?lon=1.267070531562012&lat=38.93457555987214&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61663 - "GET /api/thumbnail/finca_00514?lon=1.2595943812106731&lat=38.925004189324135&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61666 - "GET /api/thumbnail/finca_00470?lon=1.2405001081939542&lat=38.91244242868374&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61676 - "GET /api/thumbnail/finca_00466?lon=1.2454845484841832&lat=38.91253467013828&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61676 - "GET /api/thumbnail/finca_00042?lon=1.2690398465761894&lat=38.91905841631511&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61740 - "GET /api/thumbnail/finca_00164?lon=1.2755440741520858&lat=38.92704693847473&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:61740 - "GET /api/thumbnail/finca_00421?lon=1.2849841573678862&lat=38.931067506002464&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'scripts/generate_frontend_data.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [3194]
-INFO:     Started server process [6849]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'scripts/generate_frontend_data.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [6849]
-INFO:     Started server process [6852]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'scripts/generate_frontend_data.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [6852]
-INFO:     Started server process [7315]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     127.0.0.1:61981 - "GET /api/thumbnail/finca_00504?lon=1.26322605&lat=38.9298632&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62033 - "GET /api/thumbnail/finca_00503?lon=1.2645951142819338&lat=38.93060947077588&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62066 - "GET /api/thumbnail/finca_00408?lon=1.2712907645149867&lat=38.93215318859268&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62091 - "GET /api/thumbnail/finca_00476?lon=1.2401785457135222&lat=38.90549007119847&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62096 - "GET /api/thumbnail/finca_00471?lon=1.2402276213924215&lat=38.91216462008315&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62102 - "GET /api/thumbnail/finca_00484?lon=1.235608815171595&lat=38.902212305589714&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62107 - "GET /api/thumbnail/finca_00243?lon=1.2461607&lat=38.8940947&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62107 - "GET /api/thumbnail/finca_00479?lon=1.2323212847481095&lat=38.90126698557473&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62133 - "GET /api/thumbnail/finca_00470?lon=1.2405001081939542&lat=38.91244242868374&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62135 - "GET /api/thumbnail/finca_00049?lon=1.2598401036303624&lat=38.90992992994281&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62138 - "GET /api/thumbnail/finca_00602?lon=1.2769173287687265&lat=38.9028155368095&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62138 - "GET /api/thumbnail/finca_00620?lon=1.2890079668123338&lat=38.89622665010929&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62138 - "GET /api/thumbnail/finca_00204?lon=1.29873835&lat=38.8878011&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62143 - "GET /api/thumbnail/finca_00218?lon=1.28480625&lat=38.8832986&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62143 - "GET /api/thumbnail/finca_00217?lon=1.2886127&lat=38.88291175000001&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62143 - "GET /api/thumbnail/finca_00208?lon=1.2954033684174608&lat=38.88308624754027&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62151 - "GET /api/thumbnail/finca_00607?lon=1.2785405837204762&lat=38.89739040917796&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62151 - "GET /api/thumbnail/finca_00088?lon=1.26379125&lat=38.9020294&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62157 - "GET /api/thumbnail/finca_00328?lon=1.274604165862659&lat=38.88595889872941&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62157 - "GET /api/thumbnail/finca_00242?lon=1.28116325&lat=38.8889944&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62161 - "GET /api/thumbnail/finca_00484?lon=1.235608815171595&lat=38.902212305589714&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:62187 - "GET /api/thumbnail/finca_00503?lon=1.2645951142819338&lat=38.93060947077588&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'check_correlation.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [7315]
-INFO:     Started server process [8404]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'analyze_red_fincas.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [8404]
-INFO:     Started server process [8546]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'backend/satellite/ndvi_score_only.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [8546]
-INFO:     Started server process [8711]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'test_corrected_algorithm.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [8711]
-INFO:     Started server process [8849]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'scripts/recalculate_scores.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [8849]
-INFO:     Started server process [9193]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'backend/satellite/ndvi_score_only.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [9193]
-INFO:     Started server process [10172]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'backend/satellite/ndvi_score_only.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [10172]
-INFO:     Started server process [10178]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'backend/satellite/ndvi_score_only.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [10178]
-INFO:     Started server process [10187]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'backend/satellite/ndvi_score_only.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [10187]
-INFO:     Started server process [10192]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'scripts/apply_realistic_algorithm.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [10192]
-INFO:     Started server process [10317]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'scripts/apply_realistic_algorithm.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [10317]
-INFO:     Started server process [10323]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'scripts/generate_frontend_data.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [10323]
-INFO:     Started server process [10940]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'backend/satellite/ndvi_score_only.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [10940]
-INFO:     Started server process [11059]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     127.0.0.1:63238 - "GET /api/thumbnail/finca_00394?lon=1.2762025&lat=38.93248385&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63249 - "GET /api/thumbnail/finca_00530?lon=1.2652033492550214&lat=38.92467607664325&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63260 - "GET /api/thumbnail/finca_00501?lon=1.2640532563870128&lat=38.926461791967014&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63270 - "GET /api/thumbnail/finca_00143?lon=1.251876535430785&lat=38.918963833333336&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63291 - "GET /api/thumbnail/finca_00465?lon=1.239012258089271&lat=38.91187162193739&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63291 - "GET /api/thumbnail/finca_00464?lon=1.2392956942791877&lat=38.91158330576372&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63298 - "GET /api/thumbnail/finca_00472?lon=1.2428656210809421&lat=38.90932434633283&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63298 - "GET /api/thumbnail/finca_00487?lon=1.2194740066177627&lat=38.90370274966298&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63308 - "GET /api/thumbnail/finca_00367?lon=1.2307750166216267&lat=38.894484049586005&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63308 - "GET /api/thumbnail/finca_00371?lon=1.2175318515935092&lat=38.89800133670365&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63321 - "GET /api/thumbnail/finca_00370?lon=1.2175582502834938&lat=38.897711705239026&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63321 - "GET /api/thumbnail/finca_00369?lon=1.2175239825396271&lat=38.895290690303526&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63335 - "GET /api/thumbnail/finca_00297?lon=1.237001917652814&lat=38.88442573174815&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63341 - "GET /api/thumbnail/finca_00308?lon=1.263533&lat=38.87977455&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63341 - "GET /api/thumbnail/finca_00331?lon=1.2635143578216868&lat=38.885739916349664&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63357 - "GET /api/thumbnail/finca_00324?lon=1.260999&lat=38.87251425&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63362 - "GET /api/thumbnail/finca_00320?lon=1.258881061827487&lat=38.87036234410466&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63367 - "GET /api/thumbnail/finca_00486?lon=1.2183034331224796&lat=38.904012131647235&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63370 - "GET /api/thumbnail/finca_00458?lon=1.23758835&lat=38.9070206&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63370 - "GET /api/thumbnail/finca_00461?lon=1.2423653800271541&lat=38.906925910611704&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63374 - "GET /api/thumbnail/finca_00462?lon=1.2448888994696619&lat=38.908582153263424&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:63398 - "GET /api/thumbnail/finca_00465?lon=1.239012258089271&lat=38.91187162193739&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64233 - "GET /api/thumbnail/finca_00472?lon=1.2428656210809421&lat=38.90932434633283&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64242 - "GET /api/thumbnail/finca_00367?lon=1.2307750166216267&lat=38.894484049586005&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64244 - "GET /api/thumbnail/finca_00369?lon=1.2175239825396271&lat=38.895290690303526&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64248 - "GET /api/thumbnail/finca_00371?lon=1.2175318515935092&lat=38.89800133670365&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64255 - "GET /api/thumbnail/finca_00484?lon=1.235608815171595&lat=38.902212305589714&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64262 - "GET /api/thumbnail/finca_00476?lon=1.2401785457135222&lat=38.90549007119847&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64264 - "GET /api/thumbnail/finca_00478?lon=1.2454273809494005&lat=38.91023192285472&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64267 - "GET /api/thumbnail/finca_00463?lon=1.243593481526326&lat=38.91200525249964&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64267 - "GET /api/thumbnail/finca_00470?lon=1.2405001081939542&lat=38.91244242868374&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64272 - "GET /api/thumbnail/finca_00338?lon=1.2646650030763373&lat=38.887638729022385&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64278 - "GET /api/thumbnail/finca_00487?lon=1.2194740066177627&lat=38.90370274966298&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64280 - "GET /api/thumbnail/finca_00457?lon=1.237062007293516&lat=38.90466620224877&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64282 - "GET /api/thumbnail/finca_00320?lon=1.258881061827487&lat=38.87036234410466&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64414 - "GET /api/thumbnail/finca_00501?lon=1.2640532563870128&lat=38.926461791967014&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64418 - "GET /api/thumbnail/finca_00510?lon=1.2593776636018759&lat=38.92876007493615&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64418 - "GET /api/thumbnail/finca_00141?lon=1.2513005338307455&lat=38.919546629448405&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64431 - "GET /api/thumbnail/finca_00142?lon=1.2513480458560806&lat=38.92061525652032&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64431 - "GET /api/thumbnail/finca_00467?lon=1.241756531231936&lat=38.91303599602849&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64439 - "GET /api/thumbnail/finca_00296?lon=1.23783055&lat=38.8845393&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64439 - "GET /api/thumbnail/finca_00358?lon=1.2507726985142495&lat=38.88223786502409&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64439 - "GET /api/thumbnail/finca_00327?lon=1.2655694&lat=38.8834265&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64439 - "GET /api/thumbnail/finca_00338?lon=1.2646650030763373&lat=38.887638729022385&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64444 - "GET /api/thumbnail/finca_00483?lon=1.2349347121504544&lat=38.90078814005589&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64447 - "GET /api/thumbnail/finca_00491?lon=1.2354152607186188&lat=38.929874669129894&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64447 - "GET /api/thumbnail/finca_00492?lon=1.2351413673631844&lat=38.93002349725365&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64497 - "GET /api/thumbnail/finca_00164?lon=1.2755440741520858&lat=38.92704693847473&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64497 - "GET /api/thumbnail/finca_00162?lon=1.273454329505241&lat=38.92699115732293&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64517 - "GET /api/thumbnail/finca_00161?lon=1.2811015360360403&lat=38.92300587931444&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64519 - "GET /api/thumbnail/finca_00052?lon=1.28595935&lat=38.919384&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64526 - "GET /api/thumbnail/finca_00047?lon=1.2655533554862133&lat=38.91432188315459&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64737 - "GET /api/thumbnail/finca_00518?lon=1.266193&lat=38.93040365&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64739 - "GET /api/thumbnail/finca_00509?lon=1.2586814590245123&lat=38.93004802559341&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64741 - "GET /api/thumbnail/finca_00496?lon=1.2516576814434317&lat=38.93547399929689&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64985 - "GET /api/thumbnail/finca_00500?lon=1.2553401307395469&lat=38.929784421882836&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64985 - "GET /api/thumbnail/finca_00498?lon=1.2463824627502533&lat=38.93058451680669&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64985 - "GET /api/thumbnail/finca_00493?lon=1.23666345&lat=38.93067065&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64989 - "GET /api/thumbnail/finca_00497?lon=1.2488598&lat=38.9345972&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64989 - "GET /api/thumbnail/finca_00521?lon=1.255351701507049&lat=38.93765335031034&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64989 - "GET /api/thumbnail/finca_00176?lon=1.2443593201073517&lat=38.94188939544524&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64996 - "GET /api/thumbnail/finca_00178?lon=1.2385607511082486&lat=38.944937483063974&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:64996 - "GET /api/thumbnail/finca_00581?lon=1.2547929&lat=38.94813545&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:65012 - "GET /api/thumbnail/finca_00391?lon=1.2749271&lat=38.95274045&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:65012 - "GET /api/thumbnail/finca_00386?lon=1.276762075425017&lat=38.95191466366344&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:65016 - "GET /api/thumbnail/finca_00399?lon=1.2754609685426266&lat=38.935525395734125&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:65027 - "GET /api/thumbnail/finca_00255?lon=1.2782240627985582&lat=38.956459158340024&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:65027 - "GET /api/thumbnail/finca_00258?lon=1.2790326687511728&lat=38.95733976526016&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:65027 - "GET /api/thumbnail/finca_00261?lon=1.263015465028499&lat=38.957581632806736&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:65080 - "GET /api/thumbnail/finca_00167?lon=1.28337495&lat=38.92734125&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49327 - "GET /api/thumbnail/finca_00434?lon=1.2794482633269133&lat=38.93206152939876&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49451 - "GET /api/thumbnail/finca_00034?lon=1.2743130231001922&lat=38.92145887242816&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49471 - "GET /api/thumbnail/finca_00044?lon=1.267838784244661&lat=38.91631215716327&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49505 - "GET /api/thumbnail/finca_00435?lon=1.2857755027435702&lat=38.939919964155756&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49620 - "GET /api/thumbnail/finca_00512?lon=1.2606605&lat=38.9283312&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49620 - "GET /api/thumbnail/finca_00508?lon=1.2582452203286254&lat=38.92993902884548&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49620 - "GET /api/thumbnail/finca_00506?lon=1.26062865&lat=38.9318661&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49620 - "GET /api/thumbnail/finca_00520?lon=1.2560170826799306&lat=38.93650120527492&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49620 - "GET /api/thumbnail/finca_00497?lon=1.2488598&lat=38.9345972&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49625 - "GET /api/thumbnail/finca_00494?lon=1.2401176765072466&lat=38.933317255353046&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49625 - "GET /api/thumbnail/finca_00490?lon=1.2300635534919517&lat=38.92818144794485&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49634 - "GET /api/thumbnail/finca_00174?lon=1.2456916907324453&lat=38.94131757044844&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49634 - "GET /api/thumbnail/finca_00176?lon=1.2443593201073517&lat=38.94188939544524&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49634 - "GET /api/thumbnail/finca_00592?lon=1.2441053893342502&lat=38.944292063408106&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49695 - "GET /api/thumbnail/finca_00515?lon=1.2661578869560453&lat=38.931634958822954&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49695 - "GET /api/thumbnail/finca_00505?lon=1.2604711866233143&lat=38.932188253708645&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49698 - "GET /api/thumbnail/finca_00493?lon=1.23666345&lat=38.93067065&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49913 - "GET /api/thumbnail/finca_00348?lon=1.2445977063234628&lat=38.8877088776395&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:49913 - "GET /api/thumbnail/finca_00326?lon=1.26033964324761&lat=38.87863201922273&width=280&height=200&scale=2 HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'venv/lib/python3.11/site-packages/numpy/conftest.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [11059]
-Process SpawnProcess-23:
-Traceback (most recent call last):
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
-    self.run()
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
-    target(sockets=sockets)
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/uvicorn/server.py", line 61, in run
-    return asyncio.run(self.serve(sockets=sockets))
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/asyncio/runners.py", line 190, in run
-    return runner.run(main)
-           ^^^^^^^^^^^^^^^^
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/asyncio/runners.py", line 118, in run
-    return self._loop.run_until_complete(task)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
-    return future.result()
-           ^^^^^^^^^^^^^^^
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/uvicorn/server.py", line 68, in serve
-    config.load()
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/uvicorn/config.py", line 467, in load
-    self.loaded_app = import_from_string(self.app)
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/uvicorn/importer.py", line 21, in import_from_string
-    module = importlib.import_module(module_str)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/Users/sou/Desktop/Fincalert/backend/api/main.py", line 15, in <module>
-    from ..detection.building_detector import BuildingDetector
-  File "/Users/sou/Desktop/Fincalert/backend/detection/building_detector.py", line 2, in <module>
-    import geopandas as gpd
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/geopandas/__init__.py", line 1, in <module>
-    from geopandas._config import options
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/geopandas/_config.py", line 109, in <module>
-    default_value=_default_use_pygeos(),
-                  ^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/geopandas/_config.py", line 95, in _default_use_pygeos
-    import geopandas._compat as compat
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/geopandas/_compat.py", line 8, in <module>
-    import pandas as pd
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/__init__.py", line 22, in <module>
-    from pandas.compat import is_numpy_dev as _is_numpy_dev  # pyright: ignore # noqa:F401
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/compat/__init__.py", line 25, in <module>
-    from pandas.compat.numpy import (
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/compat/numpy/__init__.py", line 4, in <module>
-    from pandas.util.version import Version
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/util/__init__.py", line 2, in <module>
-    from pandas.util._decorators import (  # noqa:F401
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/util/_decorators.py", line 14, in <module>
-    from pandas._libs.properties import cache_readonly
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/_libs/__init__.py", line 13, in <module>
-    from pandas._libs.interval import Interval
-  File "pandas/_libs/interval.pyx", line 1, in init pandas._libs.interval
-ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
-WARNING:  StatReload detected changes in 'backend/api/main.py'. Reloading...
-Process SpawnProcess-24:
-Traceback (most recent call last):
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
-    self.run()
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
-    target(sockets=sockets)
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/uvicorn/server.py", line 61, in run
-    return asyncio.run(self.serve(sockets=sockets))
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/asyncio/runners.py", line 190, in run
-    return runner.run(main)
-           ^^^^^^^^^^^^^^^^
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/asyncio/runners.py", line 118, in run
-    return self._loop.run_until_complete(task)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
-    return future.result()
-           ^^^^^^^^^^^^^^^
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/uvicorn/server.py", line 68, in serve
-    config.load()
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/uvicorn/config.py", line 467, in load
-    self.loaded_app = import_from_string(self.app)
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/uvicorn/importer.py", line 21, in import_from_string
-    module = importlib.import_module(module_str)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/Users/sou/Desktop/Fincalert/backend/api/main.py", line 15, in <module>
-    from ..detection.building_detector import BuildingDetector
-  File "/Users/sou/Desktop/Fincalert/backend/detection/building_detector.py", line 2, in <module>
-    import geopandas as gpd
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/geopandas/__init__.py", line 1, in <module>
-    from geopandas._config import options
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/geopandas/_config.py", line 109, in <module>
-    default_value=_default_use_pygeos(),
-                  ^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/geopandas/_config.py", line 95, in _default_use_pygeos
-    import geopandas._compat as compat
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/geopandas/_compat.py", line 8, in <module>
-    import pandas as pd
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/__init__.py", line 22, in <module>
-    from pandas.compat import is_numpy_dev as _is_numpy_dev  # pyright: ignore # noqa:F401
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/compat/__init__.py", line 25, in <module>
-    from pandas.compat.numpy import (
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/compat/numpy/__init__.py", line 4, in <module>
-    from pandas.util.version import Version
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/util/__init__.py", line 2, in <module>
-    from pandas.util._decorators import (  # noqa:F401
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/util/_decorators.py", line 14, in <module>
-    from pandas._libs.properties import cache_readonly
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/_libs/__init__.py", line 13, in <module>
-    from pandas._libs.interval import Interval
-  File "pandas/_libs/interval.pyx", line 1, in init pandas._libs.interval
-ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
-WARNING:  StatReload detected changes in 'backend/api/main.py'. Reloading...
-Process SpawnProcess-25:
-Traceback (most recent call last):
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
-    self.run()
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
-    target(sockets=sockets)
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/uvicorn/server.py", line 61, in run
-    return asyncio.run(self.serve(sockets=sockets))
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/asyncio/runners.py", line 190, in run
-    return runner.run(main)
-           ^^^^^^^^^^^^^^^^
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/asyncio/runners.py", line 118, in run
-    return self._loop.run_until_complete(task)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
-    return future.result()
-           ^^^^^^^^^^^^^^^
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/uvicorn/server.py", line 68, in serve
-    config.load()
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/uvicorn/config.py", line 467, in load
-    self.loaded_app = import_from_string(self.app)
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/uvicorn/importer.py", line 21, in import_from_string
-    module = importlib.import_module(module_str)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/Users/sou/Desktop/Fincalert/backend/api/main.py", line 15, in <module>
-    from ..detection.building_detector import BuildingDetector
-  File "/Users/sou/Desktop/Fincalert/backend/detection/building_detector.py", line 2, in <module>
-    import geopandas as gpd
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/geopandas/__init__.py", line 1, in <module>
-    from geopandas._config import options
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/geopandas/_config.py", line 109, in <module>
-    default_value=_default_use_pygeos(),
-                  ^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/geopandas/_config.py", line 95, in _default_use_pygeos
-    import geopandas._compat as compat
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/geopandas/_compat.py", line 8, in <module>
-    import pandas as pd
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/__init__.py", line 22, in <module>
-    from pandas.compat import is_numpy_dev as _is_numpy_dev  # pyright: ignore # noqa:F401
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/compat/__init__.py", line 25, in <module>
-    from pandas.compat.numpy import (
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/compat/numpy/__init__.py", line 4, in <module>
-    from pandas.util.version import Version
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/util/__init__.py", line 2, in <module>
-    from pandas.util._decorators import (  # noqa:F401
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/util/_decorators.py", line 14, in <module>
-    from pandas._libs.properties import cache_readonly
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/_libs/__init__.py", line 13, in <module>
-    from pandas._libs.interval import Interval
-  File "pandas/_libs/interval.pyx", line 1, in init pandas._libs.interval
-ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
-WARNING:  StatReload detected changes in 'backend/api/main.py'. Reloading...
-Process SpawnProcess-26:
-Traceback (most recent call last):
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
-    self.run()
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/multiprocessing/process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/uvicorn/_subprocess.py", line 76, in subprocess_started
-    target(sockets=sockets)
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/uvicorn/server.py", line 61, in run
-    return asyncio.run(self.serve(sockets=sockets))
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/asyncio/runners.py", line 190, in run
-    return runner.run(main)
-           ^^^^^^^^^^^^^^^^
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/asyncio/runners.py", line 118, in run
-    return self._loop.run_until_complete(task)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
-    return future.result()
-           ^^^^^^^^^^^^^^^
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/uvicorn/server.py", line 68, in serve
-    config.load()
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/uvicorn/config.py", line 467, in load
-    self.loaded_app = import_from_string(self.app)
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/uvicorn/importer.py", line 21, in import_from_string
-    module = importlib.import_module(module_str)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/.pyenv/versions/3.11.5/lib/python3.11/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
-  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
-  File "/Users/sou/Desktop/Fincalert/backend/api/main.py", line 15, in <module>
-    from ..detection.building_detector import BuildingDetector
-  File "/Users/sou/Desktop/Fincalert/backend/detection/building_detector.py", line 2, in <module>
-    import geopandas as gpd
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/geopandas/__init__.py", line 1, in <module>
-    from geopandas._config import options
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/geopandas/_config.py", line 109, in <module>
-    default_value=_default_use_pygeos(),
-                  ^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/geopandas/_config.py", line 95, in _default_use_pygeos
-    import geopandas._compat as compat
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/geopandas/_compat.py", line 8, in <module>
-    import pandas as pd
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/__init__.py", line 22, in <module>
-    from pandas.compat import is_numpy_dev as _is_numpy_dev  # pyright: ignore # noqa:F401
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/compat/__init__.py", line 25, in <module>
-    from pandas.compat.numpy import (
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/compat/numpy/__init__.py", line 4, in <module>
-    from pandas.util.version import Version
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/util/__init__.py", line 2, in <module>
-    from pandas.util._decorators import (  # noqa:F401
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/util/_decorators.py", line 14, in <module>
-    from pandas._libs.properties import cache_readonly
-  File "/Users/sou/Desktop/Fincalert/venv/lib/python3.11/site-packages/pandas/_libs/__init__.py", line 13, in <module>
-    from pandas._libs.interval import Interval
-  File "pandas/_libs/interval.pyx", line 1, in init pandas._libs.interval
-ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject
-WARNING:  StatReload detected changes in 'venv/lib/python3.11/site-packages/numpy/conftest.py'. Reloading...
-Creating new Ultralytics Settings v0.0.6 file ✅ 
-View Ultralytics Settings with 'yolo settings' or at '/Users/sou/Library/Application Support/Ultralytics/settings.json'
-Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.
-INFO:     Started server process [17066]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':   0%|          | 0.00/6.25M [00:00<?, ?B/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':   1%|          | 66.1k/6.25M [00:00<00:10, 615kB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':   2%|▏         | 146k/6.25M [00:00<00:08, 714kB/s] Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':   4%|▍         | 258k/6.25M [00:00<00:07, 881kB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':   6%|▌         | 370k/6.25M [00:00<00:06, 934kB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':   8%|▊         | 482k/6.25M [00:00<00:06, 1.00MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':   9%|▉         | 581k/6.25M [00:00<00:06, 954kB/s] Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  11%|█         | 675k/6.25M [00:00<00:06, 899kB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  12%|█▏        | 786k/6.25M [00:00<00:06, 952kB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  14%|█▍        | 921k/6.25M [00:00<00:05, 1.03MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  17%|█▋        | 1.06M/6.25M [00:01<00:04, 1.20MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  19%|█▉        | 1.21M/6.25M [00:01<00:03, 1.33MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  22%|██▏       | 1.40M/6.25M [00:01<00:03, 1.49MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  25%|██▌       | 1.59M/6.25M [00:01<00:03, 1.62MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  28%|██▊       | 1.76M/6.25M [00:01<00:02, 1.67MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  31%|███▏      | 1.96M/6.25M [00:01<00:02, 1.77MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  35%|███▍      | 2.16M/6.25M [00:01<00:02, 1.82MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  38%|███▊      | 2.38M/6.25M [00:01<00:02, 1.92MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  41%|████▏     | 2.59M/6.25M [00:01<00:01, 1.93MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  45%|████▌     | 2.82M/6.25M [00:02<00:01, 2.07MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  49%|████▉     | 3.06M/6.25M [00:02<00:01, 2.15MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  53%|█████▎    | 3.31M/6.25M [00:02<00:01, 2.28MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  57%|█████▋    | 3.57M/6.25M [00:02<00:01, 2.35MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  61%|██████▏   | 3.84M/6.25M [00:02<00:01, 2.42MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  66%|██████▌   | 4.10M/6.25M [00:02<00:00, 2.51MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  70%|██████▉   | 4.34M/6.25M [00:02<00:00, 2.46MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  73%|███████▎  | 4.59M/6.25M [00:02<00:00, 2.47MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  77%|███████▋  | 4.82M/6.25M [00:02<00:00, 2.38MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  81%|████████  | 5.06M/6.25M [00:02<00:00, 2.37MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  85%|████████▍ | 5.28M/6.25M [00:03<00:00, 2.27MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  88%|████████▊ | 5.50M/6.25M [00:03<00:00, 2.13MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  91%|█████████▏| 5.71M/6.25M [00:03<00:00, 2.12MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  95%|█████████▍| 5.92M/6.25M [00:03<00:00, 2.11MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt':  99%|█████████▉| 6.18M/6.25M [00:03<00:00, 2.28MB/s]Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt to 'yolov8n.pt': 100%|██████████| 6.25M/6.25M [00:03<00:00, 1.84MB/s]
-❌ YOLO detection failed for finca_00001: No module named '_lzma'
-INFO:     127.0.0.1:50061 - "GET /api/detection/pools/finca_00001 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57211 - "GET /api/detection/visual-analysis/finca_00025 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57213 - "GET /api/thumbnail/finca_00025?lon=1.28617924283649&lat=38.998689770432605&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57215 - "GET /api/detection/visual-analysis/finca_00026 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57217 - "GET /api/thumbnail/finca_00026?lon=1.290102638112894&lat=39.000605173976595&width=280&height=200&scale=2 HTTP/1.1" 200 OK
 WARNING:  StatReload detected changes in 'backend/detection/yolo_pool_detector.py'. Reloading...
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [17066]
-INFO:     Started server process [19618]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-❌ YOLO detection failed for finca_00001: No module named '_lzma'
-INFO:     127.0.0.1:50092 - "GET /api/detection/pools/finca_00001 HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'backend/api/main.py'. Reloading...
-INFO:     Shutting down
-INFO:     Waiting for application shutdown.
-INFO:     Application shutdown complete.
-INFO:     Finished server process [19618]
-INFO:     Started server process [19690]
+INFO:     Finished server process [57315]
+INFO:     Started server process [64543]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 WARNING:  StatReload detected changes in 'backend/api/main.py'. Reloading...
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [19690]
-INFO:     Started server process [19702]
+INFO:     Finished server process [64543]
+INFO:     Started server process [64553]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:57286 - "GET /api/detection/pools/finca_00026?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57309 - "GET /api/detection/pools/finca_00026?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'backend/detection/yolo_pool_detector.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [64553]
+INFO:     Started server process [66747]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+❌ YOLO detection failed for finca_00026: module 'torchvision' has no attribute 'ops'
+INFO:     127.0.0.1:57364 - "GET /api/detection/pools/finca_00026?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'backend/detection/yolo_pool_detector.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [66747]
+INFO:     Started server process [66971]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:57424 - "GET /api/detection/pools/finca_00026?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'backend/api/main.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [66971]
+INFO:     Started server process [67278]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:57453 - "GET /api/detection/pools/finca_00003?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57457 - "GET /api/detection/pools/finca_00018?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57460 - "GET /api/detection/pools/finca_00019?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57463 - "GET /api/detection/pools/finca_00025?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57467 - "GET /api/detection/pools/finca_00026?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57481 - "GET /api/detection/visual-analysis/finca_00025 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57483 - "GET /api/thumbnail/finca_00025?lon=1.28617924283649&lat=38.998689770432605&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57491 - "GET /api/detection/visual-analysis/finca_00025 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57496 - "GET /api/detection/visual-analysis/finca_00023 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57498 - "GET /api/thumbnail/finca_00023?lon=1.2869175187124595&lat=38.99379975733283&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57496 - "GET /api/detection/visual-analysis/finca_00024 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57498 - "GET /api/thumbnail/finca_00024?lon=1.2896446763160596&lat=38.99284933188857&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57502 - "GET /api/detection/visual-analysis/finca_00028 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57504 - "GET /api/thumbnail/finca_00028?lon=1.2893776&lat=38.9896895&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57502 - "GET /api/detection/visual-analysis/finca_00029 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57504 - "GET /api/thumbnail/finca_00029?lon=1.2892800934401185&lat=38.989591812396434&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57502 - "GET /api/detection/visual-analysis/finca_00001 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57504 - "GET /api/thumbnail/finca_00001?lon=1.289420247014884&lat=38.98929390905781&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57502 - "GET /api/detection/visual-analysis/finca_00027 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57504 - "GET /api/thumbnail/finca_00027?lon=1.2894720587705104&lat=38.98940923620729&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57502 - "GET /api/detection/visual-analysis/finca_00004 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57504 - "GET /api/thumbnail/finca_00004?lon=1.294956620839063&lat=38.98716280051603&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57502 - "GET /api/detection/visual-analysis/finca_00030 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57504 - "GET /api/thumbnail/finca_00030?lon=1.2957301901696214&lat=38.986442525023584&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57502 - "GET /api/detection/visual-analysis/finca_00011 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57504 - "GET /api/thumbnail/finca_00011?lon=1.300051107724236&lat=38.98235705684561&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57502 - "GET /api/detection/visual-analysis/finca_00014 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57504 - "GET /api/thumbnail/finca_00014?lon=1.2984750709216033&lat=38.98024499732465&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57502 - "GET /api/detection/visual-analysis/finca_00013 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57504 - "GET /api/thumbnail/finca_00013?lon=1.298820450863239&lat=38.97918234201123&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57512 - "GET /api/detection/visual-analysis/finca_00006 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57514 - "GET /api/thumbnail/finca_00006?lon=1.24062985&lat=38.9670041&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57512 - "GET /api/detection/visual-analysis/finca_00007 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57514 - "GET /api/thumbnail/finca_00007?lon=1.2397571312718674&lat=38.96911844898131&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57512 - "GET /api/detection/visual-analysis/finca_00010 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57514 - "GET /api/thumbnail/finca_00010?lon=1.2230034348014984&lat=38.957351177225824&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57512 - "GET /api/detection/visual-analysis/finca_00009 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57514 - "GET /api/thumbnail/finca_00009?lon=1.2193455740942585&lat=38.959414411092915&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57512 - "GET /api/detection/visual-analysis/finca_00008 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57514 - "GET /api/thumbnail/finca_00008?lon=1.2172234135487694&lat=38.95859535305308&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57512 - "GET /api/detection/visual-analysis/finca_00002 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57514 - "GET /api/thumbnail/finca_00002?lon=1.2367587116397556&lat=38.939295555878665&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57512 - "GET /api/detection/visual-analysis/finca_00005 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57514 - "GET /api/thumbnail/finca_00005?lon=1.2421863018699784&lat=38.93960783393726&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57518 - "GET /api/detection/visual-analysis/finca_00017 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57520 - "GET /api/thumbnail/finca_00017?lon=1.2979226744251&lat=39.0084000690982&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57518 - "GET /api/detection/visual-analysis/finca_00018 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57520 - "GET /api/thumbnail/finca_00018?lon=1.295875612987999&lat=39.00732826982141&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57518 - "GET /api/detection/visual-analysis/finca_00020 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57520 - "GET /api/thumbnail/finca_00020?lon=1.2968577445551368&lat=39.005421311915526&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57518 - "GET /api/detection/visual-analysis/finca_00021 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57520 - "GET /api/thumbnail/finca_00021?lon=1.2970512246109684&lat=39.00494752376887&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57518 - "GET /api/detection/visual-analysis/finca_00019 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57520 - "GET /api/thumbnail/finca_00019?lon=1.2965081576182846&lat=39.0052460231151&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57539 - "GET /api/detection/visual-analysis/finca_00021 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57541 - "GET /api/thumbnail/finca_00021?lon=1.2970512246109684&lat=39.00494752376887&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57539 - "GET /api/detection/visual-analysis/finca_00017 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57539 - "GET /api/detection/visual-analysis/finca_00018 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57539 - "GET /api/detection/visual-analysis/finca_00022 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57541 - "GET /api/thumbnail/finca_00022?lon=1.29484675&lat=39.0047387&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57539 - "GET /api/detection/visual-analysis/finca_00026 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57541 - "GET /api/thumbnail/finca_00026?lon=1.290102638112894&lat=39.000605173976595&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'backend/detection/yolo_pool_detector.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [67278]
+INFO:     Started server process [67705]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'backend/detection/yolo_pool_detector.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [67705]
+INFO:     Started server process [67724]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 WARNING:  StatReload detected changes in 'backend/api/main.py'. Reloading...
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [19702]
-INFO:     Started server process [19708]
+INFO:     Finished server process [67724]
+INFO:     Started server process [67726]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
+INFO:     127.0.0.1:57586 - "GET /api/detection/visual-analysis/finca_00025 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57586 - "GET /api/detection/visual-analysis/finca_00022 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57586 - "GET /api/detection/visual-analysis/finca_00019 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57586 - "GET /api/detection/visual-analysis/finca_00020 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57592 - "GET /api/thumbnail/finca_00020?lon=1.2968577445551368&lat=39.005421311915526&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57586 - "GET /api/detection/visual-analysis/finca_00021 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57592 - "GET /api/thumbnail/finca_00021?lon=1.2970512246109684&lat=39.00494752376887&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57586 - "GET /api/detection/visual-analysis/finca_00018 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57613 - "GET /api/detection/pools/finca_00019?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57619 - "GET /api/detection/pools/finca_00025?use_mapbox=true&demo=false HTTP/1.1" 200 OK
 WARNING:  StatReload detected changes in 'backend/api/main.py'. Reloading...
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [19708]
-INFO:     Started server process [19717]
+INFO:     Finished server process [67726]
+INFO:     Started server process [68012]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'backend/api/main.py'. Reloading...
+INFO:     127.0.0.1:57670 - "GET /api/detection/visual-analysis/finca_00023 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57672 - "GET /api/thumbnail/finca_00023?lon=1.2869175187124595&lat=38.99379975733283&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57670 - "GET /api/detection/visual-analysis/finca_00023 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57670 - "GET /api/detection/visual-analysis/finca_00023 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57670 - "GET /api/detection/visual-analysis/finca_00023 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57670 - "GET /api/detection/visual-analysis/finca_00023 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57675 - "GET /api/detection/visual-analysis/finca_00004 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57677 - "GET /api/thumbnail/finca_00004?lon=1.294956620839063&lat=38.98716280051603&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57675 - "GET /api/detection/visual-analysis/finca_00004 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57675 - "GET /api/detection/visual-analysis/finca_00004 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57682 - "GET /api/detection/visual-analysis/finca_00030 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57684 - "GET /api/thumbnail/finca_00030?lon=1.2957301901696214&lat=38.986442525023584&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57725 - "GET /api/detection/visual-analysis/finca_00015 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57727 - "GET /api/thumbnail/finca_00015?lon=1.299847518827737&lat=38.9798015562826&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57745 - "GET /api/detection/visual-analysis/finca_00016 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57747 - "GET /api/thumbnail/finca_00016?lon=1.2999920173827089&lat=38.979791167190896&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57757 - "GET /api/detection/visual-analysis/finca_00015 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57771 - "GET /api/detection/visual-analysis/finca_00014 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57773 - "GET /api/thumbnail/finca_00014?lon=1.2984750709216033&lat=38.98024499732465&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57784 - "GET /api/detection/visual-analysis/finca_00012 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57786 - "GET /api/thumbnail/finca_00012?lon=1.2986559212159599&lat=38.9792077256264&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57784 - "GET /api/detection/visual-analysis/finca_00013 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57786 - "GET /api/thumbnail/finca_00013?lon=1.298820450863239&lat=38.97918234201123&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'scripts/generate_pool_overlays.py'. Reloading...
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [19717]
-INFO:     Started server process [19719]
+INFO:     Finished server process [68012]
+INFO:     Started server process [68410]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'backend/api/main.py'. Reloading...
+INFO:     127.0.0.1:57810 - "GET /api/detection/visual-analysis/finca_00007 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57812 - "GET /api/thumbnail/finca_00007?lon=1.2397571312718674&lat=38.96911844898131&width=280&height=200&scale=2 HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'backend/detection/yolo_pool_detector.py'. Reloading...
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [19719]
-INFO:     Started server process [19723]
+INFO:     Finished server process [68410]
+INFO:     Started server process [68516]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'backend/api/main.py'. Reloading...
+INFO:     127.0.0.1:57881 - "GET /api/detection/pools/finca_00003?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57886 - "GET /api/detection/pools/finca_00018?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57889 - "GET /api/detection/pools/finca_00019?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57893 - "GET /api/detection/pools/finca_00025?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57897 - "GET /api/detection/pools/finca_00026?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'backend/detection/yolo_pool_detector.py'. Reloading...
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [19723]
-INFO:     Started server process [19727]
+INFO:     Finished server process [68516]
+INFO:     Started server process [69156]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-WARNING:  StatReload detected changes in 'backend/api/main.py'. Reloading...
+WARNING:  StatReload detected changes in 'backend/detection/yolo_pool_detector.py'. Reloading...
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [19727]
-INFO:     Started server process [19732]
+INFO:     Finished server process [69156]
+INFO:     Started server process [69249]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     127.0.0.1:50134 - "GET /api/detection/pools/finca_00001 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50136 - "GET /api/detection/visual-analysis/finca_00001 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50139 - "GET /api/detection/visual-analysis/finca_00125 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:50141 - "GET /api/detection/visual-analysis/finca_00200 HTTP/1.1" 200 OK
-WARNING:  StatReload detected changes in 'backend/api/main.py'. Reloading...
+INFO:     127.0.0.1:58154 - "GET /api/detection/pools/finca_00018?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58159 - "GET /api/detection/pools/finca_00019?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58162 - "GET /api/detection/pools/finca_00025?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58166 - "GET /api/detection/pools/finca_00026?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'backend/detection/yolo_pool_detector.py'. Reloading...
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [19732]
-INFO:     Started server process [20317]
+INFO:     Finished server process [69249]
+INFO:     Started server process [69614]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'backend/detection/yolo_pool_detector.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [69614]
+INFO:     Started server process [69938]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:58374 - "GET /api/detection/pools/finca_00018?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58379 - "GET /api/detection/pools/finca_00019?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58382 - "GET /api/detection/pools/finca_00025?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58386 - "GET /api/detection/pools/finca_00026?use_mapbox=true&demo=false HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'backend/detection/yolo_pool_detector.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [69938]
+INFO:     Started server process [70293]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'scripts/batch_pool_detection_all.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [70293]
+INFO:     Started server process [71035]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.

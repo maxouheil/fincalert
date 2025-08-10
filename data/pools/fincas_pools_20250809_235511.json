@@ -1,0 +1,1299 @@
+{
+  "results": [
+    {
+      "finca_id": "finca_00001",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        272,
+        147,
+        486
+      ],
+      "area_px": 10915
+    },
+    {
+      "finca_id": "finca_00002",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        967,
+        251,
+        1216,
+        426
+      ],
+      "area_px": 33577
+    },
+    {
+      "finca_id": "finca_00003",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        1134,
+        909,
+        1216,
+        1169
+      ],
+      "area_px": 15336
+    },
+    {
+      "finca_id": "finca_00004",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        348,
+        672,
+        404,
+        738
+      ],
+      "area_px": 2574
+    },
+    {
+      "finca_id": "finca_00005",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        513,
+        149,
+        856,
+        424
+      ],
+      "area_px": 53435
+    },
+    {
+      "finca_id": "finca_00006",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        343,
+        708,
+        574,
+        1015
+      ],
+      "area_px": 35665
+    },
+    {
+      "finca_id": "finca_00007",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        703,
+        1036,
+        853,
+        1216
+      ],
+      "area_px": 17716
+    },
+    {
+      "finca_id": "finca_00008",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        857,
+        64,
+        1096,
+        170
+      ],
+      "area_px": 16498
+    },
+    {
+      "finca_id": "finca_00009",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        640,
+        710,
+        1020,
+        1053
+      ],
+      "area_px": 72816
+    },
+    {
+      "finca_id": "finca_00010",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        1002,
+        1140,
+        1162,
+        1216
+      ],
+      "area_px": 9058
+    },
+    {
+      "finca_id": "finca_00011",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        1113,
+        269,
+        1216
+      ],
+      "area_px": 11623
+    },
+    {
+      "finca_id": "finca_00012",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        550,
+        223,
+        670,
+        304
+      ],
+      "area_px": 7060
+    },
+    {
+      "finca_id": "finca_00013",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        201,
+        154,
+        321,
+        237
+      ],
+      "area_px": 7075
+    },
+    {
+      "finca_id": "finca_00014",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        793,
+        911,
+        856,
+        964
+      ],
+      "area_px": 2601
+    },
+    {
+      "finca_id": "finca_00015",
+      "pool_detected": false,
+      "state": "unknown",
+      "confidence": 0.0,
+      "bbox": null,
+      "area_px": 0
+    },
+    {
+      "finca_id": "finca_00016",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        978,
+        734,
+        1216,
+        1039
+      ],
+      "area_px": 38681
+    },
+    {
+      "finca_id": "finca_00017",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        64,
+        1216,
+        550
+      ],
+      "area_px": 336863
+    },
+    {
+      "finca_id": "finca_00018",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        218,
+        640,
+        880,
+        1216
+      ],
+      "area_px": 232938
+    },
+    {
+      "finca_id": "finca_00019",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        64,
+        1216,
+        1216
+      ],
+      "area_px": 671112
+    },
+    {
+      "finca_id": "finca_00020",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        64,
+        258,
+        330
+      ],
+      "area_px": 36373
+    },
+    {
+      "finca_id": "finca_00021",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        1100,
+        256,
+        1216
+      ],
+      "area_px": 15929
+    },
+    {
+      "finca_id": "finca_00022",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        939,
+        277,
+        1216,
+        1048
+      ],
+      "area_px": 132009
+    },
+    {
+      "finca_id": "finca_00023",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        140,
+        1045,
+        680,
+        1216
+      ],
+      "area_px": 62192
+    },
+    {
+      "finca_id": "finca_00024",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        64,
+        413,
+        500
+      ],
+      "area_px": 88113
+    },
+    {
+      "finca_id": "finca_00025",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        911,
+        600,
+        1016,
+        735
+      ],
+      "area_px": 10267
+    },
+    {
+      "finca_id": "finca_00026",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        165,
+        785,
+        817,
+        1216
+      ],
+      "area_px": 186541
+    },
+    {
+      "finca_id": "finca_00027",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        866,
+        630,
+        1014,
+        739
+      ],
+      "area_px": 10345
+    },
+    {
+      "finca_id": "finca_00028",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        1134,
+        64,
+        1216,
+        249
+      ],
+      "area_px": 10123
+    },
+    {
+      "finca_id": "finca_00029",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        1080,
+        442,
+        1216
+      ],
+      "area_px": 34907
+    },
+    {
+      "finca_id": "finca_00030",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        103,
+        176,
+        216,
+        243
+      ],
+      "area_px": 5254
+    },
+    {
+      "finca_id": "finca_00031",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        96,
+        121,
+        180,
+        192
+      ],
+      "area_px": 3892
+    },
+    {
+      "finca_id": "finca_00032",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        64,
+        1070,
+        1216
+      ],
+      "area_px": 625279
+    },
+    {
+      "finca_id": "finca_00033",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        308,
+        341,
+        646
+      ],
+      "area_px": 55710
+    },
+    {
+      "finca_id": "finca_00034",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        64,
+        159,
+        203
+      ],
+      "area_px": 10382
+    },
+    {
+      "finca_id": "finca_00035",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        271,
+        154,
+        430
+      ],
+      "area_px": 11186
+    },
+    {
+      "finca_id": "finca_00036",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        972,
+        367,
+        1216
+      ],
+      "area_px": 47321
+    },
+    {
+      "finca_id": "finca_00037",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        64,
+        784,
+        343
+      ],
+      "area_px": 128400
+    },
+    {
+      "finca_id": "finca_00038",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        493,
+        738,
+        775,
+        1087
+      ],
+      "area_px": 63759
+    },
+    {
+      "finca_id": "finca_00039",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        608,
+        481,
+        855
+      ],
+      "area_px": 61626
+    },
+    {
+      "finca_id": "finca_00040",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        1046,
+        160,
+        1216,
+        310
+      ],
+      "area_px": 17231
+    },
+    {
+      "finca_id": "finca_00041",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        841,
+        1074,
+        999,
+        1216
+      ],
+      "area_px": 14368
+    },
+    {
+      "finca_id": "finca_00042",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        1145,
+        766,
+        1216,
+        865
+      ],
+      "area_px": 5614
+    },
+    {
+      "finca_id": "finca_00043",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        697,
+        126,
+        814
+      ],
+      "area_px": 5304
+    },
+    {
+      "finca_id": "finca_00044",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        355,
+        1140,
+        438,
+        1216
+      ],
+      "area_px": 4955
+    },
+    {
+      "finca_id": "finca_00045",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        393,
+        64,
+        632,
+        128
+      ],
+      "area_px": 10892
+    },
+    {
+      "finca_id": "finca_00046",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        701,
+        64,
+        858,
+        197
+      ],
+      "area_px": 15067
+    },
+    {
+      "finca_id": "finca_00047",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        944,
+        799,
+        1216,
+        1103
+      ],
+      "area_px": 47623
+    },
+    {
+      "finca_id": "finca_00048",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        779,
+        1136,
+        860,
+        1216
+      ],
+      "area_px": 3370
+    },
+    {
+      "finca_id": "finca_00049",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        232,
+        521,
+        866
+      ],
+      "area_px": 198381
+    },
+    {
+      "finca_id": "finca_00050",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        74,
+        272,
+        380
+      ],
+      "area_px": 36618
+    },
+    {
+      "finca_id": "finca_00051",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        816,
+        893,
+        1216,
+        1216
+      ],
+      "area_px": 68246
+    },
+    {
+      "finca_id": "finca_00052",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        304,
+        707,
+        473,
+        854
+      ],
+      "area_px": 15657
+    },
+    {
+      "finca_id": "finca_00053",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        1052,
+        160,
+        1216
+      ],
+      "area_px": 11940
+    },
+    {
+      "finca_id": "finca_00054",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        133,
+        78,
+        256,
+        241
+      ],
+      "area_px": 13305
+    },
+    {
+      "finca_id": "finca_00055",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        1024,
+        64,
+        1216,
+        301
+      ],
+      "area_px": 27496
+    },
+    {
+      "finca_id": "finca_00056",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        586,
+        64,
+        1216,
+        628
+      ],
+      "area_px": 213501
+    },
+    {
+      "finca_id": "finca_00057",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        800,
+        64,
+        1216,
+        336
+      ],
+      "area_px": 84989
+    },
+    {
+      "finca_id": "finca_00058",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        980,
+        1094,
+        1216,
+        1216
+      ],
+      "area_px": 18174
+    },
+    {
+      "finca_id": "finca_00059",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        344,
+        310,
+        429,
+        427
+      ],
+      "area_px": 5167
+    },
+    {
+      "finca_id": "finca_00060",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        726,
+        791,
+        936,
+        971
+      ],
+      "area_px": 25221
+    },
+    {
+      "finca_id": "finca_00061",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        790,
+        248,
+        966
+      ],
+      "area_px": 23732
+    },
+    {
+      "finca_id": "finca_00062",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        769,
+        910,
+        1216,
+        1216
+      ],
+      "area_px": 94620
+    },
+    {
+      "finca_id": "finca_00063",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        963,
+        64,
+        1216,
+        272
+      ],
+      "area_px": 37186
+    },
+    {
+      "finca_id": "finca_00064",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        64,
+        726,
+        389
+      ],
+      "area_px": 111432
+    },
+    {
+      "finca_id": "finca_00065",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        802,
+        64,
+        902,
+        120
+      ],
+      "area_px": 4374
+    },
+    {
+      "finca_id": "finca_00066",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        75,
+        64,
+        469,
+        370
+      ],
+      "area_px": 69423
+    },
+    {
+      "finca_id": "finca_00067",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        84,
+        364,
+        462
+      ],
+      "area_px": 69531
+    },
+    {
+      "finca_id": "finca_00068",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        77,
+        984,
+        390,
+        1216
+      ],
+      "area_px": 41930
+    },
+    {
+      "finca_id": "finca_00069",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        778,
+        267,
+        1137
+      ],
+      "area_px": 46878
+    },
+    {
+      "finca_id": "finca_00070",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        774,
+        64,
+        1216,
+        256
+      ],
+      "area_px": 43504
+    },
+    {
+      "finca_id": "finca_00071",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        1124,
+        64,
+        1216,
+        285
+      ],
+      "area_px": 12626
+    },
+    {
+      "finca_id": "finca_00072",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        895,
+        278,
+        1174,
+        531
+      ],
+      "area_px": 40232
+    },
+    {
+      "finca_id": "finca_00073",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        654,
+        428,
+        1216,
+        1216
+      ],
+      "area_px": 222870
+    },
+    {
+      "finca_id": "finca_00074",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        297,
+        977,
+        409,
+        1078
+      ],
+      "area_px": 7375
+    },
+    {
+      "finca_id": "finca_00075",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        912,
+        224,
+        1125
+      ],
+      "area_px": 17927
+    },
+    {
+      "finca_id": "finca_00076",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        134,
+        752,
+        463,
+        968
+      ],
+      "area_px": 47415
+    },
+    {
+      "finca_id": "finca_00077",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        64,
+        1130,
+        1216
+      ],
+      "area_px": 634405
+    },
+    {
+      "finca_id": "finca_00078",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        952,
+        545,
+        1216,
+        758
+      ],
+      "area_px": 37388
+    },
+    {
+      "finca_id": "finca_00079",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        300,
+        308,
+        670,
+        464
+      ],
+      "area_px": 33099
+    },
+    {
+      "finca_id": "finca_00080",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        112,
+        400,
+        367,
+        511
+      ],
+      "area_px": 16067
+    },
+    {
+      "finca_id": "finca_00081",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        1106,
+        75,
+        1216,
+        283
+      ],
+      "area_px": 15180
+    },
+    {
+      "finca_id": "finca_00082",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        779,
+        333,
+        974,
+        495
+      ],
+      "area_px": 22705
+    },
+    {
+      "finca_id": "finca_00083",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        1094,
+        530,
+        1216,
+        872
+      ],
+      "area_px": 26586
+    },
+    {
+      "finca_id": "finca_00084",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        576,
+        64,
+        683,
+        206
+      ],
+      "area_px": 10619
+    },
+    {
+      "finca_id": "finca_00085",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        80,
+        221,
+        292,
+        416
+      ],
+      "area_px": 26636
+    },
+    {
+      "finca_id": "finca_00086",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        612,
+        64,
+        1216,
+        623
+      ],
+      "area_px": 197157
+    },
+    {
+      "finca_id": "finca_00087",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        983,
+        836,
+        1216,
+        1216
+      ],
+      "area_px": 63766
+    },
+    {
+      "finca_id": "finca_00088",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        103,
+        179,
+        227,
+        255
+      ],
+      "area_px": 4801
+    },
+    {
+      "finca_id": "finca_00089",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        509,
+        64,
+        647,
+        184
+      ],
+      "area_px": 8903
+    },
+    {
+      "finca_id": "finca_00090",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        545,
+        950,
+        1091,
+        1216
+      ],
+      "area_px": 83666
+    },
+    {
+      "finca_id": "finca_00091",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        983,
+        903,
+        1216,
+        1216
+      ],
+      "area_px": 46658
+    },
+    {
+      "finca_id": "finca_00092",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        1098,
+        250,
+        1216,
+        544
+      ],
+      "area_px": 22378
+    },
+    {
+      "finca_id": "finca_00093",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        1033,
+        496,
+        1216,
+        780
+      ],
+      "area_px": 33813
+    },
+    {
+      "finca_id": "finca_00094",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        899,
+        1126,
+        1108,
+        1216
+      ],
+      "area_px": 9781
+    },
+    {
+      "finca_id": "finca_00095",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        64,
+        64,
+        461,
+        705
+      ],
+      "area_px": 156793
+    },
+    {
+      "finca_id": "finca_00096",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        949,
+        134,
+        1108,
+        379
+      ],
+      "area_px": 26191
+    },
+    {
+      "finca_id": "finca_00097",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        1052,
+        224,
+        1104,
+        288
+      ],
+      "area_px": 2518
+    },
+    {
+      "finca_id": "finca_00098",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        348,
+        490,
+        1216,
+        1216
+      ],
+      "area_px": 341042
+    },
+    {
+      "finca_id": "finca_00099",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        150,
+        1170,
+        248,
+        1216
+      ],
+      "area_px": 3061
+    },
+    {
+      "finca_id": "finca_00100",
+      "pool_detected": true,
+      "state": "green",
+      "confidence": 0.1,
+      "bbox": [
+        210,
+        767,
+        438,
+        971
+      ],
+      "area_px": 26995
+    }
+  ]
+}

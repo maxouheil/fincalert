@@ -6,6 +6,46 @@ Utilise YOLOv8 + analyse couleur HSV pour classification état piscine
 import cv2
 import numpy as np
 from ultralytics import YOLO
+# Stub torchvision ops.nms if missing to avoid _lzma dependency
+try:
+    import torchvision  # noqa: F401
+    # if ops missing, add simple stub
+    if not hasattr(__import__('torchvision'), 'ops'):
+        raise ImportError
+except Exception:
+    import sys as _sys, types as _types, torch as _torch
+    _parent = _types.ModuleType('torchvision')
+    _ops = _types.ModuleType('torchvision.ops')
+    def _nms(boxes: _torch.Tensor, scores: _torch.Tensor, iou_thres: float):
+        if boxes.numel() == 0:
+            return _torch.empty((0,), dtype=_torch.long)
+        x1, y1, x2, y2 = boxes[:,0], boxes[:,1], boxes[:,2], boxes[:,3]
+        areas = (x2 - x1).clamp(min=0) * (y2 - y1).clamp(min=0)
+        order = scores.argsort(descending=True)
+        keep = []
+        while order.numel() > 0:
+            i = int(order[0])
+            keep.append(i)
+            if order.numel() == 1:
+                break
+            xx1 = _torch.maximum(x1[i], x1[order[1:]])
+            yy1 = _torch.maximum(y1[i], y1[order[1:]])
+            xx2 = _torch.minimum(x2[i], x2[order[1:]])
+            yy2 = _torch.minimum(y2[i], y2[order[1:]])
+            w = (xx2 - xx1).clamp(min=0)
+            h = (yy2 - yy1).clamp(min=0)
+            inter = w * h
+            iou = inter / (areas[i] + areas[order[1:]] - inter + 1e-6)
+            inds = (iou <= iou_thres).nonzero(as_tuple=False).squeeze(1)
+            order = order[inds + 1]
+        return _torch.tensor(keep, dtype=_torch.long)
+    _ops.nms = _nms
+    _parent.ops = _ops
+    _sys.modules['torchvision'] = _parent
+    _sys.modules['torchvision.ops'] = _ops
+    for _name in ['datasets','io','models','transforms','utils','_meta_registrations']:
+        _sys.modules[f'torchvision.{_name}'] = _types.ModuleType(f'torchvision.{_name}')
+import os
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 import requests
@@ -26,11 +66,25 @@ class YOLOPoolDetector:
             model_path: Chemin vers le modèle YOLO (téléchargé automatiquement si nécessaire)
         """
         try:
-            self.model = YOLO(model_path)
-            logger.info(f"✅ YOLO model loaded: {model_path}")
+            preferred = os.environ.get("POOL_MODEL_PATH")
+            fallback = model_path
+            local_trained = os.path.join(os.path.dirname(__file__), "..", "yolo_pools.pt")
+            local_trained = os.path.normpath(local_trained)
+            chosen = preferred or (local_trained if os.path.exists(local_trained) else fallback)
+            self.model = YOLO(chosen)
+            logger.info(f"✅ YOLO model loaded: {chosen}")
         except Exception as e:
             logger.error(f"❌ Failed to load YOLO model: {e}")
             raise
+        # Detection thresholds
+        self.conf_threshold_pool: float = 0.05
+        # Central crop ratio to limit detection area (e.g., 0.7 keeps 70% width/height centered)
+        try:
+            self.crop_ratio: float = float(os.getenv("POOL_CROP_RATIO", "1.0"))
+            if not (0.2 <= self.crop_ratio <= 1.0):
+                self.crop_ratio = 1.0
+        except Exception:
+            self.crop_ratio = 1.0
     
     def detect_pools_from_url(self, image_url: str, finca_id: str = None) -> Dict:
         """
@@ -54,8 +108,31 @@ class YOLOPoolDetector:
             except Exception as img_error:
                 # Fallback si problème avec PIL
                 return self._empty_result(f"Image processing error: {str(img_error)}")
-            
-            return self.detect_pools_from_image(cv_image, finca_id)
+
+            # Optional central crop to reduce detection zone
+            x_off, y_off = 0, 0
+            if self.crop_ratio < 1.0:
+                h, w = cv_image.shape[:2]
+                new_w = max(1, int(w * self.crop_ratio))
+                new_h = max(1, int(h * self.crop_ratio))
+                x_off = (w - new_w) // 2
+                y_off = (h - new_h) // 2
+                cv_image_cropped = cv_image[y_off:y_off+new_h, x_off:x_off+new_w]
+            else:
+                cv_image_cropped = cv_image
+
+            result = self.detect_pools_from_image(cv_image_cropped, finca_id)
+
+            # Shift bboxes back to original image coordinates if cropped
+            if self.crop_ratio < 1.0 and result.get("all_pools"):
+                for p in result["all_pools"]:
+                    bx1, by1, bx2, by2 = p.get("bbox", [0, 0, 0, 0])
+                    p["bbox"] = [bx1 + x_off, by1 + y_off, bx2 + x_off, by2 + y_off]
+            if self.crop_ratio < 1.0:
+                result["crop_ratio"] = self.crop_ratio
+                result["crop_offsets"] = {"x": x_off, "y": y_off}
+
+            return result
             
         except Exception as e:
             logger.error(f"❌ Pool detection failed for {finca_id}: {e}")
@@ -72,7 +149,8 @@ class YOLOPoolDetector:
         """
         try:
             # Prédiction YOLO
-            results = self.model(cv_image, verbose=False)
+            # Run at higher img size for small pools
+            results = self.model.predict(source=cv_image, imgsz=1280, conf=self.conf_threshold_pool, iou=0.6, verbose=False)
             
             pools_detected = []
             
@@ -87,7 +165,7 @@ class YOLOPoolDetector:
                     confidence = float(box.conf[0])
                     
                     # Chercher objets liés aux piscines
-                    if self._is_pool_related(class_name) and confidence > 0.3:
+                    if self._is_pool_related(class_name) and confidence > self.conf_threshold_pool:
                         # Extraire bbox
                         x1, y1, x2, y2 = map(int, box.xyxy[0])
                         
@@ -153,14 +231,17 @@ class YOLOPoolDetector:
         hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
         
         # Masques couleur pour eau
-        # Bleu (eau propre): H=100-130, S=50-255, V=50-255
-        blue_lower = np.array([100, 50, 50])
-        blue_upper = np.array([130, 255, 255])
+        # Bleu (eau propre)
+        blue_lower = np.array([90, 55, 55])
+        blue_upper = np.array([135, 255, 255])
+        # Turquoise/cyan considéré comme bleu
+        cyan_lower = np.array([80, 55, 55])
+        cyan_upper = np.array([95, 255, 255])
         blue_mask = cv2.inRange(hsv, blue_lower, blue_upper)
         
-        # Vert (eau sale/algues): H=40-80, S=50-255, V=50-255  
-        green_lower = np.array([40, 50, 50])
-        green_upper = np.array([80, 255, 255])
+        # Vert (eau sale/algues): resserré 55-75 et plus saturé/lumineux
+        green_lower = np.array([55, 60, 60])
+        green_upper = np.array([75, 255, 255])
         green_mask = cv2.inRange(hsv, green_lower, green_upper)
         
         # Gris/marron (vide/sale): S=0-50, V=30-150
@@ -170,16 +251,27 @@ class YOLOPoolDetector:
         
         # Calculer pourcentages
         total_pixels = roi.shape[0] * roi.shape[1]
-        blue_pct = cv2.countNonZero(blue_mask) / total_pixels
-        green_pct = cv2.countNonZero(green_mask) / total_pixels
+        # Union bleu + turquoise
+        cyan_mask = cv2.inRange(hsv, cyan_lower, cyan_upper)
+        blue_union = cv2.bitwise_or(blue_mask, cyan_mask)
+        blue_cnt = cv2.countNonZero(blue_union)
+        green_cnt = cv2.countNonZero(green_mask)
+        blue_pct = blue_cnt / total_pixels
+        green_pct = green_cnt / total_pixels
         empty_pct = cv2.countNonZero(empty_mask) / total_pixels
+        # Moyenne de teinte sur pixels verts détectés pour éviter le turquoise
+        green_h_mean = None
+        if green_cnt > 0:
+            green_h_mean = float(hsv[..., 0][green_mask > 0].mean())
         
-        # Classification avec seuils
-        if blue_pct > 0.15:  # 15% de pixels bleus
+        # Classification avec seuils (resserrer le vert vs turquoise)
+        # Bleu si dominance marquée ou simplement proportion suffisante
+        if blue_pct >= max(0.08, green_pct * 1.25):
             return {"state": "blue", "confidence": min(1.0, blue_pct * 2)}
-        elif green_pct > 0.10:  # 10% de pixels verts
-            return {"state": "green", "confidence": min(1.0, green_pct * 2.5)}
-        elif empty_pct > 0.20:  # 20% de pixels "vides"
+        # Vert uniquement si suffisamment de pixels verts, dominance nette et teinte bien verte
+        elif green_pct >= 0.12 and green_pct >= blue_pct * 1.25 and (green_h_mean is not None and 58 <= green_h_mean <= 72):
+            return {"state": "green", "confidence": min(1.0, green_pct * 2.0)}
+        elif empty_pct > 0.15:  # 15% de pixels "vides"
             return {"state": "empty", "confidence": min(1.0, empty_pct * 1.5)}
         else:
             # Analyse luminosité moyenne pour piscine couverte/sombre

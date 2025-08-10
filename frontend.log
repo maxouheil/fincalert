@@ -1998,3 +1998,323 @@ No issues found.
 Compiled successfully!
 webpack compiled successfully
 No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/MapView.tsx:121:9
+TS2552: Cannot find name 'isCheckingStreetView'. Did you mean 'checkAllStreetView'?
+    119 |   // Fonction pour vérifier toutes les fincas
+    120 |   const checkAllStreetView = async () => {
+  > 121 |     if (isCheckingStreetView) return;
+        |         ^^^^^^^^^^^^^^^^^^^^
+    122 |     
+    123 |     setIsCheckingStreetView(true);
+    124 |     setStreetViewProgress({ checked: 0, total: fincas.length });
+
+ERROR in src/components/MapView.tsx:123:5
+TS2304: Cannot find name 'setIsCheckingStreetView'.
+    121 |     if (isCheckingStreetView) return;
+    122 |     
+  > 123 |     setIsCheckingStreetView(true);
+        |     ^^^^^^^^^^^^^^^^^^^^^^^
+    124 |     setStreetViewProgress({ checked: 0, total: fincas.length });
+    125 |     
+    126 |     console.log(`🔍 Démarrage vérification Street View pour ${fincas.length} fincas...`);
+
+ERROR in src/components/MapView.tsx:124:5
+TS2304: Cannot find name 'setStreetViewProgress'.
+    122 |     
+    123 |     setIsCheckingStreetView(true);
+  > 124 |     setStreetViewProgress({ checked: 0, total: fincas.length });
+        |     ^^^^^^^^^^^^^^^^^^^^^
+    125 |     
+    126 |     console.log(`🔍 Démarrage vérification Street View pour ${fincas.length} fincas...`);
+    127 |     
+
+ERROR in src/components/MapView.tsx:139:11
+TS2304: Cannot find name 'setStreetViewProgress'.
+    137 |           await checkStreetViewForFinca(finca);
+    138 |           checked++;
+  > 139 |           setStreetViewProgress({ checked, total: fincas.length });
+        |           ^^^^^^^^^^^^^^^^^^^^^
+    140 |         })
+    141 |       );
+    142 |       
+
+ERROR in src/components/MapView.tsx:149:5
+TS2304: Cannot find name 'setIsCheckingStreetView'.
+    147 |     }
+    148 |     
+  > 149 |     setIsCheckingStreetView(false);
+        |     ^^^^^^^^^^^^^^^^^^^^^^^
+    150 |     console.log(`✅ Vérification terminée: ${checked} fincas vérifiées`);
+    151 |   };
+    152 |
+
+ERROR in src/components/MapView.tsx:386:23
+TS2552: Cannot find name 'isCheckingStreetView'. Did you mean 'checkAllStreetView'?
+    384 |           <button
+    385 |             onClick={checkAllStreetView}
+  > 386 |             disabled={isCheckingStreetView}
+        |                       ^^^^^^^^^^^^^^^^^^^^
+    387 |             style={{
+    388 |               padding: '8px 12px',
+    389 |               backgroundColor: isCheckingStreetView ? '#9CA3AF' : '#2563EB',
+
+ERROR in src/components/MapView.tsx:389:32
+TS2552: Cannot find name 'isCheckingStreetView'. Did you mean 'checkAllStreetView'?
+    387 |             style={{
+    388 |               padding: '8px 12px',
+  > 389 |               backgroundColor: isCheckingStreetView ? '#9CA3AF' : '#2563EB',
+        |                                ^^^^^^^^^^^^^^^^^^^^
+    390 |               color: 'white',
+    391 |               border: 'none',
+    392 |               borderRadius: '6px',
+
+ERROR in src/components/MapView.tsx:395:23
+TS2552: Cannot find name 'isCheckingStreetView'. Did you mean 'checkAllStreetView'?
+    393 |               fontSize: '12px',
+    394 |               fontWeight: 600,
+  > 395 |               cursor: isCheckingStreetView ? 'not-allowed' : 'pointer',
+        |                       ^^^^^^^^^^^^^^^^^^^^
+    396 |               whiteSpace: 'nowrap'
+    397 |             }}
+    398 |           >
+
+ERROR in src/components/MapView.tsx:399:14
+TS2552: Cannot find name 'isCheckingStreetView'. Did you mean 'checkAllStreetView'?
+    397 |             }}
+    398 |           >
+  > 399 |             {isCheckingStreetView ? 
+        |              ^^^^^^^^^^^^^^^^^^^^
+    400 |               `Checking... ${streetViewProgress.checked}/${streetViewProgress.total}` : 
+    401 |               'Check All Street View'
+    402 |             }
+
+ERROR in src/components/MapView.tsx:400:30
+TS2304: Cannot find name 'streetViewProgress'.
+    398 |           >
+    399 |             {isCheckingStreetView ? 
+  > 400 |               `Checking... ${streetViewProgress.checked}/${streetViewProgress.total}` : 
+        |                              ^^^^^^^^^^^^^^^^^^
+    401 |               'Check All Street View'
+    402 |             }
+    403 |           </button>
+
+ERROR in src/components/MapView.tsx:400:60
+TS2304: Cannot find name 'streetViewProgress'.
+    398 |           >
+    399 |             {isCheckingStreetView ? 
+  > 400 |               `Checking... ${streetViewProgress.checked}/${streetViewProgress.total}` : 
+        |                                                            ^^^^^^^^^^^^^^^^^^
+    401 |               'Check All Street View'
+    402 |             }
+    403 |           </button>
+
+ERROR in src/components/MapView.tsx:407:10
+TS2552: Cannot find name 'isCheckingStreetView'. Did you mean 'checkAllStreetView'?
+    405 |         
+    406 |         {/* Barre de progression */}
+  > 407 |         {isCheckingStreetView && (
+        |          ^^^^^^^^^^^^^^^^^^^^
+    408 |           <div style={{ 
+    409 |             marginTop: '8px',
+    410 |             backgroundColor: 'rgba(255,255,255,0.9)',
+
+ERROR in src/components/MapView.tsx:416:42
+TS2304: Cannot find name 'streetViewProgress'.
+    414 |           }}>
+    415 |             <div style={{ fontSize: '11px', marginBottom: '4px', color: '#374151' }}>
+  > 416 |               Street View verification: {streetViewProgress.checked}/{streetViewProgress.total}
+        |                                          ^^^^^^^^^^^^^^^^^^
+    417 |             </div>
+    418 |             <div style={{
+    419 |               width: '200px',
+
+ERROR in src/components/MapView.tsx:416:71
+TS2304: Cannot find name 'streetViewProgress'.
+    414 |           }}>
+    415 |             <div style={{ fontSize: '11px', marginBottom: '4px', color: '#374151' }}>
+  > 416 |               Street View verification: {streetViewProgress.checked}/{streetViewProgress.total}
+        |                                                                       ^^^^^^^^^^^^^^^^^^
+    417 |             </div>
+    418 |             <div style={{
+    419 |               width: '200px',
+
+ERROR in src/components/MapView.tsx:426:28
+TS2304: Cannot find name 'streetViewProgress'.
+    424 |             }}>
+    425 |               <div style={{
+  > 426 |                 width: `${(streetViewProgress.checked / streetViewProgress.total) * 100}%`,
+        |                            ^^^^^^^^^^^^^^^^^^
+    427 |                 height: '100%',
+    428 |                 backgroundColor: '#2563EB',
+    429 |                 transition: 'width 0.3s ease'
+
+ERROR in src/components/MapView.tsx:426:57
+TS2304: Cannot find name 'streetViewProgress'.
+    424 |             }}>
+    425 |               <div style={{
+  > 426 |                 width: `${(streetViewProgress.checked / streetViewProgress.total) * 100}%`,
+        |                                                         ^^^^^^^^^^^^^^^^^^
+    427 |                 height: '100%',
+    428 |                 backgroundColor: '#2563EB',
+    429 |                 transition: 'width 0.3s ease'
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+ERROR in src/components/MapView.tsx:355:23
+TS2552: Cannot find name 'isCheckingStreetView'. Did you mean 'checkAllStreetView'?
+    353 |           <button
+    354 |             onClick={checkAllStreetView}
+  > 355 |             disabled={isCheckingStreetView}
+        |                       ^^^^^^^^^^^^^^^^^^^^
+    356 |             style={{
+    357 |               padding: '8px 12px',
+    358 |               backgroundColor: isCheckingStreetView ? '#9CA3AF' : '#2563EB',
+
+ERROR in src/components/MapView.tsx:358:32
+TS2552: Cannot find name 'isCheckingStreetView'. Did you mean 'checkAllStreetView'?
+    356 |             style={{
+    357 |               padding: '8px 12px',
+  > 358 |               backgroundColor: isCheckingStreetView ? '#9CA3AF' : '#2563EB',
+        |                                ^^^^^^^^^^^^^^^^^^^^
+    359 |               color: 'white',
+    360 |               border: 'none',
+    361 |               borderRadius: '6px',
+
+ERROR in src/components/MapView.tsx:364:23
+TS2552: Cannot find name 'isCheckingStreetView'. Did you mean 'checkAllStreetView'?
+    362 |               fontSize: '12px',
+    363 |               fontWeight: 600,
+  > 364 |               cursor: isCheckingStreetView ? 'not-allowed' : 'pointer',
+        |                       ^^^^^^^^^^^^^^^^^^^^
+    365 |               whiteSpace: 'nowrap'
+    366 |             }}
+    367 |           >
+
+ERROR in src/components/MapView.tsx:368:14
+TS2552: Cannot find name 'isCheckingStreetView'. Did you mean 'checkAllStreetView'?
+    366 |             }}
+    367 |           >
+  > 368 |             {isCheckingStreetView ? 
+        |              ^^^^^^^^^^^^^^^^^^^^
+    369 |               `Checking... ${streetViewProgress.checked}/${streetViewProgress.total}` : 
+    370 |               'Check All Street View'
+    371 |             }
+
+ERROR in src/components/MapView.tsx:369:30
+TS2304: Cannot find name 'streetViewProgress'.
+    367 |           >
+    368 |             {isCheckingStreetView ? 
+  > 369 |               `Checking... ${streetViewProgress.checked}/${streetViewProgress.total}` : 
+        |                              ^^^^^^^^^^^^^^^^^^
+    370 |               'Check All Street View'
+    371 |             }
+    372 |           </button>
+
+ERROR in src/components/MapView.tsx:369:60
+TS2304: Cannot find name 'streetViewProgress'.
+    367 |           >
+    368 |             {isCheckingStreetView ? 
+  > 369 |               `Checking... ${streetViewProgress.checked}/${streetViewProgress.total}` : 
+        |                                                            ^^^^^^^^^^^^^^^^^^
+    370 |               'Check All Street View'
+    371 |             }
+    372 |           </button>
+
+ERROR in src/components/MapView.tsx:376:10
+TS2552: Cannot find name 'isCheckingStreetView'. Did you mean 'checkAllStreetView'?
+    374 |         
+    375 |         {/* Barre de progression */}
+  > 376 |         {isCheckingStreetView && (
+        |          ^^^^^^^^^^^^^^^^^^^^
+    377 |           <div style={{ 
+    378 |             marginTop: '8px',
+    379 |             backgroundColor: 'rgba(255,255,255,0.9)',
+
+ERROR in src/components/MapView.tsx:385:42
+TS2304: Cannot find name 'streetViewProgress'.
+    383 |           }}>
+    384 |             <div style={{ fontSize: '11px', marginBottom: '4px', color: '#374151' }}>
+  > 385 |               Street View verification: {streetViewProgress.checked}/{streetViewProgress.total}
+        |                                          ^^^^^^^^^^^^^^^^^^
+    386 |             </div>
+    387 |             <div style={{
+    388 |               width: '200px',
+
+ERROR in src/components/MapView.tsx:385:71
+TS2304: Cannot find name 'streetViewProgress'.
+    383 |           }}>
+    384 |             <div style={{ fontSize: '11px', marginBottom: '4px', color: '#374151' }}>
+  > 385 |               Street View verification: {streetViewProgress.checked}/{streetViewProgress.total}
+        |                                                                       ^^^^^^^^^^^^^^^^^^
+    386 |             </div>
+    387 |             <div style={{
+    388 |               width: '200px',
+
+ERROR in src/components/MapView.tsx:395:28
+TS2304: Cannot find name 'streetViewProgress'.
+    393 |             }}>
+    394 |               <div style={{
+  > 395 |                 width: `${(streetViewProgress.checked / streetViewProgress.total) * 100}%`,
+        |                            ^^^^^^^^^^^^^^^^^^
+    396 |                 height: '100%',
+    397 |                 backgroundColor: '#2563EB',
+    398 |                 transition: 'width 0.3s ease'
+
+ERROR in src/components/MapView.tsx:395:57
+TS2304: Cannot find name 'streetViewProgress'.
+    393 |             }}>
+    394 |               <div style={{
+  > 395 |                 width: `${(streetViewProgress.checked / streetViewProgress.total) * 100}%`,
+        |                                                         ^^^^^^^^^^^^^^^^^^
+    396 |                 height: '100%',
+    397 |                 backgroundColor: '#2563EB',
+    398 |                 transition: 'width 0.3s ease'
+
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.
+Compiling...
+Compiled successfully!
+webpack compiled successfully
+No issues found.

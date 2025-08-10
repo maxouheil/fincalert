@@ -46,6 +46,11 @@ For a complete documentation guide, see `docs/README.md`.
 - **APIs**: Google Street View Static API for availability checking
 - **Data Processing**: Advanced statistical algorithms for vegetation analysis
 
+### Visual Detection (New)
+- **YOLOv8 (Ultralytics)** fine-tuned for swimming pools (Hiro dataset)
+- HSV-based color analysis (blue/green/empty/covered) with thresholds tuned for satellite imagery
+- Torchvision-less NMS fallback to avoid systems missing `lzma`
+
 ## Quick Start
 
 ### Start all servers at once
@@ -95,9 +100,13 @@ Create a `.env` file with:
 MAPBOX_TOKEN=your_mapbox_token
 GEE_SERVICE_ACCOUNT=your_gee_service_account.json
 GOOGLE_STREETVIEW_API_KEY=your_google_api_key
+POOL_MODEL_PATH=backend/yolo_pools.pt
+POOL_CROP_RATIO=0.7  # optional, central crop ratio to tighten detection zone
 ```
 
 **Note**: The Google Street View API key should have the "Street View Static API" enabled for finca availability checking.
+
+For pool detection, if you trained custom weights, point `POOL_MODEL_PATH` to your `.pt` file. `POOL_CROP_RATIO` reduces the detection area around the image center (e.g., 0.7 keeps 70% width/height).
 
 ## Project Structure
 
@@ -110,8 +119,8 @@ fincalert/
 │   │   └── utils/
 ├── backend/            # Python processing scripts
 │   ├── satellite/      # Satellite data processing
-│   ├── detection/      # Building detection
-│   └── api/           # FastAPI endpoints
+│   ├── detection/      # Visual detection (YOLO pools, mobility)
+│   └── api/            # FastAPI endpoints
 └── data/              # GeoJSON and processed data
 ```
 
@@ -124,6 +133,25 @@ fincalert/
 - **Enhanced Popup System**: Redesigned UI with NDVI charts, activity badges, and Street View CTAs
 - **Multi-dimensional Filtering**: Activity status and Street View availability filters
 - **Batch Operations**: "Check All Street View" with progress tracking
+
+### 🏊 Visual Detection (Pools)
+- Added YOLOv8-based pool detector with HSV color classification
+- Turquoise is now classified as blue (clean pool)
+- Configurable central crop (`POOL_CROP_RATIO`, default 0.7) to avoid neighboring properties
+- Larger Mapbox imagery for inference (19–20 zoom, up to 1280x960 @2x)
+- Overlays generator for quick QA on top 30 fincas
+
+Backend endpoints:
+- `GET /api/detection/pools/{finca_id}?use_mapbox=true&demo=false`
+- `GET /api/detection/mobility/{finca_id}?demo=false` (skeleton)
+- `GET /api/detection/visual-analysis/{finca_id}?demo=false` (pools + mobility)
+
+Scripts:
+- `scripts/generate_pool_overlays.py` → crée des overlays bbox/color pour les 30 premières fincas
+- `scripts/batch_pool_detection_all.py` → exécute la détection piscines sur tout le jeu (≈600 fincas) et écrit `data/test_results/pools_full_summary.json`
+
+Notes techniques:
+- Pour contourner les environnements sans module `_lzma`, l’API charge un stub `torchvision` et utilise un NMS PyTorch pur.
 
 ### 📊 Algorithm Improvements:
 - Realistic distribution: ~46% Active, 38% Semi-active, 16% Abandoned
@@ -139,4 +167,4 @@ fincalert/
 ## Development Status
 
 **Current Version**: Enhanced MVP with full NDVI analysis and Street View integration
-**Next Phase**: Advanced analytics dashboard and reporting features
+**Next Phase**: Full visual indicators integration (pools + mobility) dans le frontend et tableau de bord QA

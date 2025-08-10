@@ -1,0 +1,12 @@
+names:
+- swimming pool
+nc: 1
+roboflow:
+  license: MIT
+  project: swimming-pool-8tokb-azudd
+  url: https://universe.roboflow.com/fincalert/swimming-pool-8tokb-azudd/dataset/1
+  version: 1
+  workspace: fincalert
+train: /Users/sou/Desktop/Fincalert/swimming-pool-1/train/images
+val: /Users/sou/Desktop/Fincalert/swimming-pool-1/valid/images
+test: /Users/sou/Desktop/Fincalert/swimming-pool-1/test/images

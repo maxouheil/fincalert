@@ -50,8 +50,7 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
   const [streetViewFilter, setStreetViewFilter] = useState<'all' | 'available' | 'unavailable'>('all');
   const [hasCentered, setHasCentered] = useState(false);
   const [thumbLoaded, setThumbLoaded] = useState(false);
-  const [isCheckingStreetView, setIsCheckingStreetView] = useState(false);
-  const [streetViewProgress, setStreetViewProgress] = useState({ checked: 0, total: 0 });
+  const [top30Only, setTop30Only] = useState(false);
 
   // Reference areas for West Ibiza (approximate centers)
   const referenceAreas = useMemo(
@@ -118,42 +117,18 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
     }
   };
 
-  // Fonction pour vérifier toutes les fincas
-  const checkAllStreetView = async () => {
-    if (isCheckingStreetView) return;
-    
-    setIsCheckingStreetView(true);
-    setStreetViewProgress({ checked: 0, total: fincas.length });
-    
-    console.log(`🔍 Démarrage vérification Street View pour ${fincas.length} fincas...`);
-    
-    let checked = 0;
-    const batchSize = 10; // Traiter par batch de 10 pour éviter de surcharger l'API
-    
-    for (let i = 0; i < fincas.length; i += batchSize) {
-      const batch = fincas.slice(i, i + batchSize);
-      
-      // Traiter le batch en parallèle
-      await Promise.all(
-        batch.map(async (finca) => {
-          await checkStreetViewForFinca(finca);
-          checked++;
-          setStreetViewProgress({ checked, total: fincas.length });
-        })
-      );
-      
-      // Petite pause entre les batches pour éviter le rate limiting
-      if (i + batchSize < fincas.length) {
-        await new Promise(resolve => setTimeout(resolve, 500));
-      }
-    }
-    
-    setIsCheckingStreetView(false);
-    console.log(`✅ Vérification terminée: ${checked} fincas vérifiées`);
-  };
+  // checkAllStreetView désactivé (UI: bouton masqué)
+  const checkAllStreetView = undefined as unknown as () => Promise<void>;
 
   const filteredFincas = useMemo(() => {
     return fincas.filter((f) => {
+      // Top 30 filter (IDs finca_00001..finca_00030)
+      if (top30Only) {
+        const m = /^finca_(\d{5})$/.exec(f.id);
+        if (!m) return false;
+        const n = parseInt(m[1], 10);
+        if (!(n >= 1 && n <= 30)) return false;
+      }
       const area = f.surface_estimee_m2;
       const dist = f.distance_plus_proche_voisin_m;
       const activity = f.activity_status;
@@ -191,7 +166,7 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
 
       return areaOk && distOk && activityOk && streetViewOk;
     });
-  }, [fincas, sizeFilter, nnFilter, activityFilter, streetViewFilter]);
+  }, [fincas, sizeFilter, nnFilter, activityFilter, streetViewFilter, top30Only]);
 
   useEffect(() => {
     if (selected && !filteredFincas.some((f) => f.id === selected.id)) {
@@ -336,6 +311,22 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
       {/* Filters overlay */}
       <div style={{ position: 'absolute', top: 12, left: 12, zIndex: 1 }}>
         <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
+          <button
+            onClick={() => setTop30Only((v) => !v)}
+            aria-pressed={top30Only}
+            title="Afficher uniquement les 30 premières fincas"
+            style={{
+              padding: '6px 10px',
+              borderRadius: 6,
+              border: top30Only ? '2px solid #2563EB' : '1px solid #D1D5DB',
+              background: top30Only ? '#EFF6FF' : '#FFFFFF',
+              fontSize: 12,
+              fontWeight: 600,
+              cursor: 'pointer'
+            }}
+          >
+            Top 30
+          </button>
           <select
             className="filter-select"
             value={sizeFilter}
@@ -382,57 +373,11 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
             <option value="unavailable">🚫 Unavailable</option>
           </select>
           
-          {/* Bouton de vérification Street View */}
-          <button
-            onClick={checkAllStreetView}
-            disabled={isCheckingStreetView}
-            style={{
-              padding: '8px 12px',
-              backgroundColor: isCheckingStreetView ? '#9CA3AF' : '#2563EB',
-              color: 'white',
-              border: 'none',
-              borderRadius: '6px',
-              fontSize: '12px',
-              fontWeight: 600,
-              cursor: isCheckingStreetView ? 'not-allowed' : 'pointer',
-              whiteSpace: 'nowrap'
-            }}
-          >
-            {isCheckingStreetView ? 
-              `Checking... ${streetViewProgress.checked}/${streetViewProgress.total}` : 
-              'Check All Street View'
-            }
-          </button>
+          {/* Bouton Street View (masqué) */}
+          <span style={{ display: 'none' }} />
         </div>
         
-        {/* Barre de progression */}
-        {isCheckingStreetView && (
-          <div style={{ 
-            marginTop: '8px',
-            backgroundColor: 'rgba(255,255,255,0.9)',
-            borderRadius: '8px',
-            padding: '8px',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
-          }}>
-            <div style={{ fontSize: '11px', marginBottom: '4px', color: '#374151' }}>
-              Street View verification: {streetViewProgress.checked}/{streetViewProgress.total}
-            </div>
-            <div style={{
-              width: '200px',
-              height: '4px',
-              backgroundColor: '#E5E7EB',
-              borderRadius: '2px',
-              overflow: 'hidden'
-            }}>
-              <div style={{
-                width: `${(streetViewProgress.checked / streetViewProgress.total) * 100}%`,
-                height: '100%',
-                backgroundColor: '#2563EB',
-                transition: 'width 0.3s ease'
-              }} />
-            </div>
-          </div>
-        )}
+        {/* Barre de progression masquée */}
       </div>
       <Source id="fincas" type="geojson" data={geojson as any}>
         <Layer {...fincaLayer} />
