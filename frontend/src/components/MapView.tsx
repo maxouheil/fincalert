@@ -48,9 +48,31 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
   const [nnFilter, setNnFilter] = useState<'all' | '10to15' | '15to30' | 'lt30' | '30to60' | 'gt60'>('all');
   const [activityFilter, setActivityFilter] = useState<'all' | 'active' | 'semi-active' | 'inactive'>('all');
   const [streetViewFilter, setStreetViewFilter] = useState<'all' | 'available' | 'unavailable'>('all');
+  const [poolFilter, setPoolFilter] = useState<'all' | 'blue' | 'other' | 'none'>('all');
   const [hasCentered, setHasCentered] = useState(false);
   const [thumbLoaded, setThumbLoaded] = useState(false);
   const [top30Only, setTop30Only] = useState(false);
+
+  // Charger pool summary dans un dictionnaire {finca_id -> {pool_detected, best_pool.state}}
+  const [poolSummary, setPoolSummary] = useState<Record<string, { pool_detected: boolean; best_state: string | null }>>({});
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const res = await fetch('/data/pools_full_summary.json');
+        if (!res.ok) return;
+        const arr = await res.json();
+        const map: Record<string, { pool_detected: boolean; best_state: string | null }> = {};
+        for (const item of arr) {
+          const id: string = String(item.finca_id);
+          const detected: boolean = Boolean(item.pool_detected);
+          const state: string | null = item.best_pool?.state ?? null;
+          map[id] = { pool_detected: detected, best_state: state };
+        }
+        setPoolSummary(map);
+      } catch {}
+    };
+    load();
+  }, []);
 
   // Reference areas for West Ibiza (approximate centers)
   const referenceAreas = useMemo(
@@ -164,9 +186,24 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
         }
       }
 
-      return areaOk && distOk && activityOk && streetViewOk;
+      // Filtre piscine basé sur poolSummary
+      let poolOk = true;
+      if (poolFilter !== 'all') {
+        const ps = poolSummary[f.id];
+        const detected = Boolean(ps?.pool_detected);
+        const state = ps?.best_state || null;
+        if (poolFilter === 'blue') {
+          poolOk = detected && state === 'blue';
+        } else if (poolFilter === 'other') {
+          poolOk = detected && state !== 'blue';
+        } else if (poolFilter === 'none') {
+          poolOk = !detected;
+        }
+      }
+
+      return areaOk && distOk && activityOk && streetViewOk && poolOk;
     });
-  }, [fincas, sizeFilter, nnFilter, activityFilter, streetViewFilter, top30Only]);
+  }, [fincas, sizeFilter, nnFilter, activityFilter, streetViewFilter, poolFilter, top30Only, poolSummary]);
 
   useEffect(() => {
     if (selected && !filteredFincas.some((f) => f.id === selected.id)) {
@@ -176,16 +213,21 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
 
   const geojson = useMemo(() => ({
     type: 'FeatureCollection',
-    features: filteredFincas.map((f) => ({
-      type: 'Feature',
-      properties: { 
-        id: f.id,
-        abandon_score: f.abandon_score || 50,
-        activity_status: f.activity_status || 'unknown'
-      },
-      geometry: { type: 'Point', coordinates: [f.lon, f.lat] },
-    })),
-  }), [filteredFincas]);
+    features: filteredFincas.map((f) => {
+      const ps = poolSummary[f.id];
+      return ({
+        type: 'Feature',
+        properties: { 
+          id: f.id,
+          abandon_score: f.abandon_score || 50,
+          activity_status: f.activity_status || 'unknown',
+          pool_detected: Boolean(ps?.pool_detected || false),
+          pool_state: ps?.best_state || null,
+        },
+        geometry: { type: 'Point', coordinates: [f.lon, f.lat] },
+      });
+    }),
+  }), [filteredFincas, poolSummary]);
 
   // Compute geometric center of all fincas for initial centering
   const datasetCenter = useMemo(() => {
@@ -371,6 +413,17 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
             <option value="all">All Street View</option>
             <option value="available">🗺️ Available</option>
             <option value="unavailable">🚫 Unavailable</option>
+          </select>
+          <select
+            className="filter-select"
+            value={poolFilter}
+            onChange={(e) => setPoolFilter(e.target.value as 'all' | 'blue' | 'other' | 'none')}
+            aria-label="Filter by pool state"
+          >
+            <option value="all">💦 Pool: All</option>
+            <option value="blue">💙 Pool (blue)</option>
+            <option value="other">💚 Pool (other)</option>
+            <option value="none">∅ No pool</option>
           </select>
           
           {/* Bouton Street View (masqué) */}

@@ -1,0 +1,6706 @@
+[
+  {
+    "finca_id": "finca_00001",
+    "lat": 38.98929390905781,
+    "lon": 1.289420247014884,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00002",
+    "lat": 38.939295555878665,
+    "lon": 1.2367587116397556,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00003",
+    "lat": 38.9872073,
+    "lon": 1.29929085,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.1224682954398124,
+      "area_pixels": 25773,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00004",
+    "lat": 38.98716280051603,
+    "lon": 1.294956620839063,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00005",
+    "lat": 38.93960783393726,
+    "lon": 1.2421863018699784,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00006",
+    "lat": 38.9670041,
+    "lon": 1.24062985,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00007",
+    "lat": 38.96911844898131,
+    "lon": 1.2397571312718674,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00008",
+    "lat": 38.95859535305308,
+    "lon": 1.2172234135487694,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00009",
+    "lat": 38.959414411092915,
+    "lon": 1.2193455740942585,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00010",
+    "lat": 38.957351177225824,
+    "lon": 1.2230034348014984,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00011",
+    "lat": 38.98235705684561,
+    "lon": 1.300051107724236,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.41894325613975525,
+      "area_pixels": 48984,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00012",
+    "lat": 38.9792077256264,
+    "lon": 1.2986559212159599,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00013",
+    "lat": 38.97918234201123,
+    "lon": 1.298820450863239,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00014",
+    "lat": 38.98024499732465,
+    "lon": 1.2984750709216033,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00015",
+    "lat": 38.9798015562826,
+    "lon": 1.299847518827737,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00016",
+    "lat": 38.979791167190896,
+    "lon": 1.2999920173827089,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00017",
+    "lat": 39.0084000690982,
+    "lon": 1.2979226744251,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00018",
+    "lat": 39.00732826982141,
+    "lon": 1.295875612987999,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.2704618275165558,
+      "area_pixels": 22325,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00019",
+    "lat": 39.0052460231151,
+    "lon": 1.2965081576182846,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.06343475742878751,
+      "area_pixels": 57960,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00020",
+    "lat": 39.005421311915526,
+    "lon": 1.2968577445551368,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.08894652873277664,
+      "area_pixels": 38778,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00021",
+    "lat": 39.00494752376887,
+    "lon": 1.2970512246109684,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00022",
+    "lat": 39.0047387,
+    "lon": 1.29484675,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.052068893105591284,
+      "area_pixels": 26536,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00023",
+    "lat": 38.99379975733283,
+    "lon": 1.2869175187124595,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00024",
+    "lat": 38.99284933188857,
+    "lon": 1.2896446763160596,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00025",
+    "lat": 38.998689770432605,
+    "lon": 1.28617924283649,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.09131311988636426,
+      "area_pixels": 10807,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00026",
+    "lat": 39.000605173976595,
+    "lon": 1.290102638112894,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.0404758026386208,
+      "area_pixels": 22606,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00027",
+    "lat": 38.98940923620729,
+    "lon": 1.2894720587705104,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00028",
+    "lat": 38.9896895,
+    "lon": 1.2893776,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00029",
+    "lat": 38.989591812396434,
+    "lon": 1.2892800934401185,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00030",
+    "lat": 38.986442525023584,
+    "lon": 1.2957301901696214,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00031",
+    "lat": 38.99448015000001,
+    "lon": 1.2862777,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00032",
+    "lat": 38.994272,
+    "lon": 1.28716665,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00033",
+    "lat": 38.9926746974114,
+    "lon": 1.290039259040556,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00034",
+    "lat": 38.92145887242816,
+    "lon": 1.2743130231001922,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00035",
+    "lat": 38.920758435749846,
+    "lon": 1.2734732794905539,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.03625079093555423,
+      "area_pixels": 10878,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00036",
+    "lat": 38.920951318347804,
+    "lon": 1.2795741554023468,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.25771639464489327,
+      "area_pixels": 32185,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00037",
+    "lat": 38.920115517125765,
+    "lon": 1.2770341114130355,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00038",
+    "lat": 38.92006621665746,
+    "lon": 1.276893700202176,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00039",
+    "lat": 38.91957345,
+    "lon": 1.2761126,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00040",
+    "lat": 38.918622825867615,
+    "lon": 1.2722332318417167,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.3325154483318329,
+      "area_pixels": 19690,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00041",
+    "lat": 38.919005057412555,
+    "lon": 1.2689191602729715,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00042",
+    "lat": 38.91905841631511,
+    "lon": 1.2690398465761894,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00043",
+    "lat": 38.91923944398192,
+    "lon": 1.2699239268474174,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00044",
+    "lat": 38.91631215716327,
+    "lon": 1.267838784244661,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00045",
+    "lat": 38.915512159659784,
+    "lon": 1.2684573583941385,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00046",
+    "lat": 38.91456008457538,
+    "lon": 1.2674711934551794,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00047",
+    "lat": 38.91432188315459,
+    "lon": 1.2655533554862133,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00048",
+    "lat": 38.9108283827158,
+    "lon": 1.2609522885500517,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00049",
+    "lat": 38.90992992994281,
+    "lon": 1.2598401036303624,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00050",
+    "lat": 38.91060825,
+    "lon": 1.25845635,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00051",
+    "lat": 38.9078246237522,
+    "lon": 1.255919564976016,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00052",
+    "lat": 38.919384,
+    "lon": 1.28595935,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00053",
+    "lat": 38.91789095,
+    "lon": 1.2877368,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.2650209450168926,
+      "area_pixels": 20874,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00054",
+    "lat": 38.90889095,
+    "lon": 1.2784884,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00055",
+    "lat": 38.91035085,
+    "lon": 1.2794115,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00056",
+    "lat": 38.9097782,
+    "lon": 1.28475725000001,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00057",
+    "lat": 38.91070628732298,
+    "lon": 1.2854843838130017,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00058",
+    "lat": 38.9113178,
+    "lon": 1.28617435,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00059",
+    "lat": 38.91436952900352,
+    "lon": 1.287844421922344,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00060",
+    "lat": 38.99592088304581,
+    "lon": 1.289837783068793,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.19923078365105412,
+      "area_pixels": 21840,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00061",
+    "lat": 38.99591805204885,
+    "lon": 1.2901633511879573,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.12144608558791509,
+      "area_pixels": 22781,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00062",
+    "lat": 38.99538509430986,
+    "lon": 1.2909511520980266,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.2032939393325123,
+      "area_pixels": 19869,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00063",
+    "lat": 38.995022593055296,
+    "lon": 1.289545226990712,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.056595348376553674,
+      "area_pixels": 14798,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00064",
+    "lat": 38.9935733116042,
+    "lon": 1.297100865573516,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "unknown",
+      "confidence": 0.05807683020830154,
+      "area_pixels": 24628,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: unknown"
+  },
+  {
+    "finca_id": "finca_00065",
+    "lat": 38.99156875,
+    "lon": 1.29884725,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00066",
+    "lat": 38.991924750645836,
+    "lon": 1.298989539636285,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.03354033929022961,
+      "area_pixels": 25669,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00067",
+    "lat": 38.99925499989756,
+    "lon": 1.2932707166970654,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00068",
+    "lat": 38.99937332903519,
+    "lon": 1.2957189918407765,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00069",
+    "lat": 38.998196833443295,
+    "lon": 1.2989032666905904,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00070",
+    "lat": 39.002090678188885,
+    "lon": 1.2941367065618818,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00071",
+    "lat": 39.00188675,
+    "lon": 1.29325775,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00072",
+    "lat": 39.00252066737177,
+    "lon": 1.292971451786007,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00073",
+    "lat": 38.997480878260625,
+    "lon": 1.293276094073693,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.1959712995480829,
+      "area_pixels": 17931,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00074",
+    "lat": 38.995607863580844,
+    "lon": 1.29679150483996,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00075",
+    "lat": 38.99575951385458,
+    "lon": 1.2966363568347377,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00076",
+    "lat": 38.99536159492854,
+    "lon": 1.2997344439083935,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00077",
+    "lat": 39.0032524,
+    "lon": 1.2983437,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.09680795669555664,
+      "area_pixels": 21008,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00078",
+    "lat": 38.94119490257799,
+    "lon": 1.2586766325524243,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00079",
+    "lat": 38.94520774428866,
+    "lon": 1.2614662711458084,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00080",
+    "lat": 38.94351303852089,
+    "lon": 1.2732690957728383,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00081",
+    "lat": 38.90946705066942,
+    "lon": 1.2871805349532193,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00082",
+    "lat": 38.909486561031756,
+    "lon": 1.285721426186567,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00083",
+    "lat": 38.9090758,
+    "lon": 1.28608635,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00084",
+    "lat": 38.90903326384122,
+    "lon": 1.2883569285936523,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00085",
+    "lat": 38.89122760535219,
+    "lon": 1.240936904879913,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00086",
+    "lat": 38.903457593673394,
+    "lon": 1.2731508635215394,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00087",
+    "lat": 38.90235205775026,
+    "lon": 1.2733035090130742,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00088",
+    "lat": 38.9020294,
+    "lon": 1.26379125,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00089",
+    "lat": 38.900405659451444,
+    "lon": 1.2648015630574967,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00090",
+    "lat": 38.90651592260653,
+    "lon": 1.289492193312077,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00091",
+    "lat": 38.906559071786894,
+    "lon": 1.2885941336673419,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.36245888471603394,
+      "area_pixels": 17280,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00092",
+    "lat": 38.906465670723314,
+    "lon": 1.2862687069876444,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00093",
+    "lat": 38.90626021687257,
+    "lon": 1.2860587997513693,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00094",
+    "lat": 38.90511257729959,
+    "lon": 1.2890895693526294,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00095",
+    "lat": 38.905460266096306,
+    "lon": 1.29049931138832,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00096",
+    "lat": 38.9061998,
+    "lon": 1.29261705,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00097",
+    "lat": 38.907049484269784,
+    "lon": 1.2968831787758863,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00098",
+    "lat": 38.90645535559846,
+    "lon": 1.29868405790784,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00099",
+    "lat": 38.90623733430351,
+    "lon": 1.299459658167104,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00100",
+    "lat": 38.92316461794628,
+    "lon": 1.2888510723576896,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00101",
+    "lat": 38.92578238115765,
+    "lon": 1.2950437507244539,
+    "pool_detected": true,
+    "pool_count": 6,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.38554164606045127,
+      "area_pixels": 31185,
+      "detected_class": "swimming pool"
+    },
+    "summary": "6 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00102",
+    "lat": 38.92553881957692,
+    "lon": 1.2947696746162773,
+    "pool_detected": true,
+    "pool_count": 4,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.5601208806037903,
+      "area_pixels": 27492,
+      "detected_class": "swimming pool"
+    },
+    "summary": "4 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00103",
+    "lat": 38.927621672034306,
+    "lon": 1.2930683862931542,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00104",
+    "lat": 38.92745995395607,
+    "lon": 1.2945816796428393,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.2783673107624054,
+      "area_pixels": 20227,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00105",
+    "lat": 38.927687614789726,
+    "lon": 1.2949813580242993,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.40408748388290405,
+      "area_pixels": 20048,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00106",
+    "lat": 38.9278888443109,
+    "lon": 1.2952342168078828,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.1287854015827179,
+      "area_pixels": 6099,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00107",
+    "lat": 38.92803197998992,
+    "lon": 1.2952093200035766,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00108",
+    "lat": 38.93051709088282,
+    "lon": 1.2951252330498964,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00109",
+    "lat": 38.92911531565407,
+    "lon": 1.2901434328766377,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.1712423648483597,
+      "area_pixels": 17516,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00110",
+    "lat": 38.92897294459419,
+    "lon": 1.2927969851169065,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00111",
+    "lat": 38.93046650059548,
+    "lon": 1.3000971475393526,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00112",
+    "lat": 38.92203907789648,
+    "lon": 1.2999683859155127,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00113",
+    "lat": 38.93223806117018,
+    "lon": 1.291290377668632,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.325951745009092,
+      "area_pixels": 16965,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00114",
+    "lat": 38.93611239928435,
+    "lon": 1.2909075589756158,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.09404429701777796,
+      "area_pixels": 26880,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00115",
+    "lat": 38.935638539009325,
+    "lon": 1.2914241774396928,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.20043648143628415,
+      "area_pixels": 17731,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00116",
+    "lat": 38.93489993827966,
+    "lon": 1.2944701556153428,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00117",
+    "lat": 38.93507938901602,
+    "lon": 1.2946207107626353,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00118",
+    "lat": 38.93395103337855,
+    "lon": 1.2981992627740946,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00119",
+    "lat": 38.93243422126911,
+    "lon": 1.2993242472161073,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00120",
+    "lat": 38.934734739374775,
+    "lon": 1.2975711805119998,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00121",
+    "lat": 38.93481278124915,
+    "lon": 1.2980762880908803,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00122",
+    "lat": 38.926328082569704,
+    "lon": 1.2999353527242725,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00123",
+    "lat": 38.93855454304653,
+    "lon": 1.2909791233617758,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00124",
+    "lat": 38.93948522145456,
+    "lon": 1.290623823881264,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00125",
+    "lat": 38.94092633996843,
+    "lon": 1.2941781587308434,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.036371094304577904,
+      "area_pixels": 14017,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00126",
+    "lat": 38.94102727238958,
+    "lon": 1.2943758848889118,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.024359389561775125,
+      "area_pixels": 13462,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00127",
+    "lat": 38.94021165385271,
+    "lon": 1.2939691350394698,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00128",
+    "lat": 38.93850930110154,
+    "lon": 1.2960648390731457,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00129",
+    "lat": 38.93662107280185,
+    "lon": 1.293675548342589,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00130",
+    "lat": 38.944322191361664,
+    "lon": 1.29958105,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00131",
+    "lat": 38.94026667568007,
+    "lon": 1.2905579098282163,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00132",
+    "lat": 38.94053183480733,
+    "lon": 1.2905980818541092,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00133",
+    "lat": 38.94081336990361,
+    "lon": 1.2906163109714182,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00134",
+    "lat": 38.9409291384473,
+    "lon": 1.2950603637754001,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00135",
+    "lat": 38.94117793074221,
+    "lon": 1.2950057171588647,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.0167624438851702,
+      "area_pixels": 12896,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00136",
+    "lat": 38.943898707744836,
+    "lon": 1.2923860318441138,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.16499774158000946,
+      "area_pixels": 21384,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00137",
+    "lat": 38.94530800320259,
+    "lon": 1.2934942443697883,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00138",
+    "lat": 38.94435830892816,
+    "lon": 1.2955105696135045,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00139",
+    "lat": 38.94552307710215,
+    "lon": 1.2997564186410622,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00140",
+    "lat": 38.94714383672601,
+    "lon": 1.2987695823061467,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00141",
+    "lat": 38.919546629448405,
+    "lon": 1.2513005338307455,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00142",
+    "lat": 38.92061525652032,
+    "lon": 1.2513480458560806,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.39092501997947693,
+      "area_pixels": 22200,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00143",
+    "lat": 38.918963833333336,
+    "lon": 1.251876535430785,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00144",
+    "lat": 38.925786288593685,
+    "lon": 1.2421484336717434,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00145",
+    "lat": 38.929341656844954,
+    "lon": 1.2857455677680476,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00146",
+    "lat": 38.929676693239124,
+    "lon": 1.2863684259965356,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00147",
+    "lat": 38.93184443136914,
+    "lon": 1.2819122614095904,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00148",
+    "lat": 38.91146220953013,
+    "lon": 1.2886520203295577,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00149",
+    "lat": 38.9116805,
+    "lon": 1.2896987,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00150",
+    "lat": 38.91260007573329,
+    "lon": 1.29160381650934,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.07717536704885818,
+      "area_pixels": 24003,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00151",
+    "lat": 38.9153414,
+    "lon": 1.29493685,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.11237853795479259,
+      "area_pixels": 20470,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00152",
+    "lat": 38.914452683771955,
+    "lon": 1.2956113507947673,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00153",
+    "lat": 38.92253766411571,
+    "lon": 1.2758775726072005,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00154",
+    "lat": 38.92241332592729,
+    "lon": 1.2841803878342912,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00155",
+    "lat": 38.92266525,
+    "lon": 1.28421355,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00156",
+    "lat": 38.9194328527941,
+    "lon": 1.279407556157383,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00157",
+    "lat": 38.92256574388901,
+    "lon": 1.2839410958586401,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00158",
+    "lat": 38.92342929471976,
+    "lon": 1.281012750468039,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00159",
+    "lat": 38.923006469596054,
+    "lon": 1.2812667495805736,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.17089263292550905,
+      "area_pixels": 35052,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00160",
+    "lat": 38.922872280680664,
+    "lon": 1.2810160410806593,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.05468029901385307,
+      "area_pixels": 26076,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00161",
+    "lat": 38.92300587931444,
+    "lon": 1.2811015360360403,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.15343065559864044,
+      "area_pixels": 31136,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00162",
+    "lat": 38.92699115732293,
+    "lon": 1.273454329505241,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "unknown",
+      "confidence": 0.06556051522493363,
+      "area_pixels": 15246,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: unknown"
+  },
+  {
+    "finca_id": "finca_00163",
+    "lat": 38.92722479138905,
+    "lon": 1.2764319427224453,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.1025286643735824,
+      "area_pixels": 18135,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00164",
+    "lat": 38.92704693847473,
+    "lon": 1.2755440741520858,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00165",
+    "lat": 38.87944567377755,
+    "lon": 1.2267670171785818,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00166",
+    "lat": 38.96099255,
+    "lon": 1.22877085,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.32473626732826233,
+      "area_pixels": 19116,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00167",
+    "lat": 38.92734125,
+    "lon": 1.28337495,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00168",
+    "lat": 38.87417594826228,
+    "lon": 1.2283658455124074,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00169",
+    "lat": 38.879638742955024,
+    "lon": 1.2286359878711788,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00170",
+    "lat": 38.87924478313616,
+    "lon": 1.2288496788229637,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00171",
+    "lat": 38.97275750641366,
+    "lon": 1.230451625506413,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00172",
+    "lat": 38.8812491,
+    "lon": 1.26186535,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00173",
+    "lat": 38.97318696213495,
+    "lon": 1.2848829257345025,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00174",
+    "lat": 38.94131757044844,
+    "lon": 1.2456916907324453,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00175",
+    "lat": 38.94165592048111,
+    "lon": 1.2479967537291485,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00176",
+    "lat": 38.94188939544524,
+    "lon": 1.2443593201073517,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.055952779948711395,
+      "area_pixels": 75850,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00177",
+    "lat": 38.94593345810074,
+    "lon": 1.23299080563469,
+    "pool_detected": true,
+    "pool_count": 3,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.04084204165852285,
+      "area_pixels": 10656,
+      "detected_class": "swimming pool"
+    },
+    "summary": "3 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00178",
+    "lat": 38.944937483063974,
+    "lon": 1.2385607511082486,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00179",
+    "lat": 38.96483496385395,
+    "lon": 1.299972124870943,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.09693294763565063,
+      "area_pixels": 13160,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00180",
+    "lat": 38.911042288773096,
+    "lon": 1.299581326864367,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00181",
+    "lat": 38.91177865,
+    "lon": 1.2908035,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00182",
+    "lat": 38.916261857682635,
+    "lon": 1.2979489084932814,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00183",
+    "lat": 38.91282505362128,
+    "lon": 1.2905596334583087,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00184",
+    "lat": 38.906708022278714,
+    "lon": 1.2942725933075794,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00185",
+    "lat": 38.9050497,
+    "lon": 1.28523485,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.4438858926296234,
+      "area_pixels": 13144,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00186",
+    "lat": 38.90560865134247,
+    "lon": 1.285093083395976,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00187",
+    "lat": 38.9129789763391,
+    "lon": 1.294066782804589,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00188",
+    "lat": 38.91288199713275,
+    "lon": 1.285566469003658,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00189",
+    "lat": 38.91535475303673,
+    "lon": 1.2891855101783325,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.047766510973635476,
+      "area_pixels": 17100,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00190",
+    "lat": 38.91492720266413,
+    "lon": 1.287847431136391,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00191",
+    "lat": 38.91486005,
+    "lon": 1.28831565,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00192",
+    "lat": 38.9147706,
+    "lon": 1.28931745,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00193",
+    "lat": 38.915179162193205,
+    "lon": 1.289677136759531,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.030398636502935422,
+      "area_pixels": 28676,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00194",
+    "lat": 38.92259081083454,
+    "lon": 1.2894836183634424,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00195",
+    "lat": 38.921577054939654,
+    "lon": 1.285205024190296,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.09397852420806885,
+      "area_pixels": 23575,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00196",
+    "lat": 38.92184315029433,
+    "lon": 1.2855400523037006,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.26445508003234863,
+      "area_pixels": 20720,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00197",
+    "lat": 38.919043044533105,
+    "lon": 1.2900820297775464,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.13404841173872395,
+      "area_pixels": 12516,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00198",
+    "lat": 38.91872669440235,
+    "lon": 1.2897266955266655,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00199",
+    "lat": 38.8638603,
+    "lon": 1.29997425,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.2954340559550055,
+      "area_pixels": 39204,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00200",
+    "lat": 38.8634934,
+    "lon": 1.29946515,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00201",
+    "lat": 38.88432761910807,
+    "lon": 1.2984452466255765,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00202",
+    "lat": 38.884988924248624,
+    "lon": 1.2991557079671139,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00203",
+    "lat": 38.88605938054386,
+    "lon": 1.2993450952953638,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00204",
+    "lat": 38.8878011,
+    "lon": 1.29873835,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00205",
+    "lat": 38.887698190472506,
+    "lon": 1.2951352754327041,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00206",
+    "lat": 38.878458769646564,
+    "lon": 1.288807460580857,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00207",
+    "lat": 38.88405488247024,
+    "lon": 1.2938165600065845,
+    "pool_detected": true,
+    "pool_count": 4,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.14694300293922424,
+      "area_pixels": 10201,
+      "detected_class": "swimming pool"
+    },
+    "summary": "4 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00208",
+    "lat": 38.88308624754027,
+    "lon": 1.2954033684174608,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00209",
+    "lat": 38.87835431813877,
+    "lon": 1.295860035441765,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00210",
+    "lat": 38.88256720393589,
+    "lon": 1.2939060462639698,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00211",
+    "lat": 38.88275328317814,
+    "lon": 1.2922619994890965,
+    "pool_detected": true,
+    "pool_count": 3,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.18892189814762406,
+      "area_pixels": 18634,
+      "detected_class": "swimming pool"
+    },
+    "summary": "3 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00212",
+    "lat": 38.88326209751039,
+    "lon": 1.2918398481695528,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00213",
+    "lat": 38.88311059137397,
+    "lon": 1.2925618772556513,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.14671110219850203,
+      "area_pixels": 28545,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00214",
+    "lat": 38.88310033939347,
+    "lon": 1.29272706532993,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.127602912351258,
+      "area_pixels": 33276,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00215",
+    "lat": 38.88325009747316,
+    "lon": 1.2884960731596398,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00216",
+    "lat": 38.88260925,
+    "lon": 1.28812225,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.08110277354717255,
+      "area_pixels": 5934,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00217",
+    "lat": 38.88291175000001,
+    "lon": 1.2886127,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.022154257211574494,
+      "area_pixels": 120324,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00218",
+    "lat": 38.8832986,
+    "lon": 1.28480625,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00219",
+    "lat": 38.88981684851449,
+    "lon": 1.2858111358751356,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.0816049760993984,
+      "area_pixels": 23400,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00220",
+    "lat": 38.8901893,
+    "lon": 1.28608365,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00221",
+    "lat": 38.88929736631035,
+    "lon": 1.2857948459195476,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00222",
+    "lat": 38.889354697342746,
+    "lon": 1.2855739074467278,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.07562041421245283,
+      "area_pixels": 24568,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00223",
+    "lat": 38.88987925738143,
+    "lon": 1.2856437167147323,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.1854385894622108,
+      "area_pixels": 25344,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00224",
+    "lat": 38.88858962532926,
+    "lon": 1.2881538619998976,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.47461211681365967,
+      "area_pixels": 13816,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00225",
+    "lat": 38.88841759872292,
+    "lon": 1.288805650544797,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00226",
+    "lat": 38.88810541990416,
+    "lon": 1.2889148448935759,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00227",
+    "lat": 38.88683885,
+    "lon": 1.28587585,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00228",
+    "lat": 38.8873976962561,
+    "lon": 1.2820774259565288,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00229",
+    "lat": 38.88834885735193,
+    "lon": 1.2818676211271596,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.30308641971236,
+      "area_pixels": 14592,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00230",
+    "lat": 38.8882216904835,
+    "lon": 1.2818149346080552,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.17969947291929644,
+      "area_pixels": 15609,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00231",
+    "lat": 38.8923421,
+    "lon": 1.28727015,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00232",
+    "lat": 38.893717695905735,
+    "lon": 1.2881302745802714,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00233",
+    "lat": 38.89283775,
+    "lon": 1.28489275,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00234",
+    "lat": 38.89300865,
+    "lon": 1.284467,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00235",
+    "lat": 38.8939273,
+    "lon": 1.2850483,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00236",
+    "lat": 38.8932533,
+    "lon": 1.2845218,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00237",
+    "lat": 38.88466562968082,
+    "lon": 1.2798287673263458,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00238",
+    "lat": 38.88869813748561,
+    "lon": 1.281910511619637,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00239",
+    "lat": 38.88705823759614,
+    "lon": 1.2787778851991114,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.046009365557692326,
+      "area_pixels": 15158,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00240",
+    "lat": 38.88764528071315,
+    "lon": 1.2778297724362446,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00241",
+    "lat": 38.88759815606481,
+    "lon": 1.2787780195176113,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.5205708295839361,
+      "area_pixels": 33567,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00242",
+    "lat": 38.8889944,
+    "lon": 1.28116325,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00243",
+    "lat": 38.8940947,
+    "lon": 1.2461607,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00244",
+    "lat": 38.89084437459449,
+    "lon": 1.2400695062480642,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00245",
+    "lat": 38.89114406720252,
+    "lon": 1.240778345424367,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00246",
+    "lat": 38.971714277304564,
+    "lon": 1.2807419745104294,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00247",
+    "lat": 38.96367075,
+    "lon": 1.2883185,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00248",
+    "lat": 38.96302688389114,
+    "lon": 1.2881740702586166,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.3131898045539856,
+      "area_pixels": 12432,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00249",
+    "lat": 38.964816387329414,
+    "lon": 1.2726970510462692,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00250",
+    "lat": 38.958377380699915,
+    "lon": 1.2303485948276907,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00251",
+    "lat": 38.95826480002697,
+    "lon": 1.230545591103632,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00252",
+    "lat": 38.95817722351583,
+    "lon": 1.2307656799403792,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00253",
+    "lat": 38.95835999940186,
+    "lon": 1.2307804311534407,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00254",
+    "lat": 38.95994943709388,
+    "lon": 1.2317344422168013,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.27125632762908936,
+      "area_pixels": 23716,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00255",
+    "lat": 38.956459158340024,
+    "lon": 1.2782240627985582,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "unknown",
+      "confidence": 0.023036927729845048,
+      "area_pixels": 51940,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: unknown"
+  },
+  {
+    "finca_id": "finca_00256",
+    "lat": 38.956850230312924,
+    "lon": 1.2782514624606025,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.19220566749572754,
+      "area_pixels": 12768,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00257",
+    "lat": 38.9570307578136,
+    "lon": 1.2791483070430758,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.050548842383395805,
+      "area_pixels": 41418,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00258",
+    "lat": 38.95733976526016,
+    "lon": 1.2790326687511728,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.311277847295558,
+      "area_pixels": 25920,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00259",
+    "lat": 38.95643064496692,
+    "lon": 1.2777804228845715,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.027439402001557728,
+      "area_pixels": 5712,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00260",
+    "lat": 38.95640687792227,
+    "lon": 1.27758428973371,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00261",
+    "lat": 38.957581632806736,
+    "lon": 1.263015465028499,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00262",
+    "lat": 38.95405541097163,
+    "lon": 1.272464376014814,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00263",
+    "lat": 38.95922175291187,
+    "lon": 1.2885442810061272,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.16454575955867767,
+      "area_pixels": 15756,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00264",
+    "lat": 38.95851160620019,
+    "lon": 1.2942413789342566,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.06334325671195984,
+      "area_pixels": 28274,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00265",
+    "lat": 38.95235626231097,
+    "lon": 1.2914564219054059,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.1832244098186493,
+      "area_pixels": 13650,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00266",
+    "lat": 38.95261555114029,
+    "lon": 1.2853881688024338,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00267",
+    "lat": 38.95097823294127,
+    "lon": 1.2891199850628456,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00268",
+    "lat": 38.95457526741318,
+    "lon": 1.2844686647220054,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00269",
+    "lat": 38.9548627345721,
+    "lon": 1.2847960946060684,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00270",
+    "lat": 38.95458996086447,
+    "lon": 1.2934422081255323,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00271",
+    "lat": 38.95537087126098,
+    "lon": 1.2844349910090478,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.24244166910648346,
+      "area_pixels": 16539,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00272",
+    "lat": 38.95739088864935,
+    "lon": 1.286735563932709,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.059176668524742126,
+      "area_pixels": 7553,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00273",
+    "lat": 38.95592186439771,
+    "lon": 1.294174174880992,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.11227907985448837,
+      "area_pixels": 25942,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00274",
+    "lat": 38.9561296,
+    "lon": 1.2948032,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00275",
+    "lat": 38.97870037835315,
+    "lon": 1.2989355008953365,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00276",
+    "lat": 38.979607141265326,
+    "lon": 1.2982346718982192,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00277",
+    "lat": 38.880051145469146,
+    "lon": 1.2376008170859774,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00278",
+    "lat": 38.88415655000001,
+    "lon": 1.2358876,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00279",
+    "lat": 38.8803931,
+    "lon": 1.2263435,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00280",
+    "lat": 38.884305123608996,
+    "lon": 1.2397703586186273,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00281",
+    "lat": 38.87979090074578,
+    "lon": 1.2358930338058924,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00282",
+    "lat": 38.88018824995736,
+    "lon": 1.2350825833270798,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00283",
+    "lat": 38.88417715,
+    "lon": 1.23206815,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00284",
+    "lat": 38.887147049530704,
+    "lon": 1.241179782872833,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00285",
+    "lat": 38.88343025439908,
+    "lon": 1.2269395456041343,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.09546154737472534,
+      "area_pixels": 10881,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00286",
+    "lat": 38.88442498574714,
+    "lon": 1.226918497032631,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00287",
+    "lat": 38.87748896133161,
+    "lon": 1.236528018823551,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00288",
+    "lat": 38.886404712321976,
+    "lon": 1.2308800080014148,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00289",
+    "lat": 38.88476931210639,
+    "lon": 1.2275977184823748,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00290",
+    "lat": 38.88461669305054,
+    "lon": 1.2384212662725178,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00291",
+    "lat": 38.88081668984004,
+    "lon": 1.2305600218985038,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00292",
+    "lat": 38.88287229578305,
+    "lon": 1.2332646815444663,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.14741842448711395,
+      "area_pixels": 10767,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00293",
+    "lat": 38.88237554917682,
+    "lon": 1.235852789483832,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00294",
+    "lat": 38.88385937559095,
+    "lon": 1.2380551850505226,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00295",
+    "lat": 38.88383085,
+    "lon": 1.22911075,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00296",
+    "lat": 38.8845393,
+    "lon": 1.23783055,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00297",
+    "lat": 38.88442573174815,
+    "lon": 1.237001917652814,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.32787296175956726,
+      "area_pixels": 59278,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00298",
+    "lat": 38.88059014392888,
+    "lon": 1.2307996795471179,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00299",
+    "lat": 38.8835230966786,
+    "lon": 1.226551746744339,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.049055529627086515,
+      "area_pixels": 13908,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00300",
+    "lat": 38.96393444043925,
+    "lon": 1.2480382225428255,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.2380489856004715,
+      "area_pixels": 18081,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00301",
+    "lat": 38.96399322668752,
+    "lon": 1.2484074191069126,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.1790517419576645,
+      "area_pixels": 10434,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00302",
+    "lat": 38.96579122287955,
+    "lon": 1.2463046132724513,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.2927827835083008,
+      "area_pixels": 30260,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00303",
+    "lat": 38.96584038667227,
+    "lon": 1.2465793449308136,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.2426874190568924,
+      "area_pixels": 53738,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00304",
+    "lat": 38.9655634271557,
+    "lon": 1.2464143442826174,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00305",
+    "lat": 38.964114224632205,
+    "lon": 1.2431236637495329,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00306",
+    "lat": 38.87923756088481,
+    "lon": 1.2778983496069654,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.03578402523162658,
+      "area_pixels": 10508,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00307",
+    "lat": 38.879001649546524,
+    "lon": 1.267855619901844,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.1862824559211731,
+      "area_pixels": 8556,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00308",
+    "lat": 38.87977455,
+    "lon": 1.263533,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "unknown",
+      "confidence": 0.03645456656813621,
+      "area_pixels": 21962,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: unknown"
+  },
+  {
+    "finca_id": "finca_00309",
+    "lat": 38.8783887,
+    "lon": 1.26497885,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.13249452412128448,
+      "area_pixels": 12069,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00310",
+    "lat": 38.87842134798986,
+    "lon": 1.2648176857618931,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.1574603170156479,
+      "area_pixels": 11020,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00311",
+    "lat": 38.878516165769035,
+    "lon": 1.265547243959898,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00312",
+    "lat": 38.87907513738981,
+    "lon": 1.2674659026868889,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.2115979939699173,
+      "area_pixels": 8375,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00313",
+    "lat": 38.873207638999844,
+    "lon": 1.2554821224201629,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00314",
+    "lat": 38.87365175042883,
+    "lon": 1.256209766461852,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00315",
+    "lat": 38.869103165800475,
+    "lon": 1.2447981956293939,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00316",
+    "lat": 38.86727136530052,
+    "lon": 1.248601689684534,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.0764235332608223,
+      "area_pixels": 12705,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00317",
+    "lat": 38.8675028,
+    "lon": 1.24731735,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00318",
+    "lat": 38.86335255,
+    "lon": 1.24822315,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00319",
+    "lat": 38.8632314632113,
+    "lon": 1.249129323591072,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00320",
+    "lat": 38.87036234410466,
+    "lon": 1.258881061827487,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.15229402482509613,
+      "area_pixels": 24168,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00321",
+    "lat": 38.86937793766668,
+    "lon": 1.2582459590036166,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.031343269540046,
+      "area_pixels": 50193,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00322",
+    "lat": 38.866044521056565,
+    "lon": 1.254488657526524,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.15749622513915862,
+      "area_pixels": 45008,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00323",
+    "lat": 38.86718590166756,
+    "lon": 1.2560893666697044,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00324",
+    "lat": 38.87251425,
+    "lon": 1.260999,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00325",
+    "lat": 38.87818591302282,
+    "lon": 1.2595160888663675,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00326",
+    "lat": 38.87863201922273,
+    "lon": 1.26033964324761,
+    "pool_detected": true,
+    "pool_count": 3,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.06389984741236844,
+      "area_pixels": 47672,
+      "detected_class": "swimming pool"
+    },
+    "summary": "3 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00327",
+    "lat": 38.8834265,
+    "lon": 1.2655694,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00328",
+    "lat": 38.88595889872941,
+    "lon": 1.274604165862659,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.08499206409468599,
+      "area_pixels": 26931,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00329",
+    "lat": 38.88512506380784,
+    "lon": 1.2730450340977961,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.018527658011034592,
+      "area_pixels": 19400,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00330",
+    "lat": 38.8840079268205,
+    "lon": 1.2673436779795053,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00331",
+    "lat": 38.885739916349664,
+    "lon": 1.2635143578216868,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.26253737682519956,
+      "area_pixels": 23349,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00332",
+    "lat": 38.88511805,
+    "lon": 1.2644198,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00333",
+    "lat": 38.88424955,
+    "lon": 1.26759195,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00334",
+    "lat": 38.884139163149285,
+    "lon": 1.2632022427686411,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.05271387845277786,
+      "area_pixels": 5428,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00335",
+    "lat": 38.8841642,
+    "lon": 1.2710982,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00336",
+    "lat": 38.88313433825425,
+    "lon": 1.258149528450555,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.28321146965026855,
+      "area_pixels": 20760,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00337",
+    "lat": 38.88303570802603,
+    "lon": 1.2589337026169705,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.08944789207000801,
+      "area_pixels": 24287,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00338",
+    "lat": 38.887638729022385,
+    "lon": 1.2646650030763373,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.07445308157980492,
+      "area_pixels": 23660,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00339",
+    "lat": 38.886628704378545,
+    "lon": 1.2595756807405631,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00340",
+    "lat": 38.88625068900793,
+    "lon": 1.2594290955535112,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.09208556695178277,
+      "area_pixels": 45312,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00341",
+    "lat": 38.88422016587851,
+    "lon": 1.260082947045494,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.239457290040845,
+      "area_pixels": 19239,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00342",
+    "lat": 38.882478584485234,
+    "lon": 1.2599626660618541,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00343",
+    "lat": 38.88385939110271,
+    "lon": 1.2615914659670515,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.10304690277614788,
+      "area_pixels": 29848,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00344",
+    "lat": 38.886146504683595,
+    "lon": 1.2613856154346783,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00345",
+    "lat": 38.89281379562819,
+    "lon": 1.2693318140148986,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.0536822396263067,
+      "area_pixels": 31666,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00346",
+    "lat": 38.8801287775147,
+    "lon": 1.244160548400912,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00347",
+    "lat": 38.88177235,
+    "lon": 1.2446151,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00348",
+    "lat": 38.8877088776395,
+    "lon": 1.2445977063234628,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.12805813550949097,
+      "area_pixels": 19276,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00349",
+    "lat": 38.88695453697702,
+    "lon": 1.2430977386207605,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00350",
+    "lat": 38.887479493698144,
+    "lon": 1.2419766150943372,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00351",
+    "lat": 38.8851768,
+    "lon": 1.2439764,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00352",
+    "lat": 38.88450455000001,
+    "lon": 1.24384645,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00353",
+    "lat": 38.88418726950468,
+    "lon": 1.2448446417239376,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00354",
+    "lat": 38.88041616472319,
+    "lon": 1.2499323097458142,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00355",
+    "lat": 38.87704669637614,
+    "lon": 1.2539712309842674,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.16609957364760294,
+      "area_pixels": 20615,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00356",
+    "lat": 38.87996102789276,
+    "lon": 1.2518434335149315,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00357",
+    "lat": 38.88166035343504,
+    "lon": 1.2454891778088875,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00358",
+    "lat": 38.88223786502409,
+    "lon": 1.2507726985142495,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00359",
+    "lat": 38.88166947271088,
+    "lon": 1.2446131364500348,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00360",
+    "lat": 38.88039239112939,
+    "lon": 1.2444001135863056,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00361",
+    "lat": 38.8733029,
+    "lon": 1.25252725,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00362",
+    "lat": 38.8776881,
+    "lon": 1.2534638,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00363",
+    "lat": 38.88135472168225,
+    "lon": 1.2479595601050324,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00364",
+    "lat": 38.88011937038029,
+    "lon": 1.2467811420350683,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00365",
+    "lat": 38.882695587044594,
+    "lon": 1.2420240472379382,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00366",
+    "lat": 38.88214082778089,
+    "lon": 1.2429203237886437,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.2436343100250956,
+      "area_pixels": 21060,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00367",
+    "lat": 38.894484049586005,
+    "lon": 1.2307750166216267,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00368",
+    "lat": 38.89397225065833,
+    "lon": 1.2307093334246615,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.3019290323284539,
+      "area_pixels": 28160,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00369",
+    "lat": 38.895290690303526,
+    "lon": 1.2175239825396271,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.35679861903190613,
+      "area_pixels": 6960,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00370",
+    "lat": 38.897711705239026,
+    "lon": 1.2175582502834938,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.493151992559433,
+      "area_pixels": 11036,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00371",
+    "lat": 38.89800133670365,
+    "lon": 1.2175318515935092,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.10335680186832731,
+      "area_pixels": 23353,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00372",
+    "lat": 38.98223842317761,
+    "lon": 1.2999472047722207,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.07024230808019638,
+      "area_pixels": 25748,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00373",
+    "lat": 38.9613247060301,
+    "lon": 1.2501724382752106,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.01781567488729924,
+      "area_pixels": 20130,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00374",
+    "lat": 38.96190887300424,
+    "lon": 1.250563533184763,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.1636226922273636,
+      "area_pixels": 14241,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00375",
+    "lat": 38.961640184531234,
+    "lon": 1.250250029382255,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.04240921490213887,
+      "area_pixels": 25092,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00376",
+    "lat": 38.95499833407861,
+    "lon": 1.254753148130787,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.3827281892299652,
+      "area_pixels": 5382,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00377",
+    "lat": 38.95825130216343,
+    "lon": 1.2561124902785992,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00378",
+    "lat": 38.954326475327726,
+    "lon": 1.2593069127454295,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00379",
+    "lat": 38.95380920654967,
+    "lon": 1.2567256659604134,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.10487164529968782,
+      "area_pixels": 24549,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00380",
+    "lat": 38.9547703,
+    "lon": 1.2584533,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00381",
+    "lat": 38.956013406547896,
+    "lon": 1.2625508331788924,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00382",
+    "lat": 38.958021471499436,
+    "lon": 1.2556561380909832,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00383",
+    "lat": 38.95861790277286,
+    "lon": 1.263976375537392,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00384",
+    "lat": 38.94923972544142,
+    "lon": 1.2761935337930412,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.43506941199302673,
+      "area_pixels": 14259,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00385",
+    "lat": 38.95300863024649,
+    "lon": 1.2775285919193218,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00386",
+    "lat": 38.95191466366344,
+    "lon": 1.276762075425017,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.6582396030426025,
+      "area_pixels": 46560,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00387",
+    "lat": 38.94917236516259,
+    "lon": 1.2746191633149373,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00388",
+    "lat": 38.94913349476017,
+    "lon": 1.2744748043429992,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00389",
+    "lat": 38.9529126845244,
+    "lon": 1.2777291932517039,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00390",
+    "lat": 38.95158902828992,
+    "lon": 1.2749393541721727,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00391",
+    "lat": 38.95274045,
+    "lon": 1.2749271,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00392",
+    "lat": 38.95209682288626,
+    "lon": 1.2772908630803936,
+    "pool_detected": true,
+    "pool_count": 3,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.41327980160713196,
+      "area_pixels": 42720,
+      "detected_class": "swimming pool"
+    },
+    "summary": "3 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00393",
+    "lat": 38.93237807347398,
+    "lon": 1.2762658002010074,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.3331224370412726,
+      "area_pixels": 24192,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00394",
+    "lat": 38.93248385,
+    "lon": 1.2762025,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.16706367205049913,
+      "area_pixels": 22581,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00395",
+    "lat": 38.94651563804354,
+    "lon": 1.2781748399761266,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00396",
+    "lat": 38.93496820632411,
+    "lon": 1.289117385304138,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00397",
+    "lat": 38.93536650791581,
+    "lon": 1.2892489423418632,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00398",
+    "lat": 38.937914,
+    "lon": 1.2792749,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00399",
+    "lat": 38.935525395734125,
+    "lon": 1.2754609685426266,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00400",
+    "lat": 38.94124699499015,
+    "lon": 1.2733664481287998,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "unknown",
+      "confidence": 0.02023714631795883,
+      "area_pixels": 22575,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: unknown"
+  },
+  {
+    "finca_id": "finca_00401",
+    "lat": 38.936946582126765,
+    "lon": 1.2776751864315683,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00402",
+    "lat": 38.945883658681986,
+    "lon": 1.2895391052648797,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00403",
+    "lat": 38.94734009113063,
+    "lon": 1.2802948743575924,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "unknown",
+      "confidence": 0.04988930225372314,
+      "area_pixels": 15914,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: unknown"
+  },
+  {
+    "finca_id": "finca_00404",
+    "lat": 38.9440678,
+    "lon": 1.29145355,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00405",
+    "lat": 38.934967209393854,
+    "lon": 1.2776905868667532,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00406",
+    "lat": 38.93636796343218,
+    "lon": 1.2814944400331607,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00407",
+    "lat": 38.93693249145616,
+    "lon": 1.281707087890044,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.20429710153904226,
+      "area_pixels": 24192,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00408",
+    "lat": 38.93215318859268,
+    "lon": 1.2712907645149867,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.10859102457579152,
+      "area_pixels": 32640,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00409",
+    "lat": 38.936286371783474,
+    "lon": 1.273942381169232,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00410",
+    "lat": 38.946692527892736,
+    "lon": 1.2790228338042904,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00411",
+    "lat": 38.9442387372247,
+    "lon": 1.2791852757070201,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.12256366014480591,
+      "area_pixels": 18180,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00412",
+    "lat": 38.944099402563666,
+    "lon": 1.2907458790229118,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00413",
+    "lat": 38.93505444194892,
+    "lon": 1.28496595328894,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.026345817984400933,
+      "area_pixels": 54912,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00414",
+    "lat": 38.93084639745851,
+    "lon": 1.2907888190914185,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.06414046883583069,
+      "area_pixels": 12474,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00415",
+    "lat": 38.943100870228854,
+    "lon": 1.2814251876595826,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00416",
+    "lat": 38.9371439,
+    "lon": 1.2811113,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.138746526709273,
+      "area_pixels": 26271,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00417",
+    "lat": 38.9342042,
+    "lon": 1.2879182,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00418",
+    "lat": 38.94645261540578,
+    "lon": 1.2761007753108002,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.08143633343213659,
+      "area_pixels": 9072,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00419",
+    "lat": 38.94290659801802,
+    "lon": 1.2777958458283145,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.10164990529534616,
+      "area_pixels": 14949,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00420",
+    "lat": 38.939971034321196,
+    "lon": 1.2738987966055388,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00421",
+    "lat": 38.931067506002464,
+    "lon": 1.2849841573678862,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00422",
+    "lat": 38.94693115000001,
+    "lon": 1.282381,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00423",
+    "lat": 38.94068209063506,
+    "lon": 1.276399259822204,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00424",
+    "lat": 38.93791800387217,
+    "lon": 1.2861348147498393,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00425",
+    "lat": 38.940812764444615,
+    "lon": 1.2886860359676948,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00426",
+    "lat": 38.94463837374187,
+    "lon": 1.279945427756704,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.0724647119641304,
+      "area_pixels": 25228,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00427",
+    "lat": 38.93453119881715,
+    "lon": 1.2762646048389268,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00428",
+    "lat": 38.93605480766782,
+    "lon": 1.2890937695227416,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.3501865863800049,
+      "area_pixels": 20160,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00429",
+    "lat": 38.93412887188423,
+    "lon": 1.2794482352551284,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00430",
+    "lat": 38.94680322422826,
+    "lon": 1.2756868886941826,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00431",
+    "lat": 38.94662738853479,
+    "lon": 1.2895747472983765,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00432",
+    "lat": 38.93252855,
+    "lon": 1.27172095,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.15442292392253876,
+      "area_pixels": 12080,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00433",
+    "lat": 38.9436913,
+    "lon": 1.27859395,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.10785409063100815,
+      "area_pixels": 17460,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00434",
+    "lat": 38.93206152939876,
+    "lon": 1.2794482633269133,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "unknown",
+      "confidence": 0.0475762590765953,
+      "area_pixels": 32712,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: unknown"
+  },
+  {
+    "finca_id": "finca_00435",
+    "lat": 38.939919964155756,
+    "lon": 1.2857755027435702,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00436",
+    "lat": 38.93963651697079,
+    "lon": 1.276709539792228,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00437",
+    "lat": 38.94410357689851,
+    "lon": 1.290512494576709,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00438",
+    "lat": 38.94280485749937,
+    "lon": 1.2770598508368525,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00439",
+    "lat": 38.9389993455855,
+    "lon": 1.2834561794381831,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00440",
+    "lat": 38.946505114813846,
+    "lon": 1.2819275379285826,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00441",
+    "lat": 38.93933025,
+    "lon": 1.28187625,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.15428421354425548,
+      "area_pixels": 18100,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00442",
+    "lat": 38.94674577533503,
+    "lon": 1.2824390845779037,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.02943097870966438,
+      "area_pixels": 27030,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00443",
+    "lat": 38.949307705588986,
+    "lon": 1.2886249719105196,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00444",
+    "lat": 38.94683379309251,
+    "lon": 1.2901316146831445,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00445",
+    "lat": 38.93913120091468,
+    "lon": 1.2774328447078525,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00446",
+    "lat": 38.93937428909351,
+    "lon": 1.27689563618427,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00447",
+    "lat": 38.934357321424145,
+    "lon": 1.2766826390458466,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00448",
+    "lat": 38.94836025,
+    "lon": 1.2844569,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00449",
+    "lat": 38.93924075,
+    "lon": 1.2831424,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00450",
+    "lat": 38.95103665,
+    "lon": 1.2986426,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00451",
+    "lat": 38.9509174123181,
+    "lon": 1.2987927217643167,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00452",
+    "lat": 38.94873750461808,
+    "lon": 1.2925377194790995,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00453",
+    "lat": 38.95042045,
+    "lon": 1.2946455,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.13510838163310765,
+      "area_pixels": 36248,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00454",
+    "lat": 38.95649136669502,
+    "lon": 1.2965143523499103,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00455",
+    "lat": 38.950732412012485,
+    "lon": 1.2945841047916957,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.0627519347342766,
+      "area_pixels": 40896,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00456",
+    "lat": 38.95268706647916,
+    "lon": 1.2995279965972635,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00457",
+    "lat": 38.90466620224877,
+    "lon": 1.237062007293516,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00458",
+    "lat": 38.9070206,
+    "lon": 1.23758835,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.055752735263446256,
+      "area_pixels": 24192,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00459",
+    "lat": 38.905218382709194,
+    "lon": 1.2405972067286282,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00460",
+    "lat": 38.90676072041144,
+    "lon": 1.2427074872860744,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00461",
+    "lat": 38.906925910611704,
+    "lon": 1.2423653800271541,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.03271089149129591,
+      "area_pixels": 19964,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00462",
+    "lat": 38.908582153263424,
+    "lon": 1.2448888994696619,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00463",
+    "lat": 38.91200525249964,
+    "lon": 1.243593481526326,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00464",
+    "lat": 38.91158330576372,
+    "lon": 1.2392956942791877,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "unknown",
+      "confidence": 0.02301672175526619,
+      "area_pixels": 23182,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: unknown"
+  },
+  {
+    "finca_id": "finca_00465",
+    "lat": 38.91187162193739,
+    "lon": 1.239012258089271,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00466",
+    "lat": 38.91253467013828,
+    "lon": 1.2454845484841832,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00467",
+    "lat": 38.91303599602849,
+    "lon": 1.241756531231936,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00468",
+    "lat": 38.9127884,
+    "lon": 1.2430973,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.3700871169567108,
+      "area_pixels": 16851,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00469",
+    "lat": 38.913034017514505,
+    "lon": 1.242595476181749,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00470",
+    "lat": 38.91244242868374,
+    "lon": 1.2405001081939542,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00471",
+    "lat": 38.91216462008315,
+    "lon": 1.2402276213924215,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00472",
+    "lat": 38.90932434633283,
+    "lon": 1.2428656210809421,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.1544477492570877,
+      "area_pixels": 12963,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00473",
+    "lat": 38.90632394241979,
+    "lon": 1.2372090823937143,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00474",
+    "lat": 38.90793713904083,
+    "lon": 1.2415091687262545,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00475",
+    "lat": 38.90798385,
+    "lon": 1.2422277,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00476",
+    "lat": 38.90549007119847,
+    "lon": 1.2401785457135222,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00477",
+    "lat": 38.910013356074714,
+    "lon": 1.2382879349581208,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00478",
+    "lat": 38.91023192285472,
+    "lon": 1.2454273809494005,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00479",
+    "lat": 38.90126698557473,
+    "lon": 1.2323212847481095,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00480",
+    "lat": 38.8994298,
+    "lon": 1.23371025,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00481",
+    "lat": 38.899300172961894,
+    "lon": 1.2336341094641115,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00482",
+    "lat": 38.900076434301056,
+    "lon": 1.234180347732122,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00483",
+    "lat": 38.90078814005589,
+    "lon": 1.2349347121504544,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.38676610589027405,
+      "area_pixels": 19729,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00484",
+    "lat": 38.902212305589714,
+    "lon": 1.235608815171595,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00485",
+    "lat": 38.9036075708103,
+    "lon": 1.23742469234225,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00486",
+    "lat": 38.904012131647235,
+    "lon": 1.2183034331224796,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00487",
+    "lat": 38.90370274966298,
+    "lon": 1.2194740066177627,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.1032876215731022,
+      "area_pixels": 17266,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00488",
+    "lat": 38.91924625821375,
+    "lon": 1.2309219471759099,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00489",
+    "lat": 38.91883700868105,
+    "lon": 1.2311660307077248,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00490",
+    "lat": 38.92818144794485,
+    "lon": 1.2300635534919517,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00491",
+    "lat": 38.929874669129894,
+    "lon": 1.2354152607186188,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00492",
+    "lat": 38.93002349725365,
+    "lon": 1.2351413673631844,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "unknown",
+      "confidence": 0.016467367485165595,
+      "area_pixels": 86961,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: unknown"
+  },
+  {
+    "finca_id": "finca_00493",
+    "lat": 38.93067065,
+    "lon": 1.23666345,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.4742158055305481,
+      "area_pixels": 34656,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00494",
+    "lat": 38.933317255353046,
+    "lon": 1.2401176765072466,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.03652725278402427,
+      "area_pixels": 26376,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00495",
+    "lat": 38.935219099387986,
+    "lon": 1.2547309630589731,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.12467361241579056,
+      "area_pixels": 14382,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00496",
+    "lat": 38.93547399929689,
+    "lon": 1.2516576814434317,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.38403984904289246,
+      "area_pixels": 32112,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00497",
+    "lat": 38.9345972,
+    "lon": 1.2488598,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.18958004717556937,
+      "area_pixels": 31800,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00498",
+    "lat": 38.93058451680669,
+    "lon": 1.2463824627502533,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00499",
+    "lat": 38.93187925,
+    "lon": 1.2450614,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.15295538412008833,
+      "area_pixels": 21470,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00500",
+    "lat": 38.929784421882836,
+    "lon": 1.2553401307395469,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00501",
+    "lat": 38.926461791967014,
+    "lon": 1.2640532563870128,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00502",
+    "lat": 38.930510427134365,
+    "lon": 1.2644458185734122,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00503",
+    "lat": 38.93060947077588,
+    "lon": 1.2645951142819338,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00504",
+    "lat": 38.9298632,
+    "lon": 1.26322605,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.05024931579828262,
+      "area_pixels": 9271,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00505",
+    "lat": 38.932188253708645,
+    "lon": 1.2604711866233143,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00506",
+    "lat": 38.9318661,
+    "lon": 1.26062865,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00507",
+    "lat": 38.930025475524545,
+    "lon": 1.2584541675305367,
+    "pool_detected": true,
+    "pool_count": 4,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.5358840823173523,
+      "area_pixels": 15252,
+      "detected_class": "swimming pool"
+    },
+    "summary": "4 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00508",
+    "lat": 38.92993902884548,
+    "lon": 1.2582452203286254,
+    "pool_detected": true,
+    "pool_count": 3,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.5406730771064758,
+      "area_pixels": 16510,
+      "detected_class": "swimming pool"
+    },
+    "summary": "3 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00509",
+    "lat": 38.93004802559341,
+    "lon": 1.2586814590245123,
+    "pool_detected": true,
+    "pool_count": 4,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.4615094065666199,
+      "area_pixels": 15744,
+      "detected_class": "swimming pool"
+    },
+    "summary": "4 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00510",
+    "lat": 38.92876007493615,
+    "lon": 1.2593776636018759,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.05363571778018639,
+      "area_pixels": 9450,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00511",
+    "lat": 38.929019756465124,
+    "lon": 1.2598679245302402,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00512",
+    "lat": 38.9283312,
+    "lon": 1.2606605,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00513",
+    "lat": 38.92517549423968,
+    "lon": 1.2594912674406185,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "unknown",
+      "confidence": 0.025402327626943586,
+      "area_pixels": 98126,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: unknown"
+  },
+  {
+    "finca_id": "finca_00514",
+    "lat": 38.925004189324135,
+    "lon": 1.2595943812106731,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00515",
+    "lat": 38.931634958822954,
+    "lon": 1.2661578869560453,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00516",
+    "lat": 38.931467227637015,
+    "lon": 1.2668785535708893,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00517",
+    "lat": 38.93124505,
+    "lon": 1.26673265,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00518",
+    "lat": 38.93040365,
+    "lon": 1.266193,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00519",
+    "lat": 38.937541030205885,
+    "lon": 1.2613140878130356,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00520",
+    "lat": 38.93650120527492,
+    "lon": 1.2560170826799306,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00521",
+    "lat": 38.93765335031034,
+    "lon": 1.255351701507049,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.2879455089569092,
+      "area_pixels": 12744,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00522",
+    "lat": 38.93288193092054,
+    "lon": 1.2693649975260572,
+    "pool_detected": true,
+    "pool_count": 4,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.13379703868189577,
+      "area_pixels": 19728,
+      "detected_class": "swimming pool"
+    },
+    "summary": "4 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00523",
+    "lat": 38.93294570033781,
+    "lon": 1.2699637139874258,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.04437456447954123,
+      "area_pixels": 22663,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00524",
+    "lat": 38.932498838956256,
+    "lon": 1.2698009827840613,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.06557776633930931,
+      "area_pixels": 30798,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00525",
+    "lat": 38.931773,
+    "lon": 1.26990675,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.17900003492832184,
+      "area_pixels": 20280,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00526",
+    "lat": 38.93479616871706,
+    "lon": 1.2674864509873272,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.08218716084957123,
+      "area_pixels": 11094,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00527",
+    "lat": 38.93457555987214,
+    "lon": 1.267070531562012,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.14512507617473602,
+      "area_pixels": 13140,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00528",
+    "lat": 38.92678911762045,
+    "lon": 1.266450256346567,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00529",
+    "lat": 38.923555698658106,
+    "lon": 1.2660078254000662,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00530",
+    "lat": 38.92467607664325,
+    "lon": 1.2652033492550214,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.20294097065925598,
+      "area_pixels": 16218,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00531",
+    "lat": 38.955730914257614,
+    "lon": 1.2504751960197082,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.08050242649431326,
+      "area_pixels": 14238,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00532",
+    "lat": 38.956069842167835,
+    "lon": 1.2490132022736828,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00533",
+    "lat": 38.957336890323816,
+    "lon": 1.2472465411407097,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00534",
+    "lat": 38.95851404169289,
+    "lon": 1.2422636029643361,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00535",
+    "lat": 38.959631033872775,
+    "lon": 1.2428964893191294,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.16129909455776215,
+      "area_pixels": 20976,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00536",
+    "lat": 38.96049918343935,
+    "lon": 1.246637237847542,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00537",
+    "lat": 38.96015919750951,
+    "lon": 1.2456755254156362,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00538",
+    "lat": 38.9623504694587,
+    "lon": 1.2447880808761105,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00539",
+    "lat": 38.96232970969988,
+    "lon": 1.2450026015630546,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00540",
+    "lat": 38.96183139998354,
+    "lon": 1.245000942133199,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.2798808665352483,
+      "area_pixels": 23250,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00541",
+    "lat": 38.961971643936074,
+    "lon": 1.2451057830292054,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.41687987464330495,
+      "area_pixels": 23780,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00542",
+    "lat": 38.96259892321909,
+    "lon": 1.2373528746859506,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00543",
+    "lat": 38.9626158890181,
+    "lon": 1.2375409709267982,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00544",
+    "lat": 38.9596796,
+    "lon": 1.2388377,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00545",
+    "lat": 38.95286151360934,
+    "lon": 1.2369843233886673,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00546",
+    "lat": 38.952715331447266,
+    "lon": 1.2379213121140082,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.02834902399607976,
+      "area_pixels": 26201,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00547",
+    "lat": 38.95148556067296,
+    "lon": 1.236018976627251,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.025531199339101786,
+      "area_pixels": 14384,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00548",
+    "lat": 38.95538725,
+    "lon": 1.226628,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00549",
+    "lat": 38.955733560361374,
+    "lon": 1.2229704587311374,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00550",
+    "lat": 38.95955193449333,
+    "lon": 1.2325348874502549,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00551",
+    "lat": 38.95268595,
+    "lon": 1.24123865,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00552",
+    "lat": 38.952453118625805,
+    "lon": 1.241216189845001,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00553",
+    "lat": 38.95559287648887,
+    "lon": 1.2407829976004199,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.16182195140374897,
+      "area_pixels": 31313,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00554",
+    "lat": 38.95458375814853,
+    "lon": 1.2410861736646683,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00555",
+    "lat": 38.9545263,
+    "lon": 1.2415766,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00556",
+    "lat": 38.955396683933664,
+    "lon": 1.2397234118721923,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00557",
+    "lat": 38.94761735,
+    "lon": 1.2303669,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00558",
+    "lat": 38.94738140591782,
+    "lon": 1.2301502747480948,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00559",
+    "lat": 38.94878388978635,
+    "lon": 1.234017570632806,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00560",
+    "lat": 38.94875443274712,
+    "lon": 1.2343887569846388,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00561",
+    "lat": 38.94967067284869,
+    "lon": 1.2344361226902376,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00562",
+    "lat": 38.94972855747658,
+    "lon": 1.233439703364617,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00563",
+    "lat": 38.95038517123812,
+    "lon": 1.2313414873502373,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00564",
+    "lat": 38.95451833973671,
+    "lon": 1.2424556869633874,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.04902353739339078,
+      "area_pixels": 14148,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00565",
+    "lat": 38.95342614918967,
+    "lon": 1.2636557869607117,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00566",
+    "lat": 38.95493285000001,
+    "lon": 1.2629529,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00567",
+    "lat": 38.95079554226255,
+    "lon": 1.2676886372611407,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.22458429634571075,
+      "area_pixels": 10864,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00568",
+    "lat": 38.95248202142134,
+    "lon": 1.2712071290494737,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00569",
+    "lat": 38.95288605,
+    "lon": 1.27144035,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00570",
+    "lat": 38.94899436154307,
+    "lon": 1.2644334141565543,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00571",
+    "lat": 38.952143516580726,
+    "lon": 1.2585897363800687,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00572",
+    "lat": 38.94675112751762,
+    "lon": 1.262377351625881,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00573",
+    "lat": 38.94760668201912,
+    "lon": 1.2613809420229996,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.03949995506519632,
+      "area_pixels": 6348,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00574",
+    "lat": 38.94654612756137,
+    "lon": 1.2607553573088373,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00575",
+    "lat": 38.94573313010097,
+    "lon": 1.261529525735464,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00576",
+    "lat": 38.9481644716976,
+    "lon": 1.2599601579731983,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00577",
+    "lat": 38.94805101805024,
+    "lon": 1.2588380584634982,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00578",
+    "lat": 38.95025877662216,
+    "lon": 1.2579073485609307,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00579",
+    "lat": 38.9528724,
+    "lon": 1.25112285,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00580",
+    "lat": 38.95550694305466,
+    "lon": 1.2595428283665613,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00581",
+    "lat": 38.94813545,
+    "lon": 1.2547929,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00582",
+    "lat": 38.94828277173009,
+    "lon": 1.2549012987584038,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00583",
+    "lat": 38.9478341,
+    "lon": 1.25721775,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.050180330872535706,
+      "area_pixels": 13692,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00584",
+    "lat": 38.946106513317325,
+    "lon": 1.253491040445645,
+    "pool_detected": true,
+    "pool_count": 3,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.11161922663450241,
+      "area_pixels": 19758,
+      "detected_class": "swimming pool"
+    },
+    "summary": "3 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00585",
+    "lat": 38.94644114538462,
+    "lon": 1.2539499541421253,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.10377766937017441,
+      "area_pixels": 19136,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00586",
+    "lat": 38.94389360865674,
+    "lon": 1.2553290794083642,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "unknown",
+      "confidence": 0.01615767851471901,
+      "area_pixels": 148950,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: unknown"
+  },
+  {
+    "finca_id": "finca_00587",
+    "lat": 38.94779783561282,
+    "lon": 1.2386758737204262,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.054720135842743094,
+      "area_pixels": 21525,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00588",
+    "lat": 38.94812225,
+    "lon": 1.23870685,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00589",
+    "lat": 38.949569034442455,
+    "lon": 1.2448802391018405,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00590",
+    "lat": 38.949282352167145,
+    "lon": 1.2456091738463075,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00591",
+    "lat": 38.9491751,
+    "lon": 1.24577215,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00592",
+    "lat": 38.944292063408106,
+    "lon": 1.2441053893342502,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00593",
+    "lat": 38.94602724086279,
+    "lon": 1.2331500237934538,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "unknown",
+      "confidence": 0.016664284095168114,
+      "area_pixels": 43092,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: unknown"
+  },
+  {
+    "finca_id": "finca_00594",
+    "lat": 38.94606473861627,
+    "lon": 1.2334191296581989,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "unknown",
+      "confidence": 0.025092069804668427,
+      "area_pixels": 43384,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: unknown"
+  },
+  {
+    "finca_id": "finca_00595",
+    "lat": 38.945186989290576,
+    "lon": 1.2382636847889636,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00596",
+    "lat": 38.943684626244185,
+    "lon": 1.2321061131031776,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.11256028228736187,
+      "area_pixels": 23660,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00597",
+    "lat": 38.94357141618474,
+    "lon": 1.2313697656090683,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00598",
+    "lat": 38.879695512763554,
+    "lon": 1.2706356368736595,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.09160548181333056,
+      "area_pixels": 49784,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00599",
+    "lat": 38.9064039,
+    "lon": 1.2827445,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00600",
+    "lat": 38.9019935,
+    "lon": 1.28371155,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.09610097360581141,
+      "area_pixels": 15990,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00601",
+    "lat": 38.9045331,
+    "lon": 1.28464925,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00602",
+    "lat": 38.9028155368095,
+    "lon": 1.2769173287687265,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.04301724593451612,
+      "area_pixels": 15974,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00603",
+    "lat": 38.89718990748155,
+    "lon": 1.2792902883406148,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00604",
+    "lat": 38.898345883201806,
+    "lon": 1.2834991760530206,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00605",
+    "lat": 38.89871755000001,
+    "lon": 1.2818273,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00606",
+    "lat": 38.8986919215296,
+    "lon": 1.2816874437713712,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00607",
+    "lat": 38.89739040917796,
+    "lon": 1.2785405837204762,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00608",
+    "lat": 38.901316233844945,
+    "lon": 1.2742183556210087,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.08615810578890974,
+      "area_pixels": 32016,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00609",
+    "lat": 38.8962423,
+    "lon": 1.28512375,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00610",
+    "lat": 38.894829814968716,
+    "lon": 1.2754883816622642,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00611",
+    "lat": 38.89547407665154,
+    "lon": 1.276382073264574,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.5449748635292053,
+      "area_pixels": 9504,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00612",
+    "lat": 38.894818267448414,
+    "lon": 1.2780217139777963,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00613",
+    "lat": 38.89528614031677,
+    "lon": 1.2775444500978497,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00614",
+    "lat": 38.89438123246497,
+    "lon": 1.2803610506521321,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.2648853585604866,
+      "area_pixels": 17199,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00615",
+    "lat": 38.89444665,
+    "lon": 1.28161665,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00616",
+    "lat": 38.89459534286787,
+    "lon": 1.2811237255920962,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00617",
+    "lat": 38.89266703713523,
+    "lon": 1.275232551567067,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00618",
+    "lat": 38.89290370028541,
+    "lon": 1.2743599625762139,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.3160313069820404,
+      "area_pixels": 9546,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00619",
+    "lat": 38.89930852522394,
+    "lon": 1.2911033076815044,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00620",
+    "lat": 38.89622665010929,
+    "lon": 1.2890079668123338,
+    "pool_detected": true,
+    "pool_count": 2,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.2667728066444397,
+      "area_pixels": 30628,
+      "detected_class": "swimming pool"
+    },
+    "summary": "2 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00621",
+    "lat": 38.89724174592688,
+    "lon": 1.2890212801151957,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.07550209015607834,
+      "area_pixels": 38056,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00622",
+    "lat": 38.89711351906865,
+    "lon": 1.28879303913576,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00623",
+    "lat": 38.90112715,
+    "lon": 1.2893991,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00624",
+    "lat": 38.89888985841334,
+    "lon": 1.2928691431905162,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.270846962928772,
+      "area_pixels": 21460,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00625",
+    "lat": 38.89984100505325,
+    "lon": 1.2922477967343782,
+    "pool_detected": true,
+    "pool_count": 3,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.23764093220233917,
+      "area_pixels": 20174,
+      "detected_class": "swimming pool"
+    },
+    "summary": "3 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00626",
+    "lat": 38.8949468,
+    "lon": 1.2898381,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00627",
+    "lat": 38.893107352336045,
+    "lon": 1.292978634806173,
+    "pool_detected": true,
+    "pool_count": 1,
+    "best_pool": {
+      "state": "blue",
+      "confidence": 0.027740608681650722,
+      "area_pixels": 22440,
+      "detected_class": "swimming pool"
+    },
+    "summary": "1 pool(s) detected, best state: blue"
+  },
+  {
+    "finca_id": "finca_00628",
+    "lat": 38.8906677,
+    "lon": 1.2973061,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00629",
+    "lat": 38.8919872,
+    "lon": 1.29566215,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00630",
+    "lat": 38.90040396852995,
+    "lon": 1.2987775915685773,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  },
+  {
+    "finca_id": "finca_00631",
+    "lat": 38.897225116945016,
+    "lon": 1.299967550428561,
+    "pool_detected": false,
+    "pool_count": 0,
+    "best_pool": null,
+    "summary": "No pools detected"
+  }
+]
