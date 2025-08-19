@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Finca, VisualAnalysisResult } from '../utils/types';
+import { Finca, VisualAnalysisResult, CombinedScoringResult, FincaOptimizedData } from '../utils/types';
+import { loadCombinedScoringData, loadOptimizedSentinel1Data } from '../utils/data';
 
 interface Props {
   selected: Finca;
@@ -14,6 +15,11 @@ const NewPopup: React.FC<Props> = ({ selected, onClose }) => {
   const [hasStreetView, setHasStreetView] = useState<'loading' | 'available' | 'unavailable'>('loading');
   const [visualAnalysis, setVisualAnalysis] = useState<VisualAnalysisResult | null>(null);
   const [loadingVisual, setLoadingVisual] = useState(false);
+  const [vehicleSummary, setVehicleSummary] = useState<Record<string, { vehicle_detected: boolean; total_count: number; counts_by_class: Record<string, number> }>>({});
+  const [combinedScoring, setCombinedScoring] = useState<CombinedScoringResult | null>(null);
+  const [loadingScoring, setLoadingScoring] = useState(false);
+  const [optimizedData, setOptimizedData] = useState<FincaOptimizedData | null>(null);
+  const [loadingOptimized, setLoadingOptimized] = useState(false);
 
   // Vérification de la disponibilité Street View avec cache
   useEffect(() => {
@@ -84,6 +90,65 @@ const NewPopup: React.FC<Props> = ({ selected, onClose }) => {
     loadVisualAnalysis();
   }, [selected.id]);
 
+  // Charger scoring combiné
+  useEffect(() => {
+    const loadScoring = async () => {
+      setLoadingScoring(true);
+      try {
+        const result = await loadCombinedScoringData(selected.id, true);
+        setCombinedScoring(result);
+        console.log('🏚️ Combined scoring loaded:', result);
+      } catch (error) {
+        console.warn('⚠️ Combined scoring failed:', error);
+      } finally {
+        setLoadingScoring(false);
+      }
+    };
+
+    loadScoring();
+  }, [selected.id]);
+
+  // Charger données Sentinel-1 optimisées
+  useEffect(() => {
+    const loadOptimized = async () => {
+      setLoadingOptimized(true);
+      try {
+        const result = await loadOptimizedSentinel1Data(selected.id);
+        setOptimizedData(result);
+        console.log('🛰️ Optimized Sentinel-1 data loaded:', result);
+      } catch (error) {
+        console.warn('⚠️ Optimized Sentinel-1 data failed:', error);
+      } finally {
+        setLoadingOptimized(false);
+      }
+    };
+
+    loadOptimized();
+  }, [selected.id]);
+
+  // Charger résumé véhicules (batch)
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const res = await fetch('/data/vehicles_full_summary.json');
+        if (!res.ok) return;
+        const arr = await res.json();
+        const map: Record<string, any> = {};
+        for (const item of arr) {
+          map[String(item.finca_id)] = {
+            vehicle_detected: Boolean(item.vehicle_detected),
+            total_count: Number(item.total_count || 0),
+            counts_by_class: item.counts_by_class || {},
+          };
+        }
+        setVehicleSummary(map);
+      } catch {
+        setVehicleSummary({});
+      }
+    };
+    load();
+  }, []);
+
   // Calcul de la variation en pourcentage
   const variationPercent = selected.std_deviation && selected.median_ndvi && selected.median_ndvi > 0 
     ? Math.round((selected.std_deviation / selected.median_ndvi) * 100)
@@ -126,6 +191,19 @@ const NewPopup: React.FC<Props> = ({ selected, onClose }) => {
   };
 
   const getActivityLabel = () => {
+    // Utiliser le scoring combiné si disponible, sinon fallback sur NDVI
+    if (combinedScoring?.scoring_result) {
+      const level = combinedScoring.scoring_result.abandonment_level;
+      switch (level) {
+        case 'none': return 'Active';
+        case 'low': return 'Semi-active';
+        case 'medium': return 'Semi-active';
+        case 'high': return 'Inactive';
+        default: return 'Unknown';
+      }
+    }
+    
+    // Fallback sur NDVI
     const status = getActivityStatus();
     switch (status) {
       case 'active': return 'Active';
@@ -136,6 +214,32 @@ const NewPopup: React.FC<Props> = ({ selected, onClose }) => {
   };
 
   const getActivityColor = () => {
+    // Utiliser les données optimisées si disponibles
+    if (optimizedData?.combined_scoring) {
+      const level = optimizedData.combined_scoring.abandonment_level;
+      switch (level) {
+        case 'Très faible': return { bg: 'rgba(239,68,68,0.15)', text: '#DC2626' };
+        case 'Faible': return { bg: 'rgba(251,146,60,0.2)', text: '#FB923C' };
+        case 'Modéré': return { bg: 'rgba(59,130,246,0.15)', text: '#1E40AF' };
+        case 'Élevé': return { bg: 'rgba(251,146,60,0.2)', text: '#FB923C' };
+        case 'Très élevé': return { bg: 'rgba(239,68,68,0.15)', text: '#DC2626' };
+        default: return { bg: 'rgba(100,116,139,0.10)', text: '#64748B' };
+      }
+    }
+    
+    // Utiliser le scoring combiné si disponible, sinon fallback sur NDVI
+    if (combinedScoring?.scoring_result) {
+      const level = combinedScoring.scoring_result.abandonment_level;
+      switch (level) {
+        case 'none': return { bg: 'rgba(34,197,94,0.15)', text: '#166534' };
+        case 'low': return { bg: 'rgba(59,130,246,0.15)', text: '#1E40AF' };
+        case 'medium': return { bg: 'rgba(251,146,60,0.2)', text: '#FB923C' };
+        case 'high': return { bg: 'rgba(239,68,68,0.15)', text: '#DC2626' };
+        default: return { bg: 'rgba(100,116,139,0.10)', text: '#64748B' };
+      }
+    }
+    
+    // Fallback sur NDVI
     const status = getActivityStatus();
     switch (status) {
       case 'active': return { bg: 'rgba(34,197,94,0.15)', text: '#166534' };
@@ -143,6 +247,51 @@ const NewPopup: React.FC<Props> = ({ selected, onClose }) => {
       case 'inactive': return { bg: 'rgba(239,68,68,0.15)', text: '#DC2626' };
       default: return { bg: 'rgba(100,116,139,0.10)', text: '#64748B' };
     }
+  };
+
+  // Fonctions helper pour les données optimisées
+  const getOptimizedActivityLabel = () => {
+    if (optimizedData?.combined_scoring) {
+      return optimizedData.combined_scoring.abandonment_level;
+    }
+    return getActivityLabel();
+  };
+
+  const getOptimizedOverallScore = () => {
+    if (optimizedData?.combined_scoring) {
+      return optimizedData.combined_scoring.overall_score;
+    }
+    return selected.abandon_score || 50;
+  };
+
+  const getSentinel1ActivityLevel = () => {
+    if (optimizedData?.combined_scoring?.components?.sentinel1) {
+      return optimizedData.combined_scoring.components.sentinel1.activity_level;
+    }
+    return 'Modérée';
+  };
+
+  const getSentinel1Score = () => {
+    if (optimizedData?.combined_scoring?.components?.sentinel1) {
+      return optimizedData.combined_scoring.components.sentinel1.score;
+    }
+    return 50;
+  };
+
+  const getNDVIOptimizedScore = () => {
+    if (optimizedData?.combined_scoring?.components?.ndvi) {
+      return optimizedData.combined_scoring.components.ndvi.score;
+    }
+    return selected.abandon_score || 50;
+  };
+
+  const getVehicleScore = () => {
+    // Utiliser les données de véhicules si disponibles
+    const vehicleData = vehicleSummary[selected.id];
+    if (vehicleData && vehicleData.vehicle_detected) {
+      return 25; // Score faible si véhicule détecté
+    }
+    return 75; // Score élevé si pas de véhicule
   };
 
   const getRiskInfo = () => {
@@ -287,6 +436,159 @@ const NewPopup: React.FC<Props> = ({ selected, onClose }) => {
         {/* Attributs */}
         <div style={{ fontSize: 12, color: '#718096', marginBottom: 12 }}>
           {Math.round(selected.surface_estimee_m2)} m² • {selected.distance_plus_proche_voisin_m}m from neighbour
+        </div>
+
+        {/* Métriques d'activité - Style screenshot */}
+        <div style={{ marginBottom: 12 }}>
+          {/* Activité radar (Sentinel-1) */}
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'space-between',
+            marginBottom: 6,
+            fontSize: 12,
+            color: '#374151'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <span style={{ marginRight: 8, fontSize: 14 }}>📡</span>
+              <span>Activité radar</span>
+            </div>
+            <div style={{ 
+              display: 'flex', 
+              alignItems: 'center',
+              fontSize: 12,
+              fontWeight: 600
+            }}>
+              <span style={{ marginRight: 6 }}>
+                {loadingOptimized ? '...' : getSentinel1ActivityLevel()}
+              </span>
+              <span style={{ 
+                color: '#DC2626',
+                fontSize: 11
+              }}>
+                {loadingOptimized ? '...' : getSentinel1Score()}
+              </span>
+            </div>
+          </div>
+
+          {/* Lumière nocturne (VIIRS) */}
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'space-between',
+            marginBottom: 6,
+            fontSize: 12,
+            color: '#374151'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <span style={{ marginRight: 8, fontSize: 14 }}>💡</span>
+              <span>Lumière nocturne</span>
+            </div>
+            <div style={{ 
+              display: 'flex', 
+              alignItems: 'center',
+              fontSize: 12,
+              fontWeight: 600
+            }}>
+              <span style={{ marginRight: 6 }}>
+                {combinedScoring?.viirs_activity_level || 'Faible'}
+              </span>
+              <span style={{ 
+                color: '#DC2626',
+                fontSize: 11
+              }}>
+                {combinedScoring?.viirs_score || 0}
+              </span>
+            </div>
+          </div>
+
+          {/* Entretien végétation (NDVI) */}
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'space-between',
+            marginBottom: 6,
+            fontSize: 12,
+            color: '#374151'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <span style={{ marginRight: 8, fontSize: 14 }}>🌱</span>
+              <span>Entretien végétation</span>
+            </div>
+            <div style={{ 
+              display: 'flex', 
+              alignItems: 'center',
+              fontSize: 12,
+              fontWeight: 600
+            }}>
+              <span style={{ marginRight: 6 }}>
+                {loadingOptimized ? '...' : getNDVILabel(getNDVIOptimizedScore())}
+              </span>
+              <span style={{ 
+                color: '#DC2626',
+                fontSize: 11
+              }}>
+                {loadingOptimized ? '...' : Math.round(getNDVIOptimizedScore())}
+              </span>
+            </div>
+          </div>
+
+          {/* Véhicules */}
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'space-between',
+            marginBottom: 6,
+            fontSize: 12,
+            color: '#374151'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <span style={{ marginRight: 8, fontSize: 14 }}>🚗</span>
+              <span>Voiture</span>
+            </div>
+            <div style={{ 
+              display: 'flex', 
+              alignItems: 'center',
+              fontSize: 12,
+              fontWeight: 600
+            }}>
+              <span style={{ marginRight: 6 }}>
+                {getVehicleLabel(vehicleSummary?.[selected.id]?.vehicle_detected || false)}
+              </span>
+              <span style={{ 
+                color: '#DC2626',
+                fontSize: 11
+              }}>
+                {vehicleSummary?.[selected.id]?.total_count || 0}
+              </span>
+            </div>
+          </div>
+
+          {/* Total */}
+          <div style={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'space-between',
+            paddingTop: 8,
+            borderTop: '1px solid #E5E7EB',
+            fontSize: 12,
+            fontWeight: 600,
+            color: '#374151'
+          }}>
+            <span>Total</span>
+            <span style={{ 
+              color: '#DC2626',
+              fontSize: 13,
+              fontWeight: 700
+            }}>
+              {loadingOptimized ? '...' : (() => {
+                const sentinel1Score = getSentinel1Score();
+                const ndviScore = getNDVIOptimizedScore();
+                const vehicleScore = getVehicleScore();
+                return Math.round(sentinel1Score + ndviScore + vehicleScore);
+              })()} pts
+            </span>
+          </div>
         </div>
 
         {/* Section NDVI */}
@@ -490,6 +792,130 @@ const NewPopup: React.FC<Props> = ({ selected, onClose }) => {
           ) : null}
         </div>
 
+        {/* Section Véhicules (résumé batch) */}
+        <div style={{ borderTop: '1px solid #E5E7EB', paddingTop: 12, marginTop: 12 }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
+            <div style={{ fontSize: 14, fontWeight: 600, color: '#374151' }}>
+              Véhicules (batch)
+            </div>
+          </div>
+          {(() => {
+            const vs = vehicleSummary?.[selected.id];
+            if (!vs) {
+              return <div style={{ fontSize: 11, color: '#9CA3AF', fontStyle: 'italic' }}>— Données véhicules indisponibles</div>;
+            }
+            const has = Boolean(vs.vehicle_detected);
+            const parts: string[] = [];
+            const counts = vs.counts_by_class || {};
+            const order = ['car', 'truck', 'bus', 'motorcycle', 'bicycle'];
+            for (const k of order) {
+              if (counts[k]) parts.push(`${k}: ${counts[k]}`);
+            }
+            // add any remaining classes
+            Object.keys(counts).forEach((k) => {
+              if (!order.includes(k) && counts[k]) parts.push(`${k}: ${counts[k]}`);
+            });
+            return (
+              <div style={{ fontSize: 12, color: has ? '#374151' : '#9CA3AF' }}>
+                {has ? `✅ Véhicules détectés — total ${vs.total_count}` : '∅ Aucun véhicule détecté'}
+                {parts.length > 0 && (
+                  <div style={{ marginTop: 4, color: '#6B7280' }}>
+                    {parts.join(' • ')}
+                  </div>
+                )}
+              </div>
+            );
+          })()}
+        </div>
+
+        {/* Section Scoring d'Abandon Combiné */}
+        <div style={{ borderTop: '1px solid #E5E7EB', paddingTop: 12, marginTop: 12 }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
+            <div style={{ fontSize: 14, fontWeight: 600, color: '#374151' }}>
+              🏚️ Score d'Abandon Combiné
+            </div>
+            {loadingScoring && (
+              <div style={{ fontSize: 10, color: '#6B7280' }}>
+                Calcul...
+              </div>
+            )}
+          </div>
+          
+          {combinedScoring ? (
+            <div>
+              {/* Score total */}
+              <div style={{ 
+                display: 'flex', 
+                alignItems: 'center', 
+                justifyContent: 'space-between',
+                marginBottom: 8,
+                padding: '8px 12px',
+                backgroundColor: getAbandonmentColor(combinedScoring.scoring_result.abandonment_level).bg,
+                color: getAbandonmentColor(combinedScoring.scoring_result.abandonment_level).text,
+                borderRadius: 6,
+                fontSize: 13,
+                fontWeight: 600
+              }}>
+                <span>
+                  {getAbandonmentIcon(combinedScoring.scoring_result.abandonment_level)} 
+                  {combinedScoring.scoring_result.level_description}
+                </span>
+                <span style={{ fontSize: 16, fontWeight: 700 }}>
+                  {combinedScoring.scoring_result.total_score}/{combinedScoring.scoring_result.max_possible_score}
+                </span>
+              </div>
+
+              {/* Breakdown véhicules */}
+              <div style={{ marginBottom: 6 }}>
+                <div style={{ 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'space-between',
+                  fontSize: 11,
+                  color: '#374151'
+                }}>
+                  <span>🚗 Véhicules (6 mois)</span>
+                  <span style={{ 
+                    fontWeight: 600,
+                    color: combinedScoring.scoring_result.vehicle_score.score > 0 ? '#DC2626' : '#059669'
+                  }}>
+                    +{combinedScoring.scoring_result.vehicle_score.score}pts
+                  </span>
+                </div>
+                <div style={{ fontSize: 10, color: '#6B7280', marginLeft: 8 }}>
+                  {combinedScoring.scoring_result.vehicle_score.reason}
+                </div>
+              </div>
+
+              {/* Breakdown NDVI */}
+              <div style={{ marginBottom: 6 }}>
+                <div style={{ 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'space-between',
+                  fontSize: 11,
+                  color: '#374151'
+                }}>
+                  <span>🌱 Variation NDVI</span>
+                  <span style={{ 
+                    fontWeight: 600,
+                    color: combinedScoring.scoring_result.ndvi_score.score > 0 ? '#DC2626' : '#059669'
+                  }}>
+                    {combinedScoring.scoring_result.ndvi_score.score > 0 ? '+' : ''}{combinedScoring.scoring_result.ndvi_score.score}pts
+                  </span>
+                </div>
+                <div style={{ fontSize: 10, color: '#6B7280', marginLeft: 8 }}>
+                  {combinedScoring.scoring_result.ndvi_score.reason}
+                </div>
+              </div>
+            </div>
+          ) : !loadingScoring ? (
+            <div style={{ fontSize: 11, color: '#9CA3AF', fontStyle: 'italic' }}>
+              🔍 Scoring combiné non disponible
+            </div>
+          ) : null}
+        </div>
+
       </div>
     </div>
   );
@@ -559,6 +985,38 @@ const getConfidenceColor = (confidence: string) => {
     case 'low': return { bg: '#FEE2E2', text: '#991B1B' };
     default: return { bg: '#F3F4F6', text: '#374151' };
   }
+};
+
+const getAbandonmentIcon = (level: string) => {
+  switch (level) {
+    case 'high': return '🏚️';
+    case 'medium': return '⚠️';
+    case 'low': return '🏠';
+    case 'none': return '✅';
+    default: return '❓';
+  }
+};
+
+const getAbandonmentColor = (level: string) => {
+  switch (level) {
+    case 'high': return { bg: '#FEE2E2', text: '#991B1B' };
+    case 'medium': return { bg: '#FEF3C7', text: '#92400E' };
+    case 'low': return { bg: '#DBEAFE', text: '#1E40AF' };
+    case 'none': return { bg: '#DCFCE7', text: '#166534' };
+    default: return { bg: '#F3F4F6', text: '#6B7280' };
+  }
+};
+
+// Nouvelles fonctions helper pour les métriques
+const getNDVILabel = (score: number) => {
+  if (score >= 70) return 'Élevé';
+  if (score >= 50) return 'Modéré';
+  if (score >= 30) return 'Faible';
+  return 'Très faible';
+};
+
+const getVehicleLabel = (detected: boolean) => {
+  return detected ? 'Modéré' : 'Faible';
 };
 
 export default NewPopup;

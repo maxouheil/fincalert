@@ -54,6 +54,25 @@ export interface MobilityDetectionResult {
   time_gap_months: number;
 }
 
+export interface VehicleDetectionSummary {
+  vehicle_detected: boolean;
+  total_count: number;
+  counts_by_class: Record<string, number>;
+  best_vehicle: {
+    class: string;
+    confidence: number;
+    bbox: [number, number, number, number];
+    area_pixels?: number;
+  } | null;
+  all_vehicles: Array<{
+    class: string;
+    confidence: number;
+    bbox: [number, number, number, number];
+    area_pixels?: number;
+  }>;
+  summary: string;
+}
+
 export interface VisualAnalysisResult {
   finca_id: string;
   pools: {
@@ -67,5 +86,102 @@ export interface VisualAnalysisResult {
     visual_score: number;
     confidence: 'high' | 'medium' | 'low';
   };
+}
+
+// Types pour le système de scoring d'abandon
+export interface VehicleHistoryEntry {
+  date: string;
+  vehicles_detected: boolean;
+  count: number;
+  classes: Record<string, number>;
+  finca_id: string;
+}
+
+export interface NDVIData {
+  variation_percent: number;
+  mean_ndvi: number;
+  min_ndvi?: number;
+  max_ndvi?: number;
+}
+
+export interface VehicleScore {
+  score: number;
+  reason: string;
+  details: {
+    images_with_vehicles: number;
+    total_images: number;
+    vehicle_ratio: number;
+  };
+}
+
+export interface NDVIScore {
+  score: number;
+  reason: string;
+  details: {
+    variation_percent: number;
+    mean_ndvi: number;
+  };
+}
+
+export interface CombinedAbandonmentScore {
+  total_score: number;
+  abandonment_level: 'high' | 'medium' | 'low' | 'none';
+  level_description: string;
+  vehicle_score: VehicleScore;
+  ndvi_score: NDVIScore;
+  max_possible_score: number;
+}
+
+export interface CombinedScoringResult {
+  finca_id: string;
+  demo: boolean;
+  scoring_result: CombinedAbandonmentScore;
+  // Nouvelles propriétés Sentinel-1 et VIIRS
+  sentinel1_activity_level?: string;
+  activity_score?: number;
+  viirs_activity_level?: string;
+  viirs_score?: number;
+}
+
+// Types pour les données Sentinel-1 optimisées
+export interface Sentinel1OptimizedData {
+  vv_mean: number;
+  activity_level: 'Très élevée' | 'Élevée' | 'Modérée' | 'Faible' | 'Très faible';
+  score: number;
+  period: string;
+  images_count?: number;
+  date_range?: {
+    start: string;
+    end: string;
+  };
+}
+
+export interface NDVIOptimizedData {
+  score: number;
+  status: string;
+  median_ndvi: number;
+  risk_category: string;
+}
+
+export interface CombinedScoringOptimized {
+  overall_score: number;
+  abandonment_level: 'Très faible' | 'Faible' | 'Modéré' | 'Élevé' | 'Très élevé';
+  weights_used: {
+    ndvi: number;
+    sentinel1: number;
+  };
+  components: {
+    ndvi: NDVIOptimizedData;
+    sentinel1: Sentinel1OptimizedData;
+  };
+}
+
+export interface FincaOptimizedData {
+  finca_id: string;
+  coordinates: {
+    lat: number;
+    lon: number;
+  };
+  combined_scoring: CombinedScoringOptimized;
 }
 

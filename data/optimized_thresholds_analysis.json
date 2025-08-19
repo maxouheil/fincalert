@@ -1,0 +1,30 @@
+{
+  "original_thresholds": {
+    "very_high": -5,
+    "high": -10,
+    "moderate": -15,
+    "low": -20
+  },
+  "optimized_thresholds": {
+    "very_high": -5,
+    "high": -10,
+    "moderate": -11.836446741311416,
+    "low": -12.336446741311416
+  },
+  "target_low_percentage": 10,
+  "analysis_date": "2025-08-20T00:33:59.616455",
+  "total_fincas": 631,
+  "new_distribution": {
+    "Tr\u00e8s faible": 27,
+    "\u00c9lev\u00e9e": 166,
+    "Mod\u00e9r\u00e9e": 393,
+    "Faible": 37,
+    "Tr\u00e8s \u00e9lev\u00e9e": 8
+  },
+  "new_scores": {
+    "mean": 53.90649762282092,
+    "std": 16.56976239801579,
+    "min": 10.0,
+    "max": 90.0
+  }
+}
