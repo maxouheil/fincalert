@@ -23,6 +23,22 @@ export interface Finca {
   mobility_level?: 'high' | 'medium' | 'low' | 'unknown';
   visual_indicators?: string[];
   visual_analysis_date?: string;
+  
+  // Nouvelles données de luminosité nocturne VIIRS
+  luminosity_score?: number;
+  luminosity_mean?: number;
+  luminosity_level?: string;
+  luminosity_reason?: string;
+  luminosity_trend?: number;
+  luminosity_seasonal?: string;
+  
+  // Score global simplifié (/15)
+  simple_score?: number;
+  simple_classification?: string;
+  radar_score?: number;
+  luminosite_score?: number;
+  vegetation_score?: number;
+  cv_percent?: number;
 }
 
 // Types pour les résultats de détection
@@ -183,5 +199,65 @@ export interface FincaOptimizedData {
     lon: number;
   };
   combined_scoring: CombinedScoringOptimized;
+}
+
+// Types pour le système de scoring simple
+export interface SimpleScoringCriteria {
+  level: 'Faible' | 'Moyen' | 'Fort';
+  points: 1 | 3 | 5;
+}
+
+export interface SimpleScoringThresholds {
+  viirs: {
+    low_max: number;
+    medium_max: number;
+  };
+  radar: {
+    low_max_db: number;
+    medium_max_db: number;
+  };
+  ndvi: {
+    active_max: number;
+    moderate_max: number;
+  };
+}
+
+export interface SimpleScoringResult {
+  criteria: {
+    luminosite: SimpleScoringCriteria;
+    radar: SimpleScoringCriteria;
+    entretien_vegetation: SimpleScoringCriteria;
+  };
+  total_points: number;
+  out_of: number;
+  classification: 'Inactive' | 'Moderate' | 'Active';
+  thresholds: SimpleScoringThresholds;
+}
+
+export interface SimpleScoringResponse {
+  finca_id: string;
+  data_available: {
+    ndvi: boolean;
+    sentinel1: boolean;
+    viirs: boolean;
+  };
+  simple_scoring: SimpleScoringResult;
+}
+
+// Types pour les données NDVI 631 fincas
+export interface NDVI631Finca {
+  finca_id: string;
+  median_ndvi: number;
+  std_deviation: number;
+  cv_percent: number;
+  abandon_score: number;
+  activity_status: 'active' | 'semi-active' | 'inactive';
+  valid_periods: number;
+}
+
+export interface NDVI631Response {
+  total_fincas: number;
+  data_source: string;
+  fincas: NDVI631Finca[];
 }
 

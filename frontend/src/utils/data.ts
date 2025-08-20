@@ -28,6 +28,22 @@ export async function loadFincas(path: string = '/data/fincas_with_abandon_score
       valid_periods: f.properties?.valid_periods,
       processing_duration_s: f.properties?.processing_duration_s,
       ndvi_timeseries: f.properties?.ndvi_timeseries,
+      
+      // Nouvelles données de luminosité nocturne VIIRS
+      luminosity_score: f.properties?.luminosity_score,
+      luminosity_mean: f.properties?.luminosity_mean,
+      luminosity_level: f.properties?.luminosity_level,
+      luminosity_reason: f.properties?.luminosity_reason,
+      luminosity_trend: f.properties?.luminosity_trend,
+      luminosity_seasonal: f.properties?.luminosity_seasonal,
+      
+      // Score global simplifié (/15)
+      simple_score: f.properties?.simple_score,
+      simple_classification: f.properties?.simple_classification,
+      radar_score: f.properties?.radar_score,
+      luminosite_score: f.properties?.luminosite_score,
+      vegetation_score: f.properties?.vegetation_score,
+      cv_percent: f.properties?.cv_percent,
     } as Finca;
   });
 }
@@ -80,6 +96,34 @@ export async function loadOptimizedSentinel1Data(fincaId: string): Promise<any> 
     return fincaData || null;
   } catch (error) {
     console.warn('⚠️ Failed to load optimized Sentinel-1 data:', error);
+    return null;
+  }
+}
+
+export async function loadNDVI631Fincas(): Promise<any> {
+  try {
+    const response = await fetch('http://localhost:8000/api/ndvi-all/631-fincas');
+    if (!response.ok) {
+      throw new Error('Failed to load NDVI 631 fincas data');
+    }
+    
+    return await response.json();
+  } catch (error) {
+    console.warn('⚠️ Failed to load NDVI 631 fincas data:', error);
+    return null;
+  }
+}
+
+export async function loadSimpleScoringData(fincaId: string): Promise<any> {
+  try {
+    const response = await fetch(`http://localhost:8000/api/scoring/simple/${fincaId}`);
+    if (!response.ok) {
+      throw new Error('Failed to load simple scoring data');
+    }
+    
+    return await response.json();
+  } catch (error) {
+    console.warn('⚠️ Failed to load simple scoring data:', error);
     return null;
   }
 }

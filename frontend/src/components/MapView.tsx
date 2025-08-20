@@ -3,6 +3,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import Map, { Source, Layer, Popup, MapRef } from 'react-map-gl';
 import type { LayerProps } from 'react-map-gl';
 import { Finca } from '../utils/types';
+import { loadVehicleData } from '../utils/data';
 import NewPopup, { streetViewCache } from './NewPopup';
 
 // Prefer REACT_APP_MAPBOX_TOKEN (CRA convention). Fallback to MAPBOX_TOKEN if present.
@@ -24,10 +25,10 @@ const fincaLayer: LayerProps = {
     'circle-radius': 6,
     'circle-color': [
       'case',
-      ['>=', ['get', 'abandon_score'], 70], '#DC2626', // Red
-      ['>=', ['get', 'abandon_score'], 40], '#FB923C', // Orange
-      ['<', ['get', 'abandon_score'], 40], '#059669', // Green
-      '#2B6CB0' // Default Blue
+      ['>=', ['get', 'simple_score'], 10], '#059669', // Green - Active (10-15 points)
+      ['>=', ['get', 'simple_score'], 5], '#F59E0B', // Orange - Moderate (5-9 points)
+      ['<', ['get', 'simple_score'], 5], '#DC2626', // Red - Inactive (1-4 points)
+      '#6B7280' // Default Gray
     ],
     'circle-stroke-width': 2,
     'circle-stroke-color': '#FFFFFF'
@@ -46,12 +47,14 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
   const [placeCache, setPlaceCache] = useState<Record<string, string>>({});
   const [sizeFilter, setSizeFilter] = useState<'all' | 'S' | 'M' | 'L'>('all');
   const [nnFilter, setNnFilter] = useState<'all' | '10to15' | '15to30' | 'lt30' | '30to60' | 'gt60'>('all');
-  const [activityFilter, setActivityFilter] = useState<'all' | 'active' | 'semi-active' | 'inactive'>('all');
+  const [activityFilter, setActivityFilter] = useState<'all' | 'Active' | 'Moderate' | 'Inactive'>('all');
   const [streetViewFilter, setStreetViewFilter] = useState<'all' | 'available' | 'unavailable'>('all');
   const [poolFilter, setPoolFilter] = useState<'all' | 'blue' | 'other' | 'none'>('all');
   const [hasCentered, setHasCentered] = useState(false);
   const [thumbLoaded, setThumbLoaded] = useState(false);
   const [top30Only, setTop30Only] = useState(false);
+  const [vehicleFilter, setVehicleFilter] = useState<'all' | 'present' | 'none'>('all');
+  const [showMoreFilters, setShowMoreFilters] = useState(false);
 
   // Charger pool summary dans un dictionnaire {finca_id -> {pool_detected, best_pool.state}}
   const [poolSummary, setPoolSummary] = useState<Record<string, { pool_detected: boolean; best_state: string | null }>>({});
@@ -72,6 +75,14 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
       } catch {}
     };
     load();
+  }, []);
+
+  // Charger vehicle summary {finca_id -> {vehicle_detected, total_count, counts_by_class}}
+  const [vehicleSummary, setVehicleSummary] = useState<Record<string, { vehicle_detected: boolean; total_count: number; counts_by_class: Record<string, number> }>>({});
+  useEffect(() => {
+    loadVehicleData('/data/vehicles_full_summary.json')
+      .then((m) => setVehicleSummary(m as any))
+      .catch(() => setVehicleSummary({}));
   }, []);
 
   // Reference areas for West Ibiza (approximate centers)
@@ -171,7 +182,9 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
 
       let activityOk = true;
       if (activityFilter !== 'all') {
-        activityOk = activity === activityFilter;
+        // Utiliser simple_classification au lieu de activity_status
+        const simpleClassification = f.simple_classification || 'Inactive';
+        activityOk = simpleClassification === activityFilter;
       }
 
       let streetViewOk = true;
@@ -201,9 +214,18 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
         }
       }
 
-      return areaOk && distOk && activityOk && streetViewOk && poolOk;
+      // Filtre véhicules basé sur vehicleSummary
+      let vehicleOk = true;
+      if (vehicleFilter !== 'all') {
+        const vs = vehicleSummary[f.id];
+        const detected = Boolean(vs?.vehicle_detected);
+        if (vehicleFilter === 'present') vehicleOk = detected;
+        else if (vehicleFilter === 'none') vehicleOk = !detected;
+      }
+
+      return areaOk && distOk && activityOk && streetViewOk && poolOk && vehicleOk;
     });
-  }, [fincas, sizeFilter, nnFilter, activityFilter, streetViewFilter, poolFilter, top30Only, poolSummary]);
+  }, [fincas, sizeFilter, nnFilter, activityFilter, streetViewFilter, poolFilter, top30Only, poolSummary, vehicleFilter, vehicleSummary]);
 
   useEffect(() => {
     if (selected && !filteredFincas.some((f) => f.id === selected.id)) {
@@ -223,6 +245,8 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
           activity_status: f.activity_status || 'unknown',
           pool_detected: Boolean(ps?.pool_detected || false),
           pool_state: ps?.best_state || null,
+          simple_score: f.simple_score || 3,
+          simple_classification: f.simple_classification || 'Inactive',
         },
         geometry: { type: 'Point', coordinates: [f.lon, f.lat] },
       });
@@ -352,19 +376,24 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
     >
       {/* Filters overlay */}
       <div style={{ position: 'absolute', top: 12, left: 12, zIndex: 1 }}>
-        <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: 16, alignItems: 'center', position: 'relative' }}>
           <button
             onClick={() => setTop30Only((v) => !v)}
             aria-pressed={top30Only}
             title="Afficher uniquement les 30 premières fincas"
             style={{
-              padding: '6px 10px',
-              borderRadius: 6,
-              border: top30Only ? '2px solid #2563EB' : '1px solid #D1D5DB',
-              background: top30Only ? '#EFF6FF' : '#FFFFFF',
-              fontSize: 12,
-              fontWeight: 600,
-              cursor: 'pointer'
+              appearance: 'none',
+              fontFamily: 'var(--app-font)',
+              fontWeight: 700,
+              fontSize: 16,
+              color: '#0F172A',
+              background: top30Only ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.92)',
+              border: top30Only ? '2px solid #2563EB' : '1px solid #E2E8F0',
+              borderRadius: 14,
+              padding: '8px 16px',
+              boxShadow: '0 6px 20px rgba(0,0,0,0.12)',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease'
             }}
           >
             Top 30
@@ -382,49 +411,103 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
           </select>
           <select
             className="filter-select"
-            value={nnFilter}
-            onChange={(e) => setNnFilter(e.target.value as 'all' | '10to15' | '15to30' | 'lt30' | '30to60' | 'gt60')}
-            aria-label="Filter by isolation"
-          >
-            <option value="all">All isolations</option>
-            <option value="10to15">10 to 15m</option>
-            <option value="15to30">15 to 30m</option>
-            <option value="lt30">Less than 30m</option>
-            <option value="30to60">30 to 60m</option>
-            <option value="gt60">More than 60m</option>
-          </select>
-          <select
-            className="filter-select"
             value={activityFilter}
-            onChange={(e) => setActivityFilter(e.target.value as 'all' | 'active' | 'semi-active' | 'inactive')}
+            onChange={(e) => setActivityFilter(e.target.value as 'all' | 'Active' | 'Moderate' | 'Inactive')}
             aria-label="Filter by activity status"
           >
             <option value="all">All activities</option>
-            <option value="active">🟢 Active</option>
-            <option value="semi-active">🟡 Semi-active</option>
-            <option value="inactive">🔴 Inactive</option>
+            <option value="Active">🟢 Active (≥10 pts)</option>
+            <option value="Moderate">🟡 Moderate (5-9 pts)</option>
+            <option value="Inactive">🔴 Inactive (&lt;5 pts)</option>
           </select>
-          <select
-            className="filter-select"
-            value={streetViewFilter}
-            onChange={(e) => setStreetViewFilter(e.target.value as 'all' | 'available' | 'unavailable')}
-            aria-label="Filter by Street View availability"
-          >
-            <option value="all">All Street View</option>
-            <option value="available">🗺️ Available</option>
-            <option value="unavailable">🚫 Unavailable</option>
-          </select>
-          <select
-            className="filter-select"
-            value={poolFilter}
-            onChange={(e) => setPoolFilter(e.target.value as 'all' | 'blue' | 'other' | 'none')}
-            aria-label="Filter by pool state"
-          >
-            <option value="all">💦 Pool: All</option>
-            <option value="blue">💙 Pool (blue)</option>
-            <option value="other">💚 Pool (other)</option>
-            <option value="none">∅ No pool</option>
-          </select>
+          
+          {/* Bouton More pour les filtres avancés */}
+          <div style={{ position: 'relative' }}>
+            <button
+              onClick={() => setShowMoreFilters(!showMoreFilters)}
+              style={{
+                appearance: 'none',
+                fontFamily: 'var(--app-font)',
+                fontWeight: 700,
+                fontSize: 16,
+                color: '#0F172A',
+                background: showMoreFilters ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.92)',
+                border: showMoreFilters ? '2px solid #2563EB' : '1px solid #E2E8F0',
+                borderRadius: 14,
+                padding: '8px 16px',
+                boxShadow: '0 6px 20px rgba(0,0,0,0.12)',
+                cursor: 'pointer',
+                transition: 'all 0.2s ease'
+              }}
+            >
+              {showMoreFilters ? 'Less' : 'More'}
+            </button>
+            
+            {/* Filtres avancés (cachés par défaut) */}
+            {showMoreFilters && (
+              <div style={{ 
+                position: 'absolute', 
+                top: '100%', 
+                left: 0, 
+                background: '#FFFFFF', 
+                border: '1px solid #D1D5DB', 
+                borderRadius: 6, 
+                padding: '12px', 
+                marginTop: '4px',
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '8px',
+                minWidth: '200px',
+                zIndex: 10
+              }}>
+                <select
+                  className="filter-select"
+                  value={nnFilter}
+                  onChange={(e) => setNnFilter(e.target.value as 'all' | '10to15' | '15to30' | 'lt30' | '30to60' | 'gt60')}
+                  aria-label="Filter by isolation"
+                >
+                  <option value="all">All isolations</option>
+                  <option value="10to15">10 to 15m</option>
+                  <option value="15to30">15 to 30m</option>
+                  <option value="lt30">Less than 30m</option>
+                  <option value="30to60">30 to 60m</option>
+                  <option value="gt60">More than 60m</option>
+                </select>
+                <select
+                  className="filter-select"
+                  value={streetViewFilter}
+                  onChange={(e) => setStreetViewFilter(e.target.value as 'all' | 'available' | 'unavailable')}
+                  aria-label="Filter by Street View availability"
+                >
+                  <option value="all">All Street View</option>
+                  <option value="available">🗺️ Available</option>
+                  <option value="unavailable">🚫 Unavailable</option>
+                </select>
+                <select
+                  className="filter-select"
+                  value={poolFilter}
+                  onChange={(e) => setPoolFilter(e.target.value as 'all' | 'blue' | 'other' | 'none')}
+                  aria-label="Filter by pool state"
+                >
+                  <option value="all">💦 Pool: All</option>
+                  <option value="blue">💙 Pool (blue)</option>
+                  <option value="other">💚 Pool (other)</option>
+                  <option value="none">∅ No pool</option>
+                </select>
+                <select
+                  className="filter-select"
+                  value={vehicleFilter}
+                  onChange={(e) => setVehicleFilter(e.target.value as 'all' | 'present' | 'none')}
+                  aria-label="Filter by vehicle presence"
+                >
+                  <option value="all">🚗 Vehicle: All</option>
+                  <option value="present">✅ Present</option>
+                  <option value="none">∅ None</option>
+                </select>
+              </div>
+            )}
+          </div>
           
           {/* Bouton Street View (masqué) */}
           <span style={{ display: 'none' }} />
@@ -443,10 +526,10 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
               'circle-radius': 8,
               'circle-color': [
                 'case',
-                ['>=', ['get', 'abandon_score'], 70], '#DC2626', // Red
-                ['>=', ['get', 'abandon_score'], 40], '#FB923C', // Orange
-                ['<', ['get', 'abandon_score'], 40], '#059669', // Green
-                '#2B6CB0' // Default Blue
+                ['>=', ['get', 'simple_score'], 10], '#059669', // Green - Active (10-15 points)
+                ['>=', ['get', 'simple_score'], 5], '#F59E0B', // Orange - Moderate (5-9 points)
+                ['<', ['get', 'simple_score'], 5], '#DC2626', // Red - Inactive (1-4 points)
+                '#6B7280' // Default Gray
               ],
               'circle-stroke-width': 3,
               'circle-stroke-color': '#FFFFFF',

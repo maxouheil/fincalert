@@ -25,8 +25,11 @@ from ..satellite.ndvi_timeseries_optimized import compute_and_store_optimized as
 from pathlib import Path
 from ..detection.building_detector import BuildingDetector
 from ..detection.yolo_pool_detector import YOLOPoolDetector  # noqa
+from ..detection.yolo_vehicle_detector import YOLOVehicleDetector  # noqa
 from ..detection.yolo_mobile_detector import YOLOMobileDetector
 from ..detection.demo_detector import DemoDetector
+from ..scoring.abandonment_scorer import AbandonmentScorer
+from ..scoring.simple_scoring import compute_simple_score
 
 app = FastAPI()
 
@@ -48,6 +51,7 @@ detector = BuildingDetector()
 
 # Initialize YOLO detectors (lazy loading pour éviter ralentissement startup)
 pool_detector = None
+vehicle_detector = None
 mobile_detector = None
 demo_detector = DemoDetector()  # Toujours disponible
 
@@ -65,6 +69,13 @@ def get_mobile_detector():
     if mobile_detector is None:
         mobile_detector = YOLOMobileDetector()
     return mobile_detector
+
+def get_vehicle_detector():
+    """Lazy loading du détecteur véhicules"""
+    global vehicle_detector
+    if vehicle_detector is None:
+        vehicle_detector = YOLOVehicleDetector()
+    return vehicle_detector
 
 class Finca(BaseModel):
     id: str
@@ -509,6 +520,236 @@ async def detect_mobility(finca_id: str, months_gap: int = 6, demo: bool = True)
         raise HTTPException(status_code=500, detail=f"Mobility detection failed: {str(e)}")
 
 
+@app.get("/api/detection/vehicles/{finca_id}")
+async def detect_vehicles(finca_id: str, use_mapbox: bool = True, demo: bool = False):
+    """
+    Détecte véhicules pour une finca donnée (autour du centre)
+    Args:
+        finca_id: ID de la finca
+        use_mapbox: Utiliser Mapbox pour l'imagerie
+        demo: Réutiliser démo (non implémenté pour véhicules) -> toujours False par défaut
+    """
+    try:
+        # Charger données finca
+        here = os.path.dirname(__file__)
+        geojson_path = os.path.normpath(os.path.join(here, "../../frontend/public/data/fincas_with_abandon_scores.geojson"))
+
+        if not os.path.exists(geojson_path):
+            raise HTTPException(status_code=404, detail="Finca data not found")
+
+        with open(geojson_path, 'r') as f:
+            geojson_data = json.load(f)
+
+        finca = None
+        for feature in geojson_data.get('features', []):
+            if feature.get('properties', {}).get('id') == finca_id:
+                finca = feature['properties']
+                break
+        if not finca:
+            raise HTTPException(status_code=404, detail=f"Finca {finca_id} not found")
+
+        lat, lon = finca['lat'], finca['lon']
+
+        if not use_mapbox:
+            raise HTTPException(status_code=501, detail="Only Mapbox imagery is supported for now")
+
+        token = os.getenv("MAPBOX_TOKEN") or os.getenv("REACT_APP_MAPBOX_TOKEN")
+        if not token:
+            raise HTTPException(status_code=503, detail="Mapbox token not configured")
+
+        # High-res image similar to pools, centered on finca
+        bbox_zoom = 19
+        width, height = 1280, 960
+        image_url = (
+            f"https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/"
+            f"{lon},{lat},{bbox_zoom},0/{width}x{height}@2x?access_token={token}"
+        )
+
+        detector = get_vehicle_detector()
+        result = detector.detect_vehicles_from_url(image_url, finca_id)
+
+        return {
+            "finca_id": finca_id,
+            "coordinates": {"lat": lat, "lon": lon},
+            "image_source": "mapbox",
+            "detection_result": result,
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Vehicle detection failed: {str(e)}")
+
+
+@app.get("/api/scoring/combined/{finca_id}")
+async def get_combined_abandonment_score(finca_id: str, demo: bool = True):
+    """
+    Calcule le score d'abandon combiné (véhicules + NDVI)
+    
+    Args:
+        finca_id: ID de la finca
+        demo: Utiliser des données de démonstration si True
+    
+    Returns:
+        Score combiné avec breakdown véhicules/NDVI
+    """
+    try:
+        if demo:
+            # Données de démonstration
+            vehicle_history = [
+                {"date": "2024-01-01", "vehicles_detected": False, "count": 0},
+                {"date": "2024-01-15", "vehicles_detected": False, "count": 0},
+                {"date": "2024-02-01", "vehicles_detected": False, "count": 0},
+                {"date": "2024-02-15", "vehicles_detected": False, "count": 0},
+                {"date": "2024-03-01", "vehicles_detected": False, "count": 0},
+                {"date": "2024-03-15", "vehicles_detected": False, "count": 0},
+                {"date": "2024-04-01", "vehicles_detected": False, "count": 0},
+                {"date": "2024-04-15", "vehicles_detected": False, "count": 0},
+                {"date": "2024-05-01", "vehicles_detected": False, "count": 0},
+                {"date": "2024-05-15", "vehicles_detected": False, "count": 0},
+                {"date": "2024-06-01", "vehicles_detected": False, "count": 0},
+                {"date": "2024-06-15", "vehicles_detected": False, "count": 0}
+            ]
+            
+            ndvi_data = {"variation_percent": 5.0, "mean_ndvi": 0.35}
+        else:
+            # TODO: Charger les vraies données depuis la base
+            # Pour l'instant, utiliser des données simulées
+            vehicle_history = []
+            ndvi_data = {"variation_percent": 15.0, "mean_ndvi": 0.45}
+        
+        scorer = AbandonmentScorer()
+        result = scorer.calculate_combined_score(vehicle_history, ndvi_data)
+        
+        return {
+            "finca_id": finca_id,
+            "demo": demo,
+            "scoring_result": result
+        }
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Scoring error: {str(e)}")
+
+
+@app.get("/api/scoring/simple/{finca_id}")
+async def get_simple_scoring(finca_id: str):
+    """
+    Simple 3-criteria scoring (VIIRS luminosity, Sentinel-1 VV, NDVI variability)
+    Each criterion: 1/3/5 points. Total out of 15 with classification.
+    Data sources:
+      - NDVI 631 fincas: data/abandon_analysis_FULL/fincas_abandon_scores_REALISTIC_*.csv
+      - Sentinel-1 6 months: data/sentinel1_all_fincas_6months/*latest*.json
+      - VIIRS luminosity (optional): data/luminosity_analysis/luminosity_*latest*.json
+    """
+    try:
+        here = os.path.dirname(__file__)
+        project_root = Path(__file__).resolve().parents[2]
+
+        # NDVI - Utiliser les 631 fincas
+        ndvi_median = ndvi_std = None
+        ndvi_csv_path = project_root / "data" / "abandon_analysis_FULL" / "fincas_abandon_scores_REALISTIC_20250809_140234.csv"
+        
+        if ndvi_csv_path.exists():
+            import pandas as pd
+            df = pd.read_csv(ndvi_csv_path)
+            finca_data = df[df['finca_id'] == finca_id]
+            
+            if not finca_data.empty:
+                ndvi_median = finca_data.iloc[0]['median_ndvi']
+                ndvi_std = finca_data.iloc[0]['std_deviation']
+        
+        # Fallback vers l'ancien système si pas trouvé dans les 631
+        if ndvi_median is None or ndvi_std is None:
+            ndvi_path = project_root / "data" / "ndvi" / finca_id / "summary.json"
+            if ndvi_path.exists():
+                ndvi_json = json.loads(ndvi_path.read_text())
+                summary = ndvi_json.get("summary", {})
+                ndvi_median = summary.get("median")
+                ndvi_std = summary.get("std")
+
+        # Sentinel-1 (find latest merged file)
+        s1_dir = project_root / "data" / "sentinel1_all_fincas_6months"
+        vv_db = None
+        if s1_dir.exists():
+            files = sorted(s1_dir.glob("sentinel1_all_fincas_6months_*.json"))
+            if files:
+                latest = files[-1]
+                s1 = json.loads(latest.read_text())
+                for rec in s1.get("fincas", []):
+                    if rec.get("finca_id") == finca_id:
+                        vv_db = rec.get("sentinel1_6months", {}).get("vv_mean")
+                        break
+
+        # VIIRS luminosity (optional; fallback None)
+        viirs_dir = project_root / "data" / "luminosity_analysis"
+        viirs_lum = None
+        if viirs_dir.exists():
+            viirs_files = [f for f in viirs_dir.glob("luminosity_*.json") if "summary" not in f.name]
+            if viirs_files:
+                latest_viirs = sorted(viirs_files)[-1]
+                vi = json.loads(latest_viirs.read_text())
+                for rec in vi:
+                    if rec.get("finca_id") == finca_id and rec.get("status") == "success":
+                        viirs_lum = rec.get("metrics", {}).get("mean_luminosity")
+                        break
+
+        result = compute_simple_score(
+            viirs_mean_luminosity=viirs_lum,
+            sentinel1_vv_db=vv_db,
+            ndvi_median=ndvi_median,
+            ndvi_std=ndvi_std,
+        )
+
+        return {
+            "finca_id": finca_id,
+            "data_available": {
+                "ndvi": ndvi_median is not None and ndvi_std is not None,
+                "sentinel1": vv_db is not None,
+                "viirs": viirs_lum is not None,
+            },
+            "simple_scoring": result,
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Simple scoring error: {str(e)}")
+
+
+@app.get("/api/ndvi-all/631-fincas")
+async def get_ndvi_631_fincas():
+    """
+    Get NDVI data for all 631 fincas from the abandon analysis
+    """
+    try:
+        project_root = Path(__file__).resolve().parents[2]
+        csv_path = project_root / "data" / "abandon_analysis_FULL" / "fincas_abandon_scores_REALISTIC_20250809_140234.csv"
+        
+        if not csv_path.exists():
+            raise HTTPException(status_code=404, detail="NDVI 631 fincas data not found")
+        
+        import pandas as pd
+        df = pd.read_csv(csv_path)
+        
+        # Convert to list of dictionaries
+        ndvi_data = []
+        for _, row in df.iterrows():
+            ndvi_data.append({
+                "finca_id": row['finca_id'],
+                "median_ndvi": row['median_ndvi'],
+                "std_deviation": row['std_deviation'],
+                "cv_percent": row['cv_percent'],
+                "abandon_score": row['abandon_score'],
+                "activity_status": row['activity_status'],
+                "valid_periods": row['valid_periods']
+            })
+        
+        return {
+            "total_fincas": len(ndvi_data),
+            "data_source": "abandon_analysis_FULL/fincas_abandon_scores_REALISTIC_20250809_140234.csv",
+            "fincas": ndvi_data
+        }
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"NDVI 631 fincas error: {str(e)}")
+
+
 @app.get("/api/detection/visual-analysis/{finca_id}")
 async def get_visual_analysis(finca_id: str, demo: bool = True):
     """
@@ -616,3 +857,25 @@ def _generate_visual_summary(pool_result: dict, mobility_result: dict) -> dict:
         summary["error"] = f"Summary generation failed: {str(e)}"
     
     return summary
+@app.get("/api/luminosity/{finca_id}")
+async def get_finca_luminosity(finca_id: str):
+    """Récupère les données de luminosité d'une finca"""
+    try:
+        # Charger les données de luminosité
+        api_file = Path(__file__).parent.parent / 'data' / 'luminosity_api_data.json'
+        if not api_file.exists():
+            raise HTTPException(status_code=404, detail="Données de luminosité non disponibles")
+        
+        with open(api_file, 'r', encoding='utf-8') as f:
+            luminosity_data = json.load(f)
+        
+        if finca_id not in luminosity_data:
+            raise HTTPException(status_code=404, detail=f"Finca {finca_id} non trouvée")
+        
+        return {
+            "finca_id": finca_id,
+            "luminosity_data": luminosity_data[finca_id],
+            "status": "success"
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Erreur serveur: {str(e)}")

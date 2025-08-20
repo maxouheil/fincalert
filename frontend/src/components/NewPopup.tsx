@@ -1,304 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import { Finca, VisualAnalysisResult, CombinedScoringResult, FincaOptimizedData } from '../utils/types';
-import { loadCombinedScoringData, loadOptimizedSentinel1Data } from '../utils/data';
+import React from 'react';
+import { Finca } from '../utils/types';
 
 interface Props {
   selected: Finca;
   onClose: () => void;
 }
 
-// Cache global pour les vérifications Street View (exporté pour utilisation dans d'autres composants)
+// Cache global pour les vérifications Street View (exporté pour utilisation dans MapView)
 export const streetViewCache = new Map<string, 'available' | 'unavailable'>();
 
 const NewPopup: React.FC<Props> = ({ selected, onClose }) => {
-  const [hoverScore, setHoverScore] = useState(false);
-  const [hasStreetView, setHasStreetView] = useState<'loading' | 'available' | 'unavailable'>('loading');
-  const [visualAnalysis, setVisualAnalysis] = useState<VisualAnalysisResult | null>(null);
-  const [loadingVisual, setLoadingVisual] = useState(false);
-  const [vehicleSummary, setVehicleSummary] = useState<Record<string, { vehicle_detected: boolean; total_count: number; counts_by_class: Record<string, number> }>>({});
-  const [combinedScoring, setCombinedScoring] = useState<CombinedScoringResult | null>(null);
-  const [loadingScoring, setLoadingScoring] = useState(false);
-  const [optimizedData, setOptimizedData] = useState<FincaOptimizedData | null>(null);
-  const [loadingOptimized, setLoadingOptimized] = useState(false);
-
-  // Vérification de la disponibilité Street View avec cache
-  useEffect(() => {
-    const fincaKey = `${selected.lat}-${selected.lon}`;
-    
-    // Vérifier le cache d'abord
-    const cachedResult = streetViewCache.get(fincaKey);
-    if (cachedResult) {
-      setHasStreetView(cachedResult);
-      return;
-    }
-
-    const checkStreetView = async () => {
-      setHasStreetView('loading');
-      
-      try {
-        // Vérification OFFICIELLE avec l'API Google Street View Metadata
-        const metadataUrl = `https://maps.googleapis.com/maps/api/streetview/metadata?location=${selected.lat},${selected.lon}&key=AIzaSyDXkjUWbqx23PD0L_IKrF5K8xzO0N3ASLY`;
-        
-        console.log('🔍 Checking Street View API for:', selected.lat, selected.lon);
-        console.log('📡 API URL:', metadataUrl);
-        
-        const response = await fetch(metadataUrl);
-        const data = await response.json();
-        
-        console.log('📄 API Response:', data);
-        
-        // Google retourne status: "OK" si Street View est disponible
-        const result = data.status === 'OK' ? 'available' : 'unavailable';
-        
-        console.log('✅ Result:', result);
-        
-        setHasStreetView(result);
-        // Sauvegarder en cache
-        streetViewCache.set(fincaKey, result);
-        
-      } catch (error) {
-        console.error('❌ Erreur vérification Street View API:', error);
-        // En cas d'erreur API, on considère comme indisponible
-        setHasStreetView('unavailable');
-        streetViewCache.set(fincaKey, 'unavailable');
-      }
-    };
-
-    checkStreetView();
-  }, [selected.lat, selected.lon]);
-
-  // Chargement analyse visuelle YOLO
-  useEffect(() => {
-    const loadVisualAnalysis = async () => {
-      setLoadingVisual(true);
-      try {
-        const response = await fetch(`http://localhost:8000/api/detection/visual-analysis/${selected.id}`);
-        if (response.ok) {
-          const result = await response.json();
-          setVisualAnalysis(result);
-          console.log('🎯 Visual analysis loaded:', result);
-        } else {
-          console.warn('⚠️ Visual analysis unavailable:', response.status);
-        }
-      } catch (error) {
-        console.warn('⚠️ Visual analysis failed:', error);
-      } finally {
-        setLoadingVisual(false);
-      }
-    };
-
-    loadVisualAnalysis();
-  }, [selected.id]);
-
-  // Charger scoring combiné
-  useEffect(() => {
-    const loadScoring = async () => {
-      setLoadingScoring(true);
-      try {
-        const result = await loadCombinedScoringData(selected.id, true);
-        setCombinedScoring(result);
-        console.log('🏚️ Combined scoring loaded:', result);
-      } catch (error) {
-        console.warn('⚠️ Combined scoring failed:', error);
-      } finally {
-        setLoadingScoring(false);
-      }
-    };
-
-    loadScoring();
-  }, [selected.id]);
-
-  // Charger données Sentinel-1 optimisées
-  useEffect(() => {
-    const loadOptimized = async () => {
-      setLoadingOptimized(true);
-      try {
-        const result = await loadOptimizedSentinel1Data(selected.id);
-        setOptimizedData(result);
-        console.log('🛰️ Optimized Sentinel-1 data loaded:', result);
-      } catch (error) {
-        console.warn('⚠️ Optimized Sentinel-1 data failed:', error);
-      } finally {
-        setLoadingOptimized(false);
-      }
-    };
-
-    loadOptimized();
-  }, [selected.id]);
-
-  // Charger résumé véhicules (batch)
-  useEffect(() => {
-    const load = async () => {
-      try {
-        const res = await fetch('/data/vehicles_full_summary.json');
-        if (!res.ok) return;
-        const arr = await res.json();
-        const map: Record<string, any> = {};
-        for (const item of arr) {
-          map[String(item.finca_id)] = {
-            vehicle_detected: Boolean(item.vehicle_detected),
-            total_count: Number(item.total_count || 0),
-            counts_by_class: item.counts_by_class || {},
-          };
-        }
-        setVehicleSummary(map);
-      } catch {
-        setVehicleSummary({});
-      }
-    };
-    load();
-  }, []);
-
-  // Calcul de la variation en pourcentage
-  const variationPercent = selected.std_deviation && selected.median_ndvi && selected.median_ndvi > 0 
-    ? Math.round((selected.std_deviation / selected.median_ndvi) * 100)
-    : 23; // Valeur par défaut du screenshot
-
-  // Données NDVI mensuelles (12 mois) - utilise les vraies données si disponibles
-  const ndviData = selected.ndvi_timeseries && selected.ndvi_timeseries.length > 0
-    ? (() => {
-        // Prendre les 12 dernières périodes ou toutes si moins de 12
-        const data = selected.ndvi_timeseries.slice(-12);
-        return data.map((ts: any, i: number) => {
-          // Extraire le mois depuis la date start_date
-          const startDate = new Date(ts.start_date || ts.start);
-          const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-          const month = monthNames[startDate.getMonth()];
-          return {
-            month,
-            ndvi: ts.ndvi_value || ts.ndvi || 0.4,
-            date: ts.start_date || ts.start
-          };
-        });
-      })()
-    : [
-        { month: 'Jul', ndvi: 0.45, date: '2023-07-01' },
-        { month: 'Aug', ndvi: 0.52, date: '2023-08-01' },
-        { month: 'Sep', ndvi: 0.48, date: '2023-09-01' },
-        { month: 'Oct', ndvi: 0.62, date: '2023-10-01' },
-        { month: 'Nov', ndvi: 0.58, date: '2023-11-01' },
-        { month: 'Dec', ndvi: 0.55, date: '2023-12-01' },
-        { month: 'Jan', ndvi: 0.51, date: '2024-01-01' },
-        { month: 'Feb', ndvi: 0.48, date: '2024-02-01' },
-        { month: 'Mar', ndvi: 0.45, date: '2024-03-01' },
-        { month: 'Apr', ndvi: 0.42, date: '2024-04-01' },
-        { month: 'May', ndvi: 0.38, date: '2024-05-01' },
-        { month: 'Jun', ndvi: 0.35, date: '2024-06-01' }
-      ];
-
-  const getActivityStatus = () => {
-    return selected.activity_status || 'active';
+  // Fonctions helper pour le scoring simple
+  const getSimpleScoringStatus = () => {
+    return selected.simple_classification || 'Inactive';
   };
 
-  const getActivityLabel = () => {
-    // Utiliser le scoring combiné si disponible, sinon fallback sur NDVI
-    if (combinedScoring?.scoring_result) {
-      const level = combinedScoring.scoring_result.abandonment_level;
-      switch (level) {
-        case 'none': return 'Active';
-        case 'low': return 'Semi-active';
-        case 'medium': return 'Semi-active';
-        case 'high': return 'Inactive';
-        default: return 'Unknown';
-      }
-    }
-    
-    // Fallback sur NDVI
-    const status = getActivityStatus();
+  const getSimpleScoringColor = () => {
+    const status = getSimpleScoringStatus();
     switch (status) {
-      case 'active': return 'Active';
-      case 'potential': return 'Semi-active';
-      case 'inactive': return 'Inactive';
-      default: return 'Unknown';
+      case 'Active': return '#059669';
+      case 'Moderate': return '#F59E0B';
+      case 'Inactive': return '#DC2626';
+      default: return '#6B7280';
     }
-  };
-
-  const getActivityColor = () => {
-    // Utiliser les données optimisées si disponibles
-    if (optimizedData?.combined_scoring) {
-      const level = optimizedData.combined_scoring.abandonment_level;
-      switch (level) {
-        case 'Très faible': return { bg: 'rgba(239,68,68,0.15)', text: '#DC2626' };
-        case 'Faible': return { bg: 'rgba(251,146,60,0.2)', text: '#FB923C' };
-        case 'Modéré': return { bg: 'rgba(59,130,246,0.15)', text: '#1E40AF' };
-        case 'Élevé': return { bg: 'rgba(251,146,60,0.2)', text: '#FB923C' };
-        case 'Très élevé': return { bg: 'rgba(239,68,68,0.15)', text: '#DC2626' };
-        default: return { bg: 'rgba(100,116,139,0.10)', text: '#64748B' };
-      }
-    }
-    
-    // Utiliser le scoring combiné si disponible, sinon fallback sur NDVI
-    if (combinedScoring?.scoring_result) {
-      const level = combinedScoring.scoring_result.abandonment_level;
-      switch (level) {
-        case 'none': return { bg: 'rgba(34,197,94,0.15)', text: '#166534' };
-        case 'low': return { bg: 'rgba(59,130,246,0.15)', text: '#1E40AF' };
-        case 'medium': return { bg: 'rgba(251,146,60,0.2)', text: '#FB923C' };
-        case 'high': return { bg: 'rgba(239,68,68,0.15)', text: '#DC2626' };
-        default: return { bg: 'rgba(100,116,139,0.10)', text: '#64748B' };
-      }
-    }
-    
-    // Fallback sur NDVI
-    const status = getActivityStatus();
-    switch (status) {
-      case 'active': return { bg: 'rgba(34,197,94,0.15)', text: '#166534' };
-      case 'potential': return { bg: 'rgba(251,146,60,0.2)', text: '#FB923C' };
-      case 'inactive': return { bg: 'rgba(239,68,68,0.15)', text: '#DC2626' };
-      default: return { bg: 'rgba(100,116,139,0.10)', text: '#64748B' };
-    }
-  };
-
-  // Fonctions helper pour les données optimisées
-  const getOptimizedActivityLabel = () => {
-    if (optimizedData?.combined_scoring) {
-      return optimizedData.combined_scoring.abandonment_level;
-    }
-    return getActivityLabel();
-  };
-
-  const getOptimizedOverallScore = () => {
-    if (optimizedData?.combined_scoring) {
-      return optimizedData.combined_scoring.overall_score;
-    }
-    return selected.abandon_score || 50;
-  };
-
-  const getSentinel1ActivityLevel = () => {
-    if (optimizedData?.combined_scoring?.components?.sentinel1) {
-      return optimizedData.combined_scoring.components.sentinel1.activity_level;
-    }
-    return 'Modérée';
-  };
-
-  const getSentinel1Score = () => {
-    if (optimizedData?.combined_scoring?.components?.sentinel1) {
-      return optimizedData.combined_scoring.components.sentinel1.score;
-    }
-    return 50;
-  };
-
-  const getNDVIOptimizedScore = () => {
-    if (optimizedData?.combined_scoring?.components?.ndvi) {
-      return optimizedData.combined_scoring.components.ndvi.score;
-    }
-    return selected.abandon_score || 50;
-  };
-
-  const getVehicleScore = () => {
-    // Utiliser les données de véhicules si disponibles
-    const vehicleData = vehicleSummary[selected.id];
-    if (vehicleData && vehicleData.vehicle_detected) {
-      return 25; // Score faible si véhicule détecté
-    }
-    return 75; // Score élevé si pas de véhicule
-  };
-
-  const getRiskInfo = () => {
-    const score = selected.abandon_score || 50;
-    if (score >= 70) return { level: 'Risque élevé', desc: 'Très probablement inactive', icon: '🔴' };
-    if (score >= 40) return { level: 'Risque moyen', desc: 'Semi-active', icon: '🟡' };
-    return { level: 'Risque faible', desc: 'Active - cultivation récente', icon: '🟢' };
   };
 
   return (
@@ -306,717 +30,126 @@ const NewPopup: React.FC<Props> = ({ selected, onClose }) => {
       width: 280,
       borderRadius: 14,
       backgroundColor: '#FFFFFF',
-      boxShadow: '0 20px 56px rgba(0,0,0,0.32)',
-      filter: 'drop-shadow(0 26px 64px rgba(0,0,0,0.42))',
+      boxShadow: '0 20px 56px rgba(0,0,0,0.42)',
+      filter: 'drop-shadow(0 26px 64px rgba(0,0,0,0.52))',
       overflow: 'hidden'
     }}>
-      {/* Image avec label Streetview */}
-      <div style={{ position: 'relative', height: 200, backgroundColor: '#F3F4F6' }}>
-        <img
-          src={`http://localhost:8000/api/thumbnail/${encodeURIComponent(selected.id)}?lon=${selected.lon}&lat=${selected.lat}&width=280&height=200&scale=2`}
-          alt={selected.id}
-          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+      {/* Photo de la finca - AU DESSUS du titre */}
+      <div style={{ width: '100%', height: 120 }}>
+        <img 
+          src={`/cache/${selected.id}.jpg`}
+          alt={`Photo de ${selected.id}`}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover'
+          }}
           onError={(e) => {
-            const fallback = `https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/${selected.lon},${selected.lat},18.5,0/280x200@2x?access_token=pk.eyJ1IjoiYWxleGlzLWNyZWF0aXZlIiwiYSI6ImNsemF2MXFpcjA2OXEyaXF6aWVhaTV1cGsifQ.1hGKYC8Yr1nI4dPgG_1K7Q`;
-            (e.target as HTMLImageElement).src = fallback;
+            // Fallback vers Mapbox direct si l'image cache n'existe pas
+            const mapboxToken = process.env.REACT_APP_MAPBOX_TOKEN;
+            if (mapboxToken) {
+              e.currentTarget.src = `https://api.mapbox.com/styles/v1/mapbox/satellite-v9/static/${selected.lon},${selected.lat},18.5,0/280x200?access_token=${mapboxToken}`;
+            } else {
+              e.currentTarget.style.display = 'none';
+            }
           }}
         />
-        {/* Bouton Streetview unifié */}
-        <div style={{ position: 'absolute', top: 8, right: 8 }}>
-          {hasStreetView === 'loading' ? (
-            <div style={{ 
-              padding: '6px 10px',
-              backgroundColor: 'rgba(0,0,0,0.7)',
-              color: '#FFFFFF',
-              borderRadius: 6,
-              fontSize: 11,
-              fontWeight: 600,
-              cursor: 'default'
-            }}>
-              Streetview...
-            </div>
-          ) : hasStreetView === 'available' ? (
-            <a
-              href={`https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${selected.lat},${selected.lon}&heading=0&pitch=0`}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ 
-                display: 'block',
-                padding: '6px 10px',
-                backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                color: '#0F172A',
-                border: '1.4px solid #0F172A',
-                borderRadius: 6,
-                fontSize: 11,
-                fontWeight: 600,
-                textDecoration: 'none',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                transition: 'all 0.2s ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#0F172A';
-                e.currentTarget.style.color = '#FFFFFF';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
-                e.currentTarget.style.color = '#0F172A';
-              }}
-            >
-              Streetview
-            </a>
-          ) : (
-            <div style={{ 
-              padding: '6px 10px',
-              backgroundColor: 'rgba(0,0,0,0.7)',
-              color: '#FFFFFF',
-              borderRadius: 6,
-              fontSize: 11,
-              fontWeight: 600,
-              cursor: 'default'
-            }}>
-              Streetview unavailable
-            </div>
-          )}
-        </div>
       </div>
 
       {/* Contenu */}
       <div style={{ padding: '12px 14px' }}>
-        {/* Header avec titre et badge activité */}
+        {/* Header avec titre et badge statut */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 4 }}>
           <div style={{ fontSize: 18, fontWeight: 800, color: '#1A202C' }}>
             {selected.id}
           </div>
-          <div
-            style={{ position: 'relative' }}
-            onMouseEnter={() => setHoverScore(true)}
-            onMouseLeave={() => setHoverScore(false)}
-          >
-            <span style={{
-              padding: '2px 8px',
-              borderRadius: 999,
-              fontSize: 11,
-              fontWeight: 800,
-              cursor: 'help',
-              color: getActivityColor().text,
-              backgroundColor: getActivityColor().bg
-            }}>
-              {getActivityLabel()}
-            </span>
-            {/* Tooltip hover avec score détaillé */}
-            {hoverScore && selected.abandon_score && (
-              <div style={{
-                position: 'absolute',
-                top: '100%',
-                right: 0,
-                marginTop: 4,
-                backgroundColor: '#1F2937',
-                color: '#FFFFFF',
-                padding: '6px 8px',
-                borderRadius: 6,
-                fontSize: 11,
-                whiteSpace: 'nowrap',
-                zIndex: 1000,
-                boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
-              }}>
-                {getRiskInfo().icon} {getRiskInfo().level}: {Math.round(selected.abandon_score)}/100
-                <div style={{ fontSize: 10, opacity: 0.8, marginTop: 2 }}>
-                  {getRiskInfo().desc}
-                </div>
-              </div>
-            )}
-          </div>
+          <span style={{
+            padding: '2px 8px',
+            borderRadius: 999,
+            fontSize: 11,
+            fontWeight: 800,
+            color: '#FFFFFF',
+            backgroundColor: getSimpleScoringColor()
+          }}>
+            {getSimpleScoringStatus()}
+          </span>
         </div>
 
         {/* Localisation */}
-        <div style={{ fontSize: 14, color: '#4A5568', marginBottom: 6 }}>
+        <div style={{ fontSize: 12, color: '#6B7280', marginBottom: 4 }}>
           Sant Josep de Talaia
         </div>
 
-        {/* Attributs */}
-        <div style={{ fontSize: 12, color: '#718096', marginBottom: 12 }}>
-          {Math.round(selected.surface_estimee_m2)} m² • {selected.distance_plus_proche_voisin_m}m from neighbour
+        {/* Détails de la finca */}
+        <div style={{ fontSize: 12, color: '#6B7280', marginBottom: 12 }}>
+          {selected.surface_estimee_m2} m² • {selected.distance_plus_proche_voisin_m}m from neighbour
         </div>
 
-        {/* Métriques d'activité - Style screenshot */}
-        <div style={{ marginBottom: 12 }}>
-          {/* Activité radar (Sentinel-1) */}
-          <div style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'space-between',
-            marginBottom: 6,
-            fontSize: 12,
-            color: '#374151'
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <span style={{ marginRight: 8, fontSize: 14 }}>📡</span>
-              <span>Activité radar</span>
-            </div>
-            <div style={{ 
-              display: 'flex', 
-              alignItems: 'center',
-              fontSize: 12,
-              fontWeight: 600
-            }}>
-              <span style={{ marginRight: 6 }}>
-                {loadingOptimized ? '...' : getSentinel1ActivityLevel()}
-              </span>
-              <span style={{ 
-                color: '#DC2626',
-                fontSize: 11
-              }}>
-                {loadingOptimized ? '...' : getSentinel1Score()}
-              </span>
-            </div>
-          </div>
+        {/* Ligne de séparation */}
+        <div style={{ height: 1, backgroundColor: '#E5E7EB', marginBottom: 12 }} />
 
-          {/* Lumière nocturne (VIIRS) */}
-          <div style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'space-between',
-            marginBottom: 6,
-            fontSize: 12,
-            color: '#374151'
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <span style={{ marginRight: 8, fontSize: 14 }}>💡</span>
-              <span>Lumière nocturne</span>
-            </div>
-            <div style={{ 
-              display: 'flex', 
-              alignItems: 'center',
-              fontSize: 12,
-              fontWeight: 600
-            }}>
-              <span style={{ marginRight: 6 }}>
-                {combinedScoring?.viirs_activity_level || 'Faible'}
-              </span>
-              <span style={{ 
-                color: '#DC2626',
-                fontSize: 11
-              }}>
-                {combinedScoring?.viirs_score || 0}
-              </span>
-            </div>
-          </div>
-
-          {/* Entretien végétation (NDVI) */}
-          <div style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'space-between',
-            marginBottom: 6,
-            fontSize: 12,
-            color: '#374151'
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <span style={{ marginRight: 8, fontSize: 14 }}>🌱</span>
-              <span>Entretien végétation</span>
-            </div>
-            <div style={{ 
-              display: 'flex', 
-              alignItems: 'center',
-              fontSize: 12,
-              fontWeight: 600
-            }}>
-              <span style={{ marginRight: 6 }}>
-                {loadingOptimized ? '...' : getNDVILabel(getNDVIOptimizedScore())}
-              </span>
-              <span style={{ 
-                color: '#DC2626',
-                fontSize: 11
-              }}>
-                {loadingOptimized ? '...' : Math.round(getNDVIOptimizedScore())}
-              </span>
-            </div>
-          </div>
-
-          {/* Véhicules */}
-          <div style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'space-between',
-            marginBottom: 6,
-            fontSize: 12,
-            color: '#374151'
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              <span style={{ marginRight: 8, fontSize: 14 }}>🚗</span>
-              <span>Voiture</span>
-            </div>
-            <div style={{ 
-              display: 'flex', 
-              alignItems: 'center',
-              fontSize: 12,
-              fontWeight: 600
-            }}>
-              <span style={{ marginRight: 6 }}>
-                {getVehicleLabel(vehicleSummary?.[selected.id]?.vehicle_detected || false)}
-              </span>
-              <span style={{ 
-                color: '#DC2626',
-                fontSize: 11
-              }}>
-                {vehicleSummary?.[selected.id]?.total_count || 0}
-              </span>
-            </div>
-          </div>
-
-          {/* Total */}
-          <div style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'space-between',
-            paddingTop: 8,
-            borderTop: '1px solid #E5E7EB',
-            fontSize: 12,
-            fontWeight: 600,
-            color: '#374151'
-          }}>
-            <span>Total</span>
-            <span style={{ 
-              color: '#DC2626',
-              fontSize: 13,
-              fontWeight: 700
-            }}>
-              {loadingOptimized ? '...' : (() => {
-                const sentinel1Score = getSentinel1Score();
-                const ndviScore = getNDVIOptimizedScore();
-                const vehicleScore = getVehicleScore();
-                return Math.round(sentinel1Score + ndviScore + vehicleScore);
-              })()} pts
-            </span>
-          </div>
+        {/* Section Scoring Simplifié */}
+        <div style={{ fontSize: 12, fontWeight: 600, color: '#374151', marginBottom: 8 }}>
+          Score simplifié
         </div>
 
-        {/* Section NDVI */}
-        <div style={{ borderTop: '1px solid #E5E7EB', paddingTop: 12 }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
-            <div style={{ fontSize: 14, fontWeight: 600, color: '#374151' }}>
-              Ndvi variation
-            </div>
-            <div style={{ fontSize: 16, fontWeight: 700, color: '#1F2937' }}>
-              {variationPercent}%
-            </div>
-          </div>
-
-          {/* Chart NDVI full width */}
-          <div style={{ marginLeft: -14, marginRight: -14, marginBottom: 8 }}>
-            <svg width={280} height={60} viewBox="0 0 280 60" style={{ borderRadius: 4, display: 'block' }}>
-              {(() => {
-                const chartWidth = 240;
-                const chartHeight = 40;
-                const marginLeft = 20;
-                const marginTop = 5;
-                
-                const points = ndviData.map((d, i) => {
-                  const x = marginLeft + (i / Math.max(ndviData.length - 1, 1)) * chartWidth;
-                  const y = marginTop + chartHeight - (d.ndvi - 0.2) * (chartHeight / 0.6); // Normalize 0.2-0.8 range
-                  return { x, y, ndvi: d.ndvi, month: d.month, date: d.date };
-                });
-
-                // Créer un path avec courbes lisses (spline)
-                const createSmoothPath = (points: any[]) => {
-                  if (points.length < 2) return '';
-                  
-                  let path = `M ${points[0].x} ${points[0].y}`;
-                  
-                  for (let i = 1; i < points.length; i++) {
-                    const current = points[i];
-                    const previous = points[i - 1];
-                    
-                    // Calcul des points de contrôle pour des courbes douces
-                    const cp1x = previous.x + (current.x - previous.x) * 0.3;
-                    const cp1y = previous.y;
-                    const cp2x = current.x - (current.x - previous.x) * 0.3;
-                    const cp2y = current.y;
-                    
-                    path += ` C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${current.x} ${current.y}`;
-                  }
-                  
-                  return path;
-                };
-
-                const smoothPath = createSmoothPath(points);
-
-                return (
-                  <g>
-                    {/* Ligne NDVI avec courbes lisses */}
-                    <path
-                      d={smoothPath}
-                      stroke="#22C55E"
-                      strokeWidth="2"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-
-                    {/* Points interactifs */}
-                    {points.map((p, i) => (
-                      <circle
-                        key={i}
-                        cx={p.x}
-                        cy={p.y}
-                        r="3"
-                        fill="#22C55E"
-                        stroke="#FFFFFF"
-                        strokeWidth="1.5"
-                        style={{ cursor: 'pointer' }}
-                        onMouseEnter={(e) => {
-                          const tooltip = document.createElement('div');
-                          tooltip.id = 'ndvi-tooltip';
-                          tooltip.style.cssText = `
-                            position: absolute;
-                            background: #1F2937;
-                            color: white;
-                            padding: 4px 6px;
-                            border-radius: 4px;
-                            font-size: 10px;
-                            pointer-events: none;
-                            z-index: 1000;
-                            white-space: nowrap;
-                          `;
-                          tooltip.textContent = `${p.month}: ${p.ndvi.toFixed(3)}${p.date ? ` (${p.date.split('-')[1]}/${p.date.split('-')[2]})` : ''}`;
-                          document.body.appendChild(tooltip);
-
-                          const rect = e.currentTarget.getBoundingClientRect();
-                          tooltip.style.left = `${rect.left + window.scrollX}px`;
-                          tooltip.style.top = `${rect.top + window.scrollY - 25}px`;
-                        }}
-                        onMouseLeave={() => {
-                          const tooltip = document.getElementById('ndvi-tooltip');
-                          if (tooltip) tooltip.remove();
-                        }}
-                      />
-                    ))}
-
-                    {/* Labels */}
-                    <text x={marginLeft} y="58" fontSize="9" fill="#9CA3AF">
-                      {ndviData.length > 0 ? ndviData[0].month : 'Start'}
-                    </text>
-                    <text x={marginLeft + chartWidth} y="58" fontSize="9" fill="#9CA3AF" textAnchor="end">
-                      {ndviData.length > 0 ? ndviData[ndviData.length - 1].month : 'End'}
-                    </text>
-                  </g>
-                );
-              })()}
-            </svg>
-          </div>
-        </div>
-
-        {/* Section Activité Visuelle (YOLO) */}
-        <div style={{ borderTop: '1px solid #E5E7EB', paddingTop: 12, marginTop: 12 }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
-            <div style={{ fontSize: 14, fontWeight: 600, color: '#374151' }}>
-              Activité visuelle
-            </div>
-            {loadingVisual && (
-              <div style={{ fontSize: 10, color: '#6B7280' }}>
-                Analyse...
-              </div>
-            )}
-          </div>
-
-          {visualAnalysis ? (
-            <div>
-              {/* Indicateurs piscine */}
-              {visualAnalysis.pools?.detection_result?.pool_detected && (
-                <div style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  marginBottom: 4,
-                  fontSize: 12,
-                  color: '#374151'
-                }}>
-                  {getPoolIcon(visualAnalysis.pools.detection_result.best_pool?.state || 'unknown')}
-                  <span style={{ marginLeft: 6 }}>
-                    {getPoolStateLabel(visualAnalysis.pools.detection_result.best_pool?.state || 'unknown')}
-                  </span>
-                  <span style={{ 
-                    marginLeft: 'auto', 
-                    fontSize: 10, 
-                    color: '#6B7280' 
-                  }}>
-                    {Math.round((visualAnalysis.pools.detection_result.best_pool?.confidence || 0) * 100)}%
-                  </span>
+        {selected.simple_score ? (
+          <div>
+            {/* Critères individuels */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+              {/* Activité radar */}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 12 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <span style={{ fontSize: 14 }}>📡</span>
+                  <span style={{ color: '#6B7280' }}>Activité radar</span>
                 </div>
-              )}
-
-              {/* Indicateurs mobilité */}
-              {visualAnalysis.mobility?.detection_result && (
-                <div style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  marginBottom: 4,
-                  fontSize: 12,
-                  color: '#374151'
-                }}>
-                  {getMobilityIcon(visualAnalysis.mobility.detection_result.mobility_level)}
-                  <span style={{ marginLeft: 6 }}>
-                    {getMobilityLabel(visualAnalysis.mobility.detection_result.mobility_level)}
-                  </span>
-                  <span style={{ 
-                    marginLeft: 'auto', 
-                    fontSize: 10, 
-                    color: '#6B7280' 
-                  }}>
-                    Score: {Math.round(visualAnalysis.mobility.detection_result.mobility_score * 100)}%
-                  </span>
-                </div>
-              )}
-
-              {/* Résumé confiance */}
-              {visualAnalysis.summary && (
-                <div style={{ 
-                  marginTop: 8,
-                  padding: '6px 8px',
-                  backgroundColor: getConfidenceColor(visualAnalysis.summary.confidence).bg,
-                  color: getConfidenceColor(visualAnalysis.summary.confidence).text,
-                  borderRadius: 4,
-                  fontSize: 11,
-                  fontWeight: 600
-                }}>
-                  {getConfidenceIcon(visualAnalysis.summary.confidence)} {getConfidenceLabel(visualAnalysis.summary.confidence)}
-                  <span style={{ fontWeight: 400, marginLeft: 4 }}>
-                    (Score visuel: {Math.round(visualAnalysis.summary.visual_score * 100)}%)
-                  </span>
-                </div>
-              )}
-            </div>
-          ) : !loadingVisual ? (
-            <div style={{ fontSize: 11, color: '#9CA3AF', fontStyle: 'italic' }}>
-              🔍 Analyse visuelle non disponible
-            </div>
-          ) : null}
-        </div>
-
-        {/* Section Véhicules (résumé batch) */}
-        <div style={{ borderTop: '1px solid #E5E7EB', paddingTop: 12, marginTop: 12 }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
-            <div style={{ fontSize: 14, fontWeight: 600, color: '#374151' }}>
-              Véhicules (batch)
-            </div>
-          </div>
-          {(() => {
-            const vs = vehicleSummary?.[selected.id];
-            if (!vs) {
-              return <div style={{ fontSize: 11, color: '#9CA3AF', fontStyle: 'italic' }}>— Données véhicules indisponibles</div>;
-            }
-            const has = Boolean(vs.vehicle_detected);
-            const parts: string[] = [];
-            const counts = vs.counts_by_class || {};
-            const order = ['car', 'truck', 'bus', 'motorcycle', 'bicycle'];
-            for (const k of order) {
-              if (counts[k]) parts.push(`${k}: ${counts[k]}`);
-            }
-            // add any remaining classes
-            Object.keys(counts).forEach((k) => {
-              if (!order.includes(k) && counts[k]) parts.push(`${k}: ${counts[k]}`);
-            });
-            return (
-              <div style={{ fontSize: 12, color: has ? '#374151' : '#9CA3AF' }}>
-                {has ? `✅ Véhicules détectés — total ${vs.total_count}` : '∅ Aucun véhicule détecté'}
-                {parts.length > 0 && (
-                  <div style={{ marginTop: 4, color: '#6B7280' }}>
-                    {parts.join(' • ')}
-                  </div>
-                )}
-              </div>
-            );
-          })()}
-        </div>
-
-        {/* Section Scoring d'Abandon Combiné */}
-        <div style={{ borderTop: '1px solid #E5E7EB', paddingTop: 12, marginTop: 12 }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
-            <div style={{ fontSize: 14, fontWeight: 600, color: '#374151' }}>
-              🏚️ Score d'Abandon Combiné
-            </div>
-            {loadingScoring && (
-              <div style={{ fontSize: 10, color: '#6B7280' }}>
-                Calcul...
-              </div>
-            )}
-          </div>
-          
-          {combinedScoring ? (
-            <div>
-              {/* Score total */}
-              <div style={{ 
-                display: 'flex', 
-                alignItems: 'center', 
-                justifyContent: 'space-between',
-                marginBottom: 8,
-                padding: '8px 12px',
-                backgroundColor: getAbandonmentColor(combinedScoring.scoring_result.abandonment_level).bg,
-                color: getAbandonmentColor(combinedScoring.scoring_result.abandonment_level).text,
-                borderRadius: 6,
-                fontSize: 13,
-                fontWeight: 600
-              }}>
-                <span>
-                  {getAbandonmentIcon(combinedScoring.scoring_result.abandonment_level)} 
-                  {combinedScoring.scoring_result.level_description}
-                </span>
-                <span style={{ fontSize: 16, fontWeight: 700 }}>
-                  {combinedScoring.scoring_result.total_score}/{combinedScoring.scoring_result.max_possible_score}
+                <span style={{ color: '#6B7280' }}>
+                  {selected.radar_score ? `${selected.radar_score >= 4 ? 'Fort' : selected.radar_score >= 2 ? 'Moyen' : 'Faible'} • ${selected.radar_score}/5` : 'N/A'}
                 </span>
               </div>
 
-              {/* Breakdown véhicules */}
-              <div style={{ marginBottom: 6 }}>
-                <div style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'space-between',
-                  fontSize: 11,
-                  color: '#374151'
-                }}>
-                  <span>🚗 Véhicules (6 mois)</span>
-                  <span style={{ 
-                    fontWeight: 600,
-                    color: combinedScoring.scoring_result.vehicle_score.score > 0 ? '#DC2626' : '#059669'
-                  }}>
-                    +{combinedScoring.scoring_result.vehicle_score.score}pts
-                  </span>
+              {/* Lumière nocturne */}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 12 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <span style={{ fontSize: 14 }}>💡</span>
+                  <span style={{ color: '#6B7280' }}>Lumière nocturne</span>
                 </div>
-                <div style={{ fontSize: 10, color: '#6B7280', marginLeft: 8 }}>
-                  {combinedScoring.scoring_result.vehicle_score.reason}
-                </div>
+                <span style={{ color: '#6B7280' }}>
+                  {selected.luminosite_score ? `${selected.luminosite_score >= 4 ? 'Fort' : selected.luminosite_score >= 2 ? 'Moyen' : 'Faible'} • ${selected.luminosite_score}/5` : 'N/A'}
+                </span>
               </div>
 
-              {/* Breakdown NDVI */}
-              <div style={{ marginBottom: 6 }}>
-                <div style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'space-between',
-                  fontSize: 11,
-                  color: '#374151'
+              {/* Entretien végétation */}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 12 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                  <span style={{ fontSize: 14 }}>🌿</span>
+                  <span style={{ color: '#6B7280' }}>Entretien végétation</span>
+                </div>
+                <span style={{ color: '#6B7280' }}>
+                  {selected.vegetation_score ? `${selected.vegetation_score >= 4 ? 'Fort' : selected.vegetation_score >= 2 ? 'Moyen' : 'Faible'} • ${selected.vegetation_score}/5` : 'N/A'}
+                </span>
+              </div>
+
+              {/* Total */}
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 12, marginTop: 4 }}>
+                <span style={{ fontWeight: 600, color: '#374151' }}>Total</span>
+                <span style={{ 
+                  fontWeight: 600, 
+                  color: selected.simple_score >= 10 ? '#059669' : selected.simple_score >= 5 ? '#F59E0B' : '#DC2626'
                 }}>
-                  <span>🌱 Variation NDVI</span>
-                  <span style={{ 
-                    fontWeight: 600,
-                    color: combinedScoring.scoring_result.ndvi_score.score > 0 ? '#DC2626' : '#059669'
-                  }}>
-                    {combinedScoring.scoring_result.ndvi_score.score > 0 ? '+' : ''}{combinedScoring.scoring_result.ndvi_score.score}pts
-                  </span>
-                </div>
-                <div style={{ fontSize: 10, color: '#6B7280', marginLeft: 8 }}>
-                  {combinedScoring.scoring_result.ndvi_score.reason}
-                </div>
+                  {selected.simple_score}/15 pts
+                </span>
               </div>
             </div>
-          ) : !loadingScoring ? (
-            <div style={{ fontSize: 11, color: '#9CA3AF', fontStyle: 'italic' }}>
-              🔍 Scoring combiné non disponible
-            </div>
-          ) : null}
-        </div>
-
+          </div>
+        ) : (
+          <div style={{ fontSize: 11, color: '#9CA3AF', fontStyle: 'italic' }}>
+            🔍 Score non disponible
+          </div>
+        )}
       </div>
     </div>
   );
-};
-
-// Fonctions helpers pour l'analyse visuelle
-const getPoolIcon = (state: string) => {
-  switch (state) {
-    case 'blue': return '🏊';
-    case 'green': return '🟢';
-    case 'empty': return '⚫';
-    case 'covered': return '🔲';
-    default: return '❓';
-  }
-};
-
-const getPoolStateLabel = (state: string) => {
-  switch (state) {
-    case 'blue': return 'Piscine entretenue';
-    case 'green': return 'Piscine sale';
-    case 'empty': return 'Piscine vide';
-    case 'covered': return 'Piscine couverte';
-    default: return 'Piscine détectée';
-  }
-};
-
-const getMobilityIcon = (level: string) => {
-  switch (level) {
-    case 'high': return '🚗';
-    case 'medium': return '🚙';
-    case 'low': return '🚶';
-    default: return '❓';
-  }
-};
-
-const getMobilityLabel = (level: string) => {
-  switch (level) {
-    case 'high': return 'Activité élevée';
-    case 'medium': return 'Activité modérée';
-    case 'low': return 'Activité faible';
-    default: return 'Activité inconnue';
-  }
-};
-
-const getConfidenceIcon = (confidence: string) => {
-  switch (confidence) {
-    case 'high': return '✅';
-    case 'medium': return '⚠️';
-    case 'low': return '❌';
-    default: return '❓';
-  }
-};
-
-const getConfidenceLabel = (confidence: string) => {
-  switch (confidence) {
-    case 'high': return 'Confiance élevée';
-    case 'medium': return 'Confiance modérée';
-    case 'low': return 'Confiance faible';
-    default: return 'Confiance inconnue';
-  }
-};
-
-const getConfidenceColor = (confidence: string) => {
-  switch (confidence) {
-    case 'high': return { bg: '#D1FAE5', text: '#065F46' };
-    case 'medium': return { bg: '#FEF3C7', text: '#92400E' };
-    case 'low': return { bg: '#FEE2E2', text: '#991B1B' };
-    default: return { bg: '#F3F4F6', text: '#374151' };
-  }
-};
-
-const getAbandonmentIcon = (level: string) => {
-  switch (level) {
-    case 'high': return '🏚️';
-    case 'medium': return '⚠️';
-    case 'low': return '🏠';
-    case 'none': return '✅';
-    default: return '❓';
-  }
-};
-
-const getAbandonmentColor = (level: string) => {
-  switch (level) {
-    case 'high': return { bg: '#FEE2E2', text: '#991B1B' };
-    case 'medium': return { bg: '#FEF3C7', text: '#92400E' };
-    case 'low': return { bg: '#DBEAFE', text: '#1E40AF' };
-    case 'none': return { bg: '#DCFCE7', text: '#166534' };
-    default: return { bg: '#F3F4F6', text: '#6B7280' };
-  }
-};
-
-// Nouvelles fonctions helper pour les métriques
-const getNDVILabel = (score: number) => {
-  if (score >= 70) return 'Élevé';
-  if (score >= 50) return 'Modéré';
-  if (score >= 30) return 'Faible';
-  return 'Très faible';
-};
-
-const getVehicleLabel = (detected: boolean) => {
-  return detected ? 'Modéré' : 'Faible';
 };
 
 export default NewPopup;
