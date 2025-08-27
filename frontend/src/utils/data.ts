@@ -44,6 +44,27 @@ export async function loadFincas(path: string = '/data/fincas_with_abandon_score
       luminosite_score: f.properties?.luminosite_score,
       vegetation_score: f.properties?.vegetation_score,
       cv_percent: f.properties?.cv_percent,
+      
+      // Données cadastrales
+      creation_date: f.properties?.creation_date,
+      
+      // Scores V3
+      simple_score_v3: f.properties?.simple_score_v3,
+      simple_classification_v3: f.properties?.simple_classification_v3,
+      simple_base_total_v3: f.properties?.simple_base_total_v3,
+      simple_age_bonus_v3: f.properties?.simple_age_bonus_v3,
+      
+      // NOUVEAU: Score total sur 20 points
+      total_score_20: f.properties?.total_score_20,
+      total_score_classification: f.properties?.total_score_classification,
+      total_score_criteria: f.properties?.total_score_criteria,
+      
+      // Données brutes pour les nouveaux critères
+      viirs_mean_luminosity: f.properties?.viirs_mean_luminosity,
+      sentinel1_vv_db: f.properties?.sentinel1_vv_db,
+      ndvi_median: f.properties?.ndvi_median,
+      ndvi_std_deviation: f.properties?.ndvi_std_deviation,
+      total_vehicles_detected: f.properties?.total_vehicles_detected,
     } as Finca;
   });
 }

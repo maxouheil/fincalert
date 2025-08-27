@@ -6,6 +6,8 @@ export interface Finca {
   distance_plus_proche_voisin_m: number;
   qualifiee_finca: boolean;
   neighborhood?: string;
+  creation_date?: string; // Date de création cadastrale
+  
   // Nouvelles données NDVI
   abandon_score?: number;
   activity_status?: 'active' | 'potential' | 'inactive' | 'unknown';
@@ -39,6 +41,51 @@ export interface Finca {
   luminosite_score?: number;
   vegetation_score?: number;
   cv_percent?: number;
+  
+  // Score V3 avec bonus d'ancienneté (/20)
+  simple_score_v3?: number;
+  simple_classification_v3?: string;
+  simple_base_total_v3?: number;
+  simple_age_bonus_v3?: number;
+  
+  // NOUVEAU: Score total sur 20 points avec tous les critères
+  total_score_20?: number;
+  total_score_classification?: 'Active' | 'Semi-active' | 'Inactive';
+  total_score_criteria?: {
+    luminosite?: {
+      points: number;
+      level: string;
+      description: string;
+    };
+    radar?: {
+      points: number;
+      level: string;
+      description: string;
+    };
+    vegetation?: {
+      points: number;
+      level: string;
+      description: string;
+    };
+    creation_date?: {
+      points: number;
+      level: string;
+      description: string;
+    };
+
+    car_presence?: {
+      points: number;
+      level: string;
+      description: string;
+    };
+  };
+  
+  // Données brutes pour les nouveaux critères
+  viirs_mean_luminosity?: number;
+  sentinel1_vv_db?: number;
+  ndvi_median?: number;
+  ndvi_std_deviation?: number;
+  total_vehicles_detected?: number;
 }
 
 // Types pour les résultats de détection

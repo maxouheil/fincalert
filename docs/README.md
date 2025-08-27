@@ -1,457 +1,242 @@
-## Fincalert — Guide de Documentation
+# 🏠 Fincalert - Système de Détection d'Abandon de Fincas
 
-### 1) Lancer le projet (dev)
+## 📋 Vue d'ensemble
 
-- Démarrer tous les serveurs
+Fincalert est un système complet de détection d'abandon de fincas (propriétés rurales) basé sur l'analyse multi-critères de données satellitaires et géospatiales. Le système utilise des algorithmes avancés pour évaluer l'activité des propriétés et identifier celles qui sont potentiellement abandonnées.
+
+## 🎯 Objectif Principal
+
+Calculer un **score d'abandon sur 20 points** indiquant la probabilité qu'une finca soit abandonnée, basé sur 5 critères distincts :
+
+- **Score élevé (15-20)** : Finca très active
+- **Score moyen (7-14)** : Finca semi-active  
+- **Score faible (0-6)** : Finca inactive/abandonnée
+
+## 🏗️ Architecture du Système
+
+### Backend (Python)
+- **API REST** : FastAPI avec endpoints pour l'analyse et la détection
+- **Détection d'objets** : YOLO pour piscines et véhicules
+- **Analyse satellitaire** : NDVI, Sentinel-1, VIIRS
+- **Traitement d'images** : PIL, OpenCV
+- **Géolocalisation** : Mapbox API
+
+### Frontend (React + TypeScript)
+- **Interface cartographique** : Mapbox GL JS
+- **Visualisation** : Composants React personnalisés
+- **Filtres interactifs** : Par activité, score, localisation
+- **Popups détaillés** : Informations complètes par finca
+
+## 📊 Système de Scoring (20 points)
+
+### 🚗 Présence de Voitures (5 points) - CRITÈRE PRINCIPAL
+**Source de données :** Détection YOLO via Roboflow API
+- **0 véhicules** : 0/5 points (Aucune activité)
+- **1-2 véhicules** : 3/5 points (Activité modérée)
+- **3+ véhicules** : 5/5 points (Activité élevée)
+
+**Technologie :** Modèle "Finca cars in Ibiza 2" (mAP@50: 77.6%)
+
+### 📅 Date de Création Cadastrale (5 points)
+**Source de données :** Données cadastrales espagnoles
+- **> 20 ans** : 0/5 points (Très ancien)
+- **15-20 ans** : 1/5 points (Ancien)
+- **10-15 ans** : 2/5 points (Moyen)
+- **5-10 ans** : 3/5 points (Récent)
+- **< 5 ans** : 5/5 points (Très récent)
+
+### 🌿 Entretien Végétation - NDVI (4 points)
+**Source de données :** Analyse NDVI Sentinel-2 (6 mois)
+- **Variation forte (CV ≥ 25%)** : 4/4 points (Entretien actif)
+- **Variation semi (CV 15-25%)** : 2/4 points (Entretien modéré)
+- **Variation faible (CV < 15%)** : 0/4 points (Entretien faible)
+
+**Données intégrées :** 631/631 fincas avec scores NDVI complets
+
+### 📡 Activité Radar - Sentinel-1 (3 points)
+**Source de données :** Sentinel-1 VV (6 mois)
+- **≤ -11.404 dB** : 1/3 points (Faible)
+- **-11.404 à -10.066 dB** : 2/3 points (Moyen)
+- **> -10.066 dB** : 3/3 points (Fort)
+
+### 🌙 Luminosité Nocturne - VIIRS (3 points)
+**Source de données :** VIIRS Day/Night Band
+- **≤ 0.700** : 1/3 points (Faible)
+- **0.700 à 1.209** : 2/3 points (Moyen)
+- **> 1.209** : 3/3 points (Fort)
+
+## 🎯 Classification Finale
+
+### 🟢 ACTIVE (>10 points)
+**Distribution actuelle :** 56.7% (358/631 fincas)
+**Signification :** Finca très active avec activité humaine récente
+
+### 🟠 SEMI-ACTIVE (7-10 points)
+**Distribution actuelle :** 41.8% (264/631 fincas)
+**Signification :** Finca avec activité modérée
+
+### 🔴 INACTIVE (<7 points)
+**Distribution actuelle :** 1.4% (9/631 fincas)
+**Signification :** Finca inactive ou abandonnée
+
+## 📈 Statistiques Globales
+
+- **Fincas analysées :** 631
+- **Score moyen :** 11.3/20 (56.5%)
+- **Données complètes :** 100% (tous les critères disponibles)
+- **Précision NDVI :** 100% (631/631 fincas)
+- **Détection véhicules :** 100% (631/631 fincas)
+
+## 🔧 Technologies Utilisées
+
+### Détection d'Objets
+- **YOLO v8** : Détection de piscines et véhicules
+- **Roboflow** : API de détection cloud
+- **Confidence threshold :** 20% (optimisé pour détection complète)
+
+### Données Satellitaires
+- **Sentinel-2** : NDVI (résolution 10m, 6 mois)
+- **Sentinel-1** : Radar VV (résolution 10m, 6 mois)
+- **VIIRS** : Luminosité nocturne (résolution 375m)
+
+### Géolocalisation
+- **Mapbox** : Images satellitaires et cartes
+- **Zoom optimal :** 19 (1280x960 pixels)
+- **Cache local :** Images mises en cache pour performance
+
+## 🚀 Workflow d'Analyse
+
+### 1. Collecte des Données
 ```bash
-./start-all.sh
+# Détection véhicules (Roboflow)
+python scripts/analyze_all_fincas_vehicles_confidence20.py
+
+# Intégration données NDVI
+python scripts/extract_ndvi_scores.py
+
+# Calcul scores totaux
+python scripts/calculate_total_scores_20.py
 ```
-- Arrêter tous les serveurs
+
+### 2. Intégration des Critères
+- **Véhicules** : Résultats Roboflow → GeoJSON
+- **NDVI** : Fichier `combined_scoring_optimized_sentinel1.json` → GeoJSON
+- **Sentinel-1** : Données 6 mois → GeoJSON
+- **VIIRS** : Données luminosité → GeoJSON
+- **Cadastre** : Données espagnoles → GeoJSON
+
+### 3. Calcul Final
+- **Score total** : Somme des 5 critères (0-20 points)
+- **Classification** : Basée sur les barèmes définis
+- **Export** : GeoJSON avec tous les scores et métadonnées
+
+## 📁 Structure des Données
+
+### Fichiers Principaux
+```
+frontend/public/data/
+├── fincas_with_abandon_scores.geojson  # Données complètes (631 fincas)
+├── fincas_total_scores_20.geojson      # Scores calculés
+└── fincas_with_all_data.geojson        # Données intégrées
+```
+
+### Données par Finca
+```json
+{
+  "id": "finca_00045",
+  "total_score_20": 7,
+  "total_score_classification": "Semi-active",
+  "total_score_criteria": {
+    "car_presence": {"points": 0, "level": "Aucune"},
+    "creation_date": {"points": 3, "level": "Récent"},
+    "vegetation": {"points": 2, "level": "Variation semi"},
+    "radar": {"points": 1, "level": "Faible"},
+    "luminosite": {"points": 1, "level": "Faible"}
+  },
+  "surface_estimee_m2": 138,
+  "creation_date": "2019-12-02T00:00:00",
+  "total_vehicles_detected": 0,
+  "ndvi_score_old": 50,
+  "viirs_mean_luminosity": 0.650,
+  "sentinel1_vv_db": -12.57
+}
+```
+
+## 🎨 Interface Utilisateur
+
+### Carte Interactive
+- **Points colorés** : Vert (Active), Orange (Semi-active), Rouge (Inactive)
+- **Filtres** : Par classification, score, localisation
+- **Zoom** : Niveaux 15-20 avec images satellitaires
+
+### Popup Détaillé
+- **Informations cadastrales** : Surface, date de création
+- **Score complet** : 5 critères avec points et niveaux
+- **Données brutes** : Valeurs NDVI, radar, luminosité
+- **Classification** : Statut final avec description
+
+## 🔄 Mise à Jour des Données
+
+### Processus Automatisé
+1. **Détection véhicules** : Toutes les 631 fincas
+2. **Intégration NDVI** : Extraction depuis fichiers existants
+3. **Calcul scores** : Application des nouveaux barèmes
+4. **Export frontend** : Mise à jour des fichiers GeoJSON
+
+### Performance
+- **Temps d'analyse** : ~10 minutes pour 631 fincas
+- **Parallélisation** : ThreadPoolExecutor (5 workers)
+- **Cache** : Images Mapbox mises en cache localement
+
+## 📊 Validation et Qualité
+
+### Métriques de Performance
+- **NDVI** : 100% de couverture (631/631 fincas)
+- **Véhicules** : 100% de détection (631/631 fincas)
+- **Sentinel-1** : 100% de couverture (631/631 fincas)
+- **VIIRS** : 100% de couverture (631/631 fincas)
+
+### Distribution Réaliste
+- **Actives** : 56.7% (majorité logique pour Ibiza)
+- **Semi-actives** : 41.8% (activité modérée)
+- **Inactives** : 1.4% (très peu d'abandonnées)
+
+## 🚀 Déploiement
+
+### Backend
 ```bash
-./stop-all.sh
+cd backend
+uvicorn api.main:app --reload --host 0.0.0.0 --port 8000
 ```
-- Démarrer individuellement
+
+### Frontend
 ```bash
-./start-backend.sh    # Backend (FastAPI) sur http://localhost:8000
-./start-frontend.sh   # Frontend (React) sur http://localhost:3000
+cd frontend
+npm install
+npm start
 ```
 
-Pré-requis:
-- Avoir un environnement Python virtuel `venv` (au besoin: `python3 -m venv venv`)
-- Node.js et npm installés
-- Fichier `.env` dans `frontend/` avec:
-```
-REACT_APP_MAPBOX_TOKEN=...   # Token Mapbox requis
-REACT_APP_GOOGLE_MAPS_API_KEY=...  # Pour Street View
-```
-
-Logs pratiques:
-```bash
-tail -f backend.log frontend.log
-```
-
-
-### 2) Comment ça fonctionne (vue d'ensemble)
-
-- Frontend (React, `frontend/`)
-  - Charge les données de fincas depuis un GeoJSON statique: `public/data/fincas_with_abandon_scores.geojson`.
-  - Affiche les points sur une carte Mapbox (style satellite) via `react-map-gl` et `mapbox-gl`.
-  - Filtres interactifs (taille, isolement, activité, Street View, piscine) directement côté client.
-  - Une popup affiche les détails de la finca sélectionnée avec score d'abandon combiné et indicateurs visuels.
-
-- Backend (FastAPI, `backend/`)
-  - Fournit des endpoints pour l'analyse visuelle des fincas et la détection d'objets.
-  - API de détection de piscines et d'analyse d'abandon via YOLO et traitement d'images.
-
-- Données
-  - Données principales: `frontend/public/data/fincas_with_abandon_scores.geojson` (631 fincas avec scores NDVI).
-  - Données piscines: `frontend/public/data/pools_full_summary.json` (résultats de détection YOLO).
-  - Données véhicules: `frontend/public/data/vehicles_full_summary.json` (détection véhicules YOLO COCO).
-  - **Données de scoring simplifié**: API `/api/scoring/simple/{finca_id}` (3 critères : radar, luminosité, végétation).
-  - Schéma d'une finca (côté frontend):
-    - `id: string`
-    - `lat: number`
-    - `lon: number`
-    - `surface_estimee_m2: number`
-    - `distance_plus_proche_voisin_m: number`
-    - `qualifiee_finca: boolean`
-    - `abandon_score: number` (score NDVI 0-1)
-    - `mobility_score: number` (score de mobilité)
-    - `mobility_level: string` (low/medium/high)
-    - `visual_indicators: object` (indicateurs visuels)
-    - `visual_analysis_date: string` (date d'analyse)
-    - `luminosity_score: number` (score VIIRS 1-5)
-    - `luminosity_mean: number` (luminosité moyenne)
-    - `luminosity_level: string` (Faible/Moyen/Fort)
-    - `simple_score: number` (score global 1-15)
-    - `simple_classification: string` (Active/Moderate/Inactive)
-    - `radar_score: number` (score radar 1-5)
-    - `luminosite_score: number` (score luminosité 1-5)
-    - `vegetation_score: number` (score végétation 1-5)
-
-
-### 3) Flux de données côté frontend
-
-- `frontend/src/utils/data.ts`
-  - `loadFincas('/data/fincas_with_abandon_scores.geojson')` charge le GeoJSON principal.
-  - `loadPoolData('/data/pools_full_summary.json')` charge les données de détection de piscines.
-  - `loadSimpleScoringData(fincaId)` charge les données de scoring simplifié.
-  - Transforme chaque feature en objet `Finca` avec scores et indicateurs.
-
-- `frontend/src/App.tsx`
-  - Charge les fincas et données piscines au montage, stocke dans l'état React.
-  - Passe la liste et la sélection à `MapView`.
-
-- `frontend/src/components/MapView.tsx`
-  - Affiche la carte, les points colorés par score simplifié, la popup.
-  - Implémente tous les filtres côté client.
-
-- `frontend/src/components/NewPopup.tsx`
-  - Affiche les détails de la finca avec scoring simplifié à 3 critères.
-  - Intègre les données radar, luminosité et végétation avec seuils optimisés.
-  - **Image de la finca** : Affiche la photo satellite au-dessus du titre.
-  - **Score global** : Affiche le total sur 15 points avec classification.
-  - **Interface harmonisée** : Styles cohérents avec drop shadow amélioré.
-
-
-### 4) Filtres et système de couleurs
-
-- Filtres (dans `MapView.tsx`):
-  - **Top 30** (bouton toggle): Affiche uniquement les 30 premières fincas
-  - **Taille** (`sizeFilter`):
-    - S: `50 ≤ surface < 80` m²
-    - M: `80 ≤ surface < 120` m²
-    - L: `120 ≤ surface ≤ 150` m²
-  - **Activité** (`activityFilter`): Basé sur le scoring simplifié
-    - 🟢 **Active** (≥10 pts)
-    - 🟡 **Moderate** (5-9 pts)
-    - 🔴 **Inactive** (<5 pts)
-  - **More** (menu déroulant):
-    - **Isolement** (`nnFilter`, distance au plus proche voisin):
-      - `< 30` m
-      - `30 à 60` m
-      - `> 60` m
-    - **Street View** (`streetViewFilter`):
-      - Toutes / Disponible / Non disponible
-    - **Piscine** (`poolFilter`):
-      - Toutes / Pool (blue) / Pool (other) / No pool
-    - **Véhicules** (`vehicleFilter`):
-      - Toutes / Présents / Absents
-
-- **Système de couleurs des points** (basé sur le scoring simplifié):
-  - 🟢 **Vert**: `Active` (10-15 points, finca active)
-  - 🟠 **Orange**: `Moderate` (5-9 points, finca moyennement active)
-  - 🔴 **Rouge**: `Inactive` (1-4 points, finca inactive)
-
-- **Données piscines** (filtrage uniquement, pas de coloration):
-  - Source: `pools_full_summary.json` (631 entrées)
-  - États: `blue` (piscine bleue), `green`, `empty`, `covered`, `unknown`
-  - Filtre "Pool (blue)" = piscines en état `blue`
-  - Filtre "Pool (other)" = piscines en autres états
-
-
-### 5) Système de Scoring Simplifié (Nouveau)
-
-- **Scoring Simplifié à 3 Critères** (1/3/5 points par critère, total sur 15):
-  - **📡 Activité Radar (Sentinel-1 VV)**: Mesure l'activité radar sur 6 mois
-  - **💡 Luminosité Nocturne (VIIRS)**: Indicateur d'activité humaine nocturne
-  - **🌿 Entretien Végétation (NDVI)**: Variabilité de la végétation (entretien)
-
-- **Seuils par critère**:
-  - **Radar (VV en dB)**:
-    - Faible (1 pt): VV ≤ -11.404 dB
-    - Moyen (3 pts): -11.404 < VV ≤ -10.066 dB
-    - Fort (5 pts): VV > -10.066 dB
-  - **Luminosité (nW/cm²/sr)**:
-    - Faible (1 pt): ≤ 0.700
-    - Moyen (3 pts): 0.700 < luminosité ≤ 1.209
-    - Fort (5 pts): > 1.209
-  - **Végétation (CV NDVI)**:
-    - Faible (1 pt): CV < 12% (peu d'entretien)
-    - Moyen (3 pts): 12% ≤ CV < 25% (entretien modéré)
-    - Fort (5 pts): CV ≥ 25% (beaucoup d'entretien)
-
-- **Classification finale**:
-  - **🟢 Active**: Total ≥ 10 points (finca active)
-  - **🟠 Moderate**: 5 ≤ Total < 10 points (finca moyennement active)
-  - **🔴 Inactive**: Total < 5 points (finca inactive)
-
-- **Logique du scoring**:
-  - **Plus de points = Moins de risque d'abandon**
-  - **Radar**: Plus d'activité radar = plus de points
-  - **Luminosité**: Plus de lumière nocturne = plus de points
-  - **Végétation**: Plus de variation NDVI (entretien) = plus de points
-
-- **Sources de données**:
-  - **NDVI**: `data/abandon_analysis_FULL/fincas_abandon_scores_REALISTIC_*.csv`
-  - **Sentinel-1**: `data/sentinel1_all_fincas_6months/*latest*.json`
-  - **VIIRS**: `data/luminosity_analysis/luminosity_*latest*.json`
-  - **Données intégrées**: `frontend/public/data/fincas_with_abandon_scores.geojson` (avec propriétés `luminosity_*` et `simple_*`)
-
-
-### 6) Données Cadastrales et Date de Dernier Achat (Nouveau)
-
-- **Intégration Complète des Données Cadastrales**:
-  - **Source officielle** : APIs du cadastre espagnol via CatastRo
-  - **Données récupérées** : 631/631 fincas avec données cadastrales
-  - **Fichier principal** : `backend/data/cadastral_data_complete.json`
-
-- **Nouvelles Données Cadastrales**:
-  - **📅 Date de création** (`creation_date`) : Date de création de la parcelle cadastrale
-  - **🏠 Référence cadastrale** (`reference`) : Identifiant officiel unique
-  - **📍 Adresse complète** (`address`) : Adresse cadastrale officielle
-  - **📐 Surface cadastrale** (`surface_m2`) : Surface officielle en m²
-  - **📋 Données WFS** : Informations détaillées via Web Feature Service
-
-- **Nouveau Critère : Date de Dernier Achat**:
-  - **Filtre "Dernier achat"** avec 6 tranches d'âge :
-    - **Toutes** : Aucun filtre
-    - **≤ 5 ans** : Très récent (propriété récemment acquise)
-    - **5-10 ans** : Récent (acquisition modérée)
-    - **10-15 ans** : Ancien (propriété établie)
-    - **15-20 ans** : Très ancien (propriété de longue date)
-    - **≥ 20 ans** : Historique (propriété ancestrale)
-
-- **Logique du Filtre Dernier Achat**:
-  - **Basé sur** : `creation_date` des données cadastrales
-  - **Calcul** : Âge = (Date actuelle - Date de création) en années
-  - **Intérêt** : Propriétés récentes = potentiellement plus actives
-  - **Statistiques** : Affichage en temps réel (X/Y fincas par tranche)
-
-- **APIs Cadastrales**:
-  - **`GET /api/cadastral/{finca_id}`** : Données cadastrales d'une finca
-  - **`GET /api/cadastral/all`** : Toutes les données cadastrales
-  - **`GET /api/cadastral/metadata`** : Métadonnées et statistiques
-
-- **Sources de Données Cadastrales**:
-  - **CatastRo R Package** : Package officiel pour l'API cadastrale
-  - **WFS (Web Feature Service)** : Données géospatiales détaillées
-  - **OVC (Oficina Virtual del Catastro)** : Interface web officielle
-  - **Données intégrées** : `frontend/public/data/fincas_with_abandon_scores.geojson`
-
-- **Statistiques Cadastrales**:
-  - **Total fincas** : 631
-  - **Données WFS disponibles** : 628/631 (99.5%)
-  - **Dates de création** : 628/631 (99.5%)
-  - **Surfaces cadastrales** : 628/631 (99.5%)
-  - **Références cadastrales** : 628/631 (99.5%)
-
-- **Interface Utilisateur**:
-  - **Filtre intégré** : Menu "More" → "Dernier achat"
-  - **Statistiques temps réel** : Affichage du nombre de fincas par tranche
-  - **Interface harmonisée** : Styles cohérents avec les autres filtres
-  - **Sidebar cadastrale masquée** : Interface simplifiée
-
-- **Types TypeScript**:
-  ```typescript
-  export interface Finca {
-    // ... propriétés existantes
-    creation_date?: string; // Date de création cadastrale
-    // Données cadastrales complètes disponibles via API
-  }
-  ```
-
-- **Scripts d'Analyse Cadastrale**:
-  - `scripts/get_cadastral_data_all_fincas.py` : Récupération complète
-  - `scripts/complete_cadastral_data_vpn.py` : Complétion via VPN
-  - `scripts/update_complete_cadastral_data.py` : Fusion des données
-  - `scripts/analyze_creation_date_distribution.py` : Analyse des dates
-
-
-### 7) API Backend (résumé)
-
-- Base: `http://localhost:8000`
-- `GET /` → `{ "message": "Fincalert API" }`
-- `GET /api/detection/visual-analysis/{finca_id}` → analyse visuelle d'une finca
-- `GET /api/detection/pools/{finca_id}` → détection de piscines sur une finca
-- `GET /api/detection/vehicles/{finca_id}` → détection de véhicules autour d'une finca
-- `GET /api/scoring/simple/{finca_id}` → scoring simplifié à 3 critères
-- `GET /api/luminosity/{finca_id}` → données de luminosité VIIRS
-- **`GET /api/cadastral/{finca_id}` → données cadastrales complètes d'une finca (Nouveau)**
-- **`GET /api/cadastral/all` → toutes les données cadastrales (Nouveau)**
-- **`GET /api/cadastral/metadata` → métadonnées et statistiques cadastrales (Nouveau)**
-
-Modules de détection:
-- `backend/detection/building_detector.py` - Détection de bâtiments
-- `backend/detection/yolo_pool_detector.py` - Détection de piscines YOLO
-- `backend/detection/extract_fincas.py` - Extraction de fincas
-
-
-### 8) Configuration / Environnements
-
-- Variables d'environnement (frontend)
-  - `REACT_APP_MAPBOX_TOKEN` requis pour la carte et les images statiques.
-  - `REACT_APP_GOOGLE_MAPS_API_KEY` pour les liens Street View.
-
-- Variables d'environnement (backend)
-  - Variables pour Google Earth Engine si utilisé.
-
-- Ports
-  - Frontend: `3000` (configuré dans `start-frontend.sh`)
-  - Backend: `8000`
-
-
-### 9) Structure du projet
-
-```
-fincalert/
-├── frontend/
-│   ├── public/data/
-│   │   ├── fincas_with_abandon_scores.geojson           # Données principales (631 fincas)
-│   │   ├── pools_full_summary.json                      # Détection piscines (631 entrées)
-│   │   ├── vehicles_full_summary.json                   # Détection véhicules (30→631 entrées)
-│   │   ├── combined_scoring_optimized_sentinel1.json    # Scoring combiné optimisé (Nouveau)
-│   │   └── fincas_extreme_west.geojson                  # Données brutes
-│   └── src/
-│       ├── components/MapView.tsx                       # Carte + filtres
-│       ├── components/NewPopup.tsx                      # Popup détaillée (mis à jour)
-│       ├── utils/data.ts                                # Chargement données (mis à jour)
-│       └── utils/types.ts                               # Types TypeScript (mis à jour)
-├── backend/
-│   ├── api/main.py
-│   ├── data/
-│   │   ├── cadastral_data_complete.json                 # Données cadastrales complètes (Nouveau)
-│   │   └── cadastral_metadata.json                      # Métadonnées cadastrales (Nouveau)
-│   ├── detection/                                       # Modules de détection
-│   └── satellite/                                       # Traitement satellite
-├── data/
-│   ├── test_results/pools_full_summary.json             # Source données piscines
-│   ├── test_results/vehicles_full_summary.json          # Résultats batch véhicules
-│   ├── sentinel1_all_fincas_6months_optimized.json      # Données Sentinel-1 optimisées (Nouveau)
-│   ├── combined_scoring_optimized_sentinel1.json        # Scoring combiné (Nouveau)
-│   ├── optimized_thresholds_analysis.json               # Seuils optimisés (Nouveau)
-│   ├── cadastre_analysis/                               # Données cadastrales (Nouveau)
-│   │   ├── cadastral_data_all_fincas.json              # Données complètes
-│   │   ├── cadastral_data_batch_*.json                 # Données par lots
-│   │   └── r_script_batch_*.R                          # Scripts R par lots
-│   └── pools/                                           # Résultats détection piscines
-├── scripts/                                             # Scripts d'analyse
-│   ├── batch_luminosity_analysis_all_631_real_optimized.py  # Analyse VIIRS complète optimisée
-│   ├── monitor_real_luminosity_progress.py              # Monitoring temps réel VIIRS
-│   ├── start_real_luminosity_analysis.sh                # Lancement analyse VIIRS
-│   ├── integrate_luminosity_data.py                     # Intégration données luminosité
-│   ├── fix_simple_scoring.py                            # Correction score global
-│   ├── analyze_all_fincas_sentinel1_6months.py          # Analyse Sentinel-1 complète
-│   ├── adjust_activity_thresholds.py                    # Optimisation des seuils
-│   ├── apply_optimized_thresholds.py                    # Application des seuils
-│   ├── integrate_optimized_sentinel1_scoring.py         # Intégration scoring
-│   ├── monitor_all_fincas_sentinel1_6months.py          # Monitoring en temps réel
-│   ├── display_optimized_integration_summary.py         # Résumé intégration
-│   ├── explain_scoring_system.py                        # Explication scoring
-│   ├── correct_scoring_interpretation.py                # Correction interprétation
-│   ├── recap_viirs_scores_top20.py                      # Récapitulatif VIIRS
-│   ├── get_cadastral_data_all_fincas.py                 # Récupération données cadastrales (Nouveau)
-│   ├── complete_cadastral_data_vpn.py                   # Complétion via VPN (Nouveau)
-│   ├── update_complete_cadastral_data.py                # Fusion données cadastrales (Nouveau)
-│   ├── analyze_creation_date_distribution.py            # Analyse dates création (Nouveau)
-│   └── test_frontend_data_loading.py                    # Test chargement frontend
-└── start-all.sh, stop-all.sh, etc.
-```
-
-
-### 10) Dépannage rapide
-
-- Le frontend n'affiche pas la carte → vérifier `REACT_APP_MAPBOX_TOKEN` dans `frontend/.env`.
-- Conflit de port 3000 → `lsof -ti :3000 | xargs kill -9` puis relancer.
-- `npm start` depuis la racine → utiliser `cd frontend && npm start`.
-- Données piscines manquantes → vérifier `frontend/public/data/pools_full_summary.json`.
-- Données véhicules manquantes → copier `data/test_results/vehicles_full_summary.json` vers `frontend/public/data/vehicles_full_summary.json`.
-- Erreur "index.html not found" → s'assurer d'être dans `frontend/` pour `npm start`.
-- **Données de scoring manquantes** → vérifier l'API `/api/scoring/simple/{finca_id}` et les sources de données NDVI/Sentinel-1/VIIRS.
-- **Données de luminosité manquantes** → vérifier l'API `/api/luminosity/{finca_id}` et les fichiers `data/luminosity_analysis/`.
-- **Données cadastrales manquantes** → vérifier `backend/data/cadastral_data_complete.json` et l'API `/api/cadastral/{finca_id}`.
-- **Filtre "Dernier achat" ne fonctionne pas** → vérifier que `creation_date` est présent dans le GeoJSON et exécuter `scripts/test_frontend_data_loading.py`.
-- **Interface des filtres** → les filtres sont maintenant organisés avec "More" pour les filtres avancés.
-- **Styles des boutons** → harmonisés avec la typographie `var(--app-font)` et les ombres cohérentes.
-- **Erreur npm "Missing script: dev"** → utiliser `npm start` au lieu de `npm run dev`.
-
-
-### 11) Dernières modifications
-
-- **Commit récent**: Intégration complète des données cadastrales et nouveau filtre "Dernier achat"
-  - **Données cadastrales complètes** : 631/631 fincas avec données officielles
-  - **Nouveau filtre "Dernier achat"** : 6 tranches d'âge basées sur `creation_date`
-  - **APIs cadastrales** : 3 nouveaux endpoints pour accès aux données
-  - **Interface simplifiée** : Sidebar cadastrale masquée, focus sur les filtres
-  - **Statistiques temps réel** : Affichage du nombre de fincas par tranche d'âge
-  - **Sources officielles** : CatastRo R Package, WFS, OVC pour données réelles
-
-- **Commit précédent**: Analyse de luminosité complète et intégration système
-  - **Analyse VIIRS complète** : 631/631 fincas analysées avec vraies données
-  - **Cache optimisé** : 99.8% d'efficacité, ~1 minute de traitement total
-  - **Intégration frontend/backend** : Données de luminosité intégrées dans GeoJSON
-  - **API endpoint** `/api/luminosity/{finca_id}` ajouté
-  - **Types TypeScript** mis à jour avec propriétés `luminosity_*`
-  - **Interface harmonisée** : Filtres nettoyés, styles cohérents
-
-- **Commit précédent**: Système de scoring simplifié à 3 critères
-  - **Scoring simplifié** (radar + luminosité + végétation, 1/3/5 points)
-  - **Classification** Active/Moderate/Inactive (10+/5-9/<5 points)
-  - **Interface utilisateur** mise à jour avec popup détaillée
-  - **API endpoint** `/api/scoring/simple/{finca_id}` fonctionnel
-  - **Logique cohérente** : plus de points = moins de risque d'abandon
-
-- **Commit c097b09**: Ajout du filtre "💦 Pool" branché sur `pools_full_summary.json`
-  - Filtre piscine fonctionnel (All/Blue/Other/None)
-  - Données de détection YOLO intégrées pour 631 fincas
-
-### 12) Analyse de Luminosité VIIRS (Complète)
-
-- **Analyse complète** : 631/631 fincas analysées avec succès
-- **Performance optimisée** :
-  - **Cache persistant** : 99.8% d'efficacité, évite les appels GEE répétés
-  - **Parallélisation** : ThreadPoolExecutor avec 3 workers par défaut
-  - **Temps total** : ~1 minute pour l'ensemble des 631 fincas
-  - **Monitoring temps réel** : Barre de progression et statistiques détaillées
-
-- **Intégration système** :
-  - **GeoJSON mis à jour** : Propriétés `luminosity_*` ajoutées
-  - **API endpoint** : `/api/luminosity/{finca_id}` pour accès direct
-  - **Frontend intégré** : Données disponibles directement dans les composants
-  - **Types TypeScript** : Interface `Finca` mise à jour
-
-- **Résultats statistiques** :
-  - **Score moyen** : 4.0/5 points
-  - **Distribution** : 14.2% faible, 21.5% moyen, 64.3% fort
-  - **Luminosité moyenne** : 2.524 nW/cm²/sr
-  - **Plage** : 0.390 à 21.579 nW/cm²/sr
-
-### 13) Interface Utilisateur (Améliorations)
-
-- **Filtres réorganisés** :
-  - **Filtres principaux** : Top 30, Taille, Activité (basé sur scoring simplifié)
-  - **Filtres avancés** : Menu "More" avec Isolation, Street View, Pool, Véhicules, **Dernier achat**
-  - **Styles harmonisés** : Typographie `var(--app-font)`, ombres cohérentes
-
-- **Nouveau Filtre "Dernier achat"** :
-  - **6 tranches d'âge** : Toutes, ≤5 ans, 5-10 ans, 10-15 ans, 15-20 ans, ≥20 ans
-  - **Statistiques temps réel** : Affichage du nombre de fincas par tranche
-  - **Interface intuitive** : Menu déroulant avec descriptions claires
-  - **Performance optimisée** : Filtrage côté client sans appels API
-
-- **Popup améliorée** :
-  - **Image de la finca** : Photo satellite au-dessus du titre
-  - **Score global** : Affichage du total sur 15 points avec classification
-  - **Drop shadow** : Ombre portée améliorée pour plus de profondeur
-  - **Données intégrées** : Radar, luminosité, végétation directement depuis GeoJSON
-  - **Informations cadastrales** : Date de création et références disponibles
-
-- **Carte optimisée** :
-  - **Couleurs cohérentes** : Même couleur au clic qu'en état normal
-  - **Système de scoring** : Points colorés selon le score global simplifié
-  - **Performance** : Données pré-calculées, pas d'appels API redondants
-  - **Interaction fluide** : Filtrage en temps réel sans rechargement
-
-- **Sidebar cadastrale masquée** :
-  - **Interface simplifiée** : Focus sur les filtres principaux
-  - **Données disponibles** : Accès via APIs dédiées si nécessaire
-  - **Performance améliorée** : Moins de composants à charger
-
-### 14) Analyse Satellite (Nouveau)
-
-- **Sentinel-1 SAR**:
-  - **Résolution**: 10m (ultra-précise)
-  - **Période**: 6 mois d'analyse
-  - **Métrique**: VV_mean (backscatter vertical)
-  - **Avantages**: Fonctionne jour/nuit, indépendant des nuages
-  - **Seuils simplifiés**:
-    - `Faible (1 pt)`: VV ≤ -11.404 dB
-    - `Moyen (3 pts)`: -11.404 < VV ≤ -10.066 dB
-    - `Fort (5 pts)`: VV > -10.066 dB
-
-- **VIIRS DNB** (système complet et optimisé):
-  - **Résolution**: 750m
-  - **Période**: 6 mois d'analyse (optimisée)
-  - **Métrique**: Luminosité nocturne (nW/cm²/sr)
-  - **Cache**: Système de cache persistant pour GEE
-  - **Parallélisation**: ThreadPoolExecutor (3 workers par défaut)
-  - **Seuils simplifiés**:
-    - `Faible (1 pt)`: ≤ 0.700 nW/cm²/sr
-    - `Moyen (3 pts)`: 0.700 < luminosité ≤ 1.209 nW/cm²/sr
-    - `Fort (5 pts)`: > 1.209 nW/cm²/sr
-  - **Résultats** : 631/631 fincas analysées, 99.8% cache efficiency
-
-- **NDVI** (système existant):
-  - **Métrique**: Indice de végétation normalisé
-  - **Période**: Analyse saisonnière
-  - **Utilisation**: Coefficient de variation (CV) pour l'entretien végétation
+### Accès
+- **Frontend** : http://localhost:3000
+- **API** : http://localhost:8000
+- **Documentation API** : http://localhost:8000/docs
+
+## 📝 Notes Techniques
+
+### Optimisations Récentes
+- **Confidence threshold** : Optimisé à 20% pour détection complète
+- **Zoom Mapbox** : Standardisé à 19 pour cohérence
+- **Cache images** : Réduction des appels API
+- **Parallélisation** : Amélioration des performances
+
+### Données Intégrées
+- **Scores NDVI** : Extraits de `combined_scoring_optimized_sentinel1.json`
+- **Détection véhicules** : Roboflow API avec modèle optimisé
+- **Données cadastrales** : Priorité aux données principales
+- **Métadonnées** : Conservation des données brutes pour traçabilité
+
+---
+
+**Dernière mise à jour :** 27 août 2025
+**Version :** 2.0 (Système 20 points)
+**Statut :** Production avec données complètes

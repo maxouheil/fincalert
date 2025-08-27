@@ -5,6 +5,7 @@ import type { LayerProps } from 'react-map-gl';
 import { Finca } from '../utils/types';
 import { loadVehicleData } from '../utils/data';
 import NewPopup, { streetViewCache } from './NewPopup';
+// import CadastreOverlay from './CadastreOverlay';
 
 // Prefer REACT_APP_MAPBOX_TOKEN (CRA convention). Fallback to MAPBOX_TOKEN if present.
 const env = process.env as unknown as Record<string, string | undefined>;
@@ -17,7 +18,7 @@ const FALLBACK_VIEW_STATE = {
   zoom: 14.0,
 };
 
-// Layer style for finca points
+// Layer style for finca points - NOUVEAU: Score total sur 30 points
 const fincaLayer: LayerProps = {
   id: 'finca-points',
   type: 'circle',
@@ -25,9 +26,9 @@ const fincaLayer: LayerProps = {
     'circle-radius': 6,
     'circle-color': [
       'case',
-      ['>=', ['get', 'simple_score'], 10], '#059669', // Green - Active (10-15 points)
-      ['>=', ['get', 'simple_score'], 5], '#F59E0B', // Orange - Moderate (5-9 points)
-      ['<', ['get', 'simple_score'], 5], '#DC2626', // Red - Inactive (1-4 points)
+      ['>', ['coalesce', ['get', 'total_score_20'], 0], 10], '#059669', // Green - Active (>10 points)
+      ['>=', ['coalesce', ['get', 'total_score_20'], 0], 7], '#F59E0B', // Orange - Semi-active (≥7 points)
+      ['<', ['coalesce', ['get', 'total_score_20'], 0], 7], '#DC2626', // Red - Inactive (<7 points)
       '#6B7280' // Default Gray
     ],
     'circle-stroke-width': 2,
@@ -39,15 +40,19 @@ type Props = {
   fincas: Finca[];
   selected: Finca | null;
   onSelect: (id: string) => void;
+  filters?: { lastPurchase: string };
+  onFiltersChange?: (filters: { lastPurchase: string }) => void;
+  fincaCount?: number;
+  filteredCount?: number;
 };
 
-const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
+const MapView: React.FC<Props> = ({ fincas, selected, onSelect, filters, onFiltersChange, fincaCount, filteredCount }) => {
   const mapRef = useRef<MapRef | null>(null);
   const [popupTick, setPopupTick] = useState(0);
   const [placeCache, setPlaceCache] = useState<Record<string, string>>({});
   const [sizeFilter, setSizeFilter] = useState<'all' | 'S' | 'M' | 'L'>('all');
   const [nnFilter, setNnFilter] = useState<'all' | '10to15' | '15to30' | 'lt30' | '30to60' | 'gt60'>('all');
-  const [activityFilter, setActivityFilter] = useState<'all' | 'Active' | 'Moderate' | 'Inactive'>('all');
+  const [activityFilter, setActivityFilter] = useState<'all' | 'Active' | 'Semi-active' | 'Inactive'>('all');
   const [streetViewFilter, setStreetViewFilter] = useState<'all' | 'available' | 'unavailable'>('all');
   const [poolFilter, setPoolFilter] = useState<'all' | 'blue' | 'other' | 'none'>('all');
   const [hasCentered, setHasCentered] = useState(false);
@@ -55,6 +60,7 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
   const [top30Only, setTop30Only] = useState(false);
   const [vehicleFilter, setVehicleFilter] = useState<'all' | 'present' | 'none'>('all');
   const [showMoreFilters, setShowMoreFilters] = useState(false);
+  // const [cadastreOverlayVisible, setCadastreOverlayVisible] = useState(true);
 
   // Charger pool summary dans un dictionnaire {finca_id -> {pool_detected, best_pool.state}}
   const [poolSummary, setPoolSummary] = useState<Record<string, { pool_detected: boolean; best_state: string | null }>>({});
@@ -182,9 +188,9 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
 
       let activityOk = true;
       if (activityFilter !== 'all') {
-        // Utiliser simple_classification au lieu de activity_status
-        const simpleClassification = f.simple_classification || 'Inactive';
-        activityOk = simpleClassification === activityFilter;
+        // NOUVEAU: Utiliser total_score_classification au lieu de simple_classification
+        const totalClassification = f.total_score_classification || 'Inactive';
+        activityOk = totalClassification === activityFilter;
       }
 
       let streetViewOk = true;
@@ -246,7 +252,11 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
           pool_detected: Boolean(ps?.pool_detected || false),
           pool_state: ps?.best_state || null,
           simple_score: f.simple_score || 3,
-          simple_classification: f.simple_classification || 'Inactive',
+          simple_score_v3: f.simple_score_v3 || f.simple_score || 3,
+          simple_classification: f.simple_classification_v3 || f.simple_classification || 'Inactive',
+          // NOUVEAU: Score total sur 20 points
+          total_score_20: f.total_score_20 || 0,
+          total_score_classification: f.total_score_classification || 'Inactive',
         },
         geometry: { type: 'Point', coordinates: [f.lon, f.lat] },
       });
@@ -329,7 +339,8 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
           const canvas = m.getCanvas?.() || m.getMap?.().getCanvas?.();
           if (canvas) canvas.style.cursor = feats && feats.length ? 'pointer' : '';
       }}
-      onClick={(e) => {
+                     onClick={(e) => {
+                       // Gérer le clic sur un point finca normal
         let feature = e.features && e.features.find((ft: any) => ft.layer?.id === fincaLayer.id);
         if (!feature && mapRef.current) {
           const m: any = mapRef.current;
@@ -412,14 +423,64 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
           <select
             className="filter-select"
             value={activityFilter}
-            onChange={(e) => setActivityFilter(e.target.value as 'all' | 'Active' | 'Moderate' | 'Inactive')}
+            onChange={(e) => setActivityFilter(e.target.value as 'all' | 'Active' | 'Semi-active' | 'Inactive')}
             aria-label="Filter by activity status"
           >
             <option value="all">All activities</option>
             <option value="Active">🟢 Active (≥10 pts)</option>
-            <option value="Moderate">🟡 Moderate (5-9 pts)</option>
+                          <option value="Semi-active">🟠 Semi-active (11-15 pts)</option>
             <option value="Inactive">🔴 Inactive (&lt;5 pts)</option>
           </select>
+          
+          {/* Filtre Dernier Achat */}
+          {filters && onFiltersChange && (
+            <select
+              className="filter-select"
+              value={filters.lastPurchase}
+              onChange={(e) => onFiltersChange({ ...filters, lastPurchase: e.target.value })}
+              aria-label="Filter by last purchase age"
+            >
+              <option value="all">🏠 Dernier achat: Toutes</option>
+              <option value="0-5">🏠 ≤ 5 ans (très récent)</option>
+              <option value="5-10">🏠 5-10 ans (récent)</option>
+              <option value="10-15">🏠 10-15 ans (ancien)</option>
+              <option value="15-20">🏠 15-20 ans (très ancien)</option>
+              <option value="20+">🏠 ≥ 20 ans (historique)</option>
+            </select>
+          )}
+          
+          {/* Statistiques du filtre dernier achat */}
+          {filters && fincaCount && filteredCount && (
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              fontSize: 12,
+              color: '#6B7280',
+              fontWeight: 500,
+              backgroundColor: 'rgba(255,255,255,0.92)',
+              borderRadius: 12,
+              padding: '4px 8px',
+              border: '1px solid #E2E8F0',
+            }}>
+              <span>{filters.lastPurchase === 'all' ? 'Toutes' : 
+                filters.lastPurchase === '0-5' ? '≤ 5 ans' :
+                filters.lastPurchase === '5-10' ? '5-10 ans' :
+                filters.lastPurchase === '10-15' ? '10-15 ans' :
+                filters.lastPurchase === '15-20' ? '15-20 ans' :
+                filters.lastPurchase === '20+' ? '≥ 20 ans' : 'Toutes'}</span>
+              <span style={{
+                backgroundColor: '#2563EB',
+                color: 'white',
+                padding: '2px 6px',
+                borderRadius: 8,
+                fontSize: 11,
+                fontWeight: 600,
+              }}>
+                {filteredCount}/{fincaCount}
+              </span>
+            </div>
+          )}
           
           {/* Bouton More pour les filtres avancés */}
           <div style={{ position: 'relative' }}>
@@ -505,6 +566,8 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
                   <option value="present">✅ Present</option>
                   <option value="none">∅ None</option>
                 </select>
+                {/* Bouton Cadastre masqué */}
+                <span style={{ display: 'none' }} />
               </div>
             )}
           </div>
@@ -526,9 +589,9 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
               'circle-radius': 8,
               'circle-color': [
                 'case',
-                ['>=', ['get', 'simple_score'], 10], '#059669', // Green - Active (10-15 points)
-                ['>=', ['get', 'simple_score'], 5], '#F59E0B', // Orange - Moderate (5-9 points)
-                ['<', ['get', 'simple_score'], 5], '#DC2626', // Red - Inactive (1-4 points)
+                ['>=', ['coalesce', ['get', 'simple_score_v3'], ['get', 'simple_score'], 0], 14], '#059669', // Green - Active (≥14 points)
+                ['>=', ['coalesce', ['get', 'simple_score_v3'], ['get', 'simple_score'], 0], 9], '#F59E0B', // Orange - Moderate (9-13 points)
+                ['<=', ['coalesce', ['get', 'simple_score_v3'], ['get', 'simple_score'], 0], 8], '#DC2626', // Red - Inactive (≤8 points)
                 '#6B7280' // Default Gray
               ],
               'circle-stroke-width': 3,
@@ -537,6 +600,9 @@ const MapView: React.FC<Props> = ({ fincas, selected, onSelect }) => {
           />
         )}
       </Source>
+
+      {/* Overlay Cadastral masqué */}
+      {/* <CadastreOverlay visible={cadastreOverlayVisible} /> */}
 
       {selected && (
         <Popup
